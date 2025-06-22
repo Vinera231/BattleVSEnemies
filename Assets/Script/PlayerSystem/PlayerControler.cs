@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Networking.Types;
 using UnityEngine.SceneManagement;
 
 public class PlayerControler : MonoBehaviour
