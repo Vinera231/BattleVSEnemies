@@ -24,9 +24,6 @@ public class Health : MonoBehaviour
         ValueChanged?.Invoke(Value);
       
         if (_healthValue == 0)
-        {
-            Died?.Invoke();
-            Debug.Log("Смерт");      
-        }
+            Died?.Invoke(); 
     } 
 }

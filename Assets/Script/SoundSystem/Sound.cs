@@ -8,7 +8,7 @@ public class Sound : MonoBehaviour
 
     private void Awake()
     {
-        _musicSource.volume = _volumeSlider.value; 
+        _musicSource.volume = _volumeSlider.value;
      }
 
     private void OnEnable()

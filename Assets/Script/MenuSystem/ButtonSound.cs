@@ -19,18 +19,12 @@ public class ButtonSound : MonoBehaviour
         _informer.Clicked -= OnClick;
     }
 
-    private void OnEnter()
-    {
+    private void OnEnter() =>
         _sfx.PlayCursorEnterButton();
-    }
 
-    private void OnExit()
-    {
+    private void OnExit() =>
         _sfx.PlayCursorExitButton();
-    }
 
-    private void OnClick()
-    {
+    private void OnClick() =>
         _sfx.PlayClickButton();
-    }
 }

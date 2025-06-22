@@ -12,28 +12,17 @@ public class ButtonInformer : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public event Action Entered;
     public event Action Exited;
 
-    private void OnEnable()
-    {
+    private void OnEnable() =>
         _button.onClick.AddListener(OnClick);
-    }
 
-    private void OnDisable()
-    {
+    private void OnDisable() =>
         _button.onClick.RemoveListener(OnClick);
-    }
-
-    private void OnClick()
-    {
+    private void OnClick() =>
         Clicked?.Invoke();
-    }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
+    public void OnPointerEnter(PointerEventData eventData) =>
         Entered?.Invoke();
-    }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
+    public void OnPointerExit(PointerEventData eventData) =>
         Exited?.Invoke();
-    }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,16 +17,14 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private float _jump = 2f;
     [SerializeField] private Transform JumpForce;
 
-    private CursorShower _cursorShower;
-    private void OnEnable()
-    {
-        _health.Died += OnDied;
-    }
+    public event Action Died;
 
-    private void OnDisable()
-    {
+    private void OnEnable() =>
+        _health.Died += OnDied;
+
+    private void OnDisable() =>
         _health.Died -= OnDied;
-    }
+
     private void Update()
     {
         _isGround = _controller.isGrounded;
@@ -37,7 +36,7 @@ public class PlayerControler : MonoBehaviour
         _moveZ = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * _moveX + transform.forward * _moveZ;
-        _controller.Move(move * _speed * Time.deltaTime);
+        _controller.Move(_speed * Time.deltaTime * move);
 
         if (_isGround && Input.GetKeyDown(KeyCode.Space))
             _velocity.y = Mathf.Sqrt(_jump * -2f * gravity);
@@ -52,11 +51,6 @@ public class PlayerControler : MonoBehaviour
     public void TakeDamage(float value) =>
         _health.TakeDamage(value);
 
-    private void OnDied()
-    {
-        SceneManager.LoadScene(0);
-
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }   
+    private void OnDied() =>
+        Died?.Invoke();
 }

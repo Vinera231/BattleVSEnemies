@@ -5,9 +5,6 @@ public class HealthView : MonoBehaviour
 {
     [SerializeField] private Image _image;
 
-    public void ShowInfo(float value, float maxValue)
-    {
+    public void ShowInfo(float value, float maxValue) =>
         _image.fillAmount = value / maxValue;
-    }
-
 }
