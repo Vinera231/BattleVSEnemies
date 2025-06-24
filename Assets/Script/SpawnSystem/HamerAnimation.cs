@@ -7,18 +7,13 @@ public class HamerAnimation : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Enemy _enemy;
 
-    private void OnEnable()
-    {
+    private void OnEnable() =>
         _enemy.Attacked += OnAttack;
-    }
+    
 
-    private void OnDisable()
-    {
-        _enemy.Attacked -= OnAttack;
-    }
+    private void OnDisable() =>
+        _enemy.Attacked -= OnAttack;  
 
-    private void OnAttack()
-    {
-        _animator.SetTrigger(Hit);
-    }
+    private void OnAttack() =>
+        _animator.SetTrigger(Hit); 
 }

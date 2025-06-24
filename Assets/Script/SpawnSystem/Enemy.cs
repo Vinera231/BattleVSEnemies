@@ -64,10 +64,9 @@ public class Enemy : MonoBehaviour
             Attack(player);
     }
 
-    public void TakeDamage(float value)
-    {
+    public void TakeDamage(float value) =>
         _health.TakeDamage(value);
-    }
+    
 
     private void Attack(PlayerControler player)
     {
@@ -90,6 +89,4 @@ public class Enemy : MonoBehaviour
     
     private void OnDied() =>
         Destroy(gameObject);
-
-  
 }
