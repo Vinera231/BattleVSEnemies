@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class CustomSceneManager : MonoBehaviour
 {
     [SerializeField] private InputReader _reader;
-    [SerializeField] private PlayerControler _player;
+    [SerializeField] private Player _player;
 
     private void OnEnable()
     {

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerControler : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] private Health _health;
     [SerializeField] private CharacterController _controller;
