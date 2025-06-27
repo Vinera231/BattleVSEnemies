@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class DistanceDetector : MonoBehaviour
 {
-    public event Action<Transform> Detected;
+    public event Action<Player> Detected;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerControler player))
-            Detected?.Invoke(player.transform); 
+        if (other.TryGetComponent(out Player player))
+            Detected?.Invoke(player); 
     }
 }
