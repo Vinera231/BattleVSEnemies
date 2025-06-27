@@ -18,9 +18,10 @@ public class WaveManager : MonoBehaviour
     private float _waveStartTime;
     private bool _isActiveWave;
 
-    private void Start() =>
+    private void Start()
+    {
         StartWave(0, TextFirstWave, OnFirstWaveFinished);
-    
+    }
 
     private void Update()
     {
