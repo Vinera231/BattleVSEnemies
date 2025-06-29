@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _amount: 20
+  _remainingTime: 5
 --- !u!1 &7936241553910035030
 GameObject:
   m_ObjectHideFlags: 0

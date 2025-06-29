@@ -15,12 +15,10 @@ public class BulletSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _inputReader.ShotPressed += OnShotPressed;
-        _inputReader.ShotPressed += OnShotPressed;
+        _inputReader.ShotPressed += OnShotPressed;  
     }
     private void OnDisable()
     {
-        _inputReader.ShotPressed -= OnShotPressed;
         _inputReader.ShotPressed -= OnShotPressed;
     }
 

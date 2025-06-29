@@ -10,5 +10,5 @@ public class WaveManagerView : MonoBehaviour
         _name.text = text;
 
     public void SetTime(float elapsed) =>
-        _time.text = $"Wave: {elapsed:F1}";
+        _time.text = $"Time: {elapsed:F1}";
 }
