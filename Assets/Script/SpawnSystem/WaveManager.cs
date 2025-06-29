@@ -6,7 +6,6 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] private WaveManagerView _view;
     [SerializeField] private List<Wave> _waves;
-    [SerializeField] private WinPanel _winPanel;
 
     private float _waveStartTime;
     private bool _isActiveWave;
@@ -43,7 +42,8 @@ public class WaveManager : MonoBehaviour
 
         if (_currentWaveIndex < _waves.Count)
             StartWave(_currentWaveIndex);
-        else
+        
+        if(_currentWaveIndex > _waves.Count)
             ProcessFinished();
     }
 

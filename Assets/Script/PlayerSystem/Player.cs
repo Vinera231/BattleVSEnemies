@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -16,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _playerBody;
     [SerializeField] private float _jump = 2f;
     [SerializeField] private Transform JumpForce;
+    [SerializeField] private BulletSpawner _bulletSpawner;
 
     public event Action Died;
 
@@ -46,6 +46,11 @@ public class Player : MonoBehaviour
 
         float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
         _playerBody.Rotate(Vector3.up * mouseX);
+    }
+
+    public void ReplenishBullet(int amount)
+    {
+        _bulletSpawner.AddBullet(amount);
     }
 
     public void TakeDamage(float value) =>

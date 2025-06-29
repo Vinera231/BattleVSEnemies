@@ -12,6 +12,7 @@ public class Wave : MonoBehaviour
     [SerializeField] private float _countHamer;
     [SerializeField] private float _timeBeforeSpawn;
     [SerializeField] private string _text;
+    [SerializeField] private LootSpawner _lootSpawner;
 
     private WaitForSeconds _wait;
     private List<Enemy> _enemies = new();
@@ -61,8 +62,9 @@ public class Wave : MonoBehaviour
     private void OnDied(Enemy enemy)
     {
         _enemies.Remove(enemy);
-        
-        if(_enemies.Count == 0)
+        _lootSpawner.Spawn(enemy.transform.position);
+
+        if (_enemies.Count == 0)
             Finished?.Invoke();
     }
 }

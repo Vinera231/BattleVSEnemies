@@ -451,7 +451,7 @@ MonoBehaviour:
   _attackDetector: {fileID: 7791667835240250374}
   _health: {fileID: 3245646316109140766}
   _agent: {fileID: 429578588366157047}
-  _speed: 8
+  _speed: 10
   _detectionRadius: 20
   _damageAmount: 20
   _attackRate: 1

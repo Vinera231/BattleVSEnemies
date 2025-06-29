@@ -15,15 +15,15 @@ public class PanelSwitcher : MonoBehaviour
 
     private void OnEnable()
     {
-        _waveManager.AllWavesFinished += OnWavesFiniched;
+        _waveManager.AllWavesFinished += OnWavesFinished;
     }
 
     private void OnDisable()
     {
-        _waveManager.AllWavesFinished -= OnWavesFiniched;
+        _waveManager.AllWavesFinished -= OnWavesFinished;
     }
 
-    private void OnWavesFiniched()
+    private void OnWavesFinished()
     {
         _winPanel.Show();
         WinPanelShowed?.Invoke();

@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _view: {fileID: 3591059338729883888}
   _maxValue: 100
-  _healthValue: 1
+  _healthValue: 100
 --- !u!1 &5556298815762716875
 GameObject:
   m_ObjectHideFlags: 0

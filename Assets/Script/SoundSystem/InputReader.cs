@@ -34,4 +34,5 @@ public class InputReader : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
             ShotPressed?.Invoke();
     }
+
 }
