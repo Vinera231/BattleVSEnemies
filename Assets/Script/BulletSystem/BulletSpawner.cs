@@ -36,7 +36,7 @@ public class BulletSpawner : MonoBehaviour
 
         GameObject newBullet = Instantiate(_prefab, transform.position, transform.rotation);
         Rigidbody rigidbody = newBullet.GetComponent<Rigidbody>();
-        rigidbody.velocity = transform.forward * _velocity;
+        rigidbody.linearVelocity = transform.forward * _velocity;
         rigidbody.freezeRotation = true;
 
         _bullet--;
@@ -52,12 +52,12 @@ public class BulletSpawner : MonoBehaviour
     {
         _bullet = Mathf.Min(_bullet + amount, _limitbullet);
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
-        Debug.Log("Игрок подобрал патроны");
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
         _gameEfect.PlayReloadBullet();
     }
 
     public void NotBullet()
     {
-        Debug.Log("Нет патронав");
+        Debug.Log("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
     }
 } 
