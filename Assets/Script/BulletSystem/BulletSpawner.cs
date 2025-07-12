@@ -10,8 +10,7 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private int _bullet;
     [SerializeField] private int _limitbullet;
     [SerializeField] private BulletView _bulletView;
-    [SerializeField] private GameEfect _gameEfect;
-  
+    [SerializeField] private SfxPlayer _player;
 
     private void OnEnable()
     {
@@ -29,7 +28,7 @@ public class BulletSpawner : MonoBehaviour
             NotBullet();
 
             _bulletView.UpdateBulletCount(_bullet, _limitbullet);
-            _gameEfect.PlayNotBullet();
+            _player.PlayNotBullet();
 
             return;
         }
@@ -53,7 +52,7 @@ public class BulletSpawner : MonoBehaviour
         _bullet = Mathf.Min(_bullet + amount, _limitbullet);
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
         Debug.Log("����� �������� �������");
-        _gameEfect.PlayReloadBullet();
+        _player.PlayReloadBullet();
     }
 
     public void NotBullet()

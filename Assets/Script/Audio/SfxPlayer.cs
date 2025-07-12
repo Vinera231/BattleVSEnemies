@@ -6,6 +6,8 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _cursourEnterButton;
     [SerializeField] private AudioClip _cursorExitButton;
     [SerializeField] private AudioClip _clickButton;
+    [SerializeField] private AudioClip _notBullet;
+    [SerializeField] private AudioClip _reloadBullet;
 
     public void PlayCursorEnterButton() =>
         _source.PlayOneShot(_cursourEnterButton);
@@ -18,4 +20,10 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayClickButton() =>
         _source.PlayOneShot(_clickButton);
+
+    public void PlayNotBullet() =>
+        _source.PlayOneShot(_notBullet);
+
+    public void PlayReloadBullet() =>
+        _source.PlayOneShot(_reloadBullet);
 }
