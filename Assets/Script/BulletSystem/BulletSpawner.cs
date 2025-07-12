@@ -11,6 +11,8 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private int _limitbullet;
     [SerializeField] private BulletView _bulletView;
     [SerializeField] private SfxPlayer _player;
+    [SerializeField] private BulletViewAnim _anim;
+
 
     private void OnEnable()
     {
@@ -58,5 +60,7 @@ public class BulletSpawner : MonoBehaviour
     public void NotBullet()
     {
         Debug.Log("��� ��������");
+    
+       _anim.BulletNotAnimation(_bullet,_limitbullet);
     }
 } 

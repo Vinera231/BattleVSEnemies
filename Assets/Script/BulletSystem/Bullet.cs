@@ -1,30 +1,34 @@
-using System;
-using TMPro;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _damage = 20f;
+    [SerializeField] private float _damage;
 
     private void Start() =>
         Invoke(nameof(DestroyBullet), 3);
 
-    public void DestroyBullet() =>
+    private void DestroyBullet() =>
         Destroy(gameObject);
 
-    private void OnCollisionEnter(Collision collision) =>
+    private void OnCollisionEnter(Collision collision)
+    {
         OnEnter(collision.gameObject);
 
-    private void OnTriggerEnter(Collider other) =>
+        if (collision.gameObject.TryGetComponent(out BulletIgnore _) == false)
+            DestroyBullet();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
         OnEnter(other.gameObject);
+        
+        if (other.gameObject.TryGetComponent(out BulletIgnore _) == false)
+            DestroyBullet();
+    }
 
     private void OnEnter(GameObject other)
     {
-        if (other.TryGetComponent(out Enemy enemy) == false)
-            return;
-
-        enemy.TakeDamage(_damage);
-        Destroy(gameObject);
+        if (other.TryGetComponent(out Enemy enemy))
+            enemy.TakeDamage(_damage);
     }
-
 }
