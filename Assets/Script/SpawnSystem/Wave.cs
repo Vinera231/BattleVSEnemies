@@ -13,13 +13,22 @@ public class Wave : MonoBehaviour
     [SerializeField] private float _timeBeforeSpawn;
     [SerializeField] private string _text;
     [SerializeField] private LootSpawner _lootSpawner;
+    [SerializeField] private List<Transform> _spawnPoints;
 
     private WaitForSeconds _wait;
-    private List<Enemy> _enemies = new();
+    private readonly List<Enemy> _enemies = new();
 
     public event Action Finished;
 
     public string Text => _text;
+
+    private Vector3 RandomSpawnPosition()
+    {
+        if (_spawnPoints.Count == 0)
+            return transform.position;
+        else
+            return _spawnPoints[UnityEngine.Random.Range(0, _spawnPoints.Count)].position;
+    }
 
     private void Awake() =>
         _wait = new(_frequency);
@@ -34,7 +43,7 @@ public class Wave : MonoBehaviour
         while (_countEnemy > 0)
         {
             yield return _wait;
-            Enemy enemy = _spawner.SpawnEnemy(transform.position);
+            Enemy enemy = _spawner.SpawnEnemy(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
             _countEnemy--;
@@ -43,7 +52,7 @@ public class Wave : MonoBehaviour
         while (_countSpeedy > 0)
         {
             yield return _wait;
-            Enemy enemy = _spawner.SpawnSpeedy(transform.position);
+            Enemy enemy = _spawner.SpawnSpeedy(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
             _countSpeedy--;
@@ -52,7 +61,7 @@ public class Wave : MonoBehaviour
         while (_countHamer > 0)
         {
             yield return _wait;
-            Enemy enemy = _spawner.SpawnHamer(transform.position);
+            Enemy enemy = _spawner.SpawnHamer(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
             _countHamer--;
