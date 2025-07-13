@@ -26,8 +26,8 @@ public class BulletView : MonoBehaviour
         if (_bulletGui.Length > 0)
             _bulletGui[1].SetActive(count >= SecondTreshold);
 
-        if (_bulletGui.Length > 0)
-            _bulletGui[2].SetActive(count >= SecondTreshold);
+        if (_bulletGui.Length == 0)
+            _bulletGui[2].SetActive(count >= ThirdTreshold);
     }
 
     public void BulletNotAnimation()
