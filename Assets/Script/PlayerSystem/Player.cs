@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _jump = 2f;
     [SerializeField] private Transform JumpForce;
     [SerializeField] private BulletSpawner _bulletSpawner;
+    [SerializeField] private MedKit _kit;
 
     public event Action Died;
 
@@ -51,6 +52,11 @@ public class Player : MonoBehaviour
     public void ReplenishBullet(int amount)
     {
         _bulletSpawner.AddBullet(amount);
+    }
+
+   public void TakeHealth(int life)
+    {
+        _health.RecoverHealth(life);
     }
 
     public void TakeDamage(float value) =>
