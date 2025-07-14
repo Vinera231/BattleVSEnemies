@@ -521,6 +521,7 @@ GameObject:
   - component: {fileID: 72216842678060647}
   - component: {fileID: 9174998212645412849}
   - component: {fileID: 1072211070825823427}
+  - component: {fileID: -8180341325247479640}
   m_Layer: 0
   m_Name: Medicoment
   m_TagString: Untagged
@@ -537,7 +538,7 @@ Transform:
   m_GameObject: {fileID: 8355761646879269418}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0610008, y: 1.3129997, z: 25}
+  m_LocalPosition: {x: 1.059, y: 1.3129997, z: 25}
   m_LocalScale: {x: 0.092796, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -617,8 +618,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.87625355
-  m_Center: {x: -0.56321436, y: 0, z: 0}
+  m_Radius: 1.1894617
+  m_Center: {x: -0.5632137, y: 0, z: 0.058176994}
 --- !u!95 &9174998212645412849
 Animator:
   serializedVersion: 7
@@ -653,5 +654,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdf90810342db44ebbbe91c853f43c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ramainingTime: 10
+  _ramainingTime: 6
   _healthAmount: 30
+--- !u!114 &-8180341325247479640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8355761646879269418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3243b4ccc76fb4bbdd4c2026d07c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

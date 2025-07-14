@@ -208,6 +208,7 @@ MonoBehaviour:
   _view: {fileID: 3591059338729883888}
   _maxValue: 100
   _healthValue: 100
+  _player: {fileID: 0}
 --- !u!1 &5556298815762716875
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +470,7 @@ MonoBehaviour:
   _health: {fileID: 3009349650919912553}
   _agent: {fileID: 89978275632698240}
   _speed: 5
-  _detectionRadius: 20
+  _detectionRadius: 70
   _damageAmount: 20
   _attackRate: 1
   _attackSound: {fileID: 8300000, guid: b48a08328c36ed2408caaf324ecec4c1, type: 3}
