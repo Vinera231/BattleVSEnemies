@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CursorShower : MonoBehaviour
@@ -7,7 +8,10 @@ public class CursorShower : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private InputReader _inputReader;
 
-    private void Awake() => 
+    public event Action OnCursourShow;
+    public event Action OnCursourHide;
+
+    private void Awake() =>
         Hide();
 
     private void OnEnable()
@@ -15,7 +19,7 @@ public class CursorShower : MonoBehaviour
         _panelSwitcher.WinPanelShowed += Show;
         _settingPanel.Changed += OnChanged;
         _player.Died += Show;
-        _inputReader.ExitToMenuPressed += Show;
+        _inputReader.ExitToMenuPressed += Show;        
     }
 
     private void OnDisable()
@@ -26,7 +30,7 @@ public class CursorShower : MonoBehaviour
         _inputReader.ExitToMenuPressed -= Show;
     }
 
-    private void OnChanged(bool isOn) 
+    private void OnChanged(bool isOn)
     {
         if (isOn)
             Show();
@@ -38,11 +42,13 @@ public class CursorShower : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        OnCursourShow?.Invoke();
     }
 
     private void Hide()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        OnCursourHide?.Invoke();
     }
 }
