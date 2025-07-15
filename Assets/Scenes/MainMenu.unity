@@ -663,7 +663,7 @@ RectTransform:
   m_GameObject: {fileID: 221712978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0223694, y: 1.064704, z: 0.99116}
+  m_LocalScale: {x: 1.0218377, y: 1.064704, z: 0.99116}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148691897}
@@ -788,6 +788,7 @@ GameObject:
   - component: {fileID: 392671384}
   - component: {fileID: 392671386}
   - component: {fileID: 392671387}
+  - component: {fileID: 392671388}
   m_Layer: 5
   m_Name: SettingButton
   m_TagString: Untagged
@@ -960,6 +961,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 392671381}
+--- !u!114 &392671388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392671379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &479852686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,6 +2221,7 @@ GameObject:
   - component: {fileID: 1148691901}
   - component: {fileID: 1148691902}
   - component: {fileID: 1148691904}
+  - component: {fileID: 1148691905}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -2221,7 +2238,7 @@ RectTransform:
   m_GameObject: {fileID: 1148691896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.90028, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 221712979}
@@ -2229,8 +2246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.1631, y: 58}
-  m_SizeDelta: {x: 163.53, y: 30}
+  m_AnchoredPosition: {x: -7.1636, y: 58}
+  m_SizeDelta: {x: 181.65, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148691898
 MonoBehaviour:
@@ -2376,6 +2393,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 1148691898}
+--- !u!114 &1148691905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148691896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1172133892
 GameObject:
   m_ObjectHideFlags: 0
@@ -4585,6 +4617,7 @@ GameObject:
   - component: {fileID: 2016815097}
   - component: {fileID: 2016815098}
   - component: {fileID: 2016815099}
+  - component: {fileID: 2016815100}
   m_Layer: 5
   m_Name: ExitGameButton
   m_TagString: Untagged
@@ -4756,6 +4789,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 2016815093}
+--- !u!114 &2016815100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016815091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2017324031
 GameObject:
   m_ObjectHideFlags: 0
