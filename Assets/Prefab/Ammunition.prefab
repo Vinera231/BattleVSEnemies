@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _amount: 20
-  _remainingTime: 7
+  _remainingTime: 8
 --- !u!95 &8800243200666478190
 Animator:
   serializedVersion: 7

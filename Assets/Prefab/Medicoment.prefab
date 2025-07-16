@@ -534,8 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdf90810342db44ebbbe91c853f43c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ramainingTime: 6
-  _healthAmount: 30
+  _ramainingTime: 12
+  _healthAmount: 50
 --- !u!114 &601652269704480430
 MonoBehaviour:
   m_ObjectHideFlags: 0

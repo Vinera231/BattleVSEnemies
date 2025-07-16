@@ -30,6 +30,7 @@ public class BulletSpawner : MonoBehaviour
 
             _bulletView.UpdateBulletCount(_bullet, _limitbullet);
             _player.PlayNotBullet();
+            _bulletView.BulletNotAnimation();
 
             return;
         }
@@ -41,7 +42,8 @@ public class BulletSpawner : MonoBehaviour
 
         _bullet--;
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
-       
+        _bulletView.BulletNotAnimation();
+
         if (_isActive == false)
             return;
 
@@ -52,14 +54,15 @@ public class BulletSpawner : MonoBehaviour
     {
         _bullet = Mathf.Min(_bullet + amount, _limitbullet);
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
-        Debug.Log("����� �������� �������");
+        Debug.Log("Есть патрони");
         _player.PlayReloadBullet();
     }
 
     public void NotBullet()
     {
-        Debug.Log("��� ��������");
+        Debug.Log("Есть патрони");
 
         _bulletView.UpdateBulletCount(_bullet,_limitbullet);
+        _bulletView.BulletNotAnimation();
     }
 } 

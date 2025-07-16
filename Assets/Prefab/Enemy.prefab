@@ -470,7 +470,7 @@ MonoBehaviour:
   _health: {fileID: 3009349650919912553}
   _agent: {fileID: 89978275632698240}
   _speed: 5
-  _detectionRadius: 200
+  _detectionRadius: 380
   _damageAmount: 20
   _attackRate: 1
   _attackSound: {fileID: 8300000, guid: b48a08328c36ed2408caaf324ecec4c1, type: 3}

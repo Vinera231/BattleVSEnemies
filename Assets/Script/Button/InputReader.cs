@@ -6,7 +6,6 @@ public class InputReader : MonoBehaviour
     private const KeyCode SettingPanel = KeyCode.Escape;
 
     public event Action SettingPanelPressed;
-    public event Action ExitToMenuPressed;
     public event Action ShotPressed;
 
     private void Update()

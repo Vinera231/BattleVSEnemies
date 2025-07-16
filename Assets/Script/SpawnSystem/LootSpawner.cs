@@ -10,20 +10,20 @@ public class LootSpawner : MonoBehaviour
     [SerializeField] private Vector3 _offset;
     [SerializeField] private Vector2 _deviation;
 
-    public void Spawn(Vector3 position)
+    public void SpawnBulletBag(Vector3 position)
     {
         BulletBag bulletBag = Instantiate(_bulletBagPrefab, transform);
         bulletBag.transform.position = DeviatePosition(position) + _offset;  
-   
-        MedKit kit = Instantiate(_kit, transform);
-        kit.transform.position = DeviatePosition(position) + _offset;
     }
 
-    public void Spawn()
+    public void SpawnBulletBag()
     {
         BulletBag bulletBag = Instantiate(_bulletBagPrefab, transform);
-        bulletBag.transform.position = DeviatePosition(GetRandomPosition()) + _offset;
+        bulletBag.transform.position = DeviatePosition(GetRandomPosition()) + _offset;  
+    }
 
+    public void SpawnMedKit()
+    {
         MedKit kit = Instantiate(_kit, transform);
         kit.transform.position = DeviatePosition(GetRandomPosition()) + _offset;
     }

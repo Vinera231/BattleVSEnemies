@@ -18,8 +18,7 @@ public class CursorShower : MonoBehaviour
     {
         _panelSwitcher.WinPanelShowed += Show;
         _settingPanel.Changed += OnChanged;
-        _player.Died += Show;
-        _inputReader.ExitToMenuPressed += Show;        
+        _player.Died += Show;        
     }
 
     private void OnDisable()
@@ -27,7 +26,6 @@ public class CursorShower : MonoBehaviour
         _panelSwitcher.WinPanelShowed -= Show;
         _settingPanel.Changed -= OnChanged;
         _player.Died -= Show;
-        _inputReader.ExitToMenuPressed -= Show;
     }
 
     private void OnChanged(bool isOn)

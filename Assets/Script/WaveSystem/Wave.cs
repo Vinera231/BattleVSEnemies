@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-    [SerializeField] private EnemySpawner _spawner;
+    [SerializeField] private EnemySpawner _spawner; 
     [SerializeField] private float _frequency;
     [SerializeField] private float _countEnemy;
     [SerializeField] private float _countSpeedy;
@@ -71,7 +71,7 @@ public class Wave : MonoBehaviour
     private void OnDied(Enemy enemy)
     {
         _enemies.Remove(enemy);
-        _lootSpawner.Spawn(enemy.transform.position);
+        _lootSpawner.SpawnBulletBag(enemy.transform.position);
 
         if (_enemies.Count == 0)
             Finished?.Invoke();
