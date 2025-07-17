@@ -6,7 +6,6 @@ public class Health : MonoBehaviour
     [SerializeField] private HealthView _view;
     [SerializeField] private float _maxValue;
     [SerializeField] private float _healthValue;
-    [SerializeField] private Player _player;
 
     public event Action<float> ValueChanged;
     public event Action Died;
@@ -30,9 +29,9 @@ public class Health : MonoBehaviour
 
     public void RecoverHealth(float amount)
     {
-        _healthValue = Mathf.Min(_healthValue + amount, +50);
+        _healthValue = Mathf.Min(_healthValue + amount,_maxValue);
     
-        _view.ShowInfo(_healthValue, amount);
+        _view.ShowInfo(_healthValue, _maxValue);
         ValueChanged?.Invoke(Value);
     }
 }

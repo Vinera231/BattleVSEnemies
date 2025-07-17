@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CursorShower : MonoBehaviour
 {
-    [SerializeField] private PanelSwitcher _panelSwitcher;
+    [SerializeField] private WinPanelShower _winPanelShower;
     [SerializeField] private SettingPanelShower _settingPanel;
     [SerializeField] private Player _player;
     [SerializeField] private InputReader _inputReader;
@@ -16,14 +16,14 @@ public class CursorShower : MonoBehaviour
 
     private void OnEnable()
     {
-        _panelSwitcher.WinPanelShowed += Show;
+        _winPanelShower.WinPanelShowed += Show;
         _settingPanel.Changed += OnChanged;
         _player.Died += Show;        
     }
 
     private void OnDisable()
     {
-        _panelSwitcher.WinPanelShowed -= Show;
+        _winPanelShower.WinPanelShowed -= Show;
         _settingPanel.Changed -= OnChanged;
         _player.Died -= Show;
     }

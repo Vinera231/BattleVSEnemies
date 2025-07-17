@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         _bulletSpawner.AddBullet(amount);
     }
 
-   public void TakeHealth(int life)
+   public void TakeHealth(float life)
     {
         _health.RecoverHealth(life);
     }
