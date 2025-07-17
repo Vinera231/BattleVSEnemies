@@ -3,17 +3,14 @@ using UnityEngine;
 
 public class BulletView : MonoBehaviour
 {
+    private const string IsEnoughBullet = nameof(IsEnoughBullet);
+
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private GameObject[] _bulletGui;
     [SerializeField] private Animator _anim;
-   
+
     [SerializeField] private float FirstTreshold = 66f;
     [SerializeField] private float SecondTreshold = 33f;
-
-    private void Start()
-    {
-        _anim = GetComponent<Animator>();
-    }
 
     public void UpdateBulletCount(float count, float max)
     {
@@ -24,13 +21,7 @@ public class BulletView : MonoBehaviour
 
         if (_bulletGui.Length > 0)
             _bulletGui[1].SetActive(count >= SecondTreshold);
-    }
 
-    public void BulletNotAnimation()
-    {
-        if (_anim != null)
-        {
-            _anim.Play("NotBullets");
-        }
+        _anim.SetBool(IsEnoughBullet, count < 10);
     }
 }

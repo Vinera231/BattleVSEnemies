@@ -30,7 +30,6 @@ public class BulletSpawner : MonoBehaviour
 
             _bulletView.UpdateBulletCount(_bullet, _limitbullet);
             _player.PlayNotBullet();
-            _bulletView.BulletNotAnimation();
 
             return;
         }
@@ -42,7 +41,7 @@ public class BulletSpawner : MonoBehaviour
 
         _bullet--;
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
-        _bulletView.BulletNotAnimation();
+       
 
         if (_isActive == false)
             return;
@@ -60,9 +59,9 @@ public class BulletSpawner : MonoBehaviour
 
     public void NotBullet()
     {
-        Debug.Log("Есть патрони");
+        Debug.Log(" патрони");
 
         _bulletView.UpdateBulletCount(_bullet,_limitbullet);
-        _bulletView.BulletNotAnimation();
+       
     }
 } 
