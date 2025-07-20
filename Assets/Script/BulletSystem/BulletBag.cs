@@ -4,6 +4,7 @@ public class BulletBag : MonoBehaviour
 {
     [SerializeField] private int _amount = 20;
     [SerializeField] private float _remainingTime = 3f;
+    [SerializeField] private float _maximumBullet = 100f;
 
     private void Update()
     {
@@ -11,6 +12,10 @@ public class BulletBag : MonoBehaviour
 
         if ( _remainingTime <= 0) 
             Destroy(gameObject);
+    
+        if( _amount >_maximumBullet )
+            gameObject.SetActive(false);
+
     }
 
     private void OnTriggerEnter(Collider other)

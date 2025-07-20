@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
@@ -11,7 +12,6 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private int _limitbullet;
     [SerializeField] private BulletView _bulletView;
     [SerializeField] private SfxPlayer _player;
-
 
     private void OnEnable()
     {
@@ -34,6 +34,7 @@ public class BulletSpawner : MonoBehaviour
             return;
         }
 
+
         GameObject newBullet = Instantiate(_prefab, transform.position, transform.rotation);
         Rigidbody rigidbody = newBullet.GetComponent<Rigidbody>();
         rigidbody.linearVelocity = transform.forward * _velocity;
@@ -48,20 +49,26 @@ public class BulletSpawner : MonoBehaviour
 
         _isActive = false;
     }
-
+    
     public void AddBullet(int amount)
     {
         _bullet = Mathf.Min(_bullet + amount, _limitbullet);
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
-        Debug.Log("Есть патрони");
-        _player.PlayReloadBullet();
+        Debug.Log("патроны");
+        _player.PlayReloadBullet();     
+    }
+
+    public void MaxBullet()
+    {
+        Debug.Log("Уже есть патроны");
+
+       _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 
     public void NotBullet()
     {
-        Debug.Log(" патрони");
+        Debug.Log("нет патронав");
 
-        _bulletView.UpdateBulletCount(_bullet,_limitbullet);
-       
+        _bulletView.UpdateBulletCount(_bullet,_limitbullet);    
     }
 } 

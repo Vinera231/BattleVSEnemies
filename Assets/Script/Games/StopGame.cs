@@ -3,15 +3,18 @@ using UnityEngine;
 public class StopGame : MonoBehaviour
 {
     [SerializeField] private SettingPanelShower _settingPanel;
+    [SerializeField] private ButtonClosePanel _closeButton;
 
     private void OnEnable()
     {
         _settingPanel.Changed += OnSettingChanged;
+        _closeButton.PanelClosed += PlayGame;
     }
 
     private void OnDisable()
     {
         _settingPanel.Changed -= OnSettingChanged;
+        _closeButton.PanelClosed -= PlayGame;
     }
 
     private void OnSettingChanged(bool isOn)
