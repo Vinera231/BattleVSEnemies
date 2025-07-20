@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     private const float StoppingDistance = 0.5f;
 
-    [SerializeField] private DistanceDetector _detector;
     [SerializeField] private AttackDetector _attackDetector;
     [SerializeField] private Health _health;
     [SerializeField] private NavMeshAgent _agent;
@@ -30,17 +29,17 @@ public class Enemy : MonoBehaviour
 
         if (_audioSource == null)
             _audioSource = gameObject.AddComponent<AudioSource>();
+
+        _player = FindFirstObjectByType<Player>();
     }
 
     private void OnEnable()
     {
-        _detector.Detected += OnDetected;
         _health.Died += OnDied;
     }
 
     private void OnDisable()
     {
-        _detector.Detected -= OnDetected;
         _health.Died -= OnDied;
     }
 
@@ -86,9 +85,6 @@ public class Enemy : MonoBehaviour
         Attacked?.Invoke();
     }
 
-    private void OnDetected(Player player) =>
-        _player = player;
-    
     private void OnDied()
     {
         Died?.Invoke(this);

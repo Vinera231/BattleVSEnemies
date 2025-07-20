@@ -49,15 +49,27 @@ public class Player : MonoBehaviour
         _playerBody.Rotate(Vector3.up * mouseX);
     }
 
-    public void ReplenishBullet(int amount)
+    public bool TryReplenishBullet(int amount)
     {
-        _bulletSpawner.AddBullet(amount);
+        if (_bulletSpawner.IsFull == false)
+        {
+            _bulletSpawner.AddBullet(amount);
+            return true;
+        }
+
+        return false;
     }
 
 
-   public void TakeHealth(float life)
+    public bool TryTakeHealth(float life)
     {
-        _health.RecoverHealth(life);
+        if (_health.IsFull == false)
+        {
+            _health.RecoverHealth(life);
+            return true;
+        }
+
+        return false;
     }
 
     public void TakeDamage(float value) =>

@@ -13,6 +13,8 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private BulletView _bulletView;
     [SerializeField] private SfxPlayer _player;
 
+    public bool IsFull => _bullet >= _limitbullet;
+
     private void OnEnable()
     {
         _inputReader.ShotPressed += OnShotPressed;  

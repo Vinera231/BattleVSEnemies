@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     public event Action<float> ValueChanged;
     public event Action Died;
 
+    public bool IsFull => _healthValue >= _maxValue;
+
     public float Value => _healthValue;
 
     public void TakeDamage(float damage)

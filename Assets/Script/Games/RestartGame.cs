@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ResetGame : MonoBehaviour
+public class RestartGame : MonoBehaviour
 {
     [SerializeField] ButtonInformer _informer;
 
@@ -17,6 +17,7 @@ public class ResetGame : MonoBehaviour
 
     private void Reset()
     {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1.0f;
     }
 }
