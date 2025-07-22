@@ -16,11 +16,6 @@ public class LootSpawner : MonoBehaviour
         bulletBag.transform.position = DeviatePosition(position) + _offset;  
     }
 
-    public void SpawnBulletBag()
-    {
-        BulletBag bulletBag = Instantiate(_bulletBagPrefab, transform);
-        bulletBag.transform.position = DeviatePosition(GetRandomPosition()) + _offset;  
-    }
 
     public void SpawnMedKit()
     {

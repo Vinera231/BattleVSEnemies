@@ -15,6 +15,7 @@ public class Wave : MonoBehaviour
     [SerializeField] private LootSpawner _lootSpawner;
     [SerializeField] private List<Transform> _spawnPoints;
 
+
     private WaitForSeconds _wait;
     private readonly List<Enemy> _enemies = new();
 

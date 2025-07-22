@@ -36,7 +36,6 @@ public class WaveManager : MonoBehaviour
         _view.SetName(_waves[index].Text);
      
         Vector2 spawnPosition = transform.position;
-        _spawner.SpawnBulletBag();
         _spawner.SpawnMedKit();
     }
 
