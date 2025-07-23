@@ -34,7 +34,7 @@ public class WaveManager : MonoBehaviour
         _waves[index].StartSpawn();
         _waves[index].Finished += OnWaveFinished;
         _view.SetName(_waves[index].Text);
-     
+
         Vector2 spawnPosition = transform.position;
         _spawner.SpawnMedKit();
     }

@@ -5,7 +5,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Enemy _enemyPrefab;
     [SerializeField] private Enemy _speedyPrefab;
     [SerializeField] private Enemy _hamerPrefab;
+    [SerializeField] private Enemy _bossPrefab;
     [SerializeField] private Vector2 _deviation;
+
+    public Enemy SpawnBoss(Vector3 position) =>
+        Spawn(position, _bossPrefab);
 
     public Enemy SpawnEnemy(Vector3 position) =>
          Spawn(position, _enemyPrefab);
