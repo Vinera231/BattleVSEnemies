@@ -397,8 +397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 926345824293864187}
-  _maxValue: 1000
-  _healthValue: 1000
+  _maxValue: 5000
+  _healthValue: 5000
 --- !u!1 &5380887101246485483
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,10 +540,11 @@ MonoBehaviour:
   _attackDetector: {fileID: 8822677875608083494}
   _health: {fileID: 2818299267573887289}
   _agent: {fileID: 7753568749947434988}
-  _speed: 3
+  _speed: 2
   _detectionRadius: 380
   _damageAmount: 80
   _attackRate: 1
+  _scoreReward: 50
   _attackSound: {fileID: 8300000, guid: b48a08328c36ed2408caaf324ecec4c1, type: 3}
 --- !u!114 &113875355764550695
 MonoBehaviour:
@@ -558,8 +559,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 2818299267573887289}
-  _firstValue: 900
-  _secondValue: 700
+  _firstValue: 4000
+  _secondValue: 3600
+  _thirtValue: 2800
 --- !u!195 &7753568749947434988
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -685,7 +687,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8822677875608083494
 MonoBehaviour:

@@ -5,7 +5,7 @@ public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] private InputReader _inputReader;
     [SerializeField] private Rigidbody _freezeRotation;
-    [SerializeField] private GameObject _prefab;
+    [SerializeField] private Bullet _prefab;
     [SerializeField] private float _velocity = 20f;
     [SerializeField] private bool _isActive = true;
     [SerializeField] private int _bullet;
@@ -15,13 +15,16 @@ public class BulletSpawner : MonoBehaviour
 
     public bool IsFull => _bullet >= _limitbullet;
 
-    private void OnEnable()
-    {
+    private void OnEnable() =>
         _inputReader.ShotPressed += OnShotPressed;  
-    }
-    private void OnDisable()
+    
+    private void OnDisable() =>  
+        _inputReader.ShotPressed -= OnShotPressed;  
+
+    public void ReplacePrefab(Bullet bullet)
     {
-        _inputReader.ShotPressed -= OnShotPressed;
+        _prefab = bullet;
+        Debug.Log("ReplacePrefab");
     }
 
     private void OnShotPressed()
@@ -37,7 +40,7 @@ public class BulletSpawner : MonoBehaviour
         }
 
 
-        GameObject newBullet = Instantiate(_prefab, transform.position, transform.rotation);
+        Bullet newBullet = Instantiate(_prefab, transform.position, transform.rotation);
         Rigidbody rigidbody = newBullet.GetComponent<Rigidbody>();
         rigidbody.linearVelocity = transform.forward * _velocity;
         rigidbody.freezeRotation = true;

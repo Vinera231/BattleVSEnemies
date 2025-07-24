@@ -208,7 +208,6 @@ MonoBehaviour:
   _view: {fileID: 3827919778234986375}
   _maxValue: 80
   _healthValue: 80
-  _player: {fileID: 0}
 --- !u!1 &2013402642695639368
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfe0840b270b704aa727d21172566cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detector: {fileID: 4989615720155440804}
   _attackDetector: {fileID: 7791667835240250374}
   _health: {fileID: 3245646316109140766}
   _agent: {fileID: 429578588366157047}
@@ -562,6 +560,7 @@ MonoBehaviour:
   _detectionRadius: 380
   _damageAmount: 20
   _attackRate: 1
+  _scoreReward: 15
   _attackSound: {fileID: 8300000, guid: b48a08328c36ed2408caaf324ecec4c1, type: 3}
 --- !u!1 &5319439340207521724
 GameObject:

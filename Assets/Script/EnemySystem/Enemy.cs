@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _detectionRadius;
     [SerializeField] private float _damageAmount;
     [SerializeField] private float _attackRate = 1f;
+    [SerializeField] private int _scoreReward;
     [SerializeField] private AudioClip _attackSound;
 
     private float _elapsedTime;
@@ -21,6 +22,8 @@ public class Enemy : MonoBehaviour
 
     public event Action Attacked;
     public event Action<Enemy> Died;
+
+    public int ScoreReward => _scoreReward;
 
     private void Awake()
     {

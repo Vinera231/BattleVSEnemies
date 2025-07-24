@@ -4,14 +4,17 @@ using UnityEngine;
 public class InputReader : MonoBehaviour
 {
     private const KeyCode SettingPanel = KeyCode.Escape;
+    private const KeyCode BuyKey = KeyCode.E;
 
     public event Action SettingPanelPressed;
     public event Action ShotPressed;
+    public event Action BuyPressed;
 
     private void Update()
     {
         ReadSettingPanel();
         ReadShotPressed();
+        ReadBuyKey();
     }
 
     private void ReadSettingPanel()
@@ -26,4 +29,9 @@ public class InputReader : MonoBehaviour
             ShotPressed?.Invoke();
     }
 
+    private void ReadBuyKey()
+    {
+        if (Input.GetKeyDown(BuyKey))
+            BuyPressed?.Invoke();
+    }
 }

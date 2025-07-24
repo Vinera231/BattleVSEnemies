@@ -5,6 +5,7 @@ public class BossAbilitiy : MonoBehaviour
     [SerializeField] private Health _health;
     [SerializeField] private float _firstValue;
     [SerializeField] private float _secondValue;
+    [SerializeField] private float _thirtValue;
 
     private EnemySpawner _spawner;
     private LootSpawner _lootSpawner;
@@ -40,11 +41,25 @@ public class BossAbilitiy : MonoBehaviour
         {
             _secondValue = float.MinValue;
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 10; i++)
             {
-                Enemy enemy = _spawner.SpawnEnemy(transform.position);
+                Enemy enemy = _spawner.SpawnSpeedy(transform.position);
                 enemy.Died += OnEnemyDied;
             }               
+
+            return;
+        }
+
+
+        if (value < _thirtValue)
+        {
+            _thirtValue = float.MinValue;
+
+            for (int i = 0; i < 5; i++)
+            {
+                Enemy enemy = _spawner.SpawnHamer(transform.position);
+                enemy.Died += OnEnemyDied;
+            }
 
             return;
         }

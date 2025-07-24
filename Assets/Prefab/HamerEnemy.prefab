@@ -336,14 +336,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfe0840b270b704aa727d21172566cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detector: {fileID: 3080538722094410163}
   _attackDetector: {fileID: 777420149218966778}
   _health: {fileID: 4824536669525482505}
   _agent: {fileID: 7640572108778093536}
-  _speed: 4
+  _speed: 5
   _detectionRadius: 380
   _damageAmount: 50
   _attackRate: 1
+  _scoreReward: 20
   _attackSound: {fileID: 8300000, guid: ecde61ff956dfbe44a8a8d5cd9ada536, type: 3}
 --- !u!1 &5412154490053405964
 GameObject:
@@ -1059,4 +1059,3 @@ MonoBehaviour:
   _view: {fileID: 6548630142224654480}
   _maxValue: 200
   _healthValue: 200
-  _player: {fileID: 0}

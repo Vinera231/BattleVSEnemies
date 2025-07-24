@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private WaveManagerView _view;
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private LootSpawner _spawner;
+    [SerializeField] private Score _score;
 
     private float _waveStartTime;
     private bool _isActiveWave;
@@ -33,6 +35,7 @@ public class WaveManager : MonoBehaviour
         _isActiveWave = true;
         _waves[index].StartSpawn();
         _waves[index].Finished += OnWaveFinished;
+        _waves[index].EnemyDied += OnEnemyDied;
         _view.SetName(_waves[index].Text);
 
         Vector2 spawnPosition = transform.position;
@@ -41,13 +44,18 @@ public class WaveManager : MonoBehaviour
 
     private void OnWaveFinished()
     {
-        _waves[_currentWaveIndex].Finished -= OnWaveFinished;
+        Wave wave = _waves[_currentWaveIndex];
+        wave.Finished -= OnWaveFinished;
+        wave.EnemyDied -= OnEnemyDied;
+
+        _score.Increaze(wave.ScoreReward);
+
         ++_currentWaveIndex;
 
         if (_currentWaveIndex < _waves.Count)
             StartWave(_currentWaveIndex);
-        
-        if(_currentWaveIndex > _waves.Count)
+
+        if (_currentWaveIndex > _waves.Count)
             ProcessFinished();
     }
 
@@ -56,4 +64,7 @@ public class WaveManager : MonoBehaviour
         _isActiveWave = false;
         AllWavesFinished?.Invoke();
     }
+
+    private void OnEnemyDied(Enemy enemy) =>
+        _score.Increaze(enemy.ScoreReward);
 }

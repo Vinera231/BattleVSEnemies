@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Wave : MonoBehaviour
 {
@@ -15,11 +16,15 @@ public class Wave : MonoBehaviour
     [SerializeField] private string _text;
     [SerializeField] private LootSpawner _lootSpawner;
     [SerializeField] private List<Transform> _spawnPoints;
+    [SerializeField] private int _scoreReward;
 
     private WaitForSeconds _wait;
     private readonly List<Enemy> _enemies = new();
 
     public event Action Finished;
+    public event Action<Enemy> EnemyDied;
+
+    public int ScoreReward => _scoreReward;
 
     public string Text => _text;
 
@@ -83,6 +88,7 @@ public class Wave : MonoBehaviour
     {
         _enemies.Remove(enemy);
         _lootSpawner.SpawnBulletBag(enemy.transform.position);
+        EnemyDied?.Invoke(enemy);
 
         if (_enemies.Count == 0)
             Finished?.Invoke();

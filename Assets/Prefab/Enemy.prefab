@@ -391,6 +391,7 @@ MonoBehaviour:
   _detectionRadius: 380
   _damageAmount: 20
   _attackRate: 1
+  _scoreReward: 10
   _attackSound: {fileID: 8300000, guid: b48a08328c36ed2408caaf324ecec4c1, type: 3}
 --- !u!1 &7157658716984522113
 GameObject:
