@@ -339,12 +339,13 @@ MonoBehaviour:
   _attackDetector: {fileID: 777420149218966778}
   _health: {fileID: 4824536669525482505}
   _agent: {fileID: 7640572108778093536}
-  _speed: 5
+  _speed: 4
   _detectionRadius: 380
   _damageAmount: 50
   _attackRate: 1
   _scoreReward: 20
   _attackSound: {fileID: 8300000, guid: ecde61ff956dfbe44a8a8d5cd9ada536, type: 3}
+  _currentSpeed: 4
 --- !u!1 &5412154490053405964
 GameObject:
   m_ObjectHideFlags: 0

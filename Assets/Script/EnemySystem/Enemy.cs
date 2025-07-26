@@ -14,11 +14,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _damageAmount;
     [SerializeField] private float _attackRate = 1f;
     [SerializeField] private int _scoreReward;
-    [SerializeField] private AudioClip _attackSound;
-
+    [SerializeField] private SfxPlayer _sfx;
+    [SerializeField] private float _currentSpeed;
+    
+    private bool _isSlowed;
     private float _elapsedTime;
     private Player _player;
-    private AudioSource _audioSource;
 
     public event Action Attacked;
     public event Action<Enemy> Died;
@@ -27,11 +28,9 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        _currentSpeed = _speed;
         _agent.speed = _speed;
         _agent.stoppingDistance = StoppingDistance;
-
-        if (_audioSource == null)
-            _audioSource = gameObject.AddComponent<AudioSource>();
 
         _player = FindFirstObjectByType<Player>();
     }
@@ -82,12 +81,27 @@ public class Enemy : MonoBehaviour
     {
         player.TakeDamage(_damageAmount);
 
-        if (_attackSound != null && _audioSource != null)
-            _audioSource.PlayOneShot(_attackSound);
+        _sfx.PlayKickEnemy();
 
         Attacked?.Invoke();
     }
 
+    public void ApplaySlow(float _slow,float _slowAmount)
+    {
+        if (_isSlowed)
+            return;
+
+        _isSlowed = true;
+        _agent.speed = Mathf.Min(0.3f, _speed,_slowAmount);
+
+        Invoke(nameof(AfterSlow),_slowAmount);
+    }
+
+    public void AfterSlow()
+    {
+        _agent.speed = _currentSpeed;
+        _isSlowed = false;
+    }
     private void OnDied()
     {
         Died?.Invoke(this);

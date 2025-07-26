@@ -397,8 +397,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 926345824293864187}
-  _maxValue: 5000
-  _healthValue: 5000
+  _maxValue: 7000
+  _healthValue: 7000
 --- !u!1 &5380887101246485483
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +545,8 @@ MonoBehaviour:
   _damageAmount: 80
   _attackRate: 1
   _scoreReward: 50
-  _attackSound: {fileID: 8300000, guid: b48a08328c36ed2408caaf324ecec4c1, type: 3}
+  _sfx: {fileID: 0}
+  _currentSpeed: 2
 --- !u!114 &113875355764550695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,9 +560,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 2818299267573887289}
-  _firstValue: 4000
-  _secondValue: 3600
-  _thirtValue: 2800
+  _firstValue: 6000
+  _secondValue: 4500
+  _thirtValue: 2000
+  _forthValue: 1000
 --- !u!195 &7753568749947434988
 NavMeshAgent:
   m_ObjectHideFlags: 0

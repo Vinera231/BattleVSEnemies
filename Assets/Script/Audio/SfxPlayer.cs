@@ -8,6 +8,8 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _clickButton;
     [SerializeField] private AudioClip _notBullet;
     [SerializeField] private AudioClip _reloadBullet;
+    [SerializeField] private AudioClip _kickEnemy;
+    [SerializeField] private AudioClip _hammerEnemy;
 
     public void PlayCursorEnterButton() =>
         _source.PlayOneShot(_cursourEnterButton);
@@ -26,4 +28,10 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayReloadBullet() =>
         _source.PlayOneShot(_reloadBullet);
+
+    public void PlayKickEnemy() =>
+       _source.PlayOneShot(_kickEnemy);
+
+    public void PlayKickHammerEnemy() =>
+       _source.PlayOneShot(_hammerEnemy);
 }

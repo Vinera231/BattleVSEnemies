@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.31350353, g: 0.8415094, b: 0, a: 1}
+  m_Color: {r: 0.37254903, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -562,6 +562,7 @@ MonoBehaviour:
   _attackRate: 1
   _scoreReward: 15
   _attackSound: {fileID: 8300000, guid: b48a08328c36ed2408caaf324ecec4c1, type: 3}
+  _currentSpeed: 10
 --- !u!1 &5319439340207521724
 GameObject:
   m_ObjectHideFlags: 0
