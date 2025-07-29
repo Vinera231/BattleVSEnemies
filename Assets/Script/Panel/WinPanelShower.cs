@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class WinPanelShower : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class WinPanelShower : MonoBehaviour
     [SerializeField] private WinPanel _winPanel;
 
     public event Action WinPanelShowed;
+
+    public bool IsActive => _winPanel.gameObject.activeInHierarchy;
 
     private void Awake() =>
         _winPanel.gameObject.SetActive(false);

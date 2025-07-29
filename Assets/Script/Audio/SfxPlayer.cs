@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SfxPlayer : MonoBehaviour
 {
+    public static SfxPlayer Instance { get; private set; }
+
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioClip _cursourEnterButton;
     [SerializeField] private AudioClip _cursorExitButton;
@@ -10,6 +12,17 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _reloadBullet;
     [SerializeField] private AudioClip _kickEnemy;
     [SerializeField] private AudioClip _hammerEnemy;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     public void PlayCursorEnterButton() =>
         _source.PlayOneShot(_cursourEnterButton);

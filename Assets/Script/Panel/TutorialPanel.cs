@@ -4,11 +4,20 @@ using UnityEngine;
 public class TutorialPanel : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
+    [SerializeField] private ButtonInformer _closeButton;
 
     public event Action<bool> Changed;
 
+    public bool IsActive => _panel.gameObject.activeInHierarchy;
+
     private void Awake() =>
         ShowPanel();
+
+    private void OnEnable() =>
+        _closeButton.Clicked += HidePanel;
+
+    private void OnDisable() =>
+        _closeButton.Clicked -= HidePanel;
 
     private void HidePanel()
     {

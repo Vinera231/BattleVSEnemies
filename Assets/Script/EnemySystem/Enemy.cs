@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _damageAmount;
     [SerializeField] private float _attackRate = 1f;
     [SerializeField] private int _scoreReward;
-    [SerializeField] private SfxPlayer _sfx;
     [SerializeField] private float _currentSpeed;
     
     private bool _isSlowed;
@@ -81,12 +80,12 @@ public class Enemy : MonoBehaviour
     {
         player.TakeDamage(_damageAmount);
 
-        _sfx.PlayKickEnemy();
+        SfxPlayer.Instance.PlayKickEnemy();
 
         Attacked?.Invoke();
     }
 
-    public void ApplaySlow(float _slow,float _slowAmount)
+    public void ApplaySlow(float slow,float _slowAmount)
     {
         if (_isSlowed)
             return;

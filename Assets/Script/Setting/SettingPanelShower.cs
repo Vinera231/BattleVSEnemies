@@ -10,6 +10,8 @@ public class SettingPanelShower : MonoBehaviour
 
     public event Action<bool> Changed;
 
+    public bool IsActive => _isShow;
+
     private void Awake() =>
         HidePanel();
 
