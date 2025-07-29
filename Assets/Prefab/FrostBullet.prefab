@@ -164,4 +164,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slowDown: 0.3
-  _duraction: 2
+  _duraction: 2.5

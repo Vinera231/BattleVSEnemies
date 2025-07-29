@@ -1200,8 +1200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 851.8, y: -465.6}
-  m_SizeDelta: {x: 200, y: 118.168}
+  m_AnchoredPosition: {x: 850.585, y: -465.6}
+  m_SizeDelta: {x: 202.4299, y: 118.168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638834685
 MonoBehaviour:
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 1.3'
+  m_text: 'Version: 1.3.0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1250,8 +1250,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2871,6 +2871,8 @@ MonoBehaviour:
   _clickButton: {fileID: 8300000, guid: 436c8a3139b8c4d44a5e55ce2737cffc, type: 3}
   _notBullet: {fileID: 0}
   _reloadBullet: {fileID: 0}
+  _kickEnemy: {fileID: 0}
+  _hammerEnemy: {fileID: 0}
 --- !u!1 &1261170592
 GameObject:
   m_ObjectHideFlags: 0
