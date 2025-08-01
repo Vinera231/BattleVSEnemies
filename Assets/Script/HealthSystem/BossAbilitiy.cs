@@ -69,7 +69,7 @@ public class BossAbilitiy : MonoBehaviour
         {
             _thirtValue = float.MinValue;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Enemy enemy = _spawner.SpawnHamer(transform.position);
                 Enemy enemy1 = _spawner.SpawnEnemy(transform.position);

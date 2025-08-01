@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _attackRate = 1f;
     [SerializeField] private int _scoreReward;
     [SerializeField] private float _currentSpeed;
-    
+
     private bool _isSlowed;
     private float _elapsedTime;
     private Player _player;

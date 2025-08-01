@@ -12,9 +12,6 @@ public class CursorShower : MonoBehaviour
     public event Action OnCursourShow;
     public event Action OnCursourHide;
 
-    //private void Awake() =>
-    //    Hide();
-
     private void OnEnable()
     {
         _winPanelShower.WinPanelShowed += Show;

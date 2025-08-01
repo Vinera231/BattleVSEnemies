@@ -6,7 +6,6 @@ public class HamerAnimation : MonoBehaviour
 
     [SerializeField] private Animator _animator;
     [SerializeField] private Enemy _enemy;
-    [SerializeField] private SfxPlayer _player;
 
     private void OnEnable()
     {
@@ -21,6 +20,5 @@ public class HamerAnimation : MonoBehaviour
     private void OnAttack()
     {
         _animator.SetTrigger(Hit);
-        _player.PlayKickHammerEnemy();
     }
 }

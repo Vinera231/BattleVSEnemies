@@ -1,4 +1,5 @@
 using System;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class TutorialPanel : MonoBehaviour
@@ -7,7 +8,7 @@ public class TutorialPanel : MonoBehaviour
     [SerializeField] private ButtonInformer _closeButton;
 
     public event Action<bool> Changed;
-
+    
     public bool IsActive => _panel.gameObject.activeInHierarchy;
 
     private void Awake() =>
