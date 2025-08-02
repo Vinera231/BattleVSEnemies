@@ -1264,7 +1264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &229241147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6789,13 +6789,13 @@ MonoBehaviour:
   _view: {fileID: 1209387577}
   _waves:
   - {fileID: 427512791}
+  - {fileID: 1377493455}
   - {fileID: 1733740976}
   - {fileID: 1997837115}
   - {fileID: 341305021}
   - {fileID: 128816732}
   - {fileID: 1884836141}
   - {fileID: 615173879}
-  - {fileID: 1377493455}
   - {fileID: 1182479980}
   - {fileID: 2125280817}
   _spawner: {fileID: 1159280639}
@@ -10086,6 +10086,7 @@ MonoBehaviour:
   JumpForce: {fileID: 1771495215}
   _bulletSpawner: {fileID: 4273884095528460507}
   _kit: {fileID: 828351779874723577, guid: aa59c45362892ff43aa1631dde0a707f, type: 3}
+  _sfx: {fileID: 9200639445192888596}
 --- !u!195 &1771495222
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13669,6 +13670,7 @@ MonoBehaviour:
   _reloadBullet: {fileID: 8300000, guid: c3bcecf49ef9a10428748d845b8e6a90, type: 3}
   _kickEnemy: {fileID: 8300000, guid: b48a08328c36ed2408caaf324ecec4c1, type: 3}
   _hammerEnemy: {fileID: 8300000, guid: ecde61ff956dfbe44a8a8d5cd9ada536, type: 3}
+  _recoverPlayer: {fileID: 8300000, guid: 9f4af44cac6fcce4397c415097f0f790, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

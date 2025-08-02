@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Enemy : MonoBehaviour
 {
@@ -73,15 +75,24 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float value) =>
+    public enum DamageType
+    {
+        Default,
+        Hammer
+    }
+
+
+    public void TakeDamage(float value)
+    {
         _health.TakeDamage(value);
 
+    }
     private void Attack(Player player)
     {
         player.TakeDamage(_damageAmount);
 
         SfxPlayer.Instance.PlayKickEnemy();
-
+        
         Attacked?.Invoke();
     }
 

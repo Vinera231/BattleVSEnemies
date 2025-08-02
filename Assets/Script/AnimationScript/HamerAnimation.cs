@@ -20,5 +20,11 @@ public class HamerAnimation : MonoBehaviour
     private void OnAttack()
     {
         _animator.SetTrigger(Hit);
+        OnHammerHit();
+    }
+
+    private void OnHammerHit()
+    {
+        SfxPlayer.Instance.PlayHammerEnemy();
     }
 }

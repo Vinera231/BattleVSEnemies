@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform JumpForce;
     [SerializeField] private BulletSpawner _bulletSpawner;
     [SerializeField] private MedKit _kit;
+    [SerializeField] private SfxPlayer _sfx;
 
     public event Action Died;
 
@@ -66,9 +67,10 @@ public class Player : MonoBehaviour
         if (_health.IsFull == false)
         {
             _health.RecoverHealth(life);
+            _sfx.PlayRecoverPlayer();
             return true;
         }
-
+        
         return false;
     }
 
