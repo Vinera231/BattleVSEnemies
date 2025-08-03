@@ -13,5 +13,4 @@ public class FrostBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

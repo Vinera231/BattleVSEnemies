@@ -29,6 +29,7 @@ public class BulletSpawner : MonoBehaviour
 
     private void OnShotPressed()
     {
+        
         if (_bullet <= 0)
         {
             NotBullet();
@@ -61,13 +62,6 @@ public class BulletSpawner : MonoBehaviour
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
         Debug.Log("патроны");
         _player.PlayReloadBullet();     
-    }
-
-    public void MaxBullet()
-    {
-        Debug.Log("Уже есть патроны");
-
-       _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 
     public void NotBullet()

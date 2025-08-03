@@ -4,6 +4,7 @@ public class StopGame : MonoBehaviour
 {
     [SerializeField] private SettingPanelShower _settingPanel;
     [SerializeField] private ButtonClosePanel _closeButton;
+    [SerializeField] private GameObject _notShoot;
 
     private void OnEnable()
     {
@@ -24,14 +25,16 @@ public class StopGame : MonoBehaviour
         else
             PlayGame();
     }
+
     private void PauseGame()
     {
-        Time.timeScale = 0;
+        _notShoot.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     private void PlayGame()
     {
-        Time.timeScale = 1;
+        _notShoot.SetActive(true);
+        Time.timeScale = 1f;
     }
-
 }

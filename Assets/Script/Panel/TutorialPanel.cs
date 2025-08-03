@@ -1,27 +1,33 @@
 using System;
-using TMPro.EditorUtilities;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TutorialPanel : MonoBehaviour
 {
+    [SerializeField] private GameObject _notShoot;
     [SerializeField] private GameObject _panel;
     [SerializeField] private ButtonInformer _closeButton;
 
     public event Action<bool> Changed;
-    
-    public bool IsActive => _panel.gameObject.activeInHierarchy;
+
+    public bool IsActive => _panel != null && gameObject.activeInHierarchy;
 
     private void Awake() =>
         ShowPanel();
 
-    private void OnEnable() =>
+    private void OnEnable()
+    {
         _closeButton.Clicked += HidePanel;
+    }
 
-    private void OnDisable() =>
+    private void OnDisable()
+    {
         _closeButton.Clicked -= HidePanel;
+    }
 
     private void HidePanel()
     {
+        _notShoot.SetActive(true);
         _panel.SetActive(false);
         Time.timeScale = 1f;
         Changed?.Invoke(false);
@@ -29,8 +35,9 @@ public class TutorialPanel : MonoBehaviour
 
     private void ShowPanel()
     {
+        _notShoot.SetActive(false);
         Time.timeScale = 0f;
         _panel.SetActive(true);
-        Changed?.Invoke(false);
+        Changed?.Invoke(true);
     }
 }

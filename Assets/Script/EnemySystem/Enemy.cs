@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _attackRate = 1f;
     [SerializeField] private int _scoreReward;
     [SerializeField] private float _currentSpeed;
+    [SerializeField] private Material _defultSkin;
+    [SerializeField] private Material _frostSkin;
+    [SerializeField] private Renderer _renderer;
 
     private bool _isSlowed;
     private float _elapsedTime;
@@ -102,7 +105,8 @@ public class Enemy : MonoBehaviour
             return;
 
         _isSlowed = true;
-        _agent.speed = Mathf.Min(0.3f, _speed,_slowAmount);
+       _agent.speed = Mathf.Min(0.3f, _speed,_slowAmount);
+        _renderer.material = _frostSkin;
 
         Invoke(nameof(AfterSlow),_slowAmount);
     }
@@ -111,6 +115,7 @@ public class Enemy : MonoBehaviour
     {
         _agent.speed = _currentSpeed;
         _isSlowed = false;
+        _renderer.material = _defultSkin;
     }
     private void OnDied()
     {

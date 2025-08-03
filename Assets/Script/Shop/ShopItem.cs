@@ -9,6 +9,8 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private InputReader _reader;
     [SerializeField] private Score _score;
+    [SerializeField] private SfxPlayer _sfx;
+    [SerializeField] private TextMeshProUGUI _helpText;
 
     private Player _player;
 
@@ -29,6 +31,7 @@ public class ShopItem : MonoBehaviour
         if(other.TryGetComponent(out Player player))
         {
             _text.gameObject.SetActive(true);
+            _helpText.gameObject.SetActive(true);
             _player = player;
         }
     }
@@ -38,6 +41,7 @@ public class ShopItem : MonoBehaviour
         if (other.TryGetComponent(out Player _))
         {
             _text.gameObject.SetActive(false);
+            _helpText.gameObject.SetActive(false);
             _player = null;
         }
     }
@@ -60,7 +64,8 @@ public class ShopItem : MonoBehaviour
             if(_score.TrySpendScore(_price))
             {
                 Destroy(gameObject);
-                _bulletSpawner.ReplacePrefab(_bulletPrefab); 
+                _bulletSpawner.ReplacePrefab(_bulletPrefab);
+                _sfx.PlayBuyBullet();
             }
         }
     }

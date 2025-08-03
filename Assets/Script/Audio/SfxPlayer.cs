@@ -13,7 +13,7 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _kickEnemy;
     [SerializeField] private AudioClip _hammerEnemy;
     [SerializeField] private AudioClip _recoverPlayer;
-
+    [SerializeField] private AudioClip _buyBullet;
     private void Awake()
     {
         if (Instance != null)
@@ -51,4 +51,8 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayRecoverPlayer() =>
         _source.PlayOneShot(_recoverPlayer);
+
+    public void PlayBuyBullet() =>
+        _source.PlayOneShot(_buyBullet);
+
 }

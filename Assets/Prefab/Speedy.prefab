@@ -561,8 +561,10 @@ MonoBehaviour:
   _damageAmount: 20
   _attackRate: 1
   _scoreReward: 15
-  _sfx: {fileID: 0}
   _currentSpeed: 10
+  _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
+  _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
+  _renderer: {fileID: 5319439339284348693}
 --- !u!1 &5319439340207521724
 GameObject:
   m_ObjectHideFlags: 0
