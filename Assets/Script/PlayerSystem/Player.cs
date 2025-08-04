@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -11,14 +12,16 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 _velocity;
     [SerializeField] private bool _isGround;
     [SerializeField] private float _move;
-    [SerializeField] private float _mouseSensitivity = 330f;
     [SerializeField] private Transform _playerBody;
     [SerializeField] private float _jump = 2f;
     [SerializeField] private Transform JumpForce;
     [SerializeField] private BulletSpawner _bulletSpawner;
     [SerializeField] private MedKit _kit;
     [SerializeField] private SfxPlayer _sfx;
+    [SerializeField] private float _mouseSensitivity = 330f;
+    //[SerializeField] private Transform _camera;
 
+    //private float _xRotation = 0f;
     public event Action Died;
 
     private void OnEnable() =>
@@ -48,6 +51,14 @@ public class Player : MonoBehaviour
 
         float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
         _playerBody.Rotate(Vector3.up * mouseX);
+
+        // float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
+        //_playerBody.Rotate(Vector3.up * mouseX);
+
+        //_xRotation -= mouseY;
+        //_xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+
+        //_camera.localRotation = Quaternion.Euler(_xRotation,0f, 0f);
     }
 
     public bool TryReplenishBullet(int amount)
@@ -61,7 +72,6 @@ public class Player : MonoBehaviour
         return false;
     }
 
-
     public bool TryTakeHealth(float life)
     {
         if (_health.IsFull == false)
@@ -70,7 +80,7 @@ public class Player : MonoBehaviour
             _sfx.PlayRecoverPlayer();
             return true;
         }
-        
+
         return false;
     }
 

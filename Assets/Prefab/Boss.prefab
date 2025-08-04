@@ -954,10 +954,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 2818299267573887289}
-  _firstValue: 7000
-  _secondValue: 4500
-  _thirtValue: 2000
-  _forthValue: 1000
+  _firstValue: 8000
+  _secondValue: 5500
+  _thirtValue: 3000
+  _forthValue: 1250
 --- !u!195 &7753568749947434988
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1026,10 +1026,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Height: 0
+  m_Radius: 1.296618
+  m_Height: 6.190538
   m_Direction: 1
-  m_Center: {x: 0, y: 0.78, z: 0}
+  m_Center: {x: 0.01199159, y: 2.6286857, z: 0}
 --- !u!1 &7099604365031243988
 GameObject:
   m_ObjectHideFlags: 0
