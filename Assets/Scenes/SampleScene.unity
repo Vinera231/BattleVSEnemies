@@ -14295,7 +14295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputReader: {fileID: 1909665639}
   _freezeRotation: {fileID: 742336071941857357, guid: 5cdb68724a7c2504fb0e549eb9f67ded, type: 3}
-  _prefab: {fileID: -4434134799110684633, guid: 5cdb68724a7c2504fb0e549eb9f67ded, type: 3}
+  _prefab: {fileID: 7562637585148806718, guid: bcb9687cdcf7742438a98ba9aae7cdf6, type: 3}
   _velocity: 20
   _isActive: 1
   _bullet: 100
@@ -14431,7 +14431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpawner: {fileID: 4273884095528460507}
   _bulletPrefab: {fileID: 1844894323753086436, guid: 2389d256a35a8c24c8ada206ea617320, type: 3}
-  _price: 1200
+  _price: 1500
   _text: {fileID: 608851380}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}

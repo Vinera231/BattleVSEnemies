@@ -1,8 +1,7 @@
-using JetBrains.Annotations;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class Enemy : MonoBehaviour
 {
@@ -19,12 +18,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _currentSpeed;
     [SerializeField] private Material _defultSkin;
     [SerializeField] private Material _frostSkin;
+    [SerializeField] private Material _poisonSkin;
     [SerializeField] private Renderer _renderer;
 
+    private bool _isPoison;
     private bool _isSlowed;
     private float _elapsedTime;
     private Player _player;
-
     public event Action Attacked;
     public event Action<Enemy> Died;
 
@@ -78,13 +78,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public enum DamageType
-    {
-        Default,
-        Hammer
-    }
-
-
     public void TakeDamage(float value)
     {
         _health.TakeDamage(value);
@@ -95,20 +88,20 @@ public class Enemy : MonoBehaviour
         player.TakeDamage(_damageAmount);
 
         SfxPlayer.Instance.PlayKickEnemy();
-        
+
         Attacked?.Invoke();
     }
 
-    public void ApplaySlow(float slow,float _slowAmount)
+    public void ApplaySlow(float slow, float _slowAmount)
     {
         if (_isSlowed)
             return;
 
         _isSlowed = true;
-       _agent.speed = Mathf.Min(0.3f, _speed,_slowAmount);
+        _agent.speed = Mathf.Min(0.3f, _speed, _slowAmount);
         _renderer.material = _frostSkin;
 
-        Invoke(nameof(AfterSlow),_slowAmount);
+        Invoke(nameof(AfterSlow), _slowAmount);
     }
 
     public void AfterSlow()
@@ -121,5 +114,31 @@ public class Enemy : MonoBehaviour
     {
         Died?.Invoke(this);
         Destroy(gameObject);
+    }
+
+
+    public void ApplyPoison(float poisonDamage, float duraction, float tickInterval)
+    {
+        if (_isPoison)
+           return;
+
+        StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
+    }
+
+    public IEnumerator PoisonCoroutine(float poisonDamage, float duraction, float tickInterval)
+    { 
+        float _elapset = 0f;
+        _isPoison = true;
+        _renderer.material = _poisonSkin;
+
+        while (_elapset < duraction)
+        {
+            _health.TakeDamage(poisonDamage);
+            yield return new WaitForSeconds(tickInterval);
+            _elapset += tickInterval;
+        }
+
+        _isPoison = false;
+        _renderer.material = _defultSkin;
     }
 }

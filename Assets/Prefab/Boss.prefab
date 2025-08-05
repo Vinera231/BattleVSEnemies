@@ -940,6 +940,7 @@ MonoBehaviour:
   _currentSpeed: 2
   _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
+  _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
   _renderer: {fileID: 3309389445043673922}
 --- !u!114 &113875355764550695
 MonoBehaviour:
