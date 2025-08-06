@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TutorialPanel : MonoBehaviour
@@ -30,14 +29,14 @@ public class TutorialPanel : MonoBehaviour
         _notShoot.SetActive(true);
         _panel.SetActive(false);
         Time.timeScale = 1f;
-        Changed?.Invoke(false);
+        Changed?.Invoke(true);
     }
-
+  
     private void ShowPanel()
     {
         _notShoot.SetActive(false);
         Time.timeScale = 0f;
         _panel.SetActive(true);
-        Changed?.Invoke(true);
+        Changed?.Invoke(false);
     }
 }

@@ -736,7 +736,7 @@ MonoBehaviour:
   _frequency: 0.25
   _countEnemy: 0
   _countSpeedy: 15
-  _countHamer: 6
+  _countHamer: 8
   _countBoss: 0
   _timeBeforeSpawn: 5
   _text: "\u041F\u044F\u0442\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
@@ -745,7 +745,7 @@ MonoBehaviour:
   - {fileID: 1666527242}
   - {fileID: 1385640122}
   - {fileID: 908464719}
-  _scoreReward: 30
+  _scoreReward: 40
 --- !u!4 &128816733
 Transform:
   m_ObjectHideFlags: 0
@@ -2220,7 +2220,7 @@ MonoBehaviour:
   - {fileID: 1599302216}
   - {fileID: 75059245}
   - {fileID: 439856445}
-  _scoreReward: 30
+  _scoreReward: 35
 --- !u!4 &341305022
 Transform:
   m_ObjectHideFlags: 0
@@ -3662,7 +3662,7 @@ MonoBehaviour:
   _spawner: {fileID: 1454733085}
   _frequency: 0.01
   _countEnemy: 12
-  _countSpeedy: 8
+  _countSpeedy: 12
   _countHamer: 15
   _countBoss: 0
   _timeBeforeSpawn: 5
@@ -3675,7 +3675,7 @@ MonoBehaviour:
   - {fileID: 362706638}
   - {fileID: 1603969236}
   - {fileID: 1047921329}
-  _scoreReward: 40
+  _scoreReward: 50
 --- !u!1 &626017126
 GameObject:
   m_ObjectHideFlags: 0
@@ -6873,7 +6873,7 @@ MonoBehaviour:
   - {fileID: 293153162}
   - {fileID: 1842855046}
   - {fileID: 2116216481}
-  _scoreReward: 50
+  _scoreReward: 60
 --- !u!4 &1182479981
 Transform:
   m_ObjectHideFlags: 0
@@ -7100,7 +7100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpawner: {fileID: 4273884095528460507}
   _bulletPrefab: {fileID: 7562637585148806718, guid: bcb9687cdcf7742438a98ba9aae7cdf6, type: 3}
-  _price: 850
+  _price: 1000
   _text: {fileID: 169567012}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -8507,7 +8507,7 @@ MonoBehaviour:
   - {fileID: 886358408}
   - {fileID: 626017127}
   - {fileID: 534668238}
-  _scoreReward: 50
+  _scoreReward: 60
 --- !u!4 &1377493456
 Transform:
   m_ObjectHideFlags: 0
@@ -10920,6 +10920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b49aa852cbe04e44bd1d01e91d7b9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reader: {fileID: 1909665639}
   _health: {fileID: 846612849}
   _controller: {fileID: 1771495217}
   _speed: 8
@@ -10936,6 +10937,7 @@ MonoBehaviour:
   _kit: {fileID: 828351779874723577, guid: aa59c45362892ff43aa1631dde0a707f, type: 3}
   _sfx: {fileID: 9200639445192888596}
   _mouseSensitivity: 330
+  _camera: {fileID: 1341807789}
 --- !u!195 &1771495222
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12176,7 +12178,7 @@ MonoBehaviour:
   _spawner: {fileID: 1454733085}
   _frequency: 0.01
   _countEnemy: 0
-  _countSpeedy: 12
+  _countSpeedy: 15
   _countHamer: 8
   _countBoss: 0
   _timeBeforeSpawn: 5
@@ -12187,7 +12189,7 @@ MonoBehaviour:
   - {fileID: 3848843171961211915}
   - {fileID: 341462662}
   - {fileID: 867590375}
-  _scoreReward: 35
+  _scoreReward: 45
 --- !u!4 &1884836142
 Transform:
   m_ObjectHideFlags: 0
@@ -13138,7 +13140,7 @@ MonoBehaviour:
   - {fileID: 886882264}
   - {fileID: 277936420}
   - {fileID: 270600850}
-  _scoreReward: 25
+  _scoreReward: 30
 --- !u!4 &1997837116
 Transform:
   m_ObjectHideFlags: 0
@@ -13673,7 +13675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpawner: {fileID: 4273884095528460507}
   _bulletPrefab: {fileID: 9067059710875233655, guid: ffff5c073c6f1ee49b8941ad49237729, type: 3}
-  _price: 550
+  _price: 650
   _text: {fileID: 916829864}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -14005,7 +14007,7 @@ MonoBehaviour:
   _text: "\u0424\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
   _spawnPoints: []
-  _scoreReward: 60
+  _scoreReward: 80
 --- !u!1 &2128525469
 GameObject:
   m_ObjectHideFlags: 0
@@ -14295,13 +14297,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputReader: {fileID: 1909665639}
   _freezeRotation: {fileID: 742336071941857357, guid: 5cdb68724a7c2504fb0e549eb9f67ded, type: 3}
-  _prefab: {fileID: 7562637585148806718, guid: bcb9687cdcf7742438a98ba9aae7cdf6, type: 3}
+  _prefab: {fileID: -4434134799110684633, guid: 5cdb68724a7c2504fb0e549eb9f67ded, type: 3}
   _velocity: 20
-  _isActive: 1
   _bullet: 100
   _limitbullet: 100
   _bulletView: {fileID: 203276211}
   _player: {fileID: 9200639445192888596}
+  _tutorial: {fileID: 229241148}
 --- !u!82 &4349893523909249507
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14431,7 +14433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpawner: {fileID: 4273884095528460507}
   _bulletPrefab: {fileID: 1844894323753086436, guid: 2389d256a35a8c24c8ada206ea617320, type: 3}
-  _price: 1500
+  _price: 2000
   _text: {fileID: 608851380}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}

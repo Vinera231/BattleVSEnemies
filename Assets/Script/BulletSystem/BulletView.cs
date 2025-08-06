@@ -23,5 +23,7 @@ public class BulletView : MonoBehaviour
             _bulletGui[1].SetActive(count >= SecondTreshold);
 
         _anim.SetBool(IsEnoughBullet, count < 10);
+
+        FindFirstObjectByType<BossAbilitiy>()?.UpdateBulletCount(count);
     }
 }
