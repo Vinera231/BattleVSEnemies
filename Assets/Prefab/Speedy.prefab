@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 5319439339284348701}
   - component: {fileID: 429578588366157047}
   - component: {fileID: 429578588366157044}
+  - component: {fileID: 8686581461533003749}
   m_Layer: 7
   m_Name: Speedy
   m_TagString: Enemy
@@ -566,6 +567,20 @@ MonoBehaviour:
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
   _renderer: {fileID: 5319439339284348693}
+--- !u!114 &8686581461533003749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319439339284348695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e03cb015aa4a9419698a85c4048952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 5319439339284348699}
+  _rotationSpeed: 50
 --- !u!1 &5319439340207521724
 GameObject:
   m_ObjectHideFlags: 0

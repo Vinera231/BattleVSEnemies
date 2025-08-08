@@ -100,6 +100,7 @@ public class Enemy : MonoBehaviour
         _isSlowed = true;
         _agent.speed = Mathf.Min(0.3f, _speed, _slowAmount);
         _renderer.material = _frostSkin;
+        SfxPlayer.Instance.PlayFrostSound();
 
         Invoke(nameof(AfterSlow), _slowAmount);
     }

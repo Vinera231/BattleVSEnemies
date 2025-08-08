@@ -2977,7 +2977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Damage:25 + Slow 3sec\nFrostBullet\n\"E\" \u0447\u0442\u043E\u0431\u044B 
+  m_text: "Damage:25 + Frost 3sec\nFrostBullet\n\"E\" \u0447\u0442\u043E\u0431\u044B 
     \u043A\u0443\u043F\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10889,7 +10889,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771495211}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -10929,10 +10929,8 @@ MonoBehaviour:
   _moveZ: 0
   _velocity: {x: 0, y: 0, z: 0}
   _isGround: 1
-  _move: 0
   _playerBody: {fileID: 1771495215}
   _jump: 2
-  JumpForce: {fileID: 1771495215}
   _bulletSpawner: {fileID: 4273884095528460507}
   _kit: {fileID: 828351779874723577, guid: aa59c45362892ff43aa1631dde0a707f, type: 3}
   _sfx: {fileID: 9200639445192888596}
@@ -13675,7 +13673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpawner: {fileID: 4273884095528460507}
   _bulletPrefab: {fileID: 9067059710875233655, guid: ffff5c073c6f1ee49b8941ad49237729, type: 3}
-  _price: 650
+  _price: 550
   _text: {fileID: 916829864}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -14528,6 +14526,7 @@ MonoBehaviour:
   _hammerEnemy: {fileID: 8300000, guid: ecde61ff956dfbe44a8a8d5cd9ada536, type: 3}
   _recoverPlayer: {fileID: 8300000, guid: 9f4af44cac6fcce4397c415097f0f790, type: 3}
   _buyBullet: {fileID: 8300000, guid: fcd4a097937ae4245a02a520796a0144, type: 3}
+  _frostSound: {fileID: 8300000, guid: 63aadab6bab81a043a2f30cb3988461a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

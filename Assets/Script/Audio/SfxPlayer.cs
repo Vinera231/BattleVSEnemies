@@ -14,6 +14,8 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _hammerEnemy;
     [SerializeField] private AudioClip _recoverPlayer;
     [SerializeField] private AudioClip _buyBullet;
+    [SerializeField] private AudioClip _frostSound;
+
     private void Awake()
     {
         if (Instance != null)
@@ -55,4 +57,6 @@ public class SfxPlayer : MonoBehaviour
     public void PlayBuyBullet() =>
         _source.PlayOneShot(_buyBullet);
 
+    public void PlayFrostSound() =>
+        _source.PlayOneShot(_frostSound);
 }
