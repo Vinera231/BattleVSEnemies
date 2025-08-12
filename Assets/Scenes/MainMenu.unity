@@ -1223,7 +1223,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 1.3.0'
+  m_text: 'Version: 1.3.2
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2873,6 +2875,9 @@ MonoBehaviour:
   _reloadBullet: {fileID: 0}
   _kickEnemy: {fileID: 0}
   _hammerEnemy: {fileID: 0}
+  _recoverPlayer: {fileID: 0}
+  _buyBullet: {fileID: 0}
+  _frostSound: {fileID: 0}
 --- !u!1 &1261170592
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,7 +4318,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Battle VS Enemy
+  m_text: 'Battle VS Enemies
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
