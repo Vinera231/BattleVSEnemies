@@ -131,12 +131,14 @@ public class Enemy : MonoBehaviour
         float _elapset = 0f;
         _isPoison = true;
         _renderer.material = _poisonSkin;
+         
 
         while (_elapset < duraction)
         {
             _health.TakeDamage(poisonDamage);
             yield return new WaitForSeconds(tickInterval);
             _elapset += tickInterval;
+            Debug.Log("есть  отровление");
         }
 
         _isPoison = false;

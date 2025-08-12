@@ -8,22 +8,13 @@ public class CursorShower : MonoBehaviour
     [SerializeField] private SettingPanelShower _settingPanel;
     [SerializeField] private Player _player;
     [SerializeField] private InputReader _inputReader;
-    [SerializeField] private float _timerCursor;
-    [SerializeField] private float _amountCursor;
-    [SerializeField]private bool _isVisibleCoursour = false;   
 
     public event Action OnCursourShow;
     public event Action OnCursourHide;
 
     private void Update()
     {
-        if (_isVisibleCoursour)
-        {
-            _timerCursor -= Time.deltaTime;
-        }
-        if (_timerCursor <= 0f)
-            Hide();
-        
+        Hide();
     }
 
     private void OnEnable()
@@ -55,9 +46,6 @@ public class CursorShower : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         OnCursourShow?.Invoke();
-
-        _isVisibleCoursour = true;
-         _timerCursor = _amountCursor;
     }
 
     private void Hide()
@@ -68,7 +56,5 @@ public class CursorShower : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         OnCursourHide?.Invoke();
-
-        _isVisibleCoursour = false;
     }
 }

@@ -6170,9 +6170,6 @@ MonoBehaviour:
   _settingPanel: {fileID: 1344660783}
   _player: {fileID: 1771495220}
   _inputReader: {fileID: 1909665639}
-  _timerCursor: 3
-  _amountCursor: 3
-  _isVisibleCoursour: 1
 --- !u!1 &1104322083
 GameObject:
   m_ObjectHideFlags: 0
@@ -7500,6 +7497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _view: {fileID: 1209387577}
   _waves:
+  - {fileID: 2125280817}
   - {fileID: 427512791}
   - {fileID: 1733740976}
   - {fileID: 1997837115}
@@ -7509,7 +7507,6 @@ MonoBehaviour:
   - {fileID: 615173879}
   - {fileID: 1377493455}
   - {fileID: 1182479980}
-  - {fileID: 2125280817}
   _spawner: {fileID: 1159280639}
   _score: {fileID: 317476448}
 --- !u!4 &1209387576
