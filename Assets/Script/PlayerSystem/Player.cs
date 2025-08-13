@@ -74,7 +74,6 @@ public class Player : MonoBehaviour
             _bulletSpawner.AddBullet(amount);
             return true;
         }
-
         return false;
     }
 
@@ -95,4 +94,5 @@ public class Player : MonoBehaviour
 
     private void OnDied() =>
         Died?.Invoke();
+
 }

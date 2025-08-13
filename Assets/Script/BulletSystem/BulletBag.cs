@@ -10,18 +10,18 @@ public class BulletBag : MonoBehaviour
     {
         _remainingTime -= Time.deltaTime;
 
-        if (_remainingTime <= 0)
+        if (_remainingTime >= 0)
             Destroy(gameObject);
 
         if (_amount > _maximumBullet)
             gameObject.SetActive(false);
-
+       
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Player player))
             if (player.TryReplenishBullet(_amount))
-                Destroy(gameObject);      
+                Destroy(gameObject);
     }
 }
