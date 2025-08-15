@@ -8,7 +8,7 @@ public class BossAbilitiy : MonoBehaviour
     [SerializeField] private float _thirtValue;
     [SerializeField] private float _forthValue;
     [SerializeField] private float _spawnEnemies;
-    [SerializeField]private float _bullets;
+    [SerializeField] private float _bullets;
 
     private float _currentBulletCount;
     private EnemySpawner _spawner;
@@ -66,6 +66,7 @@ public class BossAbilitiy : MonoBehaviour
 
             return;
         }
+
         if (_currentBulletCount < _bullets)
         {
             SpawnEnemies(1, _spawner.SpawnEnemy);

@@ -10,7 +10,7 @@ public class BulletBag : MonoBehaviour
     {
         _remainingTime -= Time.deltaTime;
 
-        if (_remainingTime >= 0)
+        if (_remainingTime <= 0)
             Destroy(gameObject);
 
         if (_amount > _maximumBullet)

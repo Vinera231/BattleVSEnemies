@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Material _poisonSkin;
     [SerializeField] private Renderer _renderer;
 
+    private bool _isBoss;
     private bool _isPoison;
     private bool _isSlowed;
     private float _elapsedTime;
@@ -83,6 +84,7 @@ public class Enemy : MonoBehaviour
         _health.TakeDamage(value);
 
     }
+    
     private void Attack(Player player)
     {
         player.TakeDamage(_damageAmount);
@@ -100,6 +102,7 @@ public class Enemy : MonoBehaviour
         _isSlowed = true;
         _agent.speed = Mathf.Min(0.3f, _speed, _slowAmount);
         _renderer.material = _frostSkin;
+      
         SfxPlayer.Instance.PlayFrostSound();
 
         Invoke(nameof(AfterSlow), _slowAmount);
@@ -115,6 +118,11 @@ public class Enemy : MonoBehaviour
     {
         Died?.Invoke(this);
         Destroy(gameObject);
+       
+        if(_isBoss)
+        SfxPlayer.Instance.PlayDieEnemySound();
+        else
+        SfxPlayer.Instance.PlayBossDiedSound();  
     }
 
 
@@ -136,6 +144,7 @@ public class Enemy : MonoBehaviour
         while (_elapset < duraction)
         {
             _health.TakeDamage(poisonDamage);
+            SfxPlayer.Instance.PlayPoisonSound();
             yield return new WaitForSeconds(tickInterval);
             _elapset += tickInterval;
             Debug.Log("есть  отровление");

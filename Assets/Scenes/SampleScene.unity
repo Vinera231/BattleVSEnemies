@@ -2225,8 +2225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.25
-  _countEnemy: 15
-  _countSpeedy: 15
+  _countEnemy: 20
+  _countSpeedy: 18
   _countHamer: 0
   _countBoss: 0
   _timeBeforeSpawn: 10
@@ -2777,7 +2777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.2
-  _countEnemy: 10
+  _countEnemy: 12
   _countSpeedy: 6
   _countHamer: 0
   _countBoss: 0
@@ -3693,8 +3693,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.01
-  _countEnemy: 12
-  _countSpeedy: 12
+  _countEnemy: 15
+  _countSpeedy: 15
   _countHamer: 15
   _countBoss: 0
   _timeBeforeSpawn: 5
@@ -10913,7 +10913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.2
-  _countEnemy: 12
+  _countEnemy: 14
   _countSpeedy: 8
   _countHamer: 0
   _countBoss: 0
@@ -14823,7 +14823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputReader: {fileID: 1909665639}
   _freezeRotation: {fileID: 742336071941857357, guid: 5cdb68724a7c2504fb0e549eb9f67ded, type: 3}
-  _prefab: {fileID: -4434134799110684633, guid: 5cdb68724a7c2504fb0e549eb9f67ded, type: 3}
+  _prefab: {fileID: 7562637585148806718, guid: bcb9687cdcf7742438a98ba9aae7cdf6, type: 3}
   _velocity: 20
   _bullet: 100
   _limitbullet: 100
@@ -15055,6 +15055,10 @@ MonoBehaviour:
   _recoverPlayer: {fileID: 8300000, guid: 9f4af44cac6fcce4397c415097f0f790, type: 3}
   _buyBullet: {fileID: 8300000, guid: fcd4a097937ae4245a02a520796a0144, type: 3}
   _frostSound: {fileID: 8300000, guid: 63aadab6bab81a043a2f30cb3988461a, type: 3}
+  _enemyDied: {fileID: 8300000, guid: 9e3fdca75aa689d45846c860c37f4b0a, type: 3}
+  _playerDied: {fileID: 8300000, guid: 1c7799489ddaa9441868aea03184e4da, type: 3}
+  _bossDied: {fileID: 8300000, guid: fabdfc8b8e1d1c44db9d5bfdbf3bf8a6, type: 3}
+  _poisonSound: {fileID: 8300000, guid: cd1ea73e485aed3458fd591f12344a5a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

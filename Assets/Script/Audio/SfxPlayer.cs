@@ -15,6 +15,11 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _recoverPlayer;
     [SerializeField] private AudioClip _buyBullet;
     [SerializeField] private AudioClip _frostSound;
+    [SerializeField] private AudioClip _enemyDied;
+    [SerializeField] private AudioClip _playerDied;
+    [SerializeField] private AudioClip _bossDied;
+    [SerializeField] private AudioClip _poisonSound;
+
 
     private void Awake()
     {
@@ -59,4 +64,16 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayFrostSound() =>
         _source.PlayOneShot(_frostSound);
+
+    public void PlayDieEnemySound() =>
+      _source.PlayOneShot(_enemyDied);
+   
+    public void PlayDiePlayerSound() =>
+      _source.PlayOneShot(_playerDied);
+
+    public void PlayBossDiedSound() =>
+     _source.PlayOneShot(_bossDied);
+
+    public void PlayPoisonSound() =>
+   _source.PlayOneShot(_poisonSound);
 }

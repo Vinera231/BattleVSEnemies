@@ -92,7 +92,9 @@ public class Player : MonoBehaviour
     public void TakeDamage(float value) =>
         _health.TakeDamage(value);
 
-    private void OnDied() =>
+    private void OnDied()
+    {
         Died?.Invoke();
-
+        _sfx.PlayDiePlayerSound();
+    }
 }
