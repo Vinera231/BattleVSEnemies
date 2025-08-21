@@ -11,6 +11,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private Score _score;
     [SerializeField] private SfxPlayer _sfx;
     [SerializeField] private TextMeshProUGUI _helpText;
+   
 
     private Player _player;
 

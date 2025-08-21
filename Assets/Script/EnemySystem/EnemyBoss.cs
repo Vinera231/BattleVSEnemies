@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class BossAbilitiy : MonoBehaviour
+public class EnemyBoss : Enemy
 {
-    [SerializeField] private Health _health;
     [SerializeField] private float _firstValue;
     [SerializeField] private float _secondValue;
     [SerializeField] private float _thirtValue;
@@ -14,31 +13,28 @@ public class BossAbilitiy : MonoBehaviour
     private EnemySpawner _spawner;
     private LootSpawner _lootSpawner;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _spawner = FindFirstObjectByType<EnemySpawner>();
         _lootSpawner = FindFirstObjectByType<LootSpawner>();
     }
 
-    private void OnEnable() =>
-        _health.ValueChanged += OnValueChanged;
-
-    private void OnDisable() =>
-        _health.ValueChanged -= OnValueChanged;
-
-    private void OnValueChanged(float value)
+    protected override void OnHealthChanged(float value)
     {
+        base.OnHealthChanged(value);
+
         if (value < _firstValue)
         {
             _firstValue = float.MinValue;
-            SpawnEnemies(5, _spawner.SpawnEnemy);
+            SpawnEnemies(10, _spawner.SpawnEnemy);
             return;
         }
 
         if (value < _secondValue)
         {
             _secondValue = float.MinValue;
-            SpawnEnemies(5, _spawner.SpawnSpeedy);
+            SpawnEnemies(10, _spawner.SpawnSpeedy);
             return;
         }
 
@@ -73,7 +69,7 @@ public class BossAbilitiy : MonoBehaviour
         }
     }
 
-    public void SpawnEnemies(int count, System.Func<Vector3, Enemy> spawnFunc)
+    private void SpawnEnemies(int count, System.Func<Vector3, Enemy> spawnFunc)
     {
         for (int i = 0; i < count; ++i)
         {
@@ -96,5 +92,10 @@ public class BossAbilitiy : MonoBehaviour
     public void UpdateBulletCount(float _current)
     {
         _currentBulletCount = _current;
+    }
+
+    protected override void PlayDeathSound()
+    {
+        SfxPlayer.Instance.PlayDieBossSound();
     }
 }

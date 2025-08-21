@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    [SerializeField] private Transform _target;    
-    
+    [SerializeField] private Transform _target;
+
     private void LateUpdate()
     {
         if (_target != null)

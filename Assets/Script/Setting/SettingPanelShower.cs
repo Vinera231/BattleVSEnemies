@@ -42,7 +42,8 @@ public class SettingPanelShower : MonoBehaviour
             ShowPanel();
         else
             HidePanel();
-
+        
+        Debug.Log($"{name} OnPanelPressed ");
         Changed?.Invoke(_isShow);
     }
 }

@@ -9,7 +9,7 @@ public class TutorialPanel : MonoBehaviour
 
     public event Action<bool> Changed;
 
-    public bool IsActive => _panel != null && gameObject.activeInHierarchy;
+    public bool IsActive => _panel != null && _panel.gameObject.activeInHierarchy;
 
     private void Awake() =>
         ShowPanel();
@@ -29,7 +29,9 @@ public class TutorialPanel : MonoBehaviour
         _notShoot.SetActive(true);
         _panel.SetActive(false);
         Time.timeScale = 1f;
+        Debug.Log($"{name}  HidePanel");
         Changed?.Invoke(true);
+
     }
   
     private void ShowPanel()

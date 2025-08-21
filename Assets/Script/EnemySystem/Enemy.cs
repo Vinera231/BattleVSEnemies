@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Material _poisonSkin;
     [SerializeField] private Renderer _renderer;
 
-    private bool _isBoss;
     private bool _isPoison;
     private bool _isSlowed;
     private float _elapsedTime;
@@ -31,7 +30,7 @@ public class Enemy : MonoBehaviour
 
     public int ScoreReward => _scoreReward;
 
-    private void Awake()
+    protected virtual void  Awake()
     {
         _currentSpeed = _speed;
         _agent.speed = _speed;
@@ -40,13 +39,15 @@ public class Enemy : MonoBehaviour
         _player = FindFirstObjectByType<Player>();
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
-        _health.Died += OnDied;
+        _health.ValueChanged += OnHealthChanged;
+        _health.Died += OnDied;   
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
+        _health.ValueChanged -= OnHealthChanged;
         _health.Died -= OnDied;
     }
 
@@ -82,9 +83,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float value)
     {
         _health.TakeDamage(value);
-
     }
-    
+
     private void Attack(Player player)
     {
         player.TakeDamage(_damageAmount);
@@ -92,6 +92,18 @@ public class Enemy : MonoBehaviour
         SfxPlayer.Instance.PlayKickEnemy();
 
         Attacked?.Invoke();
+    }
+
+    private void OnDied()
+    {
+        Died?.Invoke(this);
+        Destroy(gameObject);
+        PlayDeathSound();
+    }
+
+    protected virtual void PlayDeathSound()
+    {      
+        SfxPlayer.Instance.PlayDieEnemySound();
     }
 
     public void ApplaySlow(float slow, float _slowAmount)
@@ -102,7 +114,7 @@ public class Enemy : MonoBehaviour
         _isSlowed = true;
         _agent.speed = Mathf.Min(0.3f, _speed, _slowAmount);
         _renderer.material = _frostSkin;
-      
+
         SfxPlayer.Instance.PlayFrostSound();
 
         Invoke(nameof(AfterSlow), _slowAmount);
@@ -114,32 +126,22 @@ public class Enemy : MonoBehaviour
         _isSlowed = false;
         _renderer.material = _defultSkin;
     }
-    private void OnDied()
-    {
-        Died?.Invoke(this);
-        Destroy(gameObject);
-       
-        if(_isBoss)
-        SfxPlayer.Instance.PlayDieEnemySound();
-        else
-        SfxPlayer.Instance.PlayBossDiedSound();  
-    }
 
 
     public void ApplyPoison(float poisonDamage, float duraction, float tickInterval)
     {
         if (_isPoison)
-           return;
+            return;
 
         StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
     }
 
     public IEnumerator PoisonCoroutine(float poisonDamage, float duraction, float tickInterval)
-    { 
+    {
         float _elapset = 0f;
         _isPoison = true;
         _renderer.material = _poisonSkin;
-         
+
 
         while (_elapset < duraction)
         {
@@ -152,5 +154,10 @@ public class Enemy : MonoBehaviour
 
         _isPoison = false;
         _renderer.material = _defultSkin;
+    }
+
+    protected virtual void OnHealthChanged(float value)
+    {
+
     }
 }

@@ -889,12 +889,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5065033212600556928}
-  - component: {fileID: 8187369800895974358}
-  - component: {fileID: 113875355764550695}
   - component: {fileID: 7753568749947434988}
   - component: {fileID: 1087178890326134753}
   - component: {fileID: 1026828381980982638}
   - component: {fileID: 5291528845769104679}
+  - component: {fileID: 1277114470616081379}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -918,50 +917,6 @@ Transform:
   - {fileID: 2065493189860720943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8187369800895974358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6837979829544711026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dfe0840b270b704aa727d21172566cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackDetector: {fileID: 8822677875608083494}
-  _health: {fileID: 2818299267573887289}
-  _agent: {fileID: 7753568749947434988}
-  _speed: 2
-  _detectionRadius: 380
-  _damageAmount: 80
-  _attackRate: 1
-  _scoreReward: 50
-  _currentSpeed: 2
-  _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
-  _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
-  _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
-  _renderer: {fileID: 3309389445043673922}
---- !u!114 &113875355764550695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6837979829544711026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e17b9fb92d45246b2e9b641c04c8ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: {fileID: 2818299267573887289}
-  _firstValue: 7000
-  _secondValue: 4500
-  _thirtValue: 2000
-  _forthValue: 500
-  _spawnEnemies: 1
-  _bullets: 20
 --- !u!195 &7753568749947434988
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1048,6 +1003,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 5065033212600556928}
   _rotationSpeed: 50
+--- !u!114 &1277114470616081379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6837979829544711026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391737d01e514df4da034d6f38fd347b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackDetector: {fileID: 8822677875608083494}
+  _health: {fileID: 2818299267573887289}
+  _agent: {fileID: 7753568749947434988}
+  _speed: 2
+  _detectionRadius: 380
+  _damageAmount: 80
+  _attackRate: 1
+  _scoreReward: 200
+  _currentSpeed: 2
+  _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
+  _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
+  _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
+  _renderer: {fileID: 3309389445043673922}
+  _firstValue: 7000
+  _secondValue: 4500
+  _thirtValue: 2000
+  _forthValue: 500
+  _spawnEnemies: 1
+  _bullets: 20
 --- !u!1 &7099604365031243988
 GameObject:
   m_ObjectHideFlags: 0

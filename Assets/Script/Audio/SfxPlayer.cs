@@ -71,7 +71,7 @@ public class SfxPlayer : MonoBehaviour
     public void PlayDiePlayerSound() =>
       _source.PlayOneShot(_playerDied);
 
-    public void PlayBossDiedSound() =>
+    public void PlayDieBossSound() =>
      _source.PlayOneShot(_bossDied);
 
     public void PlayPoisonSound() =>

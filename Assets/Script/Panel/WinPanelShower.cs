@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class WinPanelShower : MonoBehaviour
 {
@@ -27,9 +26,11 @@ public class WinPanelShower : MonoBehaviour
 
     private void OnFinished()
     {
+        Debug.Log($"{name} OnFinished ");
+
         _winPanel.gameObject.SetActive(true);
         WinPanelShowed?.Invoke();
-        Invoke(nameof(LoadMenu), 5f);
+        Invoke(nameof(LoadMenu), 3f);
     }
 
     private void LoadMenu() =>

@@ -24,6 +24,6 @@ public class BulletView : MonoBehaviour
 
         _anim.SetBool(IsEnoughBullet, count < 10);
 
-        FindFirstObjectByType<BossAbilitiy>()?.UpdateBulletCount(count);
+        FindFirstObjectByType<EnemyBoss>()?.UpdateBulletCount(count);
     }
 }

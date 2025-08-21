@@ -8,21 +8,17 @@ public class CursorShower : MonoBehaviour
     [SerializeField] private SettingPanelShower _settingPanel;
     [SerializeField] private Player _player;
     [SerializeField] private InputReader _inputReader;
+    [SerializeField] private TriggerCude _triggerCude;
 
     public event Action OnCursourShow;
     public event Action OnCursourHide;
-
-    private void Update()
-    {
-        Hide();
-    }
 
     private void OnEnable()
     {
         _winPanelShower.WinPanelShowed += Show;
         _settingPanel.Changed += OnChanged;
         _tutorialPanel.Changed += OnChanged;
-        _player.Died += Show;        
+        _player.Died += Show;
     }
 
     private void OnDisable()
@@ -50,8 +46,9 @@ public class CursorShower : MonoBehaviour
 
     private void Hide()
     {
-        if(_tutorialPanel.IsActive || _winPanelShower.IsActive || _settingPanel.IsActive)
-           return;
+
+        if (_tutorialPanel.IsActive || _winPanelShower.IsActive || _settingPanel.IsActive || _triggerCude.IsActive)
+            return;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
