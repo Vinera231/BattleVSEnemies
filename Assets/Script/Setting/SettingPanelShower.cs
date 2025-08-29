@@ -24,12 +24,14 @@ public class SettingPanelShower : MonoBehaviour
 
     private void HidePanel()
     {
+        Debug.Log($"HidePanel open");
         _notShoot.SetActive(true);
         _settingPanel.SetActive(false);
     }
 
     private void ShowPanel()
     {
+        Debug.Log($"ShowPanel open" );
         _notShoot.SetActive(false);
         _settingPanel.SetActive(true);
     }
@@ -42,7 +44,7 @@ public class SettingPanelShower : MonoBehaviour
             ShowPanel();
         else
             HidePanel();
-        
+
         Debug.Log($"{name} OnPanelPressed ");
         Changed?.Invoke(_isShow);
     }

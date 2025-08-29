@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 7438585437353490373}
   - component: {fileID: 5696656929931116886}
   - component: {fileID: 1520753596075128623}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: DamageView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 2876250059495269828}
   - component: {fileID: 1998696752907489234}
   - component: {fileID: 479884344849982992}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 8167009745822683479}
   - component: {fileID: 3072741878150824329}
   - component: {fileID: 926345824293864187}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HealthView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 980949893210690510}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyebrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 1030928254468864948}
   - component: {fileID: 7972436126942227735}
   - component: {fileID: 1615630759547145471}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 5869663285076157454}
   - component: {fileID: 8813955270952375418}
   - component: {fileID: 2818299267573887289}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Health
   m_TagString: MarkBullet
   m_Icon: {fileID: 0}
@@ -894,9 +894,9 @@ GameObject:
   - component: {fileID: 1026828381980982638}
   - component: {fileID: 5291528845769104679}
   - component: {fileID: 1277114470616081379}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1366,7 +1366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2065493189860720943}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,8 +7,6 @@ public class CursorShower : MonoBehaviour
     [SerializeField] private WinPanelShower _winPanelShower;
     [SerializeField] private SettingPanelShower _settingPanel;
     [SerializeField] private Player _player;
-    [SerializeField] private InputReader _inputReader;
-    [SerializeField] private TriggerCude _triggerCude;
 
     public event Action OnCursourShow;
     public event Action OnCursourHide;
@@ -47,7 +45,7 @@ public class CursorShower : MonoBehaviour
     private void Hide()
     {
 
-        if (_tutorialPanel.IsActive || _winPanelShower.IsActive || _settingPanel.IsActive || _triggerCude.IsActive)
+        if (_tutorialPanel.IsActive || _winPanelShower.IsActive || _settingPanel.IsActive) 
             return;
 
         Cursor.visible = false;

@@ -50,6 +50,7 @@ public class BulletSpawner : MonoBehaviour
     {
         _prefab = bullet;
         Debug.Log("ReplacePrefab");
+        _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 
     private void OnShotPressed()
@@ -82,14 +83,11 @@ public class BulletSpawner : MonoBehaviour
     {
         _bullet = Mathf.Min(_bullet + amount, _limitbullet);
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
-        Debug.Log("патроны");
         _player.PlayReloadBullet();
     }
 
     public void NotBullet()
     {
-        Debug.Log("нет патронав");
-
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 }

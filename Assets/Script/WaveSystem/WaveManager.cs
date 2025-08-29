@@ -49,6 +49,7 @@ public class WaveManager : MonoBehaviour
         wave.EnemyDied -= OnEnemyDied;
 
         _score.Increaze(wave.ScoreReward);
+        Debug.Log($"Increaze дали очки");
 
         ++_currentWaveIndex;
 

@@ -1,35 +1,35 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShopItem : MonoBehaviour
+public abstract class Shop : MonoBehaviour
 {
-    [SerializeField] private BulletSpawner _bulletSpawner;
-    [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private int _price;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private InputReader _reader;
     [SerializeField] private Score _score;
     [SerializeField] private SfxPlayer _sfx;
     [SerializeField] private TextMeshProUGUI _helpText;
-   
+    [SerializeField] private bool _isConsumable = true;
+    [SerializeField] private bool _buyOnlyIteam = false;
 
-    private Player _player;
+    protected Player _player;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _text.text = _price.ToString();
         _text.gameObject.SetActive(false);
     }
 
-    private void OnEnable() =>
+    protected virtual void OnEnable() =>
         _reader.BuyPressed += OnBuyPressed;
 
-    private void OnDisable() =>
+    protected virtual void OnDisable() =>
       _reader.BuyPressed -= OnBuyPressed;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out Player player))
         {
             _text.gameObject.SetActive(true);
             _helpText.gameObject.SetActive(true);
@@ -60,15 +60,21 @@ public class ShopItem : MonoBehaviour
 
     private void OnBuyPressed()
     {
-        if(_player != null)
+        if (_player != null && _score.TrySpendScore(_price))
         {
-            if(_score.TrySpendScore(_price))
-            {
+            if (GiveItem())
+                _sfx.PlayBuyIteam();
+
+            if (_isConsumable)
                 Destroy(gameObject);
-                _bulletSpawner.ReplacePrefab(_bulletPrefab);
-                _sfx.PlayBuyBullet();
+            else if (_buyOnlyIteam)
+            {
+                _buyOnlyIteam = true;
+                _text.text = "Buoght";
+                _helpText.text = ".";
             }
         }
     }
 
+    protected abstract bool GiveItem();
 }
