@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class Iventar : MonoBehaviour
 {
     [SerializeField] private InputReader _reader;
-    [SerializeField] private Image _boostImageUI;
     [SerializeField] private Player _player;
     [SerializeField] private int _amountBullet;
+    [SerializeField] private Image _boostImageUI;
 
     private Sprite _currentBoostSprite;
     private GameObject _currentBoost;
@@ -35,7 +35,7 @@ public class Iventar : MonoBehaviour
 
         if (_currentBoostSprite != null)
         {
-            _boostImageUI.enabled = _currentBoostSprite;
+            _boostImageUI.sprite = _currentBoostSprite;
             _boostImageUI.enabled = true;
         }
 
@@ -65,7 +65,6 @@ public class Iventar : MonoBehaviour
             _hasBoost = false;
             _isBulletBoost = false;
             _boostImageUI.enabled = false;
-
         }
     }
 }

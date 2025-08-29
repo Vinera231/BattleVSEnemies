@@ -1689,7 +1689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &229241147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1990,7 +1990,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281788300}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2024,7 +2024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: be93996b8bd91dc4d9355707cc420af8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2055,9 +2055,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reader: {fileID: 1909665639}
-  _boostImageUI: {fileID: 428169852}
   _player: {fileID: 1771495220}
   _amountBullet: 40
+  _boostImageUI: {fileID: 428169852}
 --- !u!1 &289352909
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,13 +3089,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 288396d80ed325c40a33e3abbe54472e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12290,7 +12290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1341807789}
   _playerBody: {fileID: 1771495215}
-  _mouseSensitivity: 230
+  _mouseSensitivity: 330
   _smoothRotation: 100
 --- !u!1 &1768706895
 GameObject:
@@ -14526,6 +14526,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 281788301}
   - {fileID: 1359546846}
   - {fileID: 1344660784}
   - {fileID: 367833460}
@@ -14533,7 +14534,6 @@ RectTransform:
   - {fileID: 737742092}
   - {fileID: 2081845930}
   - {fileID: 229241147}
-  - {fileID: 281788301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -17070,7 +17070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 10
+  _price: 550
   _text: {fileID: 1300890203}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
