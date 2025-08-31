@@ -11,7 +11,6 @@ public abstract class Shop : MonoBehaviour
     [SerializeField] private SfxPlayer _sfx;
     [SerializeField] private TextMeshProUGUI _helpText;
     [SerializeField] private bool _isConsumable = true;
-    [SerializeField] private bool _buyOnlyIteam = false;
 
     protected Player _player;
 
@@ -66,13 +65,7 @@ public abstract class Shop : MonoBehaviour
                 _sfx.PlayBuyIteam();
 
             if (_isConsumable)
-                Destroy(gameObject);
-            else if (_buyOnlyIteam)
-            {
-                _buyOnlyIteam = true;
-                _text.text = "Buoght";
-                _helpText.text = ".";
-            }
+                Destroy(gameObject);         
         }
     }
 

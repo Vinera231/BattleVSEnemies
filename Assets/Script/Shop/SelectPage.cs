@@ -24,6 +24,7 @@ public class SelectPage : MonoBehaviour
     {
         _categoria[_currentIndex].SetActive(true);
         _currentIndex = (_currentIndex + 1) % _categoria.Length;
+
         _categoria[_currentIndex].SetActive(false);
         _textArrow.text = _categoria[_currentIndex].name;
     }

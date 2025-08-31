@@ -30,7 +30,7 @@ public class WinPanelShower : MonoBehaviour
 
         _winPanel.gameObject.SetActive(true);
         WinPanelShowed?.Invoke();
-        Invoke(nameof(LoadMenu), 3f);
+        Invoke(nameof(LoadMenu), 6f);
     }
 
     private void LoadMenu() =>

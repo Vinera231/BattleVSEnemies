@@ -779,7 +779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &140594066
 Transform:
   m_ObjectHideFlags: 0
@@ -4328,8 +4328,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6192,7 +6192,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "ExtraBulletBag\n    cost:550\n\u0414\u0430\u0435\u0442 +40 \u043F\u0430\u0442\u0440\u043E\u043D"
+  m_text: "ExtraBulletBag\n    cost:550\n\u0414\u0430\u0435\u0442 +40 \u043F\u0430\u0442\u0440\u043E\u043D
+    \u043D\u0430\u0436\u043C\u0438  \"Q\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6257,7 +6258,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 2.2826447, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8080,7 +8081,6 @@ MonoBehaviour:
   _sfx: {fileID: 9200639445192888596}
   _helpText: {fileID: 1160184618}
   _isConsumable: 1
-  _buyOnlyIteam: 1
   _bulletSpawner: {fileID: 4273884095528460507}
   _bulletPrefab: {fileID: 7562637585148806718, guid: bcb9687cdcf7742438a98ba9aae7cdf6, type: 3}
 --- !u!135 &1195832804
@@ -10210,7 +10210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1465405548
 Transform:
   m_ObjectHideFlags: 0
@@ -11049,7 +11049,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.3513584, y: 0, z: 6.508621, w: 0.050866842}
+  m_margin: {x: -0.3513584, y: 0, z: 6.508621, w: 2.1243863}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12965,8 +12965,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15414,7 +15414,6 @@ MonoBehaviour:
   _sfx: {fileID: 9200639445192888596}
   _helpText: {fileID: 473633745}
   _isConsumable: 1
-  _buyOnlyIteam: 1
   _bulletSpawner: {fileID: 4273884095528460507}
   _bulletPrefab: {fileID: 9067059710875233655, guid: ffff5c073c6f1ee49b8941ad49237729, type: 3}
 --- !u!135 &2081066903
@@ -15503,7 +15502,6 @@ GameObject:
   - component: {fileID: 2085065318}
   - component: {fileID: 2085065317}
   - component: {fileID: 2085065316}
-  - component: {fileID: 2085065319}
   - component: {fileID: 2085065320}
   m_Layer: 5
   m_Name: NextArrow
@@ -15614,19 +15612,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085065314}
   m_CullTransparentMesh: 1
---- !u!114 &2085065319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085065314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0ea8134b87ba764e915f972d9f85ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 2085065316}
 --- !u!135 &2085065320
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15646,7 +15631,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2093819634
 GameObject:
@@ -15795,7 +15780,6 @@ GameObject:
   - component: {fileID: 2112223062}
   - component: {fileID: 2112223061}
   - component: {fileID: 2112223060}
-  - component: {fileID: 2112223063}
   - component: {fileID: 2112223064}
   m_Layer: 5
   m_Name: BackArrow
@@ -15906,19 +15890,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112223058}
   m_CullTransparentMesh: 1
---- !u!114 &2112223063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112223058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0ea8134b87ba764e915f972d9f85ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 2112223060}
 --- !u!135 &2112223064
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15938,7 +15909,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2112728506
 GameObject:
@@ -16954,7 +16925,6 @@ MonoBehaviour:
   _sfx: {fileID: 9200639445192888596}
   _helpText: {fileID: 179932308}
   _isConsumable: 1
-  _buyOnlyIteam: 1
   _bulletSpawner: {fileID: 4273884095528460507}
   _bulletPrefab: {fileID: 1844894323753086436, guid: 2389d256a35a8c24c8ada206ea617320, type: 3}
 --- !u!222 &5926450974507250340
@@ -17077,7 +17047,6 @@ MonoBehaviour:
   _sfx: {fileID: 9200639445192888596}
   _helpText: {fileID: 1002962633}
   _isConsumable: 0
-  _buyOnlyIteam: 0
   _iventarPrefab: {fileID: 281788304}
   _boostSprite: {fileID: 21300000, guid: 288396d80ed325c40a33e3abbe54472e, type: 3}
 --- !u!224 &7649667819216648744

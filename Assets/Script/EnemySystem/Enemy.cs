@@ -97,13 +97,13 @@ public class Enemy : MonoBehaviour
     private void OnDied()
     {
         Died?.Invoke(this);
-        Destroy(gameObject);
-        PlayDeathSound();
+        ProcessDied();
     }
 
-    protected virtual void PlayDeathSound()
+    protected virtual void ProcessDied()
     {      
         SfxPlayer.Instance.PlayDieEnemySound();
+        Destroy(gameObject);
     }
 
     public void ApplaySlow(float slow, float _slowAmount)

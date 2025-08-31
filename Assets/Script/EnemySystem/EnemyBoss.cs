@@ -8,6 +8,7 @@ public class EnemyBoss : Enemy
     [SerializeField] private float _forthValue;
     [SerializeField] private float _spawnEnemies;
     [SerializeField] private float _bullets;
+    [SerializeField] private EnemyBossAnimator _animator;
 
     private float _currentBulletCount;
     private EnemySpawner _spawner;
@@ -94,8 +95,13 @@ public class EnemyBoss : Enemy
         _currentBulletCount = _current;
     }
 
-    protected override void PlayDeathSound()
+    protected override void ProcessDied()
     {
         SfxPlayer.Instance.PlayDieBossSound();
+        _animator.PlayDied();
+        Invoke(nameof(DestroyBoss), 3f);
     }
+    
+    private void DestroyBoss() =>
+        Destroy(gameObject);
 }
