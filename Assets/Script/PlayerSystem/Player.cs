@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    public bool TryTakeHealth(float life)
+    public bool TryTakeHealth(int life)
     {
         if (_health.IsFull == false)
         {

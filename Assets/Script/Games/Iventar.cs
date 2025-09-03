@@ -6,12 +6,14 @@ public class Iventar : MonoBehaviour
     [SerializeField] private InputReader _reader;
     [SerializeField] private Player _player;
     [SerializeField] private int _amountBullet;
+    [SerializeField] private int _amountHealth;
     [SerializeField] private Image _boostImageUI;
 
     private Sprite _currentBoostSprite;
     private GameObject _currentBoost;
     private bool _hasBoost;
     private bool _isBulletBoost;
+    private bool _isHealthBoost;
 
     private void OnEnable()
     {
@@ -23,7 +25,7 @@ public class Iventar : MonoBehaviour
         _reader.IventarPressed -= UseBoost;
     }
 
-    public bool PressIventar(GameObject currentboostPrefab, Sprite currentboostSprite, bool isBullet = false)
+    public bool PressIventar(GameObject currentboostPrefab, Sprite currentboostSprite, bool isBullet = false, bool isHealth = false)
     {
         if (_hasBoost)
             return false;
@@ -32,6 +34,7 @@ public class Iventar : MonoBehaviour
         _currentBoostSprite = currentboostSprite;
         _hasBoost = true;
         _isBulletBoost = isBullet;
+        _isHealthBoost = isHealth;
 
         if (_currentBoostSprite != null)
         {
@@ -52,6 +55,19 @@ public class Iventar : MonoBehaviour
                 if (_player != null && _player.TryReplenishBullet(_amountBullet))
                 {
                     Debug.Log($"Player take {_amountBullet}");
+                }
+            }
+            else
+            {
+                Instantiate(_currentBoostSprite, transform.position, Quaternion.identity);
+                Debug.Log($"Boost {_currentBoost.name} used");
+            }
+
+            if (_isHealthBoost)
+            {
+                if(_player != null && _player.TryTakeHealth(_amountHealth)) 
+                {
+                    Debug.Log($"Player take {_amountHealth}");
                 }
             }
             else
