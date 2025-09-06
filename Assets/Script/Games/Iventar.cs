@@ -14,6 +14,7 @@ public class Iventar : MonoBehaviour
     private bool _hasBoost;
     private bool _isBulletBoost;
     private bool _isHealthBoost;
+    private bool _isUsed = false;
 
     private void OnEnable()
     {
@@ -38,6 +39,7 @@ public class Iventar : MonoBehaviour
 
         if (_currentBoostSprite != null)
         {
+            Debug.Log($"PressIventar = {currentboostSprite}");
             _boostImageUI.sprite = _currentBoostSprite;
             _boostImageUI.enabled = true;
         }
@@ -47,40 +49,51 @@ public class Iventar : MonoBehaviour
     }
 
     private void UseBoost()
-    {
+    {  
         if (_hasBoost && _currentBoost != null)
         {
             if (_isBulletBoost)
             {
                 if (_player != null && _player.TryReplenishBullet(_amountBullet))
                 {
-                    Debug.Log($"Player take {_amountBullet}");
+                    _isUsed = true;
+                    Debug.Log($"Player take {_amountBullet}Bullet");
+                }
+                else
+                {
+                    Debug.Log("патроны полние");
                 }
             }
-            else
-            {
-                Instantiate(_currentBoostSprite, transform.position, Quaternion.identity);
-                Debug.Log($"Boost {_currentBoost.name} used");
-            }
-
-            if (_isHealthBoost)
+            else if (_isHealthBoost)
             {
                 if(_player != null && _player.TryTakeHealth(_amountHealth)) 
                 {
-                    Debug.Log($"Player take {_amountHealth}");
+                    _isUsed= true;
+                    Debug.Log($"Player take {_amountHealth}HP");
+                }
+                else
+                {
+                    Debug.Log("здоровья полная");
                 }
             }
             else
             {
-                Instantiate(_currentBoostSprite, transform.position, Quaternion.identity);
+                Instantiate(_currentBoost, transform.position, Quaternion.identity);
                 Debug.Log($"Boost {_currentBoost.name} used");
+                _isUsed = true;
             }
 
-            _currentBoost = null;
-            _currentBoostSprite = null;
+            if (_isUsed)
+            {
+             _currentBoost = null;
+            _currentBoostSprite = null;     
             _hasBoost = false;
             _isBulletBoost = false;
+            _isHealthBoost = false;
             _boostImageUI.enabled = false;
+            }
+            
+
         }
     }
 }

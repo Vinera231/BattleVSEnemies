@@ -439,10 +439,10 @@ MonoBehaviour:
   _agent: {fileID: 1595713761963284895}
   _speed: 3
   _detectionRadius: 380
-  _damageAmount: 60
+  _damageAmount: 20
   _attackRate: 1
-  _scoreReward: 50
-  _currentSpeed: 3
+  _scoreReward: 10
+  _currentSpeed: 6
   _defultSkin: {fileID: 2100000, guid: 2beb27ae9e4e9f14eb001037212ff810, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}

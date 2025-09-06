@@ -561,7 +561,7 @@ MonoBehaviour:
   _detectionRadius: 380
   _damageAmount: 20
   _attackRate: 1
-  _scoreReward: 15
+  _scoreReward: 20
   _currentSpeed: 10
   _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}

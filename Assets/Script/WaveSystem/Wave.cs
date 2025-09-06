@@ -10,7 +10,9 @@ public class Wave : MonoBehaviour
     [SerializeField] private float _countEnemy;
     [SerializeField] private float _countSpeedy;
     [SerializeField] private float _countHamer;
-    [SerializeField] private float _countBoss;
+    [SerializeField] private float _countBoss; 
+    [SerializeField] private float _countHalmer;
+    [SerializeField] private float _countIron;   
     [SerializeField] private float _timeBeforeSpawn;
     [SerializeField] private string _text;
     [SerializeField] private LootSpawner _lootSpawner;
@@ -81,6 +83,23 @@ public class Wave : MonoBehaviour
             _countBoss--;
         }
 
+        while (_countHalmer > 0)
+        {
+            yield return _wait;
+            Enemy enemy = _spawner.SpawnHalmer(RandomSpawnPosition());
+            enemy.Died += OnDied;
+            _enemies.Add(enemy);
+            _countHalmer--;
+        }
+
+        while (_countIron > 0)
+        {
+            yield return _wait;
+            Enemy enemy = _spawner.SpawnIron(RandomSpawnPosition());
+            enemy.Died += OnDied;
+            _enemies.Add(enemy);
+            _countIron--;
+        }
     }
 
     private void OnDied(Enemy enemy)

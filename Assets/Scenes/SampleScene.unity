@@ -735,9 +735,11 @@ MonoBehaviour:
   _spawner: {fileID: 1454733085}
   _frequency: 0.25
   _countEnemy: 0
-  _countSpeedy: 15
+  _countSpeedy: 20
   _countHamer: 8
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 5
   _text: "\u041F\u044F\u0442\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -779,7 +781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &140594066
 Transform:
   m_ObjectHideFlags: 0
@@ -2057,8 +2059,39 @@ MonoBehaviour:
   _reader: {fileID: 1909665639}
   _player: {fileID: 1771495220}
   _amountBullet: 40
-  _amountHealth: 0
+  _amountHealth: 40
   _boostImageUI: {fileID: 428169852}
+--- !u!1 &285329187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 285329188}
+  m_Layer: 0
+  m_Name: SpawnPoint_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &285329188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285329187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.49, y: 0, z: -13.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1402337810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289352909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,9 +2491,11 @@ MonoBehaviour:
   _spawner: {fileID: 1454733085}
   _frequency: 0.25
   _countEnemy: 20
-  _countSpeedy: 18
+  _countSpeedy: 20
   _countHamer: 0
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 10
   _text: "\u0427\u0435\u0442\u0432\u0451\u0440\u0442\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -3009,10 +3044,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.2
-  _countEnemy: 12
-  _countSpeedy: 6
+  _countEnemy: 15
+  _countSpeedy: 8
   _countHamer: 0
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 5
   _text: "\u041F\u0435\u0440\u0432\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -3796,6 +3833,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1182479981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &604431970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604431971}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &604431971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604431970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.03, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1402337810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608851379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,10 +4068,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.01
-  _countEnemy: 15
-  _countSpeedy: 15
-  _countHamer: 15
+  _countEnemy: 20
+  _countSpeedy: 20
+  _countHamer: 20
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 10
   _text: "\u0421\u0435\u0434\u044C\u043C\u0430\u044F  \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -4839,6 +4909,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &705429815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 705429816}
+  m_Layer: 0
+  m_Name: SpawnPoint_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &705429816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705429815}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.73, y: 0, z: 9.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1402337810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6296,7 +6397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "ExtraBulletBag\n    cost:550\n\u0414\u0430\u0435\u0442 +40 \u043F\u0430\u0442\u0440\u043E\u043D
+  m_text: "ExtraBulletBag\n    cost:350\n\u0414\u0430\u0435\u0442 +40 \u043F\u0430\u0442\u0440\u043E\u043D
     \u043D\u0430\u0436\u043C\u0438  \"Q\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7050,15 +7151,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 10
+  _price: 150
   _text: {fileID: 1888097179}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
   _sfx: {fileID: 9200639445192888596}
   _helpText: {fileID: 1444301433}
   _isConsumable: 0
-  _iventarPrefab: {fileID: 281788304}
-  _boostSprite: {fileID: 21300000, guid: 94ecab7bec4dd3d4f97c1b83c69b6b03, type: 3}
+  _iventar: {fileID: 281788304}
+  _boostSprite: {fileID: 21300000, guid: d661f5c5e9507f345ac6ac92fc0a18a6, type: 3}
+  _boostPrefab: {fileID: 919132149155446097, guid: 251889413fcfbe841a4d11ea37dfe4fe, type: 3}
+  _buffType: 1
 --- !u!135 &1095841845
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7814,9 +7917,11 @@ MonoBehaviour:
   _spawner: {fileID: 1454733085}
   _frequency: 0.25
   _countEnemy: 0
-  _countSpeedy: 30
+  _countSpeedy: 35
   _countHamer: 0
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 5
   _text: "\u0412\u0440\u0435\u043C\u044F \u043F\u043E\u0431\u0435\u0433\u0430\u0442\u044C "
   _lootSpawner: {fileID: 1159280639}
@@ -7828,7 +7933,7 @@ MonoBehaviour:
   - {fileID: 293153162}
   - {fileID: 1842855046}
   - {fileID: 2116216481}
-  _scoreReward: 60
+  _scoreReward: 70
 --- !u!4 &1182479981
 Transform:
   m_ObjectHideFlags: 0
@@ -8255,7 +8360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239615f87d34d4843a8c10307e4d48ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 1000
+  _price: 1500
   _text: {fileID: 169567012}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -8668,6 +8773,8 @@ MonoBehaviour:
   - {fileID: 1377493455}
   - {fileID: 1182479980}
   - {fileID: 2125280817}
+  - {fileID: 1402337811}
+  - {fileID: 1464079393}
   _spawner: {fileID: 1159280639}
   _score: {fileID: 317476448}
 --- !u!4 &1209387576
@@ -8693,6 +8800,8 @@ Transform:
   - {fileID: 1377493456}
   - {fileID: 1182479981}
   - {fileID: 2125280816}
+  - {fileID: 1402337810}
+  - {fileID: 1464079392}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1209387577
@@ -9941,8 +10050,10 @@ MonoBehaviour:
   _frequency: 0.25
   _countEnemy: 0
   _countSpeedy: 0
-  _countHamer: 20
+  _countHamer: 30
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 5
   _text: "\u041C\u043E\u043B\u043E\u0442\u043E\u0447\u043D\u0430\u044F \u0432\u0435\u0447\u0435\u0440\u0438\u043D\u043A\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -10160,6 +10271,66 @@ Transform:
   - {fileID: 1781972549}
   m_Father: {fileID: 928695647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1402337809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402337810}
+  - component: {fileID: 1402337811}
+  m_Layer: 0
+  m_Name: ElevenWave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1402337810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402337809}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.98, y: 1.17, z: 27.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 604431971}
+  - {fileID: 285329188}
+  - {fileID: 705429816}
+  m_Father: {fileID: 1209387576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1402337811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402337809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9997da8bb3b42e44bea61d622de5c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawner: {fileID: 1454733085}
+  _frequency: 0
+  _countEnemy: 0
+  _countSpeedy: 0
+  _countHamer: 0
+  _countBoss: 0
+  _countHalmer: 10
+  _countIron: 0
+  _timeBeforeSpawn: 5
+  _text: "\u0424\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
+  _lootSpawner: {fileID: 1159280639}
+  _spawnPoints: []
+  _scoreReward: 80
 --- !u!1 &1444301431
 GameObject:
   m_ObjectHideFlags: 0
@@ -10217,7 +10388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "HealthPotion\n    cost:350\n\u0414\u0430\u0435\u0442 +40 \u0445\u043F
+  m_text: "HealthPotion\n    cost:150\n\u0414\u0430\u0435\u0442 +40 \u0445\u043F
     \u043D\u0430\u0436\u043C\u0438  \"Q\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10376,7 +10547,68 @@ MonoBehaviour:
   _speedyPrefab: {fileID: 429578588366157044, guid: a8a42da73dfaca041bc93ab917750e68, type: 3}
   _hamerPrefab: {fileID: 7640572108778093539, guid: 25557155fa086214da6eeb9c04407dfd, type: 3}
   _bossPrefab: {fileID: 1277114470616081379, guid: a53039920a5e13a4eb031adfda2a8371, type: 3}
+  _halmerEnemy: {fileID: 4970981288387148015, guid: 6205876b6ad492a4db34afdd5bbcff3a, type: 3}
+  _ironEnemy: {fileID: 5789101242767093872, guid: 318136699e0a3024ca0894ec5866d1ac, type: 3}
   _deviation: {x: 1, y: 1}
+--- !u!1 &1464079391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464079392}
+  - component: {fileID: 1464079393}
+  m_Layer: 0
+  m_Name: TwelfhWave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1464079392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464079391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.89, y: 1.17, z: 27.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1564283377}
+  - {fileID: 1687942561}
+  m_Father: {fileID: 1209387576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1464079393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464079391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9997da8bb3b42e44bea61d622de5c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawner: {fileID: 1454733085}
+  _frequency: 0
+  _countEnemy: 0
+  _countSpeedy: 0
+  _countHamer: 10
+  _countBoss: 0
+  _countHalmer: 0
+  _countIron: 1
+  _timeBeforeSpawn: 5
+  _text: "\u0424\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
+  _lootSpawner: {fileID: 1159280639}
+  _spawnPoints: []
+  _scoreReward: 85
 --- !u!1 &1464293999
 GameObject:
   m_ObjectHideFlags: 0
@@ -10528,7 +10760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1465405548
 Transform:
   m_ObjectHideFlags: 0
@@ -11079,7 +11311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1d3146651b2ae46996b4603d8da2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lastWave: {fileID: 2125280817}
+  _lastWave: {fileID: 1464079393}
   _winPanel: {fileID: 737742096}
 --- !u!4 &1557966750
 Transform:
@@ -11095,6 +11327,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 252114381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1564283376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564283377}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1564283377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564283376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 0, z: 10.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1464079392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1574821837
 GameObject:
@@ -11693,6 +11956,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 128816733}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1687942560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687942561}
+  m_Layer: 0
+  m_Name: SpawnPoint_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1687942561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687942560}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.61, y: 0, z: -10.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1464079392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1694783188
 GameObject:
@@ -12302,10 +12596,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.2
-  _countEnemy: 14
-  _countSpeedy: 8
+  _countEnemy: 16
+  _countSpeedy: 10
   _countHamer: 0
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 5
   _text: "\u0412\u0442\u043E\u0440\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -12314,7 +12610,7 @@ MonoBehaviour:
   - {fileID: 1879359548}
   - {fileID: 1904327277}
   - {fileID: 1450746835}
-  _scoreReward: 25
+  _scoreReward: 30
 --- !u!4 &1733740977
 Transform:
   m_ObjectHideFlags: 0
@@ -14230,9 +14526,11 @@ MonoBehaviour:
   _spawner: {fileID: 1454733085}
   _frequency: 0.01
   _countEnemy: 0
-  _countSpeedy: 15
-  _countHamer: 8
+  _countSpeedy: 25
+  _countHamer: 10
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 5
   _text: "\u0428\u0435\u0441\u0442\u0430\u044F  \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -15318,10 +15616,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.25
-  _countEnemy: 16
+  _countEnemy: 20
   _countSpeedy: 10
   _countHamer: 0
   _countBoss: 0
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 5
   _text: "\u0422\u0440\u0435\u0442\u044C\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -15862,7 +16162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239615f87d34d4843a8c10307e4d48ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 550
+  _price: 650
   _text: {fileID: 916829864}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -16583,6 +16883,8 @@ MonoBehaviour:
   _countSpeedy: 0
   _countHamer: 0
   _countBoss: 1
+  _countHalmer: 0
+  _countIron: 0
   _timeBeforeSpawn: 5
   _text: "\u0424\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280639}
@@ -16864,7 +17166,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 541ee43c60001154fb23314550d77cbb, type: 2}
+  - {fileID: 2100000, guid: 33fc6376b70589649b811706c0aa2a7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17459,7 +17761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239615f87d34d4843a8c10307e4d48ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 2000
+  _price: 2500
   _text: {fileID: 608851380}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -17581,15 +17883,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 550
+  _price: 350
   _text: {fileID: 1300890203}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
   _sfx: {fileID: 9200639445192888596}
   _helpText: {fileID: 1002962633}
   _isConsumable: 0
-  _iventarPrefab: {fileID: 281788304}
+  _iventar: {fileID: 281788304}
   _boostSprite: {fileID: 21300000, guid: 4e5a3ff77e9aef44f897b2edc8e34704, type: 3}
+  _boostPrefab: {fileID: 3272338781160318266, guid: 342b8b06bf83adb468b9365dac57d46e, type: 3}
+  _buffType: 0
 --- !u!224 &7649667819216648744
 RectTransform:
   m_ObjectHideFlags: 0
