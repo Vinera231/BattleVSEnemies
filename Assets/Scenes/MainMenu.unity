@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 1.3.6
+  m_text: 'Version: 1.3.7
 
 '
   m_isRightToLeft: 0
@@ -4127,7 +4127,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 541ee43c60001154fb23314550d77cbb, type: 2}
+  - {fileID: 2100000, guid: 33fc6376b70589649b811706c0aa2a7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

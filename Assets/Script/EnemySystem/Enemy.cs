@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Material _poisonSkin;
     [SerializeField] private Renderer _renderer;
 
+    private Coroutine _poisonCoroutine;
+    private Coroutine _fricklesCoroutine;
     private bool _isPoison;
     private bool _isSlowed;
     private float _elapsedTime;
@@ -30,7 +32,7 @@ public class Enemy : MonoBehaviour
 
     public int ScoreReward => _scoreReward;
 
-    protected virtual void  Awake()
+    protected virtual void Awake()
     {
         _currentSpeed = _speed;
         _agent.speed = _speed;
@@ -42,7 +44,7 @@ public class Enemy : MonoBehaviour
     protected virtual void OnEnable()
     {
         _health.ValueChanged += OnHealthChanged;
-        _health.Died += OnDied;   
+        _health.Died += OnDied;
     }
 
     protected virtual void OnDisable()
@@ -101,8 +103,10 @@ public class Enemy : MonoBehaviour
     }
 
     protected virtual void ProcessDied()
-    {      
+    {
         SfxPlayer.Instance.PlayDieEnemySound();
+        SpawnBloodParticle.Instance?.CreateBlood(transform.position);
+        Debug.Log("SpawnBlood.Instance.CreateBlood : был вызван ");
         Destroy(gameObject);
     }
 
@@ -130,30 +134,68 @@ public class Enemy : MonoBehaviour
 
     public void ApplyPoison(float poisonDamage, float duraction, float tickInterval)
     {
-        if (_isPoison)
+      
+        if (_isPoison == true)
             return;
 
-        StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
+        if(_renderer == null)
+        {
+            Debug.LogWarning("Enemy not Applay : Render material");
+            return;
+        }
+
+        _isPoison = true;
+
+        _poisonCoroutine = StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
+        _fricklesCoroutine = StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
     }
 
     public IEnumerator PoisonCoroutine(float poisonDamage, float duraction, float tickInterval)
     {
         float _elapset = 0f;
-        _isPoison = true;
-        _renderer.material = _poisonSkin;
-
 
         while (_elapset < duraction)
         {
             _health.TakeDamage(poisonDamage);
             SfxPlayer.Instance.PlayPoisonSound();
+
             yield return new WaitForSeconds(tickInterval);
             _elapset += tickInterval;
             Debug.Log("есть  отровление");
+            StartCoroutine(FricklerCoroutine(duraction,tickInterval));
         }
 
         _isPoison = false;
-        _renderer.material = _defultSkin;
+
+        if(_fricklesCoroutine != null)
+        {
+            StopCoroutine(_fricklesCoroutine);
+            _fricklesCoroutine = null;
+        }
+              
+         if(_renderer != null && _defultSkin != null)
+            _renderer.material = _defultSkin;
+            
+            _poisonCoroutine = null;    
+    }
+
+    private IEnumerator FricklerCoroutine(float duraction, float tickInterval)
+    {
+        float elapsed = 0f;
+        bool toogle;
+
+        while (elapsed < duraction && _isPoison)
+        {
+            toogle =! false;
+            _renderer.material = toogle ? _poisonSkin : _defultSkin;
+        
+            yield return new WaitForSeconds(tickInterval);
+            elapsed += tickInterval;
+        }
+
+        if (_renderer != null && _defultSkin != null)
+            _renderer.material = _defultSkin;
+
     }
 
     protected virtual void OnHealthChanged(float value)

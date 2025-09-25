@@ -22,10 +22,10 @@ public class SelectPage : MonoBehaviour
 
     public void PressArrow()
     {
-        _categoria[_currentIndex].SetActive(true);
+        _categoria[_currentIndex].SetActive(false);
         _currentIndex = (_currentIndex + 1) % _categoria.Length;
 
-        _categoria[_currentIndex].SetActive(false);
+        _categoria[_currentIndex].SetActive(true);
         _textArrow.text = _categoria[_currentIndex].name;
     }
     private void OnTriggerEnter(Collider other)
