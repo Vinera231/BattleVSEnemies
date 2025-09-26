@@ -4302,52 +4302,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _players: {fileID: 1771495215}
   _rotationSpeed: 360
---- !u!1 &609121398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 609121400}
-  - component: {fileID: 609121399}
-  m_Layer: 0
-  m_Name: SpawnBloodParticle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &609121399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609121398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7d37a5a8d14f754da64215a409aa38d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: -6761643158028392180, guid: 98449de1620a9ce4c9ff811bf635901f, type: 3}
-  _offset: {x: 0, y: 0, z: 0}
---- !u!4 &609121400
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609121398}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615173877
 GameObject:
   m_ObjectHideFlags: 0
@@ -7918,63 +7872,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133573855}
   m_CullTransparentMesh: 1
---- !u!1001 &1134841981
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6463350074673769379, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_Name
-      value: ExplorelSpeedy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.9392595
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 19.324772
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149170057587676443, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7e66fdad355dc85489e976a1ef850805, type: 3}
 --- !u!1 &1146731072
 GameObject:
   m_ObjectHideFlags: 0
@@ -8724,7 +8621,7 @@ GameObject:
   - component: {fileID: 1188025904}
   - component: {fileID: 1188025903}
   m_Layer: 0
-  m_Name: ExplosionSpawner
+  m_Name: ParticleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8739,11 +8636,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1188025902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65c2ca01e6faa341a47e8977818cbb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cfcaa184ecc3d444b06170b47cfd3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 1232673056644396647, guid: 30d8129a09af62442aa64defa2994ebb, type: 3}
-  _offset: {x: 0, y: 0, z: 0}
+  _explosionPrefab: {fileID: 1232673056644396647, guid: 30d8129a09af62442aa64defa2994ebb, type: 3}
+  _bloodPrefab: {fileID: -6761643158028392180, guid: 98449de1620a9ce4c9ff811bf635901f, type: 3}
+  _explosionOffset: {x: 0, y: 0, z: 0}
+  _bloodOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &1188025904
 Transform:
   m_ObjectHideFlags: 0
@@ -18744,6 +18643,4 @@ SceneRoots:
   - {fileID: 140594066}
   - {fileID: 1465405548}
   - {fileID: 1195781896}
-  - {fileID: 1134841981}
   - {fileID: 1188025904}
-  - {fileID: 609121400}

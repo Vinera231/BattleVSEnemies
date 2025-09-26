@@ -13,7 +13,7 @@ public class ExplorelSpeedy : Enemy
     }
     protected override void ProcessDied()
     {
-        ExplosionSpawner.Instance.Create(transform.position);
+        ParticleSpawner.Instance.CreateExplosion(transform.position);
         Collider[] hits = Physics.OverlapSphere(transform.position, _explosionRadius);
 
         foreach (var hit in hits)

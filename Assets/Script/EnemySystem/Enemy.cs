@@ -105,7 +105,7 @@ public class Enemy : MonoBehaviour
     protected virtual void ProcessDied()
     {
         SfxPlayer.Instance.PlayDieEnemySound();
-        SpawnBloodParticle.Instance?.CreateBlood(transform.position);
+        ParticleSpawner.Instance?.CreateBlood(transform.position);
         Debug.Log("SpawnBlood.Instance.CreateBlood : был вызван ");
         Destroy(gameObject);
     }

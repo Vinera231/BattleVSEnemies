@@ -4851,7 +4851,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4df8a5993f951b04581df7cc5fbb1254, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4964,7 +4963,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d2e32673805f8974a888782e19aa2bbf, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4991,7 +4989,7 @@ ParticleSystemRenderer:
   m_MinParticleSize: 0.001
   m_MaxParticleSize: 2
   m_CameraVelocityScale: 0
-  m_VelocityScale: 0.1
+  m_VelocityScale: 0.3
   m_LengthScale: 0
   m_SortingFudge: 0
   m_NormalDirection: 1
@@ -5153,8 +5151,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 14
-      minScalar: 10
+      scalar: 5
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5207,7 +5205,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.9019608}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6350,8 +6348,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key0: {r: 0.97735846, g: 0, b: 0.15849024, a: 1}
+        key1: {r: 0.97735846, g: 0, b: 0.15849024, a: 0}
         key2: {r: 1, g: 1, b: 1, a: 0.039215688}
         key3: {r: 0.5660378, g: 0.32025725, b: 0, a: 0.039215688}
         key4: {r: 0, g: 0.98239845, b: 1, a: 0.039215688}
@@ -6360,13 +6358,13 @@ ParticleSystem:
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
         ctime1: 65535
-        ctime2: 30410
+        ctime2: 65535
         ctime3: 48109
         ctime4: 45875
         ctime5: 65535
         ctime6: 65535
         ctime7: 0
-        atime0: 31230
+        atime0: 77
         atime1: 65535
         atime2: 65535
         atime3: 65535
@@ -6375,7 +6373,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -9050,9 +9048,9 @@ ParticleSystem:
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 0
-    dieWithParticles: 1
+    dieWithParticles: 0
     sizeAffectsWidth: 1
-    sizeAffectsLifetime: 0
+    sizeAffectsLifetime: 1
     inheritParticleColor: 1
     generateLightingData: 0
     splitSubEmitterRibbons: 0
