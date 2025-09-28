@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Enemy _bossPrefab;
     [SerializeField] private Enemy _halmerEnemy;
     [SerializeField] private Enemy _ironEnemy;
+    [SerializeField] private Enemy _explorelEnemy;
     [SerializeField] private Vector2 _deviation;
 
     public Enemy SpawnBoss(Vector3 position) =>
@@ -28,6 +29,9 @@ public class EnemySpawner : MonoBehaviour
     public Enemy SpawnIron(Vector3 position) =>
         Spawn(position, _ironEnemy);
 
+    public Enemy SpawnExplorel(Vector3 position) =>
+        Spawn(position, _explorelEnemy);
+   
     private Enemy Spawn(Vector3 position, Enemy prefab) =>
         Instantiate(prefab, DeviatePosition(position), Quaternion.identity);
 
