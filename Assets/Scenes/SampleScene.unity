@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Damage:40\nExtraBullet\n\"Q\" \u0447\u0442\u043E\u0431\u044B  \u043A\u0443\u043F\u0438\u0442\u044C"
+  m_text: "Damage:40\nExtraBullet\n\"Q\" \u0447\u0442\u043E\u0431\u044B  \u043A\u0443\u043F\u0438\u0442\u044C\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1161,7 +1161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.1, y: 5.9}
+  m_AnchoredPosition: {x: -5.1, y: 7.8}
   m_SizeDelta: {x: -12.03, y: -26.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &186569651
@@ -2921,6 +2921,7 @@ MonoBehaviour:
   _defaultMusic: {fileID: 8300000, guid: 0ad1a4d4fdb29bb4fa34f33ae08686a0, type: 3}
   _bossMusic: {fileID: 8300000, guid: e9c85fe237840514a804e23b748ec657, type: 3}
   _beforeBoss: {fileID: 1182479980}
+  _afterBoss: {fileID: 2125280817}
 --- !u!1 &362706637
 GameObject:
   m_ObjectHideFlags: 0
@@ -6394,7 +6395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.503, y: 0.576}
+  m_AnchoredPosition: {x: 0.374, y: 0.576}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &903318079
@@ -6920,7 +6921,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "ExtraBulletBag\n    cost:350\n\u0414\u0430\u0435\u0442 +40 \u043F\u0430\u0442\u0440\u043E\u043D
+  m_text: "ExtraBulletBag\n\u0414\u0430\u0435\u0442 +40 \u043F\u0430\u0442\u0440\u043E\u043D
     \u043D\u0430\u0436\u043C\u0438  \"Q\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7466,7 +7467,7 @@ MonoBehaviour:
   - {fileID: 2005376045}
   - {fileID: 1833196642}
   - {fileID: 1488987164}
-  _scoreReward: 20
+  _scoreReward: 100
 --- !u!1 &1071401410
 GameObject:
   m_ObjectHideFlags: 0
@@ -7720,7 +7721,7 @@ Transform:
   m_GameObject: {fileID: 1095841842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.451, z: 16.55}
+  m_LocalPosition: {x: 0.121, y: -1.451, z: 16.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7740,7 +7741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 200
+  _price: 250
   _text: {fileID: 1888097179}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -9957,7 +9958,7 @@ MonoBehaviour:
   - {fileID: 487204249}
   - {fileID: 1423021737}
   - {fileID: 269844037}
-  _scoreReward: 30
+  _scoreReward: 90
 --- !u!1 &1300890201
 GameObject:
   m_ObjectHideFlags: 0
@@ -11217,7 +11218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.76, y: -0.55}
+  m_AnchoredPosition: {x: -1.59, y: -0.91}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444301433
@@ -11240,8 +11241,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "HealthPotion\n    cost:200\n\u0414\u0430\u0435\u0442 +40 \u0445\u043F
-    \u043D\u0430\u0436\u043C\u0438  \"Q\""
+  m_text: "HealthPotion\n\u0414\u0430\u0435\u0442 +40 \u0445\u043F \u043D\u0430\u0436\u043C\u0438 
+    \"Q\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16384,7 +16385,7 @@ MonoBehaviour:
   - {fileID: 695817580}
   - {fileID: 1649728149}
   - {fileID: 1720826509}
-  _scoreReward: 30
+  _scoreReward: 95
 --- !u!1 &1945765076
 GameObject:
   m_ObjectHideFlags: 0
@@ -17277,7 +17278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239615f87d34d4843a8c10307e4d48ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 650
+  _price: 750
   _text: {fileID: 916829864}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -18999,7 +19000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 350
+  _price: 420
   _text: {fileID: 1300890203}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
