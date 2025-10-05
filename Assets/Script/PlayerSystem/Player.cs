@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Health _health;
     [SerializeField] private CharacterController _controller;
     [SerializeField] private BulletSpawner _bulletSpawner;
-    [SerializeField] private MedKit _kit;
     [SerializeField] private SfxPlayer _sfx;  
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float gravity = -8f;
