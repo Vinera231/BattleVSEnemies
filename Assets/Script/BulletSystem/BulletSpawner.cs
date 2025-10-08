@@ -11,13 +11,17 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private BulletView _bulletView;
     [SerializeField] private SfxPlayer _player;
     [SerializeField] private TutorialPanel _tutorial;
+    [SerializeField] private float _baseDamage = 10f;
 
+    private float _currentDamage;
     private bool _canShoot = true;
 
     public bool IsFull => _bullet >= _limitbullet;
 
     private void Start()
     {
+        _currentDamage = _baseDamage;
+
          _tutorial = FindFirstObjectByType<TutorialPanel>();
         if (_tutorial != null)
         {
@@ -75,6 +79,8 @@ public class BulletSpawner : MonoBehaviour
         rigidbody.linearVelocity = transform.forward * _velocity;
         rigidbody.freezeRotation = true;
 
+        newBullet.SetDamage(_currentDamage);
+
         _bullet--;
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
@@ -84,6 +90,17 @@ public class BulletSpawner : MonoBehaviour
         _bullet = Mathf.Min(_bullet + amount, _limitbullet);
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
         _player.PlayReloadBullet();
+    }
+
+    public void IncreaseBulletDamage(float amount)
+    {
+        _currentDamage += amount;
+    }
+   
+    public void ResetBulletDamage()
+    {
+        _currentDamage = _baseDamage;
+        Debug.Log($"Bullet damage reset to {_currentDamage}");
     }
 
     public void NotBullet()

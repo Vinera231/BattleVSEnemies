@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _damage;
-
+    
     private void Start() =>
         Invoke(nameof(DestroyBullet), 3);
 
@@ -30,5 +30,10 @@ public class Bullet : MonoBehaviour
     {
         if (other.TryGetComponent(out Enemy enemy))
             enemy.TakeDamage(_damage);
+    }
+
+    public void SetDamage(float damage)
+    {
+        _damage = damage;
     }
 }

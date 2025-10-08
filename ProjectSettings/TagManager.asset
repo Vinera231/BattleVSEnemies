@@ -52,5 +52,8 @@ TagManager:
   - name: New Layer 1
     uniqueID: 3739127979
     locked: 0
+  - name: HealthPotion
+    uniqueID: 959334539
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -88,6 +88,19 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    public void IncreaseBulletDamage (int amount)
+    {
+       
+        if (_bulletSpawner != null)
+            _bulletSpawner.IncreaseBulletDamage(amount);         
+    }
+
+    public void ResetBulletDamage()
+    {
+        if (_bulletSpawner != null)
+            _bulletSpawner.ResetBulletDamage();
+    }
+
     public void TakeDamage(float value) =>
         _health.TakeDamage(value);
 

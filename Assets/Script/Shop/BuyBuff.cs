@@ -11,6 +11,7 @@ public class BuyBuff : Shop
     {
         Bullet,
         Health,
+        Damage,
         Other
     }
 
@@ -27,6 +28,8 @@ public class BuyBuff : Shop
             case BuffType.Other:
                 return _iventar.PressIventar(_boostPrefab, _boostSprite);
 
+             case BuffType.Damage:
+                return _iventar.PressIventar(_boostPrefab, _boostSprite, isDamage: true);
             default:
                 return false;
         }
