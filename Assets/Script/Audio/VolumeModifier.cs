@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -13,7 +14,9 @@ public class VolumeModifier : MonoBehaviour
     [SerializeField] private AudioMixer _mixer;
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _soundSlider;
+    [SerializeField] private SfxPlayer _player;
 
+    private bool _isPlaying;
     private float _minimumValueSlider;
     private float _maximumValueSlider;
 
@@ -48,6 +51,7 @@ public class VolumeModifier : MonoBehaviour
     {
         float level = ConvertVolumeToLevel(NormalizeValue(value));
         _mixer.SetFloat(group, level);
+        _player.PlaySettingSound();
     }
 
     private float NormalizeValue(float value) =>

@@ -90,13 +90,13 @@ public class Player : MonoBehaviour
 
     public void IncreaseBulletDamage (int amount)
     {
-       
         if (_bulletSpawner != null)
             _bulletSpawner.IncreaseBulletDamage(amount);         
     }
 
     public void ResetBulletDamage()
     {
+        ResetBulletDamage();
         if (_bulletSpawner != null)
             _bulletSpawner.ResetBulletDamage();
     }

@@ -19,7 +19,7 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _playerDied;
     [SerializeField] private AudioClip _bossDied;
     [SerializeField] private AudioClip _poisonSound;
-
+    [SerializeField] private AudioClip _settingSound;
 
     private void Awake()
     {
@@ -76,4 +76,7 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayPoisonSound() =>
    _source.PlayOneShot(_poisonSound);
+    
+    public void PlaySettingSound() =>
+   _source.PlayOneShot(_settingSound);
 }
