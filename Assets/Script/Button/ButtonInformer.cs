@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ButtonInformer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Button _button;
-
+    
     public event Action Clicked;
     public event Action Entered;
     public event Action Exited;

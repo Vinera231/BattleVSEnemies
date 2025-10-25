@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
     private void DestroyBullet() =>
         Destroy(gameObject);
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         OnEnter(collision.gameObject);
