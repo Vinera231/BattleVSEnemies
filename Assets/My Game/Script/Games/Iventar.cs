@@ -7,7 +7,7 @@ using static BoostDate;
 
 public class Iventar : MonoBehaviour
 { 
-    //last version
+
     [SerializeField] private InputReader _reader;
     [SerializeField] private Player _player;
     [SerializeField] private int _amountBullet;
