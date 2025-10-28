@@ -11,7 +11,7 @@ public abstract class Shop : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _helpText;
     [SerializeField] private bool _isConsumable = true;
 
-    protected Player _player;
+    protected Player Player;
 
     protected virtual void Awake()
     {
@@ -31,7 +31,7 @@ public abstract class Shop : MonoBehaviour
         {
             _text.gameObject.SetActive(true);
             _helpText.gameObject.SetActive(true);
-            _player = player;
+            Player = player;
         }
     }
 
@@ -41,7 +41,7 @@ public abstract class Shop : MonoBehaviour
         {
             _text.gameObject.SetActive(false);
             _helpText.gameObject.SetActive(false);
-            _player = null;
+            Player = null;
         }
     }
 
@@ -58,9 +58,9 @@ public abstract class Shop : MonoBehaviour
 
     private void OnBuyPressed()
     {
-        if (_player != null && _score.TrySpendScore(_price))
+        if (Player != null && _score.TrySpendScore(_price))
         {
-            if (GiveItem())
+            if (TryApplyItem())
                 _sfx.PlayBuyIteam();
 
             if (_isConsumable)
@@ -68,5 +68,5 @@ public abstract class Shop : MonoBehaviour
         }
     }
 
-    protected abstract bool GiveItem();
+    protected abstract bool TryApplyItem();
 }

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class BuyBullet : Shop
+public class BulletShop : Shop
 {
     [SerializeField] private BulletSpawner _bulletSpawner;
     [SerializeField] private Bullet _bulletPrefab;
 
-    protected override bool GiveItem()
+    protected override bool TryApplyItem()
     {
-      _bulletSpawner.ReplacePrefab(_bulletPrefab);
+        _bulletSpawner.ReplacePrefab(_bulletPrefab);
         return true;
     }
 }

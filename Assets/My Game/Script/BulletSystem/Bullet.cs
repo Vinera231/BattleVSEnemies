@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _damage;
-    
+
     private void Start() =>
         Invoke(nameof(DestroyBullet), 3);
 
