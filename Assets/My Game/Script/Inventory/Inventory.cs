@@ -16,6 +16,9 @@ public class Inventory : MonoBehaviour
     private void OnDisable() =>
         _selector.BuffApplied -= OnBuffApplied;
 
+    public void IncreaseLimit(int count) => 
+        _buffLimit += count;   
+
     public bool TryAddBuff(Sprite sprite, KeyCode hotkey, Action onApply)
     {
         if (_buffCount >= _buffLimit)
@@ -31,4 +34,5 @@ public class Inventory : MonoBehaviour
   
     private void OnBuffApplied() =>   
         _buffCount--;
+
 }

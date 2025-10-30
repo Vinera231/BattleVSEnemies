@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class BulletAdderBuffShop : Shop
+public class HealthPotionBuffShop : Shop
 {
     [SerializeField] private Inventory _inventory;
     [SerializeField] private Sprite _boostSprite;
-    [SerializeField] private int _amountBullet;
+    [SerializeField] private int _amountHealth;
     [SerializeField] private Player _player;
 
     protected override bool TryApplyItem() =>
@@ -12,7 +12,7 @@ public class BulletAdderBuffShop : Shop
 
     private void OnApply()
     {
-        if (_player.TryReplenishBullet(_amountBullet))
-            Debug.Log($"Игрок получил {_amountBullet} пуль");
+        if (_player.TryTakeHealth(_amountHealth))
+            Debug.Log($"Игрок получил {_amountHealth} пуль");
     }
 }

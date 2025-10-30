@@ -14,10 +14,11 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 _velocity;
     [SerializeField] private bool _isGround;
     [SerializeField] private float _jump = 2f;
+    [SerializeField] private Inventory _inventory;
    
     public event Action Died;
     private bool _canMove = true;
-
+    
     public void SetMove(bool state)
     {
         _canMove = state;
@@ -88,7 +89,7 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    public void IncreaseBulletDamage (int amount)
+    public void BulletDamage (int amount)
     {
         if (_bulletSpawner != null)
             _bulletSpawner.IncreaseBulletDamage(amount);         

@@ -884,7 +884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &140594066
 Transform:
   m_ObjectHideFlags: 0
@@ -3108,7 +3108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.22, y: 2.18}
+  m_AnchoredPosition: {x: 0.18, y: 2.09}
   m_SizeDelta: {x: 1.0849, y: 0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &366359245
@@ -5092,8 +5092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0436\u043C\u0438 \"E\"  \u0447\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u043B\u0438\u0441\u043D\u0443\u0442\u044C
-    \u043E\u0442\u0434\u0435\u043B"
+  m_text: "\u041D\u0430\u0436\u043C\u0438 \"E\"  "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8170,7 +8169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1095841843}
   - component: {fileID: 1095841845}
-  - component: {fileID: 1095841844}
+  - component: {fileID: 1095841846}
   m_Layer: 0
   m_Name: HealthPotion
   m_TagString: Untagged
@@ -8195,31 +8194,6 @@ Transform:
   - {fileID: 903318078}
   m_Father: {fileID: 1465405548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1095841844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095841842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _price: 0
-  _text: {fileID: 1888097179}
-  _reader: {fileID: 1909665639}
-  _score: {fileID: 317476448}
-  _sfx: {fileID: 9200639445192888596}
-  _helpText: {fileID: 1444301433}
-  _isConsumable: 0
-  _inventory: {fileID: 989577696}
-  _boostSprite: {fileID: 21300000, guid: d661f5c5e9507f345ac6ac92fc0a18a6, type: 3}
-  _boostPrefab: {fileID: 919132149155446097, guid: 251889413fcfbe841a4d11ea37dfe4fe, type: 3}
-  _amountBullet: 0
-  _amountHealth: 40
-  _player: {fileID: 1771495220}
 --- !u!135 &1095841845
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8241,6 +8215,29 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1095841846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095841842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba327a22dd4484e479da31f087be7ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _price: 0
+  _text: {fileID: 1888097179}
+  _reader: {fileID: 1909665639}
+  _score: {fileID: 317476448}
+  _sfx: {fileID: 9200639445192888596}
+  _helpText: {fileID: 1444301433}
+  _isConsumable: 1
+  _inventory: {fileID: 989577696}
+  _boostSprite: {fileID: 21300000, guid: d661f5c5e9507f345ac6ac92fc0a18a6, type: 3}
+  _amountHealth: 50
+  _player: {fileID: 1771495220}
 --- !u!1 &1099595881
 GameObject:
   m_ObjectHideFlags: 0
@@ -12043,7 +12040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1465405548
 Transform:
   m_ObjectHideFlags: 0
@@ -13181,7 +13178,8 @@ GameObject:
   - component: {fileID: 1632675936}
   - component: {fileID: 1632675935}
   - component: {fileID: 1632675934}
-  - component: {fileID: 1632675933}
+  - component: {fileID: 1632675937}
+  - component: {fileID: 1632675938}
   m_Layer: 0
   m_Name: Second Iventar
   m_TagString: Untagged
@@ -13211,31 +13209,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -2.08}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1632675933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632675931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _price: 0
-  _text: {fileID: 366359245}
-  _reader: {fileID: 1909665639}
-  _score: {fileID: 317476448}
-  _sfx: {fileID: 9200639445192888596}
-  _helpText: {fileID: 871735794}
-  _isConsumable: 0
-  _inventory: {fileID: 0}
-  _boostSprite: {fileID: 21300000, guid: be93996b8bd91dc4d9355707cc420af8, type: 3}
-  _boostPrefab: {fileID: 1632675931}
-  _amountBullet: 0
-  _amountHealth: 0
-  _player: {fileID: 0}
 --- !u!114 &1632675934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13299,6 +13272,49 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1632675937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632675931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0369ee8153dd814e80d3576b63b7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _price: 2000
+  _text: {fileID: 366359245}
+  _reader: {fileID: 1909665639}
+  _score: {fileID: 317476448}
+  _sfx: {fileID: 9200639445192888596}
+  _helpText: {fileID: 871735794}
+  _isConsumable: 1
+  _inventory: {fileID: 989577696}
+  _boostSprite: {fileID: 21300000, guid: 0aefe6822fa862c4fa826d7e83817157, type: 3}
+  _countSlots: 1
+--- !u!135 &1632675938
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632675931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: -0.03, y: 0.6, z: 12.18}
 --- !u!1 &1649728148
 GameObject:
   m_ObjectHideFlags: 0
@@ -14677,6 +14693,7 @@ MonoBehaviour:
   _velocity: {x: 0, y: 0, z: 0}
   _isGround: 1
   _jump: 3
+  _inventory: {fileID: 0}
 --- !u!195 &1771495222
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15113,8 +15130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0436\u043C\u0438 \"E\"  \u0447\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u043B\u0438\u0441\u043D\u0443\u0442\u044C
-    \u043E\u0442\u0434\u0435\u043B \u043D\u0430\u0437\u0430\u0434"
+  m_text: "\u041D\u0430\u0436\u043C\u0438 \"E\"  "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16738,7 +16754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1928403123}
   m_Layer: 0
-  m_Name: Buffes pag.2
+  m_Name: 'Buffes '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18128,7 +18144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1626, y: 1.0133}
+  m_AnchoredPosition: {x: 0.1626, y: 1.43}
   m_SizeDelta: {x: 1.1521, y: 0.4307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2111178024
@@ -19982,7 +19998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 0
+  _price: 450
   _text: {fileID: 1300890203}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -19991,9 +20007,7 @@ MonoBehaviour:
   _isConsumable: 0
   _inventory: {fileID: 989577696}
   _boostSprite: {fileID: 21300000, guid: 4e5a3ff77e9aef44f897b2edc8e34704, type: 3}
-  _boostPrefab: {fileID: 3272338781160318266, guid: 342b8b06bf83adb468b9365dac57d46e, type: 3}
   _amountBullet: 40
-  _amountHealth: 0
   _player: {fileID: 1771495220}
 --- !u!224 &7649667819216648744
 RectTransform:
@@ -20133,22 +20147,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1579632536756486878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebfff8dd11a96e4408d3751d08f2d5f9, type: 3}
+  m_Script: {fileID: 11500000, guid: c22cf3d9828b7484d9579ec549b03bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 0
+  _price: 850
   _text: {fileID: 2111178024}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
   _sfx: {fileID: 9200639445192888596}
   _helpText: {fileID: 633449206}
   _isConsumable: 0
-  _inventory: {fileID: 0}
+  _inventory: {fileID: 989577696}
   _boostSprite: {fileID: 21300000, guid: 9727a884af796c04585a0c198ecf3d57, type: 3}
-  _boostPrefab: {fileID: 4796836308401473355, guid: 448423f1b184b6841a6cc6c8920a1f0e, type: 3}
-  _amountBullet: 0
-  _amountHealth: 0
-  _player: {fileID: 0}
+  _amountDamage: 30
+  _timeInSeconds: 10
+  _player: {fileID: 1771495220}
 --- !u!4 &9200639445192888595
 Transform:
   m_ObjectHideFlags: 0

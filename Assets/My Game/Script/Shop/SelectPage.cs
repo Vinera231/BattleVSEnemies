@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SelectPage : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class SelectPage : MonoBehaviour
     [SerializeField] private GameObject[] _categoria;
     [SerializeField] private InputReader _reader;
     [SerializeField] private TextMeshProUGUI _textSelect;
+    [SerializeField] private Image _arrow;
 
     private int _currentIndex = 0;
 
