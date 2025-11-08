@@ -421,7 +421,6 @@ MonoBehaviour:
   _mixer: {fileID: 24100000, guid: 5a1d183405385ae4b88f91f99fdbec5a, type: 2}
   _musicSlider: {fileID: 1511869010}
   _soundSlider: {fileID: 1102126818}
-  _player: {fileID: 1252745118}
 --- !u!1 &192453293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,8 +1008,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 866885218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.595, y: 0}
-  m_AnchorMax: {x: 0.595, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1224,7 +1223,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 1.3.9
+  m_text: 'Version: 1.4.0
+
 
 '
   m_isRightToLeft: 0
@@ -1491,7 +1491,7 @@ RectTransform:
   m_Father: {fileID: 1722043345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.595, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -4.800499, y: 0}
   m_SizeDelta: {x: 9.601, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1870,7 +1870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1071301286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1949,6 +1949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1102126819}
   - component: {fileID: 1102126818}
+  - component: {fileID: 1102126820}
   m_Layer: 5
   m_Name: SfxSlider
   m_TagString: Untagged
@@ -2029,6 +2030,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -82.8}
   m_SizeDelta: {x: 159.981, y: 20}
   m_Pivot: {x: 0.49999994, y: 0.5}
+--- !u!114 &1102126820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102126817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0bcf0dd426a4343868d4fc27202ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfx: {fileID: 1252745118}
+  _delay: 0.5
 --- !u!1 &1116586958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,7 +2534,7 @@ RectTransform:
   m_Father: {fileID: 703765843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.595, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -4.800499, y: 0}
   m_SizeDelta: {x: 9.601, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4573,8 +4588,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1263117934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.595, y: 0}
-  m_AnchorMax: {x: 0.595, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 _velocity;
     [SerializeField] private bool _isGround;
     [SerializeField] private float _jump = 2f;
-    [SerializeField] private Inventory _inventory;
    
     public event Action Died;
     private bool _canMove = true;

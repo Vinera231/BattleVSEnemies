@@ -5780,6 +5780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 720734336}
   - component: {fileID: 720734338}
+  - component: {fileID: 720734339}
   m_Layer: 0
   m_Name: SoundSlider
   m_TagString: Untagged
@@ -5860,6 +5861,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &720734339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720734335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0bcf0dd426a4343868d4fc27202ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfx: {fileID: 9200639445192888596}
+  _delay: 0.5
 --- !u!1 &737742091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6184,11 +6199,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sensetiveSlider: {fileID: 791599151}
-  _follower: {fileID: 1753588319}
+  _follower: {fileID: 834900963}
   _playerBody: {fileID: 1771495215}
   _minSensitive: 50
   _maxSensitive: 500
   _defaultSensitivity: 330
+--- !u!1 &834900961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 834900962}
+  - component: {fileID: 834900963}
+  m_Layer: 6
+  m_Name: CameraRig
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &834900962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834900961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.03, z: -2.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1753588316}
+  m_Father: {fileID: 1771495215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834900963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834900961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b59f69b64ab58f439abbb45ee056421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1341807789}
+  _playerBody: {fileID: 1771495215}
+  _mouseSensitivity: 330
 --- !u!1 &846612844
 GameObject:
   m_ObjectHideFlags: 0
@@ -7483,7 +7546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1024423485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8227,13 +8290,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba327a22dd4484e479da31f087be7ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 0
+  _price: 200
   _text: {fileID: 1888097179}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
   _sfx: {fileID: 9200639445192888596}
   _helpText: {fileID: 1444301433}
-  _isConsumable: 1
+  _isConsumable: 0
   _inventory: {fileID: 989577696}
   _boostSprite: {fileID: 21300000, guid: d661f5c5e9507f345ac6ac92fc0a18a6, type: 3}
   _amountHealth: 50
@@ -10713,7 +10776,7 @@ Transform:
   m_GameObject: {fileID: 1341807788}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.68, y: 2.6, z: -8.05}
+  m_LocalPosition: {x: 0.68, y: 2.6, z: -7.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10871,7 +10934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1344660783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13129,7 +13192,6 @@ MonoBehaviour:
   _mixer: {fileID: 24100000, guid: 5a1d183405385ae4b88f91f99fdbec5a, type: 2}
   _musicSlider: {fileID: 586932733}
   _soundSlider: {fileID: 720734338}
-  _player: {fileID: 9200639445192888596}
 --- !u!1 &1618514431
 GameObject:
   m_ObjectHideFlags: 0
@@ -13284,7 +13346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0369ee8153dd814e80d3576b63b7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 2000
+  _price: 1500
   _text: {fileID: 366359245}
   _reader: {fileID: 1909665639}
   _score: {fileID: 317476448}
@@ -14369,7 +14431,6 @@ GameObject:
   - component: {fileID: 1753588316}
   - component: {fileID: 1753588318}
   - component: {fileID: 1753588317}
-  - component: {fileID: 1753588319}
   m_Layer: 6
   m_Name: Camera
   m_TagString: Untagged
@@ -14385,13 +14446,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753588315}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0812282, y: -0.29251325, z: -0.028441958, w: 0.9523808}
-  m_LocalPosition: {x: 16.14429, y: 3.0081868, z: 16.074228}
+  m_LocalRotation: {x: 0.04344505, y: 0, z: 0, w: 0.9990558}
+  m_LocalPosition: {x: 0, y: 0.87, z: -5.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 834900962}
+  m_LocalEulerAnglesHint: {x: 4.98, y: 0, z: 0}
 --- !u!81 &1753588317
 AudioListener:
   m_ObjectHideFlags: 0
@@ -14451,22 +14512,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1753588319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753588315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b59f69b64ab58f439abbb45ee056421, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 1341807789}
-  _playerBody: {fileID: 1771495215}
-  _mouseSensitivity: 330
-  _smoothRotation: 200
 --- !u!1 &1768706895
 GameObject:
   m_ObjectHideFlags: 0
@@ -14615,6 +14660,7 @@ Transform:
   - {fileID: 846612848}
   - {fileID: 1341807789}
   - {fileID: 1792134642}
+  - {fileID: 834900962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1771495217
@@ -14693,7 +14739,6 @@ MonoBehaviour:
   _velocity: {x: 0, y: 0, z: 0}
   _isGround: 1
   _jump: 3
-  _inventory: {fileID: 0}
 --- !u!195 &1771495222
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -20210,7 +20255,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 928695647}
-  - {fileID: 1753588316}
   - {fileID: 2043978795}
   - {fileID: 1771495215}
   - {fileID: 146794479}

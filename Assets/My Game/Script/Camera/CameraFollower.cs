@@ -6,7 +6,6 @@ public class CameraFollower : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private Transform _playerBody;
     [SerializeField] private float _mouseSensitivity = 330f;
-    [SerializeField] private float _smoothRotation = 20f;
 
     private float _xRotation = 0f;
 
@@ -31,9 +30,7 @@ public class CameraFollower : MonoBehaviour
     {
         if (_target != null)
         {
-          transform.SetPositionAndRotation(_target.position, _target.rotation);
-          transform.position = Vector3.Lerp(transform.position,
-         _target.position,_smoothRotation* Time.deltaTime);
+            transform.rotation = _target.rotation;
         }
     }
   
