@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
@@ -12,7 +13,10 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private SfxPlayer _player;
     [SerializeField] private TutorialPanel _tutorial;
     [SerializeField] private float _baseDamage = 10f;
+    [SerializeField] private float _fireRate;
 
+    private Coroutine _shootCoroutine;
+    private WaitForSeconds _waitShoot;
     private float _currentDamage;
     private bool _canShoot = true;
 
@@ -20,9 +24,11 @@ public class BulletSpawner : MonoBehaviour
 
     private void Start()
     {
+        _waitShoot = new(_fireRate);
+
         _currentDamage = _baseDamage;
 
-         _tutorial = FindFirstObjectByType<TutorialPanel>();
+        _tutorial = FindFirstObjectByType<TutorialPanel>();
         if (_tutorial != null)
         {
             _tutorial.Changed += SetShootingActive;
@@ -36,13 +42,17 @@ public class BulletSpawner : MonoBehaviour
             _tutorial.Changed -= SetShootingActive;
     }
 
-   private void OnEnable()
+    private void OnEnable()
     {
         _inputReader.ShotPressed += OnShotPressed;
+        _inputReader.ShotUnpressed += OnShotUnpressed;
     }
 
-    private void OnDisable() =>
+    private void OnDisable()
+    {
         _inputReader.ShotPressed -= OnShotPressed;
+        _inputReader.ShotUnpressed -= OnShotUnpressed;
+    }
 
     private void SetShootingActive(bool isActive)
     {
@@ -57,21 +67,39 @@ public class BulletSpawner : MonoBehaviour
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 
-    private void OnShotPressed()
+    private void StartShoot()
     {
-        if (!_canShoot)
+        StopShoot();
+        _shootCoroutine = StartCoroutine(ShootingRoutine());
+    }
+
+    private void StopShoot()
+    {
+        if (_shootCoroutine != null)
         {
-            Debug.Log("stop Shoot");
-            return;     
+            StopCoroutine(_shootCoroutine);
+            _shootCoroutine = null;
         }
 
+    }
+
+    private IEnumerator ShootingRoutine()
+    {
+        while (_canShoot)
+        {
+            Shoot();
+
+            yield return _waitShoot;
+        }
+    }
+
+    private void Shoot()
+    {
         if (_bullet <= 0)
         {
             NotBullet();
-            _bulletView.UpdateBulletCount(_bullet, _limitbullet);
             _player.PlayNotBullet();
             return;
-
         }
 
         Bullet newBullet = Instantiate(_prefab, transform.position, transform.rotation);
@@ -85,6 +113,12 @@ public class BulletSpawner : MonoBehaviour
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 
+    private void OnShotPressed() =>
+        StartShoot();
+
+    private void OnShotUnpressed() =>
+        StopShoot();
+
     public void AddBullet(int amount)
     {
         _bullet = Mathf.Min(_bullet + amount, _limitbullet);
@@ -96,7 +130,7 @@ public class BulletSpawner : MonoBehaviour
     {
         _currentDamage += amount;
     }
-   
+
     public void ResetBulletDamage()
     {
         _currentDamage = _baseDamage;

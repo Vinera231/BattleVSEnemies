@@ -12,6 +12,7 @@ public class InputReader : MonoBehaviour
     public event Action IventarPressed;
     public event Action SettingPanelPressed;
     public event Action ShotPressed;
+    public event Action ShotUnpressed;
     public event Action BuyPressed;
     public event Action JumpPressed;
     public event Action SelectPressed;
@@ -37,6 +38,9 @@ public class InputReader : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
             ShotPressed?.Invoke();
+        
+        if(Input.GetMouseButtonUp(0))
+            ShotUnpressed?.Invoke();
     }
 
     private void ReadBuyKey()
