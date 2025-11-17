@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
     private bool _isSlowed;
     private float _elapsedTime;
     private Player _player;
+    private bool _isFrozen;
+
     public event Action Attacked;
     public event Action<Enemy> Died;
 
@@ -55,6 +57,9 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (_isFrozen) 
+            return;
+
         if (_agent.isOnNavMesh == false || _player == null)
             return;
 
@@ -87,6 +92,12 @@ public class Enemy : MonoBehaviour
         _health.TakeDamage(value);
     }
 
+    public void Freeze() =>
+        _isFrozen = true;
+
+    public void ResetFreezen() =>   
+        _isFrozen = false;
+    
     private void Attack(Player player)
     {
         player.TakeDamage(_damageAmount);

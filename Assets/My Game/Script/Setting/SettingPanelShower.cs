@@ -4,7 +4,6 @@ using UnityEngine;
 public class SettingPanelShower : MonoBehaviour
 {
     [SerializeField] private GameObject _settingPanel;
-    [SerializeField] private GameObject _notShoot;
     [SerializeField] private InputReader _inputReader;
 
     private bool _isShow;
@@ -24,15 +23,11 @@ public class SettingPanelShower : MonoBehaviour
 
     private void HidePanel()
     {
-        Debug.Log($"HidePanel open");
-        _notShoot.SetActive(true);
         _settingPanel.SetActive(false);
     }
 
     private void ShowPanel()
     {
-        Debug.Log($"ShowPanel open" );
-        _notShoot.SetActive(false);
         _settingPanel.SetActive(true);
     }
 

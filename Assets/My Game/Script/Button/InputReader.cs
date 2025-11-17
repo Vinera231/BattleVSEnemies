@@ -33,13 +33,13 @@ public class InputReader : MonoBehaviour
         if (Input.GetKeyDown(SettingPanel))
             SettingPanelPressed?.Invoke();
     }
-    
+
     private void ReadShotPressed()
     {
         if (Input.GetMouseButtonDown(0))
             ShotPressed?.Invoke();
-        
-        if(Input.GetMouseButtonUp(0))
+
+        if (Input.GetMouseButtonUp(0))
             ShotUnpressed?.Invoke();
     }
 
@@ -57,14 +57,13 @@ public class InputReader : MonoBehaviour
 
     private void ReadSelectKey()
     {
-       if(Input.GetKeyDown(SelectKey))
+        if (Input.GetKeyDown(SelectKey))
             SelectPressed?.Invoke();
     }
 
     private void ReadIventarKey()
     {
-        if( Input.GetKeyDown(IventarKey))
+        if (Input.GetKeyDown(IventarKey))
             IventarPressed?.Invoke();
     }
-
 }

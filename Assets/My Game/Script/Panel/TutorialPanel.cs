@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class TutorialPanel : MonoBehaviour
 {
-    [SerializeField] private GameObject _notShoot;
     [SerializeField] private GameObject _panel;
     [SerializeField] private ButtonInformer _closeButton;
 
@@ -26,17 +25,14 @@ public class TutorialPanel : MonoBehaviour
 
     private void HidePanel()
     {
-        _notShoot.SetActive(true);
         _panel.SetActive(false);
         Time.timeScale = 1f;
-        Debug.Log($"{name}  HidePanel");
         Changed?.Invoke(true);
 
     }
   
     private void ShowPanel()
     {
-        _notShoot.SetActive(false);
         Time.timeScale = 0f;
         _panel.SetActive(true);
         Changed?.Invoke(false);

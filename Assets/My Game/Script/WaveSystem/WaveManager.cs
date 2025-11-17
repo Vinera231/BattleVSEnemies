@@ -11,16 +11,19 @@ public class WaveManager : MonoBehaviour
 
     private float _waveStartTime;
     private bool _isActiveWave;
+    private bool _isPaused;
     private int _currentWaveIndex = 0;
 
     public event Action AllWavesFinished;
+    public event Action<Enemy> EnemySpawned;
+    public event Action<Enemy> EnemyDied;
 
     private void Start() =>
         StartWave(_currentWaveIndex);
 
     private void Update()
     {
-        if (_isActiveWave == false)
+        if (_isActiveWave == false || _isPaused)
             return;
 
         float elapsed = Time.time - _waveStartTime;
@@ -35,6 +38,7 @@ public class WaveManager : MonoBehaviour
         _waves[index].StartSpawn();
         _waves[index].Finished += OnWaveFinished;
         _waves[index].EnemyDied += OnEnemyDied;
+        _waves[index].Spawned += OnEnemySpawned;
         _view.SetName(_waves[index].Text);
         Vector2 spawnPosition = transform.position;
     }
@@ -44,6 +48,7 @@ public class WaveManager : MonoBehaviour
         Wave wave = _waves[_currentWaveIndex];
         wave.Finished -= OnWaveFinished;
         wave.EnemyDied -= OnEnemyDied;
+        wave.Spawned -= OnEnemySpawned;
 
         _score.Increaze(wave.ScoreReward);
         Debug.Log($"Increaze дали очки");
@@ -62,7 +67,15 @@ public class WaveManager : MonoBehaviour
         _isActiveWave = false;
         AllWavesFinished?.Invoke();
     }
-
-    private void OnEnemyDied(Enemy enemy) =>
+  
+    private void OnEnemySpawned(Enemy enemy)
+    {
+        EnemySpawned?.Invoke(enemy);
+    }
+  
+    private void OnEnemyDied(Enemy enemy)
+    {
+        EnemyDied?.Invoke(enemy);
         _score.Increaze(enemy.ScoreReward);
+    }
 }

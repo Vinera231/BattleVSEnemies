@@ -13,12 +13,12 @@ public class TemporaryDamageBulletBuffShop : Shop
 
     private void OnApply()
     {
-        _player.BulletDamage(_amountDamage);
+        _player.IncreaseBulletDamage(_amountDamage);
         Debug.Log($"Игрок получил {_amountDamage} пуль");
 
         Invoke(nameof(ResetBuff),_timeInSeconds);
     }
 
     private void ResetBuff() =>
-        _player.BulletDamage(-_amountDamage);    
+        _player.IncreaseBulletDamage(-_amountDamage);    
 }

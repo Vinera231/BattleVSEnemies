@@ -1,10 +1,13 @@
+using System;
 using UnityEngine;
 
-public class StopGame : MonoBehaviour
+public class PauseSwitcher : MonoBehaviour
 {
     [SerializeField] private SettingPanelShower _settingPanel;
     [SerializeField] private ButtonClosePanel _closeButton;
-    [SerializeField] private GameObject _notShoot;
+
+    public event Action Paused;
+    public event Action Continued;
 
     private void OnEnable()
     {
@@ -28,13 +31,13 @@ public class StopGame : MonoBehaviour
 
     private void PauseGame()
     {
-        _notShoot.SetActive(false);
         Time.timeScale = 0f;
-    }
-
+        Paused?.Invoke();
+    } 
+    
     private void PlayGame()
     {
-        _notShoot.SetActive(true);
-        Time.timeScale = 1f;
-    }
+        Time.timeScale = 1f;  
+        Continued?.Invoke();
+    }  
 }

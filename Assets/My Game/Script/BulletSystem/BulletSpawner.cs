@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
 {
-    [SerializeField] private InputReader _inputReader;
     [SerializeField] private Rigidbody _freezeRotation;
     [SerializeField] private Bullet _prefab;
     [SerializeField] private float _velocity = 20f;
@@ -42,18 +41,6 @@ public class BulletSpawner : MonoBehaviour
             _tutorial.Changed -= SetShootingActive;
     }
 
-    private void OnEnable()
-    {
-        _inputReader.ShotPressed += OnShotPressed;
-        _inputReader.ShotUnpressed += OnShotUnpressed;
-    }
-
-    private void OnDisable()
-    {
-        _inputReader.ShotPressed -= OnShotPressed;
-        _inputReader.ShotUnpressed -= OnShotUnpressed;
-    }
-
     private void SetShootingActive(bool isActive)
     {
         Debug.Log("SetShootingActive" + isActive);
@@ -67,20 +54,19 @@ public class BulletSpawner : MonoBehaviour
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 
-    private void StartShoot()
+    public void StartShoot()
     {
         StopShoot();
         _shootCoroutine = StartCoroutine(ShootingRoutine());
     }
 
-    private void StopShoot()
+    public void StopShoot()
     {
         if (_shootCoroutine != null)
         {
             StopCoroutine(_shootCoroutine);
             _shootCoroutine = null;
         }
-
     }
 
     private IEnumerator ShootingRoutine()
@@ -112,12 +98,6 @@ public class BulletSpawner : MonoBehaviour
         _bullet--;
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
-
-    private void OnShotPressed() =>
-        StartShoot();
-
-    private void OnShotUnpressed() =>
-        StopShoot();
 
     public void AddBullet(int amount)
     {

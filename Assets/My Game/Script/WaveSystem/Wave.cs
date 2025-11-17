@@ -23,6 +23,7 @@ public class Wave : MonoBehaviour
     private WaitForSeconds _wait;
     private readonly List<Enemy> _enemies = new();
 
+    public event Action <Enemy> Spawned;
     public event Action Finished;
     public event Action<Enemy> EnemyDied;
 
@@ -54,6 +55,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnEnemy(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
             _countEnemy--;
         }
 
@@ -63,6 +65,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnSpeedy(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
             _countSpeedy--;
         }
 
@@ -72,6 +75,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnHamer(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
             _countHamer--;
         }
     
@@ -81,6 +85,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnBoss(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
             _countBoss--;
         }
 
@@ -90,6 +95,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnHalmer(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
             _countHalmer--;
         }
 
@@ -99,6 +105,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnIron(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
             _countIron--;
         }
         
@@ -108,9 +115,9 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnExplorel(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
             _countExplorel--;
         }
-   
     }
 
     private void OnDied(Enemy enemy)
