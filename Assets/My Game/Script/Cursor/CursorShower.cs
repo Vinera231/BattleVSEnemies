@@ -3,39 +3,27 @@ using UnityEngine;
 
 public class CursorShower : MonoBehaviour
 {
-    [SerializeField] private TutorialPanel _tutorialPanel;
-    [SerializeField] private WinPanelShower _winPanelShower;
-    [SerializeField] private SettingPanelShower _settingPanel;
-    [SerializeField] private Player _player;
+    [SerializeField] private PauseSwitcher _pauseSwitcher;
 
     public event Action OnCursourShow;
     public event Action OnCursourHide;
 
-    private void OnEnable()
+    private void Awake()
     {
-        _winPanelShower.WinPanelShowed += Show;
-        _settingPanel.Changed += OnChanged;
-        _tutorialPanel.Changed += OnChanged;
-        _player.Died += Show;
-    }
+        _pauseSwitcher.Continued += Hide;
+        _pauseSwitcher.Paused += Show;
 
-    private void OnDisable()
-    {
-        _winPanelShower.WinPanelShowed -= Show;
-        _settingPanel.Changed -= OnChanged;
-        _tutorialPanel.Changed -= OnChanged;
-        _player.Died -= Show;
-    }
-
-    private void OnChanged(bool isOn)
-    {
-        if (isOn)
+        if(_pauseSwitcher.IsPaused)      
             Show();
-        else
-            Hide();
     }
 
-    private void Show()
+    private void OnDestroy()
+    {
+        _pauseSwitcher.Continued -= Hide;
+        _pauseSwitcher.Paused -= Show;
+    }
+
+    public void Show()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -44,10 +32,6 @@ public class CursorShower : MonoBehaviour
 
     private void Hide()
     {
-
-        if (_tutorialPanel.IsActive || _winPanelShower.IsActive || _settingPanel.IsActive) 
-            return;
-
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         OnCursourHide?.Invoke();

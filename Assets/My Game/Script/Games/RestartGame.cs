@@ -18,6 +18,5 @@ public class RestartGame : MonoBehaviour
     private void Reset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1.0f;
     }
 }

@@ -3,14 +3,21 @@ using UnityEngine;
 public class SettingButton : MonoBehaviour
 {
     [SerializeField] private ButtonInformer _informer;
-    [SerializeField] private GameObject _panel;
+    [SerializeField] private SettingsPanel _settingsPanel;
 
-    private void OnEnable() =>
-        _informer.Clicked += OnClick;    
+    private void OnEnable()
+    {
+        _informer.Clicked += OnClick;
+    }
 
-    private void OnDisable() =>
+    private void OnDisable()
+    {
         _informer.Clicked -= OnClick;
+    }
     
-    private void OnClick() =>
-        _panel.SetActive(true);
+    private void OnClick()
+    {
+        _settingsPanel.Show();
+    }
+        
 }

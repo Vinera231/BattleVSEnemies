@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class SettingPanelShower : MonoBehaviour
 {
-    [SerializeField] private GameObject _settingPanel;
+    [SerializeField] private SettingsPanel _settingPanel;
     [SerializeField] private InputReader _inputReader;
+    [SerializeField] private ButtonClosePanel _closeButton;
 
     private bool _isShow;
 
@@ -15,20 +16,32 @@ public class SettingPanelShower : MonoBehaviour
     private void Awake() =>
         HidePanel();
 
-    private void OnEnable() =>
+    private void OnEnable()
+    {
         _inputReader.SettingPanelPressed += OnPanelPressed;
+        _closeButton.PanelClosed += HidePanel;
+    }
 
-    private void OnDisable() =>
+    private void OnDisable()
+    {
         _inputReader.SettingPanelPressed -= OnPanelPressed;
+        _closeButton.PanelClosed -= HidePanel;
+    }
 
     private void HidePanel()
     {
-        _settingPanel.SetActive(false);
+        if (_settingPanel.gameObject.activeSelf == false)
+            return;
+
+        _settingPanel.Hide();
     }
 
     private void ShowPanel()
     {
-        _settingPanel.SetActive(true);
+        if (_settingPanel.gameObject.activeSelf)
+            return;
+
+       _settingPanel.Show();
     }
 
     private void OnPanelPressed()
@@ -40,7 +53,6 @@ public class SettingPanelShower : MonoBehaviour
         else
             HidePanel();
 
-        Debug.Log($"{name} OnPanelPressed ");
         Changed?.Invoke(_isShow);
     }
 }

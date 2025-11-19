@@ -92,11 +92,17 @@ public class Enemy : MonoBehaviour
         _health.TakeDamage(value);
     }
 
-    public void Freeze() =>
+    public void Freeze()
+    {
         _isFrozen = true;
+       _agent.speed = 0f;
+    }
 
-    public void ResetFreezen() =>   
+    public void ResetFreezen()
+    {
         _isFrozen = false;
+        _agent.speed = _currentSpeed;
+    }  
     
     private void Attack(Player player)
     {
@@ -117,11 +123,10 @@ public class Enemy : MonoBehaviour
     {
         SfxPlayer.Instance.PlayDieEnemySound();
         ParticleSpawner.Instance?.CreateBlood(transform.position);
-        Debug.Log("SpawnBlood.Instance.CreateBlood : был вызван ");
         Destroy(gameObject);
     }
 
-    public void ApplaySlow(float slow, float _slowAmount)
+    public void ApplaySlow(float _, float _slowAmount)
     {
         if (_isSlowed)
             return;

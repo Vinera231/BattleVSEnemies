@@ -5,7 +5,7 @@ public class QuietPlace : MonoBehaviour
 {
     [SerializeField] private WaveManager _waveManager;
 
-    private List<Enemy> _enemies = new();
+    private readonly List<Enemy> _enemies = new();
     private bool _isActive;
 
     private void OnEnable()

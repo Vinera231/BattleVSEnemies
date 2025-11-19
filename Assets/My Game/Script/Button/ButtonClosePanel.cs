@@ -4,7 +4,6 @@ using UnityEngine;
 public class ButtonClosePanel : MonoBehaviour
 {
     [SerializeField] private ButtonInformer _informer;
-    [SerializeField] private GameObject Panel;
 
     public event Action PanelClosed;
    
@@ -16,7 +15,6 @@ public class ButtonClosePanel : MonoBehaviour
 
     public void OnClick()
     {
-        Panel.SetActive(false);
         PanelClosed?.Invoke();
     }
 }

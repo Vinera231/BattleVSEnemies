@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -11,7 +10,6 @@ public class WaveManager : MonoBehaviour
 
     private float _waveStartTime;
     private bool _isActiveWave;
-    private bool _isPaused;
     private int _currentWaveIndex = 0;
 
     public event Action AllWavesFinished;
@@ -23,7 +21,7 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (_isActiveWave == false || _isPaused)
+        if (_isActiveWave == false)
             return;
 
         float elapsed = Time.time - _waveStartTime;

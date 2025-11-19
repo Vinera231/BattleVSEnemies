@@ -3,41 +3,52 @@ using UnityEngine;
 
 public class PauseSwitcher : MonoBehaviour
 {
-    [SerializeField] private SettingPanelShower _settingPanel;
-    [SerializeField] private ButtonClosePanel _closeButton;
+    private int _pauseCounter = 0;
+    private bool _paused = false;
 
     public event Action Paused;
     public event Action Continued;
 
-    private void OnEnable()
-    {
-        _settingPanel.Changed += OnSettingChanged;
-        _closeButton.PanelClosed += PlayGame;
-    }
+    public bool IsPaused => _paused;
 
-    private void OnDisable()
+    private void Awake()
     {
-        _settingPanel.Changed -= OnSettingChanged;
-        _closeButton.PanelClosed -= PlayGame;
+        _paused = false;
+        Time.timeScale = 1f;
     }
-
-    private void OnSettingChanged(bool isOn)
+   
+    public void PauseGame(GameObject _)
     {
-        if (isOn)
-            PauseGame();
-        else
-            PlayGame();
-    }
-
-    private void PauseGame()
-    {
-        Time.timeScale = 0f;
-        Paused?.Invoke();
+        Debug.Log("PauseGame");
+        _pauseCounter++;
+        HandleChanged();
     } 
     
-    private void PlayGame()
+    public void PlayGame(GameObject _)
     {
-        Time.timeScale = 1f;  
-        Continued?.Invoke();
+        _pauseCounter--;
+        HandleChanged();
     }  
+
+    private void HandleChanged()
+    {
+        if(_pauseCounter <= 0)
+        {
+            if (_paused == false)
+                return;
+
+            _paused = false;
+            Time.timeScale = 1f;
+            Continued?.Invoke();
+        }
+        else  
+        {
+            if (_paused)
+                return;
+            
+            _paused = true;
+            Time.timeScale = 0f;
+            Paused?.Invoke();
+        }
+    }
 }

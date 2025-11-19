@@ -911,7 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _informer: {fileID: 392671387}
-  _panel: {fileID: 1071301285}
+  _panel: {fileID: 392671384}
 --- !u!114 &392671385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2631,7 +2631,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _informer: {fileID: 1247834020}
-  Panel: {fileID: 1071301285}
 --- !u!114 &1247834016
 MonoBehaviour:
   m_ObjectHideFlags: 0

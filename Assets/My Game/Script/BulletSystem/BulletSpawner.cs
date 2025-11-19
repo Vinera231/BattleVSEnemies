@@ -10,7 +10,6 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private int _limitbullet;
     [SerializeField] private BulletView _bulletView;
     [SerializeField] private SfxPlayer _player;
-    [SerializeField] private TutorialPanel _tutorial;
     [SerializeField] private float _baseDamage = 10f;
     [SerializeField] private float _fireRate;
 
@@ -24,33 +23,12 @@ public class BulletSpawner : MonoBehaviour
     private void Start()
     {
         _waitShoot = new(_fireRate);
-
         _currentDamage = _baseDamage;
-
-        _tutorial = FindFirstObjectByType<TutorialPanel>();
-        if (_tutorial != null)
-        {
-            _tutorial.Changed += SetShootingActive;
-            _canShoot = !_tutorial.IsActive;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (_tutorial != null)
-            _tutorial.Changed -= SetShootingActive;
-    }
-
-    private void SetShootingActive(bool isActive)
-    {
-        Debug.Log("SetShootingActive" + isActive);
-        _canShoot = isActive;
     }
 
     public void ReplacePrefab(Bullet bullet)
     {
         _prefab = bullet;
-        Debug.Log("ReplacePrefab");
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 

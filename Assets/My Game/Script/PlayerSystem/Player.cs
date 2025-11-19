@@ -14,11 +14,28 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 _velocity;
     [SerializeField] private bool _isGround;
     [SerializeField] private float _jump = 2f;
-    [SerializeField] private PauseSwitcher _pause;
+    [SerializeField] private PauseSwitcher _pauseSwitcher;
 
-    private bool _canAttack = true;
+    private int _attackCounter = 1;
 
     public event Action Died;
+
+    private void Awake()
+    {
+         _pauseSwitcher.Continued += AllowAttack;
+        _pauseSwitcher.Paused += ProhibitAttack;
+
+        if (_pauseSwitcher.IsPaused)
+        {
+            ProhibitAttack();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        _pauseSwitcher.Continued -= AllowAttack;
+        _pauseSwitcher.Paused -= ProhibitAttack;
+    }
 
     private void OnEnable()
     {
@@ -26,8 +43,6 @@ public class Player : MonoBehaviour
         _reader.JumpPressed += OnJump;
         _reader.ShotPressed += OnShotPressed;
         _reader.ShotUnpressed += OnShotUnpressed;
-        _pause.Continued += AllowAttack;
-        _pause.Paused += ProhibitAttack;
     }
 
     private void OnDisable()
@@ -36,8 +51,6 @@ public class Player : MonoBehaviour
         _reader.JumpPressed -= OnJump;
         _reader.ShotPressed -= OnShotPressed;
         _reader.ShotUnpressed -= OnShotUnpressed;
-        _pause.Continued -= AllowAttack;
-        _pause.Paused -= ProhibitAttack;
     }
 
 
@@ -61,13 +74,17 @@ public class Player : MonoBehaviour
         _controller.Move(_velocity * Time.deltaTime);
     }
 
-    public void AllowAttack() =>
-        _canAttack = true;
+    public void AllowAttack()
+    {
+        _attackCounter++;   
+        Debug.Log($"Method {nameof(AllowAttack)} _attackCounter = {_attackCounter}");
+    }
 
     public void ProhibitAttack()
     {
         _bulletSpawner.StopShoot();
-        _canAttack = false;
+        _attackCounter--;
+        Debug.Log($"Method {nameof(ProhibitAttack)} _attackCounter = {_attackCounter}");
     }
 
     public void OnJump()
@@ -122,13 +139,10 @@ public class Player : MonoBehaviour
 
     private void OnShotPressed()
     {
-        if (_canAttack)
-        {
-            Debug.Log(_canAttack);
-            _bulletSpawner.StartShoot();
-        }
+        if (_attackCounter > 0)       
+            _bulletSpawner.StartShoot();        
     }
 
-    private void OnShotUnpressed() =>   
+    private void OnShotUnpressed() =>
         _bulletSpawner.StopShoot();
 }
