@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ParticleSpawner : MonoBehaviour
 {
@@ -7,8 +6,10 @@ public class ParticleSpawner : MonoBehaviour
 
     [SerializeField] private ExplosionParticle _explosionPrefab;
     [SerializeField] private BloodParticle _bloodPrefab;
+    [SerializeField] private SpeedParticle _speedParticle;
     [SerializeField] private Vector3 _explosionOffset;
     [SerializeField] private Vector3 _bloodOffset;
+    [SerializeField] private Vector3 _speedOffset;
 
     private void Awake()
     {
@@ -23,4 +24,8 @@ public class ParticleSpawner : MonoBehaviour
 
     public void CreateBlood(Vector3 position) =>
         Instantiate(_bloodPrefab, position + _bloodOffset, Quaternion.identity);    
+
+    public void CreateSpeed(Vector3 position) =>
+        Instantiate(_speedParticle, position + _speedOffset, Quaternion.identity);
+
 }

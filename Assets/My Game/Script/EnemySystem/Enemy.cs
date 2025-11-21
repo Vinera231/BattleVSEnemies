@@ -190,9 +190,7 @@ public class Enemy : MonoBehaviour
         }
               
          if(_renderer != null && _defultSkin != null)
-            _renderer.material = _defultSkin;
-            
-            _poisonCoroutine = null;    
+            _renderer.material = _defultSkin;    
     }
 
     private IEnumerator FricklerCoroutine(float duraction, float tickInterval)

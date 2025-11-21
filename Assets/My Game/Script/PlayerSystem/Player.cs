@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Accessibility;
 
 public class Player : MonoBehaviour
 {
@@ -8,9 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] private CharacterController _controller;
     [SerializeField] private BulletSpawner _bulletSpawner;
     [SerializeField] private SfxPlayer _sfx;
-    [SerializeField] private float _speed = 5f;
     [SerializeField] private float gravity = -8f;
     [SerializeField] private float _moveX, _moveZ;
+    [SerializeField] private float _speed = 8f;
     [SerializeField] private Vector3 _velocity;
     [SerializeField] private bool _isGround;
     [SerializeField] private float _jump = 2f;
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
     private int _attackCounter = 1;
 
     public event Action Died;
-
+  
     private void Awake()
     {
          _pauseSwitcher.Continued += AllowAttack;
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour
         _velocity.y += gravity * Time.deltaTime;
         _controller.Move(_velocity * Time.deltaTime);
 
-        _velocity.y += gravity * Time.deltaTime;
+        _velocity.y += gravity * Time.deltaTime ;
         _controller.Move(_velocity * Time.deltaTime);
     }
 
@@ -93,6 +94,15 @@ public class Player : MonoBehaviour
             _velocity.y = Mathf.Sqrt(_jump * -2f * gravity);
     }
 
+    public void IncreaseSpeed(int amount)
+    {
+        _speed += amount;
+        ParticleSpawner.Instance?.CreateSpeed(transform.position);
+    }
+
+    public void ReseteToBaseSpeed(int amount) =>
+          _speed -= amount;
+    
     public bool TryReplenishBullet(int amount)
     {
         if (_bulletSpawner.IsFull == false)
