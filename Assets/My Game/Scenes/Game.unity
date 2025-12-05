@@ -9491,6 +9491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseSwitcher: {fileID: 1748412455}
+  _closePanel: {fileID: 2102803913}
 --- !u!1 &1159280638
 GameObject:
   m_ObjectHideFlags: 0
@@ -12753,7 +12754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1d3146651b2ae46996b4603d8da2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lastWave: {fileID: 427512791}
+  _lastWave: {fileID: 1068016032}
   _winPanel: {fileID: 737742096}
   _cursorShower: {fileID: 1099595883}
 --- !u!4 &1557966750
