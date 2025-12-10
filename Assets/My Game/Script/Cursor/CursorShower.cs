@@ -4,6 +4,7 @@ using UnityEngine;
 public class CursorShower : MonoBehaviour
 {
     [SerializeField] private PauseSwitcher _pauseSwitcher;
+    [SerializeField] private RestartGame _restartGame;
 
     public event Action OnCursourShow;
     public event Action OnCursourHide;
@@ -15,6 +16,16 @@ public class CursorShower : MonoBehaviour
 
         if(_pauseSwitcher.IsPaused)      
             Show();
+    }
+
+    private void OnEnable()
+    {
+        _restartGame.OnRestarted += Show;
+    }
+
+    private void OnDisable()
+    {
+        _restartGame.OnRestarted -= Show;
     }
 
     private void OnDestroy()

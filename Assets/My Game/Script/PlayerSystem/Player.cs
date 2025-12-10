@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Accessibility;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -15,12 +16,24 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 _velocity;
     [SerializeField] private bool _isGround;
     [SerializeField] private float _jump = 2f;
+    [SerializeField] private float _slowAmount;
     [SerializeField] private PauseSwitcher _pauseSwitcher;
+    [SerializeField] private float _currentSpeed;
+    [SerializeField] private Renderer _renderer;
+    [SerializeField] private Material _frostSkin;
+    [SerializeField] private Material _defultSkin;
+
+    private bool _isSlow;
 
     private int _attackCounter = 1;
 
     public event Action Died;
-  
+
+    private void Start()
+    {
+        _currentSpeed = _speed;
+    }
+
     private void Awake()
     {
          _pauseSwitcher.Continued += AllowAttack;
@@ -53,7 +66,6 @@ public class Player : MonoBehaviour
         _reader.ShotPressed -= OnShotPressed;
         _reader.ShotUnpressed -= OnShotUnpressed;
     }
-
 
     private void Update()
     {
@@ -138,8 +150,31 @@ public class Player : MonoBehaviour
             _bulletSpawner.ResetBulletDamage();
     }
 
-    public void TakeDamage(float value) =>
+    public void TakeDamage(float value)
+    {
         _health.TakeDamage(value);
+        
+    }
+
+    public void AfterSlowPlayer()
+    {
+        _speed = _currentSpeed;
+        _isSlow = false;
+        _renderer.material = _defultSkin;
+    }
+
+    public void SlowPlayer(float _, float _slowAmount)
+    {
+        if (_isSlow)
+            return;
+       
+        _isSlow = true;
+
+        _speed = 0f;
+        _renderer.material = _frostSkin;
+
+        Invoke(nameof(AfterSlowPlayer), _slowAmount);
+    }
 
     private void OnDied()
     {

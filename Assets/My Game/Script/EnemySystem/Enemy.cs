@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _detectionRadius;
     [SerializeField] private float _damageAmount;
+    [SerializeField] private float _frost;
     [SerializeField] private float _attackRate = 1f;
     [SerializeField] private int _scoreReward;
     [SerializeField] private float _currentSpeed;
@@ -146,7 +147,6 @@ public class Enemy : MonoBehaviour
         _isSlowed = false;
         _renderer.material = _defultSkin;
     }
-
 
     public void ApplyPoison(float poisonDamage, float duraction, float tickInterval)
     {

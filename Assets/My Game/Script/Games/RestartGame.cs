@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RestartGame : MonoBehaviour
 {
     [SerializeField] ButtonInformer _informer;
+
+    public Action OnRestarted;
 
     private void OnEnable()
     {
