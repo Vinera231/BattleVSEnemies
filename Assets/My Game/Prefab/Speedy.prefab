@@ -604,6 +604,7 @@ MonoBehaviour:
   _speed: 10
   _detectionRadius: 380
   _damageAmount: 20
+  _frost: 0
   _attackRate: 1
   _scoreReward: 20
   _currentSpeed: 10
@@ -611,6 +612,7 @@ MonoBehaviour:
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
   _renderer: {fileID: 5319439339284348693}
+  _slowDelay: 6
 --- !u!1 &5319439340207521724
 GameObject:
   m_ObjectHideFlags: 0

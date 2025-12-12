@@ -272,7 +272,6 @@ GameObject:
   - component: {fileID: 9073773082239930843}
   - component: {fileID: 1595713761963284895}
   - component: {fileID: 5789101242767093872}
-  - component: {fileID: 4113406142433393995}
   m_Layer: 7
   m_Name: IronEnemy
   m_TagString: Enemy
@@ -440,6 +439,7 @@ MonoBehaviour:
   _speed: 3
   _detectionRadius: 380
   _damageAmount: 60
+  _frost: 0
   _attackRate: 1
   _scoreReward: 50
   _currentSpeed: 3
@@ -447,20 +447,7 @@ MonoBehaviour:
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
   _renderer: {fileID: 678255414029011332}
---- !u!114 &4113406142433393995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4238991403241841734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e03cb015aa4a9419698a85c4048952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 9024955204212504243}
-  _rotationSpeed: 50
+  _slowDelay: 6
 --- !u!1 &9185846013368706294
 GameObject:
   m_ObjectHideFlags: 0

@@ -267,9 +267,9 @@ GameObject:
   - component: {fileID: 5556298816651745385}
   - component: {fileID: 5556298816651745386}
   - component: {fileID: 89978275632698240}
-  - component: {fileID: 89978275632698243}
+  - component: {fileID: 1651879996168922085}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: EnemyFrozen
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,7 +323,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
+  - {fileID: 2100000, guid: c65d4247d71e5fa4a9cadd4c755ce32d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -417,7 +417,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &89978275632698243
+--- !u!114 &1651879996168922085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5556298816651745376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dfe0840b270b704aa727d21172566cc, type: 3}
+  m_Script: {fileID: 11500000, guid: d5870935e4716f54dbaa9f39ed260927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDetector: {fileID: 465319038858044454}
@@ -437,13 +437,13 @@ MonoBehaviour:
   _damageAmount: 20
   _frost: 0
   _attackRate: 1
-  _scoreReward: 20
+  _scoreReward: 25
   _currentSpeed: 6
-  _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
+  _defultSkin: {fileID: 2100000, guid: c65d4247d71e5fa4a9cadd4c755ce32d, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
   _renderer: {fileID: 5556298816651745378}
-  _slowDelay: 6
+  _slowDelay: 0
 --- !u!1 &7157658716984522113
 GameObject:
   m_ObjectHideFlags: 0

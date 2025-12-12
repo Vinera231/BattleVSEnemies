@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Vector3 _velocity;
     [SerializeField] private bool _isGround;
     [SerializeField] private float _jump = 2f;
-    [SerializeField] private float _slowAmount;
+    [SerializeField] private float _slowDelay;
     [SerializeField] private PauseSwitcher _pauseSwitcher;
     [SerializeField] private float _currentSpeed;
     [SerializeField] private Renderer _renderer;
@@ -163,17 +163,18 @@ public class Player : MonoBehaviour
         _renderer.material = _defultSkin;
     }
 
-    public void SlowPlayer(float _, float _slowAmount)
+    public void SlowPlayer()
     {
+        Debug.Log("_isSlow");
         if (_isSlow)
             return;
        
         _isSlow = true;
 
-        _speed = 0f;
+        _speed *= 0.5f;
         _renderer.material = _frostSkin;
 
-        Invoke(nameof(AfterSlowPlayer), _slowAmount);
+        Invoke(nameof(AfterSlowPlayer), _slowDelay);
     }
 
     private void OnDied()

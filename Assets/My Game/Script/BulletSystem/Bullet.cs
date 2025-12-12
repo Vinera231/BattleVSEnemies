@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    protected static Bullet Instance;
+
     [SerializeField] private float _damage;
 
-    private void Start() =>
+    public float Damage => _damage;
+
+    protected virtual  void Start() =>
         Invoke(nameof(DestroyBullet), 3);
 
-    private void DestroyBullet() =>
+    protected virtual void DestroyBullet() =>
         Destroy(gameObject);
-    
-    private void OnCollisionEnter(Collision collision)
+
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         OnEnter(collision.gameObject);
 
@@ -18,7 +22,7 @@ public class Bullet : MonoBehaviour
             DestroyBullet();
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         OnEnter(other.gameObject);
         
@@ -26,13 +30,14 @@ public class Bullet : MonoBehaviour
             DestroyBullet();
     }
 
-    private void OnEnter(GameObject other)
+    protected virtual void OnEnter(GameObject other)
     {
         if (other.TryGetComponent(out Enemy enemy))
             enemy.TakeDamage(_damage);
     }
 
-    public void SetDamage(float damage)
+
+    public virtual void SetDamage(float damage)
     {
         _damage = damage;
     }

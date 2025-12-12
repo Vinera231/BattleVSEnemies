@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Material _frostSkin;
     [SerializeField] private Material _poisonSkin;
     [SerializeField] private Renderer _renderer;
+    [SerializeField]private float _slowDelay;
 
     private Coroutine _poisonCoroutine;
     private Coroutine _fricklesCoroutine;
@@ -105,7 +106,7 @@ public class Enemy : MonoBehaviour
         _agent.speed = _currentSpeed;
     }  
     
-    private void Attack(Player player)
+    protected virtual void Attack(Player player)
     {
         player.TakeDamage(_damageAmount);
 
@@ -127,18 +128,18 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void ApplaySlow(float _, float _slowAmount)
+    public void ApplaySlow()
     {
         if (_isSlowed)
             return;
 
         _isSlowed = true;
-        _agent.speed = Mathf.Min(0.3f, _speed, _slowAmount);
+        _agent.speed *= 0.5f;
         _renderer.material = _frostSkin;
 
         SfxPlayer.Instance.PlayFrostSound();
 
-        Invoke(nameof(AfterSlow), _slowAmount);
+        Invoke(nameof(AfterSlow), _slowDelay);
     }
 
     public void AfterSlow()

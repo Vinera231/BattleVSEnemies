@@ -14,4 +14,9 @@ public class ExplosionParticle : MonoBehaviour
         if(_particle.isPlaying == false)
             Destroy(gameObject);
     }
+
+    public void Play()
+    {
+        _particle.Play();
+    }
 }

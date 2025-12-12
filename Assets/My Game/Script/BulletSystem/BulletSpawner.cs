@@ -71,7 +71,7 @@ public class BulletSpawner : MonoBehaviour
         rigidbody.linearVelocity = transform.forward * _velocity;
         rigidbody.freezeRotation = true;
 
-        newBullet.SetDamage(_currentDamage);
+       newBullet.SetDamage(_currentDamage);
 
         _bullet--;
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);

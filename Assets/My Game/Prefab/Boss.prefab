@@ -959,7 +959,6 @@ GameObject:
   - component: {fileID: 7753568749947434988}
   - component: {fileID: 1087178890326134753}
   - component: {fileID: 1026828381980982638}
-  - component: {fileID: 5291528845769104679}
   - component: {fileID: 1277114470616081379}
   - component: {fileID: 6002438986551568146}
   m_Layer: 7
@@ -1058,20 +1057,6 @@ CapsuleCollider:
   m_Height: 6.190538
   m_Direction: 1
   m_Center: {x: 0.01199159, y: 2.6286857, z: 0}
---- !u!114 &5291528845769104679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6837979829544711026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e03cb015aa4a9419698a85c4048952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 5065033212600556928}
-  _rotationSpeed: 50
 --- !u!114 &1277114470616081379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,6 +1075,7 @@ MonoBehaviour:
   _speed: 2
   _detectionRadius: 380
   _damageAmount: 80
+  _frost: 0
   _attackRate: 1
   _scoreReward: 250
   _currentSpeed: 2
@@ -1097,6 +1083,7 @@ MonoBehaviour:
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
   _renderer: {fileID: 3309389445043673922}
+  _slowDelay: 6
   _firstValue: 7000
   _secondValue: 4500
   _thirtValue: 2000

@@ -9,7 +9,7 @@ public class FrostBullet : MonoBehaviour
     {
         if(other.TryGetComponent(out Enemy enemy))
         {
-            enemy.ApplaySlow(_slowDown,_duraction);
+            enemy.ApplaySlow();
             Destroy(gameObject);
         }
     }
