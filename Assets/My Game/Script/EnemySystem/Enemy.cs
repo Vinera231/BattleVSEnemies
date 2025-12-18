@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Renderer _renderer;
     [SerializeField]private float _slowDelay;
 
+    protected Health HealthComponent => _health;
     private Coroutine _poisonCoroutine;
     private Coroutine _fricklesCoroutine;
     private bool _isPoison;
@@ -57,7 +58,7 @@ public class Enemy : MonoBehaviour
         _health.Died -= OnDied;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (_isFrozen) 
             return;
@@ -89,7 +90,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float value)
+    public virtual void TakeDamage(float value)
     {
         _health.TakeDamage(value);
     }

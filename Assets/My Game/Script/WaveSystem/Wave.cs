@@ -14,6 +14,8 @@ public class Wave : MonoBehaviour
     [SerializeField] private float _countHalmer;
     [SerializeField] private float _countIron;   
     [SerializeField] private float _countExplorel;
+    [SerializeField] private float _countFrost;
+    [SerializeField] private float _countRegen;
     [SerializeField] private float _timeBeforeSpawn;
     [SerializeField] private string _text;
     [SerializeField] private LootSpawner _lootSpawner;
@@ -117,6 +119,26 @@ public class Wave : MonoBehaviour
             _enemies.Add(enemy);
             Spawned?.Invoke(enemy);
             _countExplorel--;
+        }
+
+        while (_countFrost > 0)
+        {
+            yield return _wait;
+            Enemy enemy = _spawner.SpawnFrost(RandomSpawnPosition());
+            enemy.Died += OnDied;
+            _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
+            _countFrost--;
+        }
+       
+        while (_countRegen > 0)
+        {
+            yield return _wait;
+            Enemy enemy = _spawner.SpawnRegen(RandomSpawnPosition());
+            enemy.Died += OnDied;
+            _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
+            _countRegen--;
         }
     }
 

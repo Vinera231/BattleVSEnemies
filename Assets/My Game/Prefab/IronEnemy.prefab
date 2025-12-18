@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 1203514768618209815}
   - component: {fileID: 9073773082239930843}
   - component: {fileID: 1595713761963284895}
-  - component: {fileID: 5789101242767093872}
+  - component: {fileID: 5660751812424424819}
   m_Layer: 7
   m_Name: IronEnemy
   m_TagString: Enemy
@@ -289,7 +289,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.6889553, y: 2.13, z: 10.442805}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 390395377180811205}
@@ -421,7 +421,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5789101242767093872
+--- !u!114 &5660751812424424819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4238991403241841734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dfe0840b270b704aa727d21172566cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 38fd17e06ad6b3e4fb38149f0a073a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDetector: {fileID: 7548374578156024645}
@@ -439,11 +439,11 @@ MonoBehaviour:
   _speed: 3
   _detectionRadius: 380
   _damageAmount: 60
-  _frost: 0
+  _frost: 6
   _attackRate: 1
   _scoreReward: 50
   _currentSpeed: 3
-  _defultSkin: {fileID: 2100000, guid: 2beb27ae9e4e9f14eb001037212ff810, type: 2}
+  _defultSkin: {fileID: 2100000, guid: 541ee43c60001154fb23314550d77cbb, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
   _renderer: {fileID: 678255414029011332}
@@ -565,5 +565,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 5752198363980295621}
-  _maxValue: 1000
-  _healthValue: 1000
+  _maxValue: 500
+  _healthValue: 500

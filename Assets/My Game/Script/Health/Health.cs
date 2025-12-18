@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
 
     public void RecoverHealth(float amount)
     {
-        _healthValue = Mathf.Min(_healthValue + amount,_maxValue);
+        _healthValue = Mathf.Min(_healthValue + amount, _maxValue);
     
         _view.ShowInfo(_healthValue, _maxValue);
         ValueChanged?.Invoke(Value);

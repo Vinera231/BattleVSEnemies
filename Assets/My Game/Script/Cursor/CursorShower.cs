@@ -6,9 +6,6 @@ public class CursorShower : MonoBehaviour
     [SerializeField] private PauseSwitcher _pauseSwitcher;
     [SerializeField] private RestartGame _restartGame;
 
-    public event Action OnCursourShow;
-    public event Action OnCursourHide;
-
     private void Awake()
     {
         _pauseSwitcher.Continued += Hide;
@@ -18,16 +15,12 @@ public class CursorShower : MonoBehaviour
             Show();
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() =>  
         _restartGame.OnRestarted += Show;
-    }
 
-    private void OnDisable()
-    {
+    private void OnDisable() =>   
         _restartGame.OnRestarted -= Show;
-    }
-
+  
     private void OnDestroy()
     {
         _pauseSwitcher.Continued -= Hide;
@@ -38,13 +31,11 @@ public class CursorShower : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        OnCursourShow?.Invoke();
     }
 
     private void Hide()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        OnCursourHide?.Invoke();
     }
 }

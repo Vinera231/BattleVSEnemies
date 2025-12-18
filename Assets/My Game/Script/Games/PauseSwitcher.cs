@@ -19,7 +19,6 @@ public class PauseSwitcher : MonoBehaviour
    
     public void PauseGame(GameObject _)
     {
-        Debug.Log("PauseGame");
         _pauseCounter++;
         HandleChanged();
     } 

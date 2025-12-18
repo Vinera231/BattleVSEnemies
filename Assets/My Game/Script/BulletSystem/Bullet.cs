@@ -36,7 +36,6 @@ public class Bullet : MonoBehaviour
             enemy.TakeDamage(_damage);
     }
 
-
     public virtual void SetDamage(float damage)
     {
         _damage = damage;

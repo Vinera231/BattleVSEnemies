@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Accessibility;
-using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -87,17 +85,13 @@ public class Player : MonoBehaviour
         _controller.Move(_velocity * Time.deltaTime);
     }
 
-    public void AllowAttack()
-    {
+    public void AllowAttack() =>
         _attackCounter++;   
-        Debug.Log($"Method {nameof(AllowAttack)} _attackCounter = {_attackCounter}");
-    }
 
     public void ProhibitAttack()
     {
         _bulletSpawner.StopShoot();
         _attackCounter--;
-        Debug.Log($"Method {nameof(ProhibitAttack)} _attackCounter = {_attackCounter}");
     }
 
     public void OnJump()
@@ -152,8 +146,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float value)
     {
-        _health.TakeDamage(value);
-        
+        _health.TakeDamage(value);        
     }
 
     public void AfterSlowPlayer()
