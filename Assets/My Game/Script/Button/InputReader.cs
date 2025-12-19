@@ -9,10 +9,13 @@ public class InputReader : MonoBehaviour
     private const KeyCode SelectKey = KeyCode.E;
     private const KeyCode IventarKey = KeyCode.F;
 
+
     public event Action IventarPressed;
     public event Action SettingPanelPressed;
     public event Action ShotPressed;
     public event Action ShotUnpressed;
+    public event Action SecondWeaponPressed;
+    public event Action SecondWeaponUnpressed;
     public event Action BuyPressed;
     public event Action JumpPressed;
     public event Action SelectPressed;
@@ -26,6 +29,16 @@ public class InputReader : MonoBehaviour
         ReadJumpKey();
         ReadSelectKey();
         ReadIventarKey();
+        ReadSecondWeapon();
+    }
+
+    private void ReadSecondWeapon()
+    {
+        if (Input.GetMouseButtonDown(1))
+            SecondWeaponPressed?.Invoke();
+
+        if (Input.GetMouseButtonUp(1))
+            SecondWeaponUnpressed?.Invoke();
     }
 
     private void ReadSettingPanel()

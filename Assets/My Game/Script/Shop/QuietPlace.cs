@@ -41,7 +41,7 @@ public class QuietPlace : MonoBehaviour
 
             foreach (Enemy enemy in _enemies)
                 enemy.ResetFreezen();
-            Debug.Log("Exit");
+            Debug.Log("Exited");
             _isActive = false;
         }
     }

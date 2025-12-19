@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour , IDamageble
 {
     private const float StoppingDistance = 0.5f;
 
@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
     protected virtual void ProcessDied()
     {
         SfxPlayer.Instance.PlayDieEnemySound();
-        ParticleSpawner.Instance?.CreateBlood(transform.position);
+        ParticleSpawner.Instance.CreateBlood(transform.position);
         Destroy(gameObject);
     }
 
