@@ -1,12 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Knife : MonoBehaviour
 {
     [SerializeField] private DamageDetector _detector;
-    [SerializeField] private float _damage = 20f;
     [SerializeField] private InputReader _reader;
+    [SerializeField] private float _damage = 20f;
 
     private readonly List<IDamageble> _damagebles = new();
 
@@ -27,6 +26,12 @@ public class Knife : MonoBehaviour
 
         _damagebles.Clear();
     }
+  
+    private void TakeDamage()
+    {
+        foreach (IDamageble damageble in _damagebles)
+            damageble?.TakeDamage(_damage);
+    }
 
     private void OnAttackPressed()
     {
@@ -36,12 +41,6 @@ public class Knife : MonoBehaviour
     private void OnAttackUnPressed()
     {
 
-    }
-
-    private void TakeDamage()
-    {
-        foreach (IDamageble damageble in _damagebles)
-            damageble?.TakeDamage(_damage);
     }
 
     private void OnCollisionEntered(Collider collider)

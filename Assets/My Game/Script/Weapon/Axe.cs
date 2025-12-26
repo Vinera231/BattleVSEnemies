@@ -1,60 +1,65 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Axe : MonoBehaviour
 {
-    [SerializeField] private float _damage = 30f;
+    [SerializeField] private DamageDetector _detector;
     [SerializeField] private InputReader _reader;
-    [SerializeField]private DamageDetector _damageDetector;
+    [SerializeField] private float _damage = 30f;
 
     private readonly List<IDamageble> _damagebles = new();
 
     private void OnEnable()
     {
-        _damageDetector.Entered += OnCollisionEntered;
-        _damageDetector.Entered += OnCollisionExited;
+        _detector.Entered += OnCollisionEntered;
+        _detector.Exited += OnCollisionExited;
         _reader.SecondWeaponPressed += OnAttackPressed;
         _reader.SecondWeaponUnpressed += OnAttackUnpressed;
     }
 
     private void OnDisable()
     {
-        _damageDetector.Entered -= OnCollisionEntered;
-        _damageDetector.Entered -= OnCollisionExited;
+        _detector.Entered -= OnCollisionEntered;
+        _detector.Exited -= OnCollisionExited;
         _reader.SecondWeaponPressed -= OnAttackPressed;
         _reader.SecondWeaponUnpressed -= OnAttackUnpressed;
+
+        _damagebles.Clear();
     }
 
+    private void TakeDamage()
+    {
+        foreach (IDamageble damageble in _damagebles)
+            damageble?.TakeDamage(_damage);
+    }
+
+    private void OnAttackPressed()
+    {
+        TakeDamage();
+    }
+
+    private void OnAttackUnpressed()
+    {
+
+    }
 
     private void OnCollisionEntered(Collider collider)
     {
         if (collider.TryGetComponent(out IDamageble damageble) == false)
             return;
-            _damagebles.Add(damageble);
+
+        _damagebles.Add(damageble);
+
+        Debug.Log($"топор зашел {collider.name}");
     }
 
     private void OnCollisionExited(Collider collider)
     {
         if (collider.TryGetComponent(out IDamageble damageble) == false)
-           return;
-            _damagebles.Remove(damageble);
-    }
-    private void OnAttackUnpressed()
-    {
-        TakeDamage();
-    }
+            return;
 
-    private void OnAttackPressed()
-    {
-        
-    }
+        _damagebles.Remove(damageble);
 
-    private void TakeDamage()
-    {
-        foreach (var damageble in _damagebles)
-            damageble?.TakeDamage(_damage);
+        Debug.Log($"топор вышел {collider.name}");
     }
-
 }
