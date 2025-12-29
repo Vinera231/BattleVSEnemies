@@ -4,9 +4,10 @@ using UnityEngine;
 public class InputReader : MonoBehaviour
 {
     private const KeyCode SettingPanel = KeyCode.Escape;
-    private const KeyCode BuyKey = KeyCode.Q;
+    private const KeyCode BuyKey = KeyCode.R;
     private const KeyCode JumpKey = KeyCode.Space;
     private const KeyCode SelectKey = KeyCode.E;
+    private const KeyCode BackSelectKey = KeyCode.Q;
     private const KeyCode IventarKey = KeyCode.F;
 
 
@@ -19,6 +20,7 @@ public class InputReader : MonoBehaviour
     public event Action BuyPressed;
     public event Action JumpPressed;
     public event Action SelectPressed;
+    public event Action BackSelectPressed;
 
 
     private void Update()
@@ -28,8 +30,15 @@ public class InputReader : MonoBehaviour
         ReadBuyKey();
         ReadJumpKey();
         ReadSelectKey();
+        ReadBackSelectKey();
         ReadIventarKey();
         ReadSecondWeapon();
+    }
+
+    private void ReadBackSelectKey()
+    {
+        if (Input.GetKeyDown(SelectKey))
+            SelectPressed?.Invoke();
     }
 
     private void ReadSecondWeapon()

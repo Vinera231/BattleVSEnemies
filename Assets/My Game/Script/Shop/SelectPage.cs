@@ -15,11 +15,13 @@ public class SelectPage : MonoBehaviour
     private void OnEnable()
     {
         _reader.SelectPressed += PressArrow;
+        _reader.BackSelectPressed += PressDownArrow;
     }
 
     private void OnDisable()
     {
         _reader.SelectPressed -= PressArrow;
+        _reader.BackSelectPressed -= PressDownArrow;
     }
 
     public void PressArrow()
@@ -30,6 +32,16 @@ public class SelectPage : MonoBehaviour
         _categoria[_currentIndex].SetActive(true);
         _textArrow.text = _categoria[_currentIndex].name;
     }
+
+    public void PressDownArrow()
+    {
+        _categoria[_currentIndex].SetActive(false);
+        _currentIndex = (_currentIndex - 1) % _categoria.Length;
+
+        _categoria[_currentIndex].SetActive(true);
+        _textArrow.text = _categoria[_currentIndex].name;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Player player))
