@@ -10,7 +10,6 @@ public class InputReader : MonoBehaviour
     private const KeyCode BackSelectKey = KeyCode.Q;
     private const KeyCode IventarKey = KeyCode.F;
 
-
     public event Action IventarPressed;
     public event Action SettingPanelPressed;
     public event Action ShotPressed;
@@ -21,7 +20,6 @@ public class InputReader : MonoBehaviour
     public event Action JumpPressed;
     public event Action SelectPressed;
     public event Action BackSelectPressed;
-
 
     private void Update()
     {

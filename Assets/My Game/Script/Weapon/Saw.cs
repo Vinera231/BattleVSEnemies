@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Saw : MonoBehaviour
+public class Saw : MonoBehaviour, ISecondWeapon
 {
     [SerializeField] private DamageDetector _detector;
     [SerializeField] private Transform _bigDisk;
@@ -11,7 +11,6 @@ public class Saw : MonoBehaviour
     [SerializeField] private float _speedRotationBigDisk;
     [SerializeField] private float _speedRotationSmallDisk;
     [SerializeField] private bool _isRotation;
-    [SerializeField] private InputReader _reader;
     [SerializeField] private float _damageInterval;
     [SerializeField] private float _damage = 20f;
 
@@ -37,26 +36,15 @@ public class Saw : MonoBehaviour
     {
         _detector.Entered += OnColliderEntered;
         _detector.Exited += OnColliderExited;
-        _reader.SecondWeaponPressed += OnSecondWeaponPressed;
-        _reader.SecondWeaponUnpressed += OnSecondWeaponUnpressed;
     }
     private void OnDisable()
     {
         _detector.Entered -= OnColliderEntered;
         _detector.Exited -= OnColliderExited;
-        _reader.SecondWeaponPressed -= OnSecondWeaponPressed;
-        _reader.SecondWeaponUnpressed -= OnSecondWeaponUnpressed;
     }
 
-    private void OnSecondWeaponPressed()
-    {
+    public void Attack() =>
         StartRotation();
-    }
-
-    private void OnSecondWeaponUnpressed()
-    {
-        StopRotation();
-    }
 
     public void StartRotation()
     {

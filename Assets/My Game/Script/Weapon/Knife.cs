@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knife : MonoBehaviour
+public class Knife : MonoBehaviour, ISecondWeapon
 {
     [SerializeField] private DamageDetector _detector;
-    [SerializeField] private InputReader _reader;
     [SerializeField] private float _damage = 20f;
 
     private readonly List<IDamageble> _damagebles = new();
@@ -13,16 +12,12 @@ public class Knife : MonoBehaviour
     {
         _detector.Entered += OnCollisionEntered;
         _detector.Exited += OnCollisionExited;
-        _reader.SecondWeaponPressed += OnAttackPressed;
-        _reader.SecondWeaponUnpressed += OnAttackUnPressed;
     }
 
     private void OnDisable()
     {
         _detector.Entered -= OnCollisionEntered;
         _detector.Exited -= OnCollisionExited;
-        _reader.SecondWeaponPressed -= OnAttackPressed;
-        _reader.SecondWeaponUnpressed -= OnAttackUnPressed;
 
         _damagebles.Clear();
     }
@@ -33,15 +28,8 @@ public class Knife : MonoBehaviour
             damageble?.TakeDamage(_damage);
     }
 
-    private void OnAttackPressed()
-    {
+    public void Attack() =>
         TakeDamage();
-    }
-
-    private void OnAttackUnPressed()
-    {
-
-    }
 
     private void OnCollisionEntered(Collider collider)
     {

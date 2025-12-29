@@ -6,14 +6,13 @@ public class CameraSetting : MonoBehaviour
   
     [Header("Reference")]
     [SerializeField] private Slider _sensetiveSlider;
-    [SerializeField] private CameraFollower _follower;
+    [SerializeField] private CameraRotator _follower;
     [SerializeField] private Transform _playerBody;
 
     [Header("Setting")]
     [SerializeField] private float _minSensitive = 250f;
     [SerializeField] private float _maxSensitive = 500f;
     [SerializeField] private float _defaultSensitivity = 330f;
-
 
     private void Start()
     {
@@ -39,5 +38,4 @@ public class CameraSetting : MonoBehaviour
         if (_follower)
             _follower.SetSensetive(value);
     }
-
 }

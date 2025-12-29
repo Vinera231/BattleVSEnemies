@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Axe : MonoBehaviour
+public class Axe : MonoBehaviour, ISecondWeapon
 {
     [SerializeField] private DamageDetector _detector;
-    [SerializeField] private InputReader _reader;
     [SerializeField] private float _damage = 30f;
 
     private readonly List<IDamageble> _damagebles = new();
@@ -13,16 +12,13 @@ public class Axe : MonoBehaviour
     {
         _detector.Entered += OnCollisionEntered;
         _detector.Exited += OnCollisionExited;
-        _reader.SecondWeaponPressed += OnAttackPressed;
-        _reader.SecondWeaponUnpressed += OnAttackUnpressed;
+        
     }
 
     private void OnDisable()
     {
         _detector.Entered -= OnCollisionEntered;
         _detector.Exited -= OnCollisionExited;
-        _reader.SecondWeaponPressed -= OnAttackPressed;
-        _reader.SecondWeaponUnpressed -= OnAttackUnpressed;
 
         _damagebles.Clear();
     }
@@ -33,15 +29,8 @@ public class Axe : MonoBehaviour
             damageble?.TakeDamage(_damage);
     }
 
-    private void OnAttackPressed()
-    {
+    public void Attack() =>
         TakeDamage();
-    }
-
-    private void OnAttackUnpressed()
-    {
-
-    }
 
     private void OnCollisionEntered(Collider collider)
     {

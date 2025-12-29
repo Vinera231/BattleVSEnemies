@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -20,10 +21,10 @@ public class Player : MonoBehaviour
     [SerializeField] private Renderer _renderer;
     [SerializeField] private Material _frostSkin;
     [SerializeField] private Material _defultSkin;
+    [SerializeField] private List<MonoBehaviour> _secondWeapons;
 
     private bool _isSlow;
-
-    private int _attackCounter = 1;
+    private int _allowedAttackCounter = 1;
 
     public event Action Died;
 
@@ -34,13 +35,11 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-         _pauseSwitcher.Continued += AllowAttack;
+        _pauseSwitcher.Continued += AllowAttack;
         _pauseSwitcher.Paused += ProhibitAttack;
 
         if (_pauseSwitcher.IsPaused)
-        {
             ProhibitAttack();
-        }
     }
 
     private void OnDestroy()
@@ -55,6 +54,8 @@ public class Player : MonoBehaviour
         _reader.JumpPressed += OnJump;
         _reader.ShotPressed += OnShotPressed;
         _reader.ShotUnpressed += OnShotUnpressed;
+        _reader.SecondWeaponPressed += OnSecondAttackPressed;
+        _reader.SecondWeaponUnpressed += OnSecondAttackUnpressed;
     }
 
     private void OnDisable()
@@ -63,6 +64,8 @@ public class Player : MonoBehaviour
         _reader.JumpPressed -= OnJump;
         _reader.ShotPressed -= OnShotPressed;
         _reader.ShotUnpressed -= OnShotUnpressed;
+        _reader.SecondWeaponPressed -= OnSecondAttackPressed;
+        _reader.SecondWeaponUnpressed -= OnSecondAttackUnpressed;
     }
 
     private void Update()
@@ -81,17 +84,17 @@ public class Player : MonoBehaviour
         _velocity.y += gravity * Time.deltaTime;
         _controller.Move(_velocity * Time.deltaTime);
 
-        _velocity.y += gravity * Time.deltaTime ;
+        _velocity.y += gravity * Time.deltaTime;
         _controller.Move(_velocity * Time.deltaTime);
     }
 
     public void AllowAttack() =>
-        _attackCounter++;   
+        _allowedAttackCounter++;
 
     public void ProhibitAttack()
     {
         _bulletSpawner.StopShoot();
-        _attackCounter--;
+        _allowedAttackCounter--;
     }
 
     public void OnJump()
@@ -103,12 +106,14 @@ public class Player : MonoBehaviour
     public void IncreaseSpeed(int amount)
     {
         _speed += amount;
-        ParticleSpawner.Instance?.CreateSpeed(transform.position);
+
+        if (ParticleSpawner.Instance != null)
+            ParticleSpawner.Instance.CreateSpeed(transform.position);
     }
 
     public void ReseteToBaseSpeed(int amount) =>
           _speed -= amount;
-    
+
     public bool TryReplenishBullet(int amount)
     {
         if (_bulletSpawner.IsFull == false)
@@ -146,7 +151,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float value)
     {
-        _health.TakeDamage(value);        
+        _health.TakeDamage(value);
     }
 
     public void AfterSlowPlayer()
@@ -161,7 +166,7 @@ public class Player : MonoBehaviour
         Debug.Log("_isSlow");
         if (_isSlow)
             return;
-       
+
         _isSlow = true;
 
         _speed *= 0.5f;
@@ -178,10 +183,29 @@ public class Player : MonoBehaviour
 
     private void OnShotPressed()
     {
-        if (_attackCounter > 0)       
-            _bulletSpawner.StartShoot();        
+        if (_allowedAttackCounter > 0)
+            _bulletSpawner.StartShoot();
     }
 
     private void OnShotUnpressed() =>
         _bulletSpawner.StopShoot();
+
+    private void OnSecondAttackPressed()
+    {
+        if (_allowedAttackCounter <= 0)
+            return;
+
+        foreach (MonoBehaviour weapon in _secondWeapons)
+            if (weapon.gameObject.activeSelf)
+                if (weapon is ISecondWeapon secondWeapon)
+                    secondWeapon.Attack();
+    }
+
+    private void OnSecondAttackUnpressed()
+    {
+        foreach (MonoBehaviour weapon in _secondWeapons)
+            if (weapon.gameObject.activeSelf)
+                if (weapon is Saw saw)
+                    saw.StopRotation();
+    }
 }
