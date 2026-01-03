@@ -606,8 +606,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 6560031663832629132}
-  _maxValue: 80
-  _healthValue: 80
+  _maxValue: 90
+  _healthValue: 90
 --- !u!1 &6463350074673769379
 GameObject:
   m_ObjectHideFlags: 0

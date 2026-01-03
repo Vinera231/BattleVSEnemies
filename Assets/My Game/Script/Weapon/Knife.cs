@@ -5,6 +5,7 @@ public class Knife : MonoBehaviour, ISecondWeapon
 {
     [SerializeField] private DamageDetector _detector;
     [SerializeField] private float _damage = 20f;
+    [SerializeField] private Animator _animator;
 
     private readonly List<IDamageble> _damagebles = new();
 
@@ -28,8 +29,11 @@ public class Knife : MonoBehaviour, ISecondWeapon
             damageble?.TakeDamage(_damage);
     }
 
-    public void Attack() =>
-        TakeDamage();
+    public void Attack()
+    {
+        _animator.SetTrigger("IsAttack");
+       TakeDamage();
+    }
 
     private void OnCollisionEntered(Collider collider)
     {

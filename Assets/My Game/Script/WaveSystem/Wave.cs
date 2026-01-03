@@ -8,10 +8,14 @@ public class Wave : MonoBehaviour
     [SerializeField] private EnemySpawner _spawner; 
     [SerializeField] private float _frequency;
     [SerializeField] private float _countEnemy;
+    [SerializeField] private float _countMonsterEnemy;
     [SerializeField] private float _countSpeedy;
+    [SerializeField] private float _countMonsterSpeedy;
     [SerializeField] private float _countHamer;
+    [SerializeField] private float _countAngryHamer;
     [SerializeField] private float _countBoss; 
     [SerializeField] private float _countHalmer;
+    [SerializeField] private float _countMonsterHalmer;
     [SerializeField] private float _countIron;   
     [SerializeField] private float _countExplorel;
     [SerializeField] private float _countFrost;
@@ -60,6 +64,16 @@ public class Wave : MonoBehaviour
             Spawned?.Invoke(enemy);
             _countEnemy--;
         }
+        
+        while (_countMonsterEnemy > 0)
+        {
+            yield return _wait;
+            Enemy enemy = _spawner.SpawnMonsterEnemy(RandomSpawnPosition());
+            enemy.Died += OnDied;
+            _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
+            _countMonsterEnemy--;
+        }
 
         while (_countSpeedy > 0)
         {
@@ -70,7 +84,18 @@ public class Wave : MonoBehaviour
             Spawned?.Invoke(enemy);
             _countSpeedy--;
         }
+       
+        while (_countMonsterSpeedy > 0)
+        {
+            yield return _wait;
+            Enemy enemy = _spawner.SpawnMonsterSpeedy(RandomSpawnPosition());
+            enemy.Died += OnDied;
+            _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
+            _countMonsterSpeedy--;
+        }
 
+        
         while (_countHamer > 0)
         {
             yield return _wait;
@@ -80,7 +105,17 @@ public class Wave : MonoBehaviour
             Spawned?.Invoke(enemy);
             _countHamer--;
         }
-    
+       
+        while (_countAngryHamer > 0)
+        {
+            yield return _wait;
+            Enemy enemy = _spawner.SpawnAngryHamer(RandomSpawnPosition());
+            enemy.Died += OnDied;
+            _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
+            _countAngryHamer--;
+        }
+      
         while(_countBoss > 0)
         {
             yield return _wait;
@@ -99,6 +134,16 @@ public class Wave : MonoBehaviour
             _enemies.Add(enemy);
             Spawned?.Invoke(enemy);
             _countHalmer--;
+        }
+       
+        while (_countMonsterHalmer > 0)
+        {
+            yield return _wait;
+            Enemy enemy = _spawner.SpawnMonsterHalmer(RandomSpawnPosition());
+            enemy.Died += OnDied;
+            _enemies.Add(enemy);
+            Spawned?.Invoke(enemy);
+            _countMonsterHalmer--;
         }
 
         while (_countIron > 0)

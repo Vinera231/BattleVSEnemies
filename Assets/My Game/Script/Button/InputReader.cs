@@ -4,9 +4,9 @@ using UnityEngine;
 public class InputReader : MonoBehaviour
 {
     private const KeyCode SettingPanel = KeyCode.Escape;
-    private const KeyCode BuyKey = KeyCode.R;
+    private const KeyCode BuyKey = KeyCode.E;
     private const KeyCode JumpKey = KeyCode.Space;
-    private const KeyCode SelectKey = KeyCode.E;
+    private const KeyCode SelectKey = KeyCode.R;
     private const KeyCode BackSelectKey = KeyCode.Q;
     private const KeyCode IventarKey = KeyCode.F;
 
@@ -28,15 +28,8 @@ public class InputReader : MonoBehaviour
         ReadBuyKey();
         ReadJumpKey();
         ReadSelectKey();
-        ReadBackSelectKey();
         ReadIventarKey();
         ReadSecondWeapon();
-    }
-
-    private void ReadBackSelectKey()
-    {
-        if (Input.GetKeyDown(SelectKey))
-            SelectPressed?.Invoke();
     }
 
     private void ReadSecondWeapon()
@@ -79,6 +72,9 @@ public class InputReader : MonoBehaviour
     {
         if (Input.GetKeyDown(SelectKey))
             SelectPressed?.Invoke();
+
+        if (Input.GetKeyDown(BackSelectKey))
+             BackSelectPressed?.Invoke();
     }
 
     private void ReadIventarKey()

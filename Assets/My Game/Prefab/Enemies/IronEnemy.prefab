@@ -442,7 +442,7 @@ MonoBehaviour:
   _damageAmount: 60
   _frost: 6
   _attackRate: 1
-  _scoreReward: 50
+  _scoreReward: 75
   _currentSpeed: 3
   _defultSkin: {fileID: 2100000, guid: 541ee43c60001154fb23314550d77cbb, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
@@ -566,8 +566,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 5752198363980295621}
-  _maxValue: 500
-  _healthValue: 500
+  _maxValue: 600
+  _healthValue: 600
 --- !u!1001 &5845175854474745518
 PrefabInstance:
   m_ObjectHideFlags: 0

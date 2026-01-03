@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.9}
+  m_AnchoredPosition: {x: 0, y: 3.37}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8142726885203101008
@@ -325,7 +325,7 @@ Transform:
   m_GameObject: {fileID: 1181340327341451449}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 11.53, z: 0}
+  m_LocalPosition: {x: 0, y: 10.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -451,7 +451,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 0.9999999, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.39, z: 0}
 --- !u!1 &2845113010260508669
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +599,7 @@ Transform:
   m_GameObject: {fileID: 3423462526607715392}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.014, y: 0.91, z: 0.999}
+  m_LocalPosition: {x: -0.014, y: 0.844, z: 0.999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -862,7 +862,7 @@ Transform:
   m_GameObject: {fileID: 5380887101246485483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.578, z: 0}
+  m_LocalPosition: {x: 0, y: -1.068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1053,10 +1053,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.296618
-  m_Height: 6.190538
+  m_Radius: 1.735126
+  m_Height: 7.301487
   m_Direction: 1
-  m_Center: {x: 0.01199159, y: 1, z: 0}
+  m_Center: {x: -0.051232815, y: 3.4445257, z: 0}
 --- !u!114 &1277114470616081379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,17 +1077,20 @@ MonoBehaviour:
   _damageAmount: 80
   _frost: 0
   _attackRate: 1
-  _scoreReward: 250
+  _scoreReward: 500
   _currentSpeed: 2
   _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
   _renderer: {fileID: 3309389445043673922}
   _slowDelay: 6
-  _firstValue: 7000
-  _secondValue: 4500
-  _thirtValue: 2000
-  _forthValue: 500
+  _firstValue: 9000
+  _secondValue: 7000
+  _thirtValue: 5000
+  _forthValue: 4000
+  _fifthValue: 3000
+  _sixValue: 1500
+  _sevenValue: 0
   _spawnEnemies: 1
   _bullets: 20
   _animator: {fileID: 6002438986551568146}
@@ -1425,8 +1428,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000001, y: 0.9999999, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000001, y: 1.02, z: 0.99999994}
+  m_Center: {x: 0, y: 1.31, z: 0}
 --- !u!1 &8627986836712295836
 GameObject:
   m_ObjectHideFlags: 0

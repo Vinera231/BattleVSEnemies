@@ -6,6 +6,9 @@ public class EnemyBoss : Enemy
     [SerializeField] private float _secondValue;
     [SerializeField] private float _thirtValue;
     [SerializeField] private float _forthValue;
+    [SerializeField] private float _fifthValue;
+    [SerializeField] private float _sixValue;
+    [SerializeField] private float _sevenValue;
     [SerializeField] private float _spawnEnemies;
     [SerializeField] private float _bullets;
     [SerializeField] private EnemyBossAnimator _animator;
@@ -35,25 +38,46 @@ public class EnemyBoss : Enemy
         if (value < _secondValue)
         {
             _secondValue = float.MinValue;
+            SpawnEnemies(10, _spawner.SpawnMonsterEnemy);
+            return;
+        }
+        
+        if (value < _thirtValue)
+        {
+            _thirtValue = float.MinValue;
             SpawnEnemies(10, _spawner.SpawnSpeedy);
             return;
         }
 
 
-        if (value < _thirtValue)
+        if (value < _forthValue)
         {
-            _thirtValue = float.MinValue;
+            _forthValue = float.MinValue;
+            SpawnEnemies(5, _spawner.SpawnMonsterSpeedy);
+            return;
+        }
+        
+        if (value < _fifthValue)
+        {
+            _fifthValue = float.MinValue;
+            SpawnEnemies(5, _spawner.SpawnMonsterSpeedy);
+            return;
+        }
+       
+        if (value < _sixValue)
+        {
+            _sixValue = float.MinValue;
             SpawnEnemies(5, _spawner.SpawnHamer);
             return;
         }
 
-        if (value < _forthValue)
+        if (value < _sevenValue)
         {
-            _forthValue = float.MinValue;
+            _sevenValue = float.MinValue;
 
             for (int i = 0; i < 5; i++)
             {
-                Enemy enemy = _spawner.SpawnHamer(transform.position);
+                Enemy enemy = _spawner.SpawnAngryHamer(transform.position);
                 Enemy enemy1 = _spawner.SpawnEnemy(transform.position);
                 Enemy enemy2 = _spawner.SpawnSpeedy(transform.position);
                 Subcrible(enemy);

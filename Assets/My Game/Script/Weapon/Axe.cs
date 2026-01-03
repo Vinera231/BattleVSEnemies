@@ -5,6 +5,7 @@ public class Axe : MonoBehaviour, ISecondWeapon
 {
     [SerializeField] private DamageDetector _detector;
     [SerializeField] private float _damage = 30f;
+    [SerializeField] private Animator _animator;
 
     private readonly List<IDamageble> _damagebles = new();
 
@@ -29,8 +30,11 @@ public class Axe : MonoBehaviour, ISecondWeapon
             damageble?.TakeDamage(_damage);
     }
 
-    public void Attack() =>
+    public void Attack()
+    {
+        _animator.SetTrigger("AttackAxe");
         TakeDamage();
+    }
 
     private void OnCollisionEntered(Collider collider)
     {

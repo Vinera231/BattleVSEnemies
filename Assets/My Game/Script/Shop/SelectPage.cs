@@ -15,28 +15,19 @@ public class SelectPage : MonoBehaviour
     private void OnEnable()
     {
         _reader.SelectPressed += PressArrow;
-        _reader.BackSelectPressed += PressDownArrow;
+        _reader.BackSelectPressed += PressArrow;
     }
 
     private void OnDisable()
     {
         _reader.SelectPressed -= PressArrow;
-        _reader.BackSelectPressed -= PressDownArrow;
+        _reader.BackSelectPressed -= PressArrow;
     }
 
     public void PressArrow()
     {
         _categoria[_currentIndex].SetActive(false);
         _currentIndex = (_currentIndex + 1) % _categoria.Length;
-
-        _categoria[_currentIndex].SetActive(true);
-        _textArrow.text = _categoria[_currentIndex].name;
-    }
-
-    public void PressDownArrow()
-    {
-        _categoria[_currentIndex].SetActive(false);
-        _currentIndex = (_currentIndex - 1) % _categoria.Length;
 
         _categoria[_currentIndex].SetActive(true);
         _textArrow.text = _categoria[_currentIndex].name;
