@@ -6,7 +6,6 @@ public class WinPanelShower : MonoBehaviour
 {
     [SerializeField] private Wave _lastWave;
     [SerializeField] private WinPanel _winPanel;
-    [SerializeField] private CursorShower _cursorShower;
 
     public event Action WinPanelShowed;
 
@@ -29,14 +28,14 @@ public class WinPanelShower : MonoBehaviour
     {
         Debug.Log($"{name} OnFinished ");
 
-        _winPanel.Show();
+        _winPanel.Show();        
+
         WinPanelShowed?.Invoke();
         Invoke(nameof(LoadMenu), 5f);
     }
 
     private void LoadMenu()
     {
-        _cursorShower.Show();
         SceneManager.LoadScene(0);
     }
 }

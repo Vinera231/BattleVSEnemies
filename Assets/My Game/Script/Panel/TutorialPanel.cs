@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class TutorialPanel : MonoBehaviour
 {
-    [SerializeField] private PauseSwitcher _pauseSwitcher;
-
-    private void OnEnable() =>
-        _pauseSwitcher.PauseGame(gameObject);
+    private void OnEnable()
+    {
+        PauseSwitcher.Instance.PauseGame();
+        CursorShower.Instance.Show();
+    }
    
-    private void OnDisable() =>   
-        _pauseSwitcher.PlayGame(gameObject);
+    private void OnDisable()
+    {
+        PauseSwitcher.Instance.PlayGame();
+        CursorShower.Instance.Hide();
+    }
 
     public void Show() =>
         gameObject.SetActive(true);

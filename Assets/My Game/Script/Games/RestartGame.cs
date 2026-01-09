@@ -4,9 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartGame : MonoBehaviour
 {
-    [SerializeField] ButtonInformer _informer;
-
-    public Action OnRestarted;
+    [SerializeField] private ButtonInformer _informer;
 
     private void OnEnable()
     {

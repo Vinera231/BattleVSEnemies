@@ -4,26 +4,35 @@ using UnityEngine;
 public class PauseSwitcher : MonoBehaviour
 {
     private int _pauseCounter = 0;
-    private bool _paused = false;
 
     public event Action Paused;
     public event Action Continued;
 
-    public bool IsPaused => _paused;
+    public static PauseSwitcher Instance { get; private set; }
+
+    public bool IsPaused => _pauseCounter > 0;
 
     private void Awake()
     {
-        _paused = false;
-        Time.timeScale = 1f;
+        if (Instance == null)
+        {
+            Instance = this;
+            transform.SetParent(null);
+            DontDestroyOnLoad(gameObject);
+
+            return;
+        }
+
+        Destroy(gameObject);
     }
-   
-    public void PauseGame(GameObject _)
+
+    public void PauseGame()
     {
         _pauseCounter++;
         HandleChanged();
     } 
     
-    public void PlayGame(GameObject _)
+    public void PlayGame()
     {
         _pauseCounter--;
         HandleChanged();
@@ -33,19 +42,11 @@ public class PauseSwitcher : MonoBehaviour
     {
         if(_pauseCounter <= 0)
         {
-            if (_paused == false)
-                return;
-
-            _paused = false;
             Time.timeScale = 1f;
             Continued?.Invoke();
         }
         else  
         {
-            if (_paused)
-                return;
-            
-            _paused = true;
             Time.timeScale = 0f;
             Paused?.Invoke();
         }

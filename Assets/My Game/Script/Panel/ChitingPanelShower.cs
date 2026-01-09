@@ -6,37 +6,31 @@ public class ChitingPanelShower : MonoBehaviour
     [SerializeField] private ChitingPanel _panel;
     [SerializeField] private ButtonInformer _closeButton;
     [SerializeField] private InputReader _reader;
-
+    
     private bool _isActive;
 
-    public event Action OpenCursour;
     public event Action<bool> Changed;
 
-    public void Start() =>
-     _panel.Show();
-   
     private void OnEnable()
     {
         _reader.ChitingPanelPressed += OnPanelOpened;
-        _reader.ChitingPanelBackPressed += PanelOff;
         _closeButton.Clicked += PanelOff;
     }
 
     private void OnDisable()
     {
         _reader.ChitingPanelPressed -= OnPanelOpened;
-        _reader.ChitingPanelBackPressed -= PanelOff;
         _closeButton.Clicked -= PanelOff;
     }
-    
+
     private void PanelOff()
     {
         if (_panel.gameObject.activeSelf == false)
             return;
 
-        _panel.Hide();
+        _panel.Hide();        
     }
-  
+
     private void PanelShow()
     {
         if (_panel.gameObject.activeSelf)
@@ -49,9 +43,9 @@ public class ChitingPanelShower : MonoBehaviour
     {
         _isActive = !_isActive;
 
-        if(_isActive )
+        if (_isActive)
             PanelShow();
-         else
+        else
             PanelOff();
 
         Changed?.Invoke(_isActive);

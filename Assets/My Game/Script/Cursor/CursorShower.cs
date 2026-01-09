@@ -1,46 +1,57 @@
-using System;
 using UnityEngine;
 
 public class CursorShower : MonoBehaviour
 {
-    [SerializeField] private PauseSwitcher _pauseSwitcher;
-    [SerializeField] private RestartGame _restartGame;
-    [SerializeField] private ChitingPanelShower _chitingPanelShower;
+    [SerializeField] private bool _isShow;
+
+    private int _counterToShow = 0;
+
+    public static CursorShower Instance { get; private set; }
 
     private void Awake()
     {
-        _pauseSwitcher.Continued += Hide;
-        _pauseSwitcher.Paused += Show;
-        _chitingPanelShower.OpenCursour += Show;
-        _restartGame.OnRestarted += Show;
-        
-        if(_pauseSwitcher.IsPaused)      
-            Show();
+        if (Instance == null)
+        {
+            Instance = this;
+            transform.SetParent(null);
+            DontDestroyOnLoad(gameObject);
+
+            _counterToShow = _isShow ? 1 : 0;
+
+            return;
+        }
+
+        Destroy(gameObject);
     }
 
-    //private void OnEnable() =>
-       
-    
+    private void OnEnable() =>
+        ProcessShow();
 
-    //private void OnDisable() =>   
-          
-  
-    private void OnDestroy()
+    private void ProcessShow()
     {
-         _restartGame.OnRestarted -= Show;
-        _pauseSwitcher.Continued -= Hide;
-        _pauseSwitcher.Paused -= Show;
+        if(_counterToShow > 0)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        Debug.Log($"CursorState = {_counterToShow > 0}, Cursor.visible = {Cursor.visible}, Cursor.lockState = {Cursor.lockState}");
     }
 
     public void Show()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        _counterToShow++;
+        ProcessShow();
     }
 
-    private void Hide()
+    public void Hide()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        _counterToShow--;
+        ProcessShow();
     }
 }

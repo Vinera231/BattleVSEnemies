@@ -4,7 +4,7 @@ using UnityEngine;
 public class InputReader : MonoBehaviour
 {
     private const KeyCode SettingPanel = KeyCode.Escape;
-    private const KeyCode ChitingPanelBack = KeyCode.Escape;
+    private const KeyCode CommandChitingPanel = KeyCode.BackQuote;
     private const KeyCode ChitingPanel = KeyCode.Insert;
     private const KeyCode BuyKey = KeyCode.Space;
     private const KeyCode JumpKey = KeyCode.Space;
@@ -12,7 +12,6 @@ public class InputReader : MonoBehaviour
     private const KeyCode BackSelectKey = KeyCode.Q;
     private const KeyCode IventarKey = KeyCode.V;
 
-    public event Action ChitingPanelBackPressed;
     public event Action IventarPressed;
     public event Action SettingPanelPressed;
     public event Action ChitingPanelPressed;
@@ -40,7 +39,7 @@ public class InputReader : MonoBehaviour
 
     private void ReadChitingPanelBack()
     {
-        if (Input.GetKeyDown(ChitingPanelBack))
+        if (Input.GetKeyDown(CommandChitingPanel))
             ChitingPanelPressed?.Invoke();
     }
 

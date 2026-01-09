@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     [SerializeField] private bool _isGround;
     [SerializeField] private float _jump = 2f;
     [SerializeField] private float _slowDelay;
-    [SerializeField] private PauseSwitcher _pauseSwitcher;
     [SerializeField] private float _currentSpeed;
     [SerializeField] private Renderer _renderer;
     [SerializeField] private Material _frostSkin;
@@ -34,23 +33,14 @@ public class Player : MonoBehaviour
         _currentSpeed = _speed;
     }
 
-    private void Awake()
-    {
-        _pauseSwitcher.Continued += AllowAttack;
-        _pauseSwitcher.Paused += ProhibitAttack;
-
-        if (_pauseSwitcher.IsPaused)
-            ProhibitAttack();
-    }
-
-    private void OnDestroy()
-    {
-        _pauseSwitcher.Continued -= AllowAttack;
-        _pauseSwitcher.Paused -= ProhibitAttack;
-    }
-
     private void OnEnable()
     {
+        if (PauseSwitcher.Instance.IsPaused)
+            ProhibitAttack();
+
+        PauseSwitcher.Instance.Continued += AllowAttack;
+        PauseSwitcher.Instance.Paused += ProhibitAttack;
+
         _health.Died += OnDied;
         _reader.JumpPressed += OnJump;
         _reader.ShotPressed += OnShotPressed;
@@ -61,6 +51,9 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
+        PauseSwitcher.Instance.Continued -= AllowAttack;
+        PauseSwitcher.Instance.Paused -= ProhibitAttack;
+
         _health.Died -= OnDied;
         _reader.JumpPressed -= OnJump;
         _reader.ShotPressed -= OnShotPressed;

@@ -18,6 +18,5 @@ public class SettingButton : MonoBehaviour
     private void OnClick()
     {
         _settingsPanel.Show();
-    }
-        
+    }        
 }
