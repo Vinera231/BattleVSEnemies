@@ -7,7 +7,7 @@ public class InventoryLimitExtenctionBuffShop : Shop
     [SerializeField] private int _countSlots;
 
     protected override bool TryApplyItem() =>
-        _inventory.TryAddBuff(_boostSprite, KeyCode.F, OnApply);
+        _inventory.TryAddBuff(_boostSprite, Key, OnApply);
 
     private void OnApply() => 
         _inventory.IncreaseLimit(_countSlots);   

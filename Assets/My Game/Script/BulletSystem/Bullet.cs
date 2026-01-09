@@ -2,10 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    protected static Bullet Instance;
-
     [SerializeField] private float _damage;
-
     public float Damage => _damage;
 
     protected virtual  void Start() =>

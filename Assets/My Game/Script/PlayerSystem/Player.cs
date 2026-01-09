@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Material _defultSkin;
     [SerializeField] private List<MonoBehaviour> _secondWeapons;
 
+    private bool _canJump = true;
     private bool _isSlow;
     private int _allowedAttackCounter = 1;
 
@@ -97,10 +98,25 @@ public class Player : MonoBehaviour
         _allowedAttackCounter--;
     }
 
+    public void AllowJump() =>
+        _canJump = true;
+
+    public void ProhibitJump()
+    {
+        _canJump = false;
+        OffJump();
+    }
+
     public void OnJump()
     {
-        if (_isGround)
+        if (_isGround && _canJump)
             _velocity.y = Mathf.Sqrt(_jump * -2f * gravity);
+    }
+   
+    public void OffJump()
+    {
+        if (_velocity.y > 0)
+            _velocity.y = 0f;
     }
 
     public void IncreaseSpeed(int amount)

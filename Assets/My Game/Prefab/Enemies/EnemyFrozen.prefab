@@ -551,6 +551,7 @@ MonoBehaviour:
   _defultSkin: {fileID: 2100000, guid: c65d4247d71e5fa4a9cadd4c755ce32d, type: 2}
   _frostSkin: {fileID: 2100000, guid: c65d4247d71e5fa4a9cadd4c755ce32d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
+  _minionSkin: {fileID: 0}
   _renderer: {fileID: 5556298816651745378}
   _slowDelay: 0
 --- !u!1 &7157658716984522113

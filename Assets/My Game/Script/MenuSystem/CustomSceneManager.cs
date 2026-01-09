@@ -24,6 +24,6 @@ public class CustomSceneManager : MonoBehaviour
     private void OnPlayrDied() =>
         LoadMenu();
 
-    private void LoadMenu() =>
+    public void LoadMenu() =>
         SceneManager.LoadScene(0);
 }

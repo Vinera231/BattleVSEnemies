@@ -25,6 +25,7 @@ public class QuietPlace : MonoBehaviour
         if (other.TryGetComponent(out Player player))
         {
             player.ProhibitAttack();
+            player.ProhibitJump();
 
             foreach (Enemy enemy in _enemies)
                 enemy.Freeze();
@@ -38,6 +39,7 @@ public class QuietPlace : MonoBehaviour
         if (other.TryGetComponent(out Player player))
         {
             player.AllowAttack();
+            player.AllowJump();
 
             foreach (Enemy enemy in _enemies)
                 enemy.ResetFreezen();

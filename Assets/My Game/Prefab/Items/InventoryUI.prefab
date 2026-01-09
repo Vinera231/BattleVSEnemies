@@ -189,7 +189,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4360588734127670136}
   - component: {fileID: 2030808139301505622}
-  - component: {fileID: 1570359798786790376}
   - component: {fileID: 6012783518094100866}
   - component: {fileID: 7393575075350129843}
   - component: {fileID: 7842015501801092365}
@@ -228,21 +227,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8726032992514041288}
   m_CullTransparentMesh: 1
---- !u!114 &1570359798786790376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726032992514041288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1709e7e32b23dca4caae331b81604a5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inventory: {fileID: 6012783518094100866}
-  _bulletIco: {fileID: 21300000, guid: db4d1c1fe5d549742b287eb59c20bdce, type: 3}
-  _damageRed: {fileID: 21300000, guid: bcbf488af50b37f4498a6136223bf155, type: 3}
 --- !u!114 &6012783518094100866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +242,7 @@ MonoBehaviour:
   _prefab: {fileID: 7223500548019028525, guid: 6ba5bfab636bec54b83e1987ae4c1ea4, type: 3}
   _content: {fileID: 8893737690760816818}
   _selector: {fileID: 7393575075350129843}
+  _buffLimit: 0
 --- !u!114 &7393575075350129843
 MonoBehaviour:
   m_ObjectHideFlags: 0

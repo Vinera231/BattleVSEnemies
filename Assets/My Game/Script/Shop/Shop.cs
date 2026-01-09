@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class Shop : MonoBehaviour
 {
+    protected const KeyCode Key = KeyCode.Tab;
+  
     [SerializeField] private int _price;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private InputReader _reader;

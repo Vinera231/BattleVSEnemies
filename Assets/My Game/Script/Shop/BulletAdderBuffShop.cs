@@ -8,7 +8,7 @@ public class BulletAdderBuffShop : Shop
     [SerializeField] private Player _player;
 
     protected override bool TryApplyItem() =>
-        _inventory.TryAddBuff(_boostSprite, KeyCode.F, OnApply);
+        _inventory.TryAddBuff(_boostSprite, Key, OnApply);
 
     private void OnApply()
     {

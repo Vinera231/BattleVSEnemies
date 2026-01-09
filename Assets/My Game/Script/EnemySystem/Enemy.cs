@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour , IDamageble
     [SerializeField] private Material _defultSkin;
     [SerializeField] private Material _frostSkin;
     [SerializeField] private Material _poisonSkin;
+    [SerializeField] private Material _minionSkin;
     [SerializeField] private Renderer _renderer;
     [SerializeField]private float _slowDelay;
 
@@ -90,6 +91,10 @@ public class Enemy : MonoBehaviour , IDamageble
         }
     }
 
+    public void Minion()
+    {
+       _renderer.material = _minionSkin;
+    }
     public virtual void TakeDamage(float value)
     {
         _health.TakeDamage(value);
@@ -128,7 +133,7 @@ public class Enemy : MonoBehaviour , IDamageble
         ParticleSpawner.Instance.CreateBlood(transform.position);
         Destroy(gameObject);
     }
-
+    
     public void ApplaySlow()
     {
         if (_isSlowed)

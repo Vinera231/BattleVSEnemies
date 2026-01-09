@@ -4,6 +4,7 @@ public class Music : MonoBehaviour
 {
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioClip _defaultMusic;
+    [SerializeField] private AudioClip _dabtStepMusic;
     [SerializeField] private AudioClip _bossMusic;
     [SerializeField] private Wave _beforeBoss;
     [SerializeField] private Wave _afterBoss;
@@ -26,6 +27,8 @@ public class Music : MonoBehaviour
 
     public void PlayDefaultMusic() =>
         Play(_defaultMusic);
+    public void PlayDadStepMusic() =>
+        Play(_dabtStepMusic);
 
     private void Play(AudioClip clip)
     {

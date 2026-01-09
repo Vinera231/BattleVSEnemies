@@ -28,7 +28,7 @@ public class WaveManager : MonoBehaviour
         _view.SetTime(elapsed);
     }
 
-    private void StartWave(int index)
+    public void StartWave(int index)
     {
         _currentWaveIndex = index;
         _waveStartTime = Time.time;

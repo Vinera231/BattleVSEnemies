@@ -4,14 +4,18 @@ using UnityEngine;
 public class InputReader : MonoBehaviour
 {
     private const KeyCode SettingPanel = KeyCode.Escape;
-    private const KeyCode BuyKey = KeyCode.E;
+    private const KeyCode ChitingPanelBack = KeyCode.Escape;
+    private const KeyCode ChitingPanel = KeyCode.Insert;
+    private const KeyCode BuyKey = KeyCode.Space;
     private const KeyCode JumpKey = KeyCode.Space;
     private const KeyCode SelectKey = KeyCode.R;
     private const KeyCode BackSelectKey = KeyCode.Q;
-    private const KeyCode IventarKey = KeyCode.F;
+    private const KeyCode IventarKey = KeyCode.V;
 
+    public event Action ChitingPanelBackPressed;
     public event Action IventarPressed;
     public event Action SettingPanelPressed;
+    public event Action ChitingPanelPressed;
     public event Action ShotPressed;
     public event Action ShotUnpressed;
     public event Action SecondWeaponPressed;
@@ -24,12 +28,20 @@ public class InputReader : MonoBehaviour
     private void Update()
     {
         ReadSettingPanel();
+        ReadChitingPanel();
+        ReadChitingPanelBack();
         ReadShotPressed();
         ReadBuyKey();
         ReadJumpKey();
         ReadSelectKey();
         ReadIventarKey();
         ReadSecondWeapon();
+    }
+
+    private void ReadChitingPanelBack()
+    {
+        if (Input.GetKeyDown(ChitingPanelBack))
+            ChitingPanelPressed?.Invoke();
     }
 
     private void ReadSecondWeapon()
@@ -74,12 +86,18 @@ public class InputReader : MonoBehaviour
             SelectPressed?.Invoke();
 
         if (Input.GetKeyDown(BackSelectKey))
-             BackSelectPressed?.Invoke();
+            BackSelectPressed?.Invoke();
     }
 
     private void ReadIventarKey()
     {
         if (Input.GetKeyDown(IventarKey))
             IventarPressed?.Invoke();
+    }
+   
+    private void ReadChitingPanel()
+    {
+        if (Input.GetKeyDown(ChitingPanel))
+           ChitingPanelPressed?.Invoke();
     }
 }

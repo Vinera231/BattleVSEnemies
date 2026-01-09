@@ -15,7 +15,7 @@ public class BulletSpawner : MonoBehaviour
 
     private Coroutine _shootCoroutine;
     private WaitForSeconds _waitShoot;
-    private float _currentDamage;
+    private float  _currentDamage;
     private bool _canShoot = true;
 
     public bool IsFull => _bullet >= _limitbullet;
@@ -36,6 +36,11 @@ public class BulletSpawner : MonoBehaviour
     {
         StopShoot();
         _shootCoroutine = StartCoroutine(ShootingRoutine());
+    }
+
+    public void SetBulletDamage(float value)
+    {
+        _currentDamage = Mathf.Max(0, value);
     }
 
     public void StopShoot()
