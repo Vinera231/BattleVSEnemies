@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2750742041236090880}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.0061161816, z: -0, w: -0.9999813}
+  m_LocalRotation: {x: 0.00949284, y: 0.008613754, z: 0.001598616, w: -0.99991655}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -199,7 +199,7 @@ Transform:
   - {fileID: 629198825344492429}
   - {fileID: 7954961593946291891}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -359.299, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.089, y: -360.985, z: -0.174}
 --- !u!33 &2750742041236090893
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -350,6 +350,7 @@ MonoBehaviour:
   _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
+  _minionSkin: {fileID: 0}
   _renderer: {fileID: 2750742041236090882}
   _slowDelay: 6
 --- !u!1 &5412154490053405964

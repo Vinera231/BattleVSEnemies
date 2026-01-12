@@ -14,6 +14,12 @@ public class Health : MonoBehaviour
 
     public float Value => _healthValue;
 
+    public void IncreaseHealth(float health)
+    {
+        _healthValue = health;
+        _maxValue = health;
+    }
+
     public void TakeDamage(float damage)
     {
         if (damage < 0)

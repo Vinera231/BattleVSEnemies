@@ -41,6 +41,11 @@ public class WaveManager : MonoBehaviour
         Vector2 spawnPosition = transform.position;
     }
 
+    public void DeleteBoss(int index)
+    {
+       _waves.Remove(_waves[index]);
+    }
+
     private void OnWaveFinished()
     {
         Wave wave = _waves[_currentWaveIndex];

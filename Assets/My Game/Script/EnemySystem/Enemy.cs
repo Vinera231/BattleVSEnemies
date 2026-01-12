@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour , IDamageble
     [SerializeField]private float _slowDelay;
 
     protected Health HealthComponent => _health;
-    private Coroutine _poisonCoroutine;
     private Coroutine _fricklesCoroutine;
     private bool _isPoison;
     private bool _isSlowed;
@@ -91,10 +90,7 @@ public class Enemy : MonoBehaviour , IDamageble
         }
     }
 
-    public void Minion()
-    {
-       _renderer.material = _minionSkin;
-    }
+   
     public virtual void TakeDamage(float value)
     {
         _health.TakeDamage(value);
@@ -125,6 +121,7 @@ public class Enemy : MonoBehaviour , IDamageble
     {
         Died?.Invoke(this);
         ProcessDied();
+        
     }
 
     protected virtual void ProcessDied()
@@ -134,6 +131,11 @@ public class Enemy : MonoBehaviour , IDamageble
         Destroy(gameObject);
     }
     
+    public void ReplaceSkin()
+    {
+        _renderer.material = _minionSkin;
+    }
+  
     public void ApplaySlow()
     {
         if (_isSlowed)
@@ -147,6 +149,7 @@ public class Enemy : MonoBehaviour , IDamageble
 
         Invoke(nameof(AfterSlow), _slowDelay);
     }
+
 
     public void AfterSlow()
     {
@@ -169,54 +172,36 @@ public class Enemy : MonoBehaviour , IDamageble
 
         _isPoison = true;
 
-        _poisonCoroutine = StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
         _fricklesCoroutine = StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
     }
 
     public IEnumerator PoisonCoroutine(float poisonDamage, float duraction, float tickInterval)
     {
-        float _elapset = 0f;
+        float elapset = 0f;
+        WaitForSeconds wait = new(tickInterval);
+        bool toogle = false;
 
-        while (_elapset < duraction)
+        while (elapset < duraction)
         {
             _health.TakeDamage(poisonDamage);
             SfxPlayer.Instance.PlayPoisonSound();
 
-            yield return new WaitForSeconds(tickInterval);
-            _elapset += tickInterval;
-            Debug.Log("есть  отровление");
-            StartCoroutine(FricklerCoroutine(duraction,tickInterval));
+            yield return wait;
+            elapset += tickInterval;
+            Debug.Log($"{elapset += tickInterval} есть  отровление");
+            toogle = !toogle;
+            _renderer.material = toogle ? _poisonSkin : _defultSkin;
         }
-
-        _isPoison = false;
-
+      
+        _renderer.material = _defultSkin;
+         _isPoison = false;
+       
+    
         if(_fricklesCoroutine != null)
         {
             StopCoroutine(_fricklesCoroutine);
             _fricklesCoroutine = null;
         }
-              
-         if(_renderer != null && _defultSkin != null)
-            _renderer.material = _defultSkin;    
-    }
-
-    private IEnumerator FricklerCoroutine(float duraction, float tickInterval)
-    {
-        float elapsed = 0f;
-        bool toogle;
-
-        while (elapsed < duraction && _isPoison)
-        {
-            toogle =! false;
-            _renderer.material = toogle ? _poisonSkin : _defultSkin;
-        
-            yield return new WaitForSeconds(tickInterval);
-            elapsed += tickInterval;
-        }
-
-        if (_renderer != null && _defultSkin != null)
-            _renderer.material = _defultSkin;
-
     }
 
     protected virtual void OnHealthChanged(float value)

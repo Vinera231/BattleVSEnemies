@@ -13,6 +13,6 @@ public class HealthPotionBuffShop : Shop
     private void OnApply()
     {
         if (_player.TryTakeHealth(_amountHealth))
-            Debug.Log($"Игрок получил {_amountHealth} пуль");
+            Debug.Log($"Игрок получил {_amountHealth} здоровья");
     }
 }

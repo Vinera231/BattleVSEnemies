@@ -163,6 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cb2c3e41c4ccd46b2b40c0d9ebbb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poisonDamage: 5
-  _poisonDuraction: 2
-  _tickInterval: 2
+  _poisonDamage: 1
+  _durationInSecond: 4
+  _tickIntervalInSecond: 0.25

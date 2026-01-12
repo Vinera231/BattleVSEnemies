@@ -8,7 +8,7 @@ public class InputReader : MonoBehaviour
     private const KeyCode ChitingPanel = KeyCode.Insert;
     private const KeyCode BuyKey = KeyCode.Space;
     private const KeyCode JumpKey = KeyCode.Space;
-    private const KeyCode SelectKey = KeyCode.R;
+    private const KeyCode SelectKey = KeyCode.E;
     private const KeyCode BackSelectKey = KeyCode.Q;
     private const KeyCode IventarKey = KeyCode.V;
 

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class RegenEnemy : Enemy
 {
-    private readonly float _recoveryHealthPerSecond = 5f;
-    private readonly float _recoveryHealthAfterAttack = 15f;
+    private readonly float _recoveryHealthPerSecond = 10f;
+    private readonly float _recoveryHealthAfterAttack = 20f;
 
     protected override void Update()
     {

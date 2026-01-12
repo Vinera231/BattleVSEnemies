@@ -15,11 +15,11 @@ public class Score : MonoBehaviour
 
     public bool TrySpendScore(int value)
     {
-        if(_score < value)
+        if(_score < value)     
             return false;
-
+        
         _score -= value;
+        _view.UpdateInfo(_score);
         return true;
     }
-
 }

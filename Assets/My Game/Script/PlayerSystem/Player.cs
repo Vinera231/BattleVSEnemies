@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Material _frostSkin;
     [SerializeField] private Material _defultSkin;
     [SerializeField] private List<MonoBehaviour> _secondWeapons;
+    [SerializeField] private GunBase _gun;
 
     private bool _canJump = true;
     private bool _isSlow;
@@ -80,6 +81,13 @@ public class Player : MonoBehaviour
 
         _velocity.y += gravity * Time.deltaTime;
         _controller.Move(_velocity * Time.deltaTime);
+    }
+
+    public void SetGun(GunBase gun)
+    {
+        _gun.gameObject.SetActive(false);
+        _gun = gun;
+        _gun.gameObject.SetActive(true);
     }
 
     public void AllowAttack() =>
@@ -193,7 +201,7 @@ public class Player : MonoBehaviour
     private void OnShotPressed()
     {
         if (_allowedAttackCounter > 0)
-            _bulletSpawner.StartShoot();
+            _bulletSpawner.StartShoot(_gun.SpawnPoint);
     }
 
     private void OnShotUnpressed() =>

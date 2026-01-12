@@ -32,10 +32,10 @@ public class BulletSpawner : MonoBehaviour
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 
-    public void StartShoot()
+    public void StartShoot(Transform spawnPoint)
     {
         StopShoot();
-        _shootCoroutine = StartCoroutine(ShootingRoutine());
+        _shootCoroutine = StartCoroutine(ShootingRoutine(spawnPoint));
     }
 
     public void SetBulletDamage(float value)
@@ -52,17 +52,17 @@ public class BulletSpawner : MonoBehaviour
         }
     }
 
-    private IEnumerator ShootingRoutine()
+    private IEnumerator ShootingRoutine(Transform spawnPoint)
     {
         while (_canShoot)
         {
-            Shoot();
+            Shoot(spawnPoint);
 
             yield return _waitShoot;
         }
     }
 
-    private void Shoot()
+    private void Shoot(Transform spawnPoint)
     {
         if (_bullet <= 0)
         {
@@ -71,9 +71,9 @@ public class BulletSpawner : MonoBehaviour
             return;
         }
 
-        Bullet newBullet = Instantiate(_prefab, transform.position, transform.rotation);
+        Bullet newBullet = Instantiate(_prefab, spawnPoint.position, spawnPoint.rotation);
         Rigidbody rigidbody = newBullet.GetComponent<Rigidbody>();
-        rigidbody.linearVelocity = transform.forward * _velocity;
+        rigidbody.linearVelocity = spawnPoint.forward * _velocity;
         rigidbody.freezeRotation = true;
 
        newBullet.SetDamage(_currentDamage);
