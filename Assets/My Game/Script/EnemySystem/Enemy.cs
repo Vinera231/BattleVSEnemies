@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour , IDamageble
+public class Enemy : MonoBehaviour, IDamageble
 {
     private const float StoppingDistance = 0.5f;
 
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour , IDamageble
     [SerializeField] private Material _poisonSkin;
     [SerializeField] private Material _minionSkin;
     [SerializeField] private Renderer _renderer;
-    [SerializeField]private float _slowDelay;
+    [SerializeField] private float _slowDelay;
 
     protected Health HealthComponent => _health;
     private Coroutine _fricklesCoroutine;
@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour , IDamageble
     private float _elapsedTime;
     private Player _player;
     private bool _isFrozen;
+    private bool _isMinion;
 
     public event Action Attacked;
     public event Action<Enemy> Died;
@@ -60,7 +61,7 @@ public class Enemy : MonoBehaviour , IDamageble
 
     protected virtual void Update()
     {
-        if (_isFrozen) 
+        if (_isFrozen)
             return;
 
         if (_agent.isOnNavMesh == false || _player == null)
@@ -90,7 +91,7 @@ public class Enemy : MonoBehaviour , IDamageble
         }
     }
 
-   
+
     public virtual void TakeDamage(float value)
     {
         _health.TakeDamage(value);
@@ -99,15 +100,15 @@ public class Enemy : MonoBehaviour , IDamageble
     public void Freeze()
     {
         _isFrozen = true;
-       _agent.speed = 0f;
+        _agent.speed = 0f;
     }
 
     public void ResetFreezen()
     {
         _isFrozen = false;
         _agent.speed = _currentSpeed;
-    }  
-    
+    }
+
     protected virtual void Attack(Player player)
     {
         player.TakeDamage(_damageAmount);
@@ -121,21 +122,22 @@ public class Enemy : MonoBehaviour , IDamageble
     {
         Died?.Invoke(this);
         ProcessDied();
-        
     }
 
     protected virtual void ProcessDied()
     {
+        _renderer.material = _defultSkin;
         SfxPlayer.Instance.PlayDieEnemySound();
         ParticleSpawner.Instance.CreateBlood(transform.position);
         Destroy(gameObject);
     }
-    
+
     public void ReplaceSkin()
     {
+        _isMinion = true;
         _renderer.material = _minionSkin;
     }
-  
+
     public void ApplaySlow()
     {
         if (_isSlowed)
@@ -146,7 +148,6 @@ public class Enemy : MonoBehaviour , IDamageble
         _renderer.material = _frostSkin;
 
         SfxPlayer.Instance.PlayFrostSound();
-
         Invoke(nameof(AfterSlow), _slowDelay);
     }
 
@@ -155,16 +156,21 @@ public class Enemy : MonoBehaviour , IDamageble
     {
         _agent.speed = _currentSpeed;
         _isSlowed = false;
-        _renderer.material = _defultSkin;
+
+        if (_isMinion == false)
+            _renderer.material = _defultSkin;
+
+        if (_isMinion == true)
+            _renderer.material = _minionSkin;
     }
 
     public void ApplyPoison(float poisonDamage, float duraction, float tickInterval)
     {
-      
-        if (_isPoison == true)
+
+        if (_isPoison == true || _isMinion)
             return;
 
-        if(_renderer == null)
+        if (_renderer == null)
         {
             Debug.LogWarning("Enemy not Applay : Render material");
             return;
@@ -193,11 +199,17 @@ public class Enemy : MonoBehaviour , IDamageble
             _renderer.material = toogle ? _poisonSkin : _defultSkin;
         }
       
-        _renderer.material = _defultSkin;
-         _isPoison = false;
+            if (_isMinion == false)
+            _renderer.material = _defultSkin;
+           
+        if (_isMinion == true)
+            _renderer.material = _minionSkin;
        
-    
-        if(_fricklesCoroutine != null)
+        _renderer.material = _defultSkin;
+       _isPoison = false;
+       
+
+        if (_fricklesCoroutine != null)
         {
             StopCoroutine(_fricklesCoroutine);
             _fricklesCoroutine = null;

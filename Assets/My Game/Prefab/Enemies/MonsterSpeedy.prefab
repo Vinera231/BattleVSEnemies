@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: be93996b8bd91dc4d9355707cc420af8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cdb8343abbe5d0a448dcca034d2badd5, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: be93996b8bd91dc4d9355707cc420af8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cdb8343abbe5d0a448dcca034d2badd5, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -530,7 +530,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -612,6 +612,7 @@ MonoBehaviour:
   _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
+  _minionSkin: {fileID: 0}
   _renderer: {fileID: 5319439339284348693}
   _slowDelay: 6
 --- !u!1 &5319439340207521724

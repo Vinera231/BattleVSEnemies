@@ -18,10 +18,10 @@ public class CheatConsoleUI : MonoBehaviour
 
     private void OnEnable() =>
         _button.Clicked += OnEnterCommand;
-
-    private void OnDisable() =>
+    
+    private void OnDisable() =>   
         _button.Clicked -= OnEnterCommand;
-
+    
     public void ShowConsole() =>
         _panel.gameObject.SetActive(true);
 

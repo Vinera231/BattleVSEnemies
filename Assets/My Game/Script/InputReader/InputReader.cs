@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Splines.ExtrusionShapes;
 
 public class InputReader : MonoBehaviour
 {
     private const KeyCode SettingPanel = KeyCode.Escape;
-    private const KeyCode CommandChitingPanel = KeyCode.BackQuote;
-    private const KeyCode ChitingPanel = KeyCode.Insert;
+    private const KeyCode ChitingPanel = KeyCode.BackQuote;
+    private const KeyCode EnterCheatPanel = KeyCode.KeypadEnter;
     private const KeyCode BuyKey = KeyCode.Space;
     private const KeyCode JumpKey = KeyCode.Space;
     private const KeyCode SelectKey = KeyCode.E;
@@ -15,6 +16,7 @@ public class InputReader : MonoBehaviour
     public event Action IventarPressed;
     public event Action SettingPanelPressed;
     public event Action ChitingPanelPressed;
+    public event Action EnterCheatPanelPressed;
     public event Action ShotPressed;
     public event Action ShotUnpressed;
     public event Action SecondWeaponPressed;
@@ -28,19 +30,13 @@ public class InputReader : MonoBehaviour
     {
         ReadSettingPanel();
         ReadChitingPanel();
-        ReadChitingPanelBack();
+        ReadEnterCheatPanel();
         ReadShotPressed();
         ReadBuyKey();
         ReadJumpKey();
         ReadSelectKey();
         ReadIventarKey();
         ReadSecondWeapon();
-    }
-
-    private void ReadChitingPanelBack()
-    {
-        if (Input.GetKeyDown(CommandChitingPanel))
-            ChitingPanelPressed?.Invoke();
     }
 
     private void ReadSecondWeapon()
@@ -99,4 +95,11 @@ public class InputReader : MonoBehaviour
         if (Input.GetKeyDown(ChitingPanel))
            ChitingPanelPressed?.Invoke();
     }
+
+    private void ReadEnterCheatPanel()
+    {
+        if (Input.GetKeyDown(EnterCheatPanel))
+            EnterCheatPanelPressed?.Invoke();
+    }
+
 }
