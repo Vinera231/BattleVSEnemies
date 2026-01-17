@@ -1,4 +1,5 @@
 using System;
+using Random = UnityEngine.Random;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -23,15 +24,19 @@ public class Enemy : MonoBehaviour, IDamageble
     [SerializeField] private Material _minionSkin;
     [SerializeField] private Renderer _renderer;
     [SerializeField] private float _slowDelay;
+    [SerializeField] private float _fireSpreadChance = 0.40f;
+    [SerializeField] private float _fireSpreadRadius = 1f;
 
     protected Health HealthComponent => _health;
     private Coroutine _fricklesCoroutine;
     private bool _isPoison;
     private bool _isSlowed;
+    private bool _isFire;
     private float _elapsedTime;
     private Player _player;
     private bool _isFrozen;
     private bool _isMinion;
+    private float _fireElapsed;
 
     public event Action Attacked;
     public event Action<Enemy> Died;
@@ -151,6 +156,14 @@ public class Enemy : MonoBehaviour, IDamageble
         Invoke(nameof(AfterSlow), _slowDelay);
     }
 
+    public void ApplayFire(float fireDamage, float duraction)
+    {
+        if (_isFire)
+            return;
+
+        _isFire = true;
+        StartCoroutine(FireCoroutine(fireDamage, duraction));
+    }
 
     public void AfterSlow()
     {
@@ -198,21 +211,61 @@ public class Enemy : MonoBehaviour, IDamageble
             toogle = !toogle;
             _renderer.material = toogle ? _poisonSkin : _defultSkin;
         }
-      
-            if (_isMinion == false)
+
+        if (_isMinion == false)
             _renderer.material = _defultSkin;
-           
+
         if (_isMinion == true)
             _renderer.material = _minionSkin;
-       
+
         _renderer.material = _defultSkin;
-       _isPoison = false;
-       
+        _isPoison = false;
+
 
         if (_fricklesCoroutine != null)
         {
             StopCoroutine(_fricklesCoroutine);
             _fricklesCoroutine = null;
+        }
+    }
+
+    private IEnumerator FireCoroutine(float fireDamage, float duration)
+    {
+        float interval = 1f;
+        WaitForSeconds wait = new WaitForSeconds(interval);
+        ParticleSpawner.Instance.CreateFire(transform, transform.position);
+        Debug.Log(ParticleSpawner.Instance);
+
+        while (_fireElapsed < duration)
+        {
+            _health.TakeDamage(fireDamage);
+            TrySpreedFire(fireDamage, duration);
+            _fireElapsed += interval;
+
+            yield return wait;
+        }
+
+        _isFire = false;
+        _fireElapsed = 0f;
+    }
+
+    private void TrySpreedFire(float fireDamage, float duraction)
+    {
+        if (Random.value > fireDamage)
+            return;
+
+        Collider[] hits = Physics.OverlapSphere(transform.position, _fireSpreadRadius);
+
+        foreach (var hit in hits)
+        {
+            if (hit.TryGetComponent(out Enemy enemy))
+            {
+                if (enemy == this)
+                    continue;
+
+                enemy.ApplayFire(fireDamage, duraction);
+                break;
+            }
         }
     }
 
