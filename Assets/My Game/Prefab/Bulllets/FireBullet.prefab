@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fireDamage: 10
-  _durationInSecond: 6
+  _durationInSecond: 7
 --- !u!1 &7749632472313140456
 GameObject:
   m_ObjectHideFlags: 0
