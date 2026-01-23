@@ -20,10 +20,16 @@ public class CustomSceneManager : MonoBehaviour
         if (_player != null)
             _player.Died -= OnPlayrDied;
     }
-   
-    private void OnPlayrDied() =>
+
+    public void OnPlayrDied() =>
         LoadMenu();
 
     public void LoadMenu() =>
         SceneManager.LoadScene(0);
+
+    public void LoadEasyMod() =>
+        SceneManager.LoadScene(2);
+
+    public void LoadNormalMod() =>
+           SceneManager.LoadScene(1);
 }

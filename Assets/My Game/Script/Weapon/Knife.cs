@@ -41,7 +41,6 @@ public class Knife : MonoBehaviour, ISecondWeapon
             return;
 
         _damagebles.Add(damageble);
-        Debug.Log($"Объект с именем {collider.name}  зашол зону поражения");
     }
 
     private void OnCollisionExited(Collider collider)
@@ -50,6 +49,5 @@ public class Knife : MonoBehaviour, ISecondWeapon
             return;
 
         _damagebles.Remove(damageble);
-        Debug.Log($"Объект с именем {collider.name} вышел из зони ");
     }
 }

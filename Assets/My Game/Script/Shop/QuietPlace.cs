@@ -29,7 +29,7 @@ public class QuietPlace : MonoBehaviour
 
             foreach (Enemy enemy in _enemies)
                 enemy.Freeze();
-            Debug.Log("Enter");
+
             _isActive = true;
         }
     }
@@ -43,7 +43,7 @@ public class QuietPlace : MonoBehaviour
 
             foreach (Enemy enemy in _enemies)
                 enemy.ResetFreezen();
-            Debug.Log("Exited");
+
             _isActive = false;
         }
     }

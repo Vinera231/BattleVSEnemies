@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour, IDamageble
     [SerializeField] private Material _minionSkin;
     [SerializeField] private Renderer _renderer;
     [SerializeField] private float _slowDelay;
-    [SerializeField] private float _fireSpreadChance = 0.40f;
     [SerializeField] private float _fireSpreadRadius = 1f;
 
     protected Health HealthComponent => _health;

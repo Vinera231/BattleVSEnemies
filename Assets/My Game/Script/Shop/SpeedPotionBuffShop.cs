@@ -17,9 +17,6 @@ public class SpeedPotionBuffShop : Shop
         Invoke(nameof(ResetBuff), _timeInSeconds);
     }
 
-    private void ResetBuff()
-    {
+    private void ResetBuff() =>  
         _player.ReseteToBaseSpeed(_amountSpeed);
-        Debug.Log($"время прошло {_amountSpeed} ResetBuff ");
-    }
 }

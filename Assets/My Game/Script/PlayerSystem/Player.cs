@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
         if (_isGround && _canJump)
             _velocity.y = Mathf.Sqrt(_jump * -2f * gravity);
     }
-   
+
     public void OffJump()
     {
         if (_velocity.y > 0)
@@ -125,7 +125,11 @@ public class Player : MonoBehaviour
         _speed += amount;
 
         if (ParticleSpawner.Instance != null)
+        {
+            Debug.Log("Spawn is doing ");
             ParticleSpawner.Instance.CreateSpeed(transform.position);
+        }
+
     }
 
     public void ReseteToBaseSpeed(int amount) =>

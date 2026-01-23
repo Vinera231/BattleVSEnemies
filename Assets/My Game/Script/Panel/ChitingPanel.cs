@@ -2,17 +2,21 @@ using UnityEngine;
 
 public class ChitingPanel : MonoBehaviour
 {
-    public void Show()
+    private void OnEnable()
     {
-        gameObject.SetActive(true);
         CursorShower.Instance.Show();
         PauseSwitcher.Instance.PauseGame();
     }
 
-    public void Hide()
+    private void OnDisable()
     {
-        gameObject.SetActive(false);
-        CursorShower.Instance.Hide();
         PauseSwitcher.Instance.PlayGame();
+        CursorShower.Instance.Hide();
     }
+
+    public void Show() =>    
+        gameObject.SetActive(true);
+    
+    public void Hide() =>   
+        gameObject.SetActive(false);
 }

@@ -39,8 +39,6 @@ public class CursorShower : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-
-        Debug.Log($"CursorState = {_counterToShow > 0}, Cursor.visible = {Cursor.visible}, Cursor.lockState = {Cursor.lockState}");
     }
 
     public void Show()

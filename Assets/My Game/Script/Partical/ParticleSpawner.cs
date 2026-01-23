@@ -8,10 +8,12 @@ public class ParticleSpawner : MonoBehaviour
     [SerializeField] private BloodParticle _bloodPrefab;
     [SerializeField] private SpeedParticle _speedParticle;
     [SerializeField] private ParticalFire _particalFire;
+    [SerializeField] private SpawnerPartical _spawnerPartical;
     [SerializeField] private Vector3 _explosionOffset;
     [SerializeField] private Vector3 _bloodOffset;
     [SerializeField] private Vector3 _speedOffset;
     [SerializeField] private Vector3 _fireOffset;
+    [SerializeField] private Vector3 _spawnerOffset;
 
     private void Awake()
     {
@@ -37,4 +39,10 @@ public class ParticleSpawner : MonoBehaviour
         particalFire.transform.rotation = Quaternion.identity;
     }
 
+    public void CreateSpawnerPartical(Transform parent,Vector3 position)
+    {
+        SpawnerPartical spawnerPartical = Instantiate(_spawnerPartical, parent);
+        spawnerPartical.transform.position = position + _spawnerOffset;
+        spawnerPartical.transform.position = Quaternion.identity * position;
+    }
 }

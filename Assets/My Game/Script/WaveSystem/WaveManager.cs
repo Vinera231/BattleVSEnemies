@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    public int CurrentWave {  get; private set; }
+
+    [SerializeField] private SkyChenged _skyChanged;
     [SerializeField] private WaveManagerView _view;
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Score _score;
@@ -28,6 +31,7 @@ public class WaveManager : MonoBehaviour
         _view.SetTime(elapsed);
     }
 
+    
     public void StartWave(int index)
     {
         _currentWaveIndex = index;
@@ -39,6 +43,9 @@ public class WaveManager : MonoBehaviour
         _waves[index].Spawned += OnEnemySpawned;
         _view.SetName(_waves[index].Text);
         Vector2 spawnPosition = transform.position;
+        CurrentWave++;
+        _skyChanged.OnWaveChanged(CurrentWave);
+    
     }
 
     public void DeleteBoss(int index)
@@ -54,7 +61,6 @@ public class WaveManager : MonoBehaviour
         wave.Spawned -= OnEnemySpawned;
 
         _score.Increaze(wave.ScoreReward);
-        Debug.Log($"Increaze дали очки");
 
         ++_currentWaveIndex;
 
@@ -73,6 +79,7 @@ public class WaveManager : MonoBehaviour
   
     private void OnEnemySpawned(Enemy enemy)
     {
+        ParticleSpawner.Instance.CreateSpawnerPartical(enemy.transform, enemy.transform.position);
         EnemySpawned?.Invoke(enemy);
     }
   
