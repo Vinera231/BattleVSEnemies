@@ -4,55 +4,42 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public int CurrentWave {  get; private set; }
-
-    [SerializeField] private SkyChenged _skyChanged;
-    [SerializeField] private WaveManagerView _view;
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Score _score;
 
-    private float _waveStartTime;
-    private bool _isActiveWave;
     private int _currentWaveIndex = 0;
 
+    public event Action<int> WaveStarted;
     public event Action AllWavesFinished;
     public event Action<Enemy> EnemySpawned;
     public event Action<Enemy> EnemyDied;
 
+    public bool IsActiveWave => _currentWaveIndex < _waves.Count;
+
+    public int CurrentWaveIndex => _currentWaveIndex;
+
     private void Start() =>
         StartWave(_currentWaveIndex);
 
-    private void Update()
-    {
-        if (_isActiveWave == false)
-            return;
-
-        float elapsed = Time.time - _waveStartTime;
-        _view.SetTime(elapsed);
-    }
-
-    
-    public void StartWave(int index)
+    public string GetWaveName(int index) =>  
+        _waves[index].Text;
+  
+    public void DeleteBoss() =>   
+       _waves.Remove(_waves[9]);
+  
+    private void StartWave(int index)
     {
         _currentWaveIndex = index;
-        _waveStartTime = Time.time;
-        _isActiveWave = true;
-        _waves[index].StartSpawn();
-        _waves[index].Finished += OnWaveFinished;
-        _waves[index].EnemyDied += OnEnemyDied;
-        _waves[index].Spawned += OnEnemySpawned;
-        _view.SetName(_waves[index].Text);
+        Wave wave = _waves[index];
+        wave.StartSpawn();
+        wave.Finished += OnWaveFinished;
+        wave.EnemyDied += OnEnemyDied;
+        wave.Spawned += OnEnemySpawned;
         Vector2 spawnPosition = transform.position;
-        CurrentWave++;
-        _skyChanged.OnWaveChanged(CurrentWave);
+        Debug.Log($"{_currentWaveIndex}");
+        WaveStarted?.Invoke(_currentWaveIndex);
+    }
     
-    }
-
-    public void DeleteBoss(int index)
-    {
-       _waves.Remove(_waves[index]);
-    }
-
     private void OnWaveFinished()
     {
         Wave wave = _waves[_currentWaveIndex];
@@ -61,20 +48,13 @@ public class WaveManager : MonoBehaviour
         wave.Spawned -= OnEnemySpawned;
 
         _score.Increaze(wave.ScoreReward);
-
         ++_currentWaveIndex;
 
         if (_currentWaveIndex < _waves.Count)
             StartWave(_currentWaveIndex);
 
         if (_currentWaveIndex > _waves.Count)
-            ProcessFinished();
-    }
-
-    private void ProcessFinished()
-    {
-        _isActiveWave = false;
-        AllWavesFinished?.Invoke();
+            AllWavesFinished?.Invoke();
     }
   
     private void OnEnemySpawned(Enemy enemy)

@@ -3063,7 +3063,7 @@ MonoBehaviour:
   - {fileID: 1666527242}
   - {fileID: 1385640122}
   - {fileID: 908464719}
-  _scoreReward: 40
+  _scoreReward: 65
 --- !u!4 &128816733
 Transform:
   m_ObjectHideFlags: 0
@@ -5565,6 +5565,7 @@ Transform:
   - {fileID: 1725155114}
   - {fileID: 1720658851}
   - {fileID: 1613027473}
+  - {fileID: 905610710}
   - {fileID: 33135357}
   - {fileID: 1209387576}
   - {fileID: 1349891806}
@@ -7311,7 +7312,7 @@ RectTransform:
   m_GameObject: {fileID: 317476443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2051, y: 1.2051, z: 1.2051}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1928975223}
@@ -8054,7 +8055,7 @@ MonoBehaviour:
   - {fileID: 1599302216}
   - {fileID: 75059245}
   - {fileID: 439856445}
-  _scoreReward: 35
+  _scoreReward: 60
 --- !u!4 &341305022
 Transform:
   m_ObjectHideFlags: 0
@@ -8583,14 +8584,14 @@ RectTransform:
   m_GameObject: {fileID: 367833459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7142289, y: 1.7142289, z: 1.7142289}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1928975223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 428.3}
+  m_AnchoredPosition: {x: 0, y: 384.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367833461
@@ -8622,8 +8623,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278387475
-  m_fontColor: {r: 0.0754717, g: 0.012388747, b: 0.012388747, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9641,7 +9642,7 @@ MonoBehaviour:
   - {fileID: 2063696794}
   - {fileID: 2093819635}
   - {fileID: 1768706896}
-  _scoreReward: 20
+  _scoreReward: 50
 --- !u!4 &427512792
 Transform:
   m_ObjectHideFlags: 0
@@ -13592,7 +13593,7 @@ MonoBehaviour:
   - {fileID: 362706638}
   - {fileID: 1603969236}
   - {fileID: 1047921329}
-  _scoreReward: 50
+  _scoreReward: 75
 --- !u!1 &616489112
 GameObject:
   m_ObjectHideFlags: 0
@@ -18032,7 +18033,7 @@ GameObject:
   - component: {fileID: 780936708}
   - component: {fileID: 780936709}
   m_Layer: 0
-  m_Name: ChangSky
+  m_Name: ReplaceSky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18062,12 +18063,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 780936707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 034e08fb3a6ef944aa13054a463792eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 93da6f47c4b457145b0bc927c9480602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normalSky: {fileID: 2100000, guid: e11f5b66aad75483b8cd16ee18a0c917, type: 2}
-  _darkSky: {fileID: 2100000, guid: ab675e6698bde46fd87143fb0d7580cb, type: 2}
-  _changWave: 11
+  _waveManager: {fileID: 1209387575}
+  _infos:
+  - _sky: {fileID: 2100000, guid: 5c8d5031ce45e4962818ca2b5426a8cf, type: 2}
+    _waveIndex: 5
+  - _sky: {fileID: 2100000, guid: 8f2c8ef98c47442d4b0e1896539bf7f1, type: 2}
+    _waveIndex: 7
+  - _sky: {fileID: 2100000, guid: ab675e6698bde46fd87143fb0d7580cb, type: 2}
+    _waveIndex: 10
+  - _sky: {fileID: 2100000, guid: f8a60d169ab8a46b09c9b01a3e51601f, type: 2}
+    _waveIndex: 14
 --- !u!1001 &782903380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20314,6 +20322,70 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1576488453971394810, guid: a778b631c6253a04899cb31bad047c81, type: 3}
   m_PrefabInstance: {fileID: 2066595168}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &905610709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 905610710}
+  - component: {fileID: 905610711}
+  m_Layer: 0
+  m_Name: BossNavMeshSurface
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &905610710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905610709}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 8.010243, z: 32.10181}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 252114381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &905610711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905610709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 1479372276
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 1
+  m_TileSize: 16
+  m_OverrideVoxelSize: 1
+  m_VoxelSize: 0.2
+  m_MinRegionArea: 0
+  m_NavMeshData: {fileID: 23800000, guid: 914521f7b15540f4ebe94201e82d7a47, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &906736949
 GameObject:
   m_ObjectHideFlags: 0
@@ -23613,23 +23685,23 @@ MonoBehaviour:
   _countMonsterEnemy: 0
   _countSpeedy: 0
   _countMonsterSpeedy: 0
-  _countHamer: 10
+  _countHamer: 0
   _countAngryHamer: 0
   _countBoss: 0
-  _countHalmer: 0
+  _countHalmer: 10
   _countMonsterHalmer: 0
   _countIron: 1
   _countExplorel: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 5
+  _timeBeforeSpawn: 6
   _text: "\u041F\u0435\u0442\u043D\u0430\u0434\u0446\u0430\u0442\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
   - {fileID: 2005376045}
   - {fileID: 1833196642}
   - {fileID: 1488987164}
-  _scoreReward: 100
+  _scoreReward: 130
 --- !u!1 &1071401410
 GameObject:
   m_ObjectHideFlags: 0
@@ -26579,8 +26651,8 @@ MonoBehaviour:
   _countMonsterHalmer: 0
   _countIron: 0
   _countExplorel: 0
-  _countFrost: 0
-  _countRegen: 0
+  _countFrost: 3
+  _countRegen: 3
   _timeBeforeSpawn: 15
   _text: "\u0414\u0435\u0432\u044F\u0442\u043E\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280641}
@@ -26592,7 +26664,7 @@ MonoBehaviour:
   - {fileID: 293153162}
   - {fileID: 1842855046}
   - {fileID: 2116216481}
-  _scoreReward: 70
+  _scoreReward: 90
 --- !u!4 &1182479981
 Transform:
   m_ObjectHideFlags: 0
@@ -27309,6 +27381,7 @@ MonoBehaviour:
   - {fileID: 1928403122}
   _reader: {fileID: 1909665639}
   _textSelect: {fileID: 1813168284}
+  _quietPlace: {fileID: 627875604}
 --- !u!1 &1195832802
 GameObject:
   m_ObjectHideFlags: 0
@@ -27985,8 +28058,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137e32f4ff7fdd9489ede9ca1568c771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skyChanged: {fileID: 780936709}
-  _view: {fileID: 1209387577}
   _waves:
   - {fileID: 427512791}
   - {fileID: 1733740976}
@@ -28050,6 +28121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cc17f16068a744d86417d675ed6667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waveManager: {fileID: 1209387575}
   _name: {fileID: 1359546847}
   _time: {fileID: 367833461}
 --- !u!1001 &1211143170
@@ -28929,7 +29001,7 @@ MonoBehaviour:
   - {fileID: 487204249}
   - {fileID: 1423021737}
   - {fileID: 269844037}
-  _scoreReward: 90
+  _scoreReward: 120
 --- !u!4 &1269127875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
@@ -30026,15 +30098,15 @@ RectTransform:
   m_GameObject: {fileID: 1359546845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6106328, y: 1.2174846, z: 1.6106328}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1928975223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -34.119}
+  m_SizeDelta: {x: 200, y: 56.048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1359546847
 MonoBehaviour:
@@ -30065,8 +30137,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -30083,8 +30155,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -30121,7 +30193,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -21.493858, y: 0, z: -23.325294, w: -24.644428}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -30428,7 +30500,7 @@ MonoBehaviour:
   - {fileID: 886358408}
   - {fileID: 626017127}
   - {fileID: 534668238}
-  _scoreReward: 60
+  _scoreReward: 80
 --- !u!4 &1377493456
 Transform:
   m_ObjectHideFlags: 0
@@ -30912,7 +30984,7 @@ MonoBehaviour:
     \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints: []
-  _scoreReward: 80
+  _scoreReward: 100
 --- !u!1001 &1405532348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31514,7 +31586,7 @@ MonoBehaviour:
   _text: "\u0414\u0432\u0435\u043D\u0430\u0434\u0446\u0430\u0442\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints: []
-  _scoreReward: 85
+  _scoreReward: 110
 --- !u!1 &1465405546
 GameObject:
   m_ObjectHideFlags: 0
@@ -35024,7 +35096,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: ea0a5ec3fbd9634429668ac2a8fab3dd, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 40b4770434480e447a3585c3c11a8820, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1613027473
 Transform:
@@ -35642,7 +35714,9 @@ MonoBehaviour:
   _timeBeforeSpawn: 5
   _text: "\u0421\u0435\u043C\u043D\u0430\u0434\u0446\u0435\u0442\u0430\u044F \u0432\u043E\u043B\u043D\u0430"
   _lootSpawner: {fileID: 1159280641}
-  _spawnPoints: []
+  _spawnPoints:
+  - {fileID: 1517698624}
+  - {fileID: 270512359}
   _scoreReward: 200
 --- !u!1 &1632675931
 GameObject:
@@ -36630,7 +36704,6 @@ MonoBehaviour:
   _description: ....
   _consoleInfo: "Boss \u0443\u0434\u0430\u043B\u0435\u043D"
   _waveManager: {fileID: 1209387575}
-  _wave: 9
 --- !u!1001 &1665866264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38098,7 +38171,7 @@ MonoBehaviour:
   - {fileID: 1879359548}
   - {fileID: 1904327277}
   - {fileID: 1450746835}
-  _scoreReward: 30
+  _scoreReward: 50
 --- !u!4 &1733740977
 Transform:
   m_ObjectHideFlags: 0
@@ -40329,16 +40402,16 @@ MonoBehaviour:
   _countMonsterHalmer: 0
   _countIron: 0
   _countExplorel: 0
-  _countFrost: 4
-  _countRegen: 4
-  _timeBeforeSpawn: 5
+  _countFrost: 6
+  _countRegen: 6
+  _timeBeforeSpawn: 8
   _text: "\u041A\u043E\u043C\u0431\u0438\u043D\u0430\u0446\u0438\u044F \u0421\u0442\u0438\u0445\u0438\u0439"
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
   - {fileID: 591167983}
   - {fileID: 2080312334}
   - {fileID: 278093799}
-  _scoreReward: 120
+  _scoreReward: 135
 --- !u!1 &1826562496
 GameObject:
   m_ObjectHideFlags: 0
@@ -42088,7 +42161,7 @@ MonoBehaviour:
   - {fileID: 3848843171961211915}
   - {fileID: 341462662}
   - {fileID: 867590375}
-  _scoreReward: 45
+  _scoreReward: 70
 --- !u!4 &1884836142
 Transform:
   m_ObjectHideFlags: 0
@@ -44078,7 +44151,7 @@ MonoBehaviour:
   - {fileID: 695817580}
   - {fileID: 1649728149}
   - {fileID: 1720826509}
-  _scoreReward: 95
+  _scoreReward: 125
 --- !u!1001 &1942385845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45836,7 +45909,7 @@ MonoBehaviour:
   - {fileID: 886882264}
   - {fileID: 277936420}
   - {fileID: 270600850}
-  _scoreReward: 30
+  _scoreReward: 55
 --- !u!4 &1997837116
 Transform:
   m_ObjectHideFlags: 0

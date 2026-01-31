@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ public class QuietPlace : MonoBehaviour
 
     private readonly List<Enemy> _enemies = new();
     private bool _isActive;
+  
+    public event Action PlayerEntered;
+    public event Action PlayerExited;
 
     private void OnEnable()
     {
@@ -31,6 +35,7 @@ public class QuietPlace : MonoBehaviour
                 enemy.Freeze();
 
             _isActive = true;
+            PlayerEntered?.Invoke();
         }
     }
 
@@ -45,6 +50,7 @@ public class QuietPlace : MonoBehaviour
                 enemy.ResetFreezen();
 
             _isActive = false;
+            PlayerExited?.Invoke();
         }
     }
 

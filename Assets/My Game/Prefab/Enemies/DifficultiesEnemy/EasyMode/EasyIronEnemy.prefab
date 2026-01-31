@@ -568,8 +568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 5752198363980295621}
-  _maxValue: 350
-  _healthValue: 350
+  _maxValue: 500
+  _healthValue: 500
 --- !u!1001 &5845175854474745518
 PrefabInstance:
   m_ObjectHideFlags: 0

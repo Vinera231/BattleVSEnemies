@@ -439,7 +439,7 @@ MonoBehaviour:
   _agent: {fileID: 1595713761963284895}
   _speed: 3
   _detectionRadius: 380
-  _damageAmount: 60
+  _damageAmount: 50
   _frost: 6
   _attackRate: 1
   _scoreReward: 75
@@ -450,6 +450,7 @@ MonoBehaviour:
   _minionSkin: {fileID: 0}
   _renderer: {fileID: 678255414029011332}
   _slowDelay: 6
+  _fireSpreadRadius: 1
 --- !u!1 &9185846013368706294
 GameObject:
   m_ObjectHideFlags: 0

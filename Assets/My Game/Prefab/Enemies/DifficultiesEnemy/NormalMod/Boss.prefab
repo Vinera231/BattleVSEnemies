@@ -1085,7 +1085,6 @@ MonoBehaviour:
   _minionSkin: {fileID: 0}
   _renderer: {fileID: 3309389445043673922}
   _slowDelay: 6
-  _fireSpreadChance: 0.4
   _fireSpreadRadius: 1
   _firstValue: 9000
   _secondValue: 7000

@@ -438,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 4891308154588419005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.373, y: 0.36, z: 0.5062046}
+  m_LocalPosition: {x: 0.432, y: 0.437, z: 0.5062046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1056,7 +1056,7 @@ MonoBehaviour:
   _agent: {fileID: 1286879671037719303}
   _speed: 6
   _detectionRadius: 380
-  _damageAmount: 20
+  _damageAmount: 15
   _frost: 0
   _attackRate: 1
   _scoreReward: 70
