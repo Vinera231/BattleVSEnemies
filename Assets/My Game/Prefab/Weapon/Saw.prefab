@@ -261,8 +261,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.8240263
-  m_Center: {x: -0.00000001959635, y: 0.45003623, z: -0.38690758}
+  m_Radius: 1.9772325
+  m_Center: {x: -0.0000000143183385, y: 0.4772744, z: -0.5128754}
 --- !u!114 &4218705114318662375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detector: {fileID: 4218705114318662375}
+  _player: {fileID: 0}
   _bigDisk: {fileID: 3831785207913318782}
   _smallDisk: {fileID: 7710387211115749745}
   _rotationAxis: {x: 0, y: 1, z: 0}

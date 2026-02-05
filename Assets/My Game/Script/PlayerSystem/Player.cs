@@ -36,12 +36,6 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        if (PauseSwitcher.Instance.IsPaused)
-            ProhibitAttack();
-
-        PauseSwitcher.Instance.Continued += AllowAttack;
-        PauseSwitcher.Instance.Paused += ProhibitAttack;
-
         _health.Died += OnDied;
         _reader.JumpPressed += OnJump;
         _reader.ShotPressed += OnShotPressed;
@@ -52,9 +46,6 @@ public class Player : MonoBehaviour
 
     private void OnDisable()
     {
-        PauseSwitcher.Instance.Continued -= AllowAttack;
-        PauseSwitcher.Instance.Paused -= ProhibitAttack;
-
         _health.Died -= OnDied;
         _reader.JumpPressed -= OnJump;
         _reader.ShotPressed -= OnShotPressed;
@@ -204,6 +195,9 @@ public class Player : MonoBehaviour
 
     private void OnShotPressed()
     {
+        if (PauseSwitcher.Instance.IsPaused)
+            return;
+
         if (_allowedAttackCounter > 0)
             _bulletSpawner.StartShoot(_gun.SpawnPoint);
     }
@@ -213,6 +207,9 @@ public class Player : MonoBehaviour
 
     private void OnSecondAttackPressed()
     {
+        if (PauseSwitcher.Instance.IsPaused)
+            return;
+
         if (_allowedAttackCounter <= 0)
             return;
 

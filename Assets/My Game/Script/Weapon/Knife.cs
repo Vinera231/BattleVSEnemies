@@ -31,7 +31,7 @@ public class Knife : MonoBehaviour, ISecondWeapon
 
     public void Attack()
     {
-        _animator.SetTrigger("IsAttack");
+       _animator.SetTrigger("IsAttack");
        TakeDamage();
     }
 

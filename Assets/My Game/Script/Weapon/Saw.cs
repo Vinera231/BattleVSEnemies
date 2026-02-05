@@ -5,6 +5,7 @@ using UnityEngine;
 public class Saw : MonoBehaviour, ISecondWeapon
 {
     [SerializeField] private DamageDetector _detector;
+    [SerializeField] private Player _player;
     [SerializeField] private Transform _bigDisk;
     [SerializeField] private Transform _smallDisk;
     [SerializeField] private Vector3 _rotationAxis = Vector3.right;
@@ -45,7 +46,7 @@ public class Saw : MonoBehaviour, ISecondWeapon
 
     public void Attack() =>
         StartRotation();
-
+ 
     public void StartRotation()
     {
         _isRotation = true;
@@ -113,8 +114,6 @@ public class Saw : MonoBehaviour, ISecondWeapon
     {
         foreach (IDamageble damageble in _damagebles)       
             damageble?.TakeDamage(_damage);
-
-        Debug.Log($"Дамаг от пили {_damagebles.Count}");
     }
 }
 

@@ -8,12 +8,6 @@ public class CheatConsoleUI : MonoBehaviour
     [SerializeField] private CheatInputField _inputField;
     [SerializeField] private CheatInfo _info;
 
-    public void ClearConsole()
-    {
-        _info.ClearInfo();
-        _inputField.ResetText();
-    }
-
     public event Action<string> CommandEntered;
 
     private void OnEnable() =>
@@ -30,6 +24,12 @@ public class CheatConsoleUI : MonoBehaviour
 
     public void AddCommandInInfo(string text) =>
         _info.AddInfo(text);
+
+    public void ClearConsole()
+    {
+        _info.ClearInfo();
+        _inputField.ResetText();
+    }
 
     private void OnEnterCommand()
     {

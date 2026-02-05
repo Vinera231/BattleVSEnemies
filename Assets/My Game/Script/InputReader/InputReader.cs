@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Splines.ExtrusionShapes;
 
 public class InputReader : MonoBehaviour
 {
@@ -101,5 +100,4 @@ public class InputReader : MonoBehaviour
         if (Input.GetKeyDown(EnterCheatPanel))
             EnterCheatPanelPressed?.Invoke();
     }
-
 }
