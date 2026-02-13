@@ -60,7 +60,7 @@ public class SfxPlayer : MonoBehaviour
     public void PlayRecoverPlayer() =>
         _source.PlayOneShot(_recoverPlayer);
 
-    public void PlayBuyIteam() =>
+    public void PlayBuyItem() =>
         _source.PlayOneShot(_buyBullet);
 
     public void PlayFrostSound() =>

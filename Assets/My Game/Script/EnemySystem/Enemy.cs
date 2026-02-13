@@ -122,17 +122,15 @@ public class Enemy : MonoBehaviour, IDamageble
         Attacked?.Invoke();
     }
 
-    private void OnDied()
-    {
-        Died?.Invoke(this);
+    private void OnDied() =>       
         ProcessDied();
-    }
 
     protected virtual void ProcessDied()
     {
         _renderer.material = _defultSkin;
         SfxPlayer.Instance.PlayDieEnemySound();
         ParticleSpawner.Instance.CreateBlood(transform.position);
+        Died?.Invoke(this);
         Destroy(gameObject);
     }
 

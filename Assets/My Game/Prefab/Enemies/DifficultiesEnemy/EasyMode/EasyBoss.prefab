@@ -583,8 +583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 926345824293864187}
-  _maxValue: 5000
-  _healthValue: 5000
+  _maxValue: 8000
+  _healthValue: 8000
 --- !u!1 &5380887101246485483
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,13 +814,13 @@ MonoBehaviour:
   _renderer: {fileID: 3309389445043673922}
   _slowDelay: 6
   _fireSpreadRadius: 1
-  _firstValue: 4500
-  _secondValue: 3000
-  _thirtValue: 2500
-  _forthValue: 2000
-  _fifthValue: 1500
-  _sixValue: 1000
-  _sevenValue: 0
+  _firstValue: 7500
+  _secondValue: 5500
+  _thirtValue: 3500
+  _forthValue: 2500
+  _fifthValue: 2000
+  _sixValue: 1500
+  _sevenValue: 1000
   _spawnEnemies: 1
   _bullets: 20
   _animator: {fileID: 6002438986551568146}

@@ -8,6 +8,7 @@ public class BulletShop : Shop
     protected override bool TryApplyItem()
     {
         _bulletSpawner.ReplacePrefab(_bulletPrefab);
+        ResetPrice();
         return true;
     }
 }

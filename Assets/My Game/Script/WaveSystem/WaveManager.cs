@@ -36,7 +36,6 @@ public class WaveManager : MonoBehaviour
         wave.EnemyDied += OnEnemyDied;
         wave.Spawned += OnEnemySpawned;
         Vector2 spawnPosition = transform.position;
-        Debug.Log($"{_currentWaveIndex}");
         WaveStarted?.Invoke(_currentWaveIndex);
     }
     

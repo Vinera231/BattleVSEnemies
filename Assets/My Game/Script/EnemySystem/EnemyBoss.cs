@@ -124,6 +124,7 @@ public class EnemyBoss : Enemy
         SfxPlayer.Instance.PlayDieBossSound();
         _animator.PlayDied();
         Invoke(nameof(DestroyBoss), 3f);
+        base.ProcessDied();
     }
     
     private void DestroyBoss() =>

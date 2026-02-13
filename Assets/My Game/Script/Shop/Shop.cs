@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Shop : MonoBehaviour
 {
     protected const KeyCode Key = KeyCode.Tab;
-  
+
     [SerializeField] private int _price;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private InputReader _reader;
@@ -12,6 +12,7 @@ public abstract class Shop : MonoBehaviour
     [SerializeField] private SfxPlayer _sfx;
     [SerializeField] private TextMeshProUGUI _helpText;
     [SerializeField] private bool _isConsumable = true;
+    [SerializeField] private GameObject _signPrefad;
 
     protected Player Player;
 
@@ -33,6 +34,7 @@ public abstract class Shop : MonoBehaviour
         {
             _text.gameObject.SetActive(true);
             _helpText.gameObject.SetActive(true);
+            _signPrefad.SetActive(true);
             Player = player;
         }
     }
@@ -43,6 +45,7 @@ public abstract class Shop : MonoBehaviour
         {
             _text.gameObject.SetActive(false);
             _helpText.gameObject.SetActive(false);
+            _signPrefad.SetActive(false);
             Player = null;
         }
     }
@@ -57,16 +60,24 @@ public abstract class Shop : MonoBehaviour
                 _text.color = Color.red;
         }
     }
-
+  
+    protected void ResetPrice()
+    {
+        _price = 0;
+        _text.text = _price.ToString();
+    }
+   
     private void OnBuyPressed()
     {
         if (Player != null && _score.TrySpendScore(_price))
         {
             if (TryApplyItem())
-                _sfx.PlayBuyIteam();
+            {
+                _sfx.PlayBuyItem();
+            }
 
             if (_isConsumable)
-                Destroy(gameObject);         
+                Destroy(gameObject);
         }
     }
 
