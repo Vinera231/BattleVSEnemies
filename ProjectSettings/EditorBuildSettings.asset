@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/My Game/Scenes/MainMenu.unity
     guid: 9bcad8aa3ac9f0548bf10f48aedd583b
   - enabled: 1
-    path: Assets/My Game/Scenes/Diffucalt/NormalMode.unity
+    path: Assets/My Game/Scenes/Diffucalt/NormalMode/NormalMode.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/My Game/Scenes/Diffucalt/EasyMode.unity
+    path: Assets/My Game/Scenes/Diffucalt/EasyMode/EasyMode.unity
     guid: 36577e5f749a2e94a88fce3b17a2de6e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
