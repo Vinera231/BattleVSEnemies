@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 5696656929931116886}
+  _hpBar: {fileID: 0}
 --- !u!1 &1181340327341451449
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 3072741878150824329}
+  _hpBar: {fileID: 0}
 --- !u!1 &3423462526607715392
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,8 +585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 926345824293864187}
-  _maxValue: 8000
-  _healthValue: 8000
+  _maxValue: 6000
+  _healthValue: 6000
 --- !u!1 &5380887101246485483
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,8 +816,8 @@ MonoBehaviour:
   _renderer: {fileID: 3309389445043673922}
   _slowDelay: 6
   _fireSpreadRadius: 1
-  _firstValue: 7500
-  _secondValue: 5500
+  _firstValue: 5500
+  _secondValue: 4000
   _thirtValue: 3500
   _forthValue: 2500
   _fifthValue: 2000
