@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5676254195851826536}
   - component: {fileID: 1453572689765449154}
   - component: {fileID: 742336071941857357}
-  - component: {fileID: -4434134799110684633}
   - component: {fileID: 1964632690701129017}
   m_Layer: 3
   m_Name: FireBullet
@@ -139,19 +138,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-4434134799110684633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707036088046653480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2e4c61de783e84c843baddb8a2ca7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 40
 --- !u!114 &1964632690701129017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b23d673d449c94abc77dc7f23eb5d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 40
   _fireDamage: 10
   _durationInSecond: 7
 --- !u!1 &7749632472313140456

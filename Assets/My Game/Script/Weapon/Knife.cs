@@ -33,6 +33,7 @@ public class Knife : MonoBehaviour, ISecondWeapon
     {
        _animator.SetTrigger("IsAttack");
        TakeDamage();
+        SfxPlayer.Instance.PlayKnifeSound();
     }
 
     private void OnCollisionEntered(Collider collider)

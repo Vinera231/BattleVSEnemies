@@ -199,7 +199,7 @@ public class Player : MonoBehaviour
             return;
 
         if (_allowedAttackCounter > 0)
-            _bulletSpawner.StartShoot(_gun.SpawnPoint);
+            _bulletSpawner.StartShoot(_gun.SpawnPoint);   
     }
 
     private void OnShotUnpressed() =>

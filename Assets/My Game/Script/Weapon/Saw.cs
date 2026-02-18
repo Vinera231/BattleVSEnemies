@@ -44,9 +44,13 @@ public class Saw : MonoBehaviour, ISecondWeapon
         _detector.Exited -= OnColliderExited;
     }
 
-    public void Attack() =>
+    public void Attack()
+    {
         StartRotation();
- 
+
+        SfxPlayer.Instance.PlayChainsawSound();
+    }
+
     public void StartRotation()
     {
         _isRotation = true;
@@ -57,6 +61,7 @@ public class Saw : MonoBehaviour, ISecondWeapon
     {
         StopCoroutineSafe();
         _isRotation = false;
+        SfxPlayer.Instance.StopChainsawSound();
     }
 
     private void OnColliderEntered(Collider collider)
@@ -68,8 +73,6 @@ public class Saw : MonoBehaviour, ISecondWeapon
 
         if (_isRotation == false)
             return;
-
-        Debug.Log($"Объект с именем {collider.name} попал в зону поражения SAW");
     }
 
     private void OnColliderExited(Collider collider)
@@ -112,7 +115,7 @@ public class Saw : MonoBehaviour, ISecondWeapon
 
     private void TakeDamage()
     {
-        foreach (IDamageble damageble in _damagebles)       
+        foreach (IDamageble damageble in _damagebles)
             damageble?.TakeDamage(_damage);
     }
 }

@@ -5,6 +5,7 @@ public class SfxPlayer : MonoBehaviour
     public static SfxPlayer Instance { get; private set; }
 
     [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioSource _sourceSaw;
     [SerializeField] private AudioClip _cursourEnterButton;
     [SerializeField] private AudioClip _cursorExitButton;
     [SerializeField] private AudioClip _clickButton;
@@ -15,6 +16,17 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _recoverPlayer;
     [SerializeField] private AudioClip _buyBullet;
     [SerializeField] private AudioClip _frostSound;
+    [SerializeField] private AudioClip _frostShootSound;
+    [SerializeField] private AudioClip _fireSound;
+    [SerializeField] private AudioClip _fireShootSound;
+    [SerializeField] private AudioClip _gunSound;
+    [SerializeField] private AudioClip _explorelSound;
+    [SerializeField] private AudioClip _poisonShootSound;
+    [SerializeField] private AudioClip _laserSound;
+    [SerializeField] private AudioClip _knifeSound;
+    [SerializeField] private AudioClip _axeSound;
+    [SerializeField] private AudioClip _sawSound;
+    [SerializeField] private AudioClip _detonationSound;
     [SerializeField] private AudioClip _enemyDied;
     [SerializeField] private AudioClip _ahh;
     [SerializeField] private AudioClip _playerDied;
@@ -65,13 +77,49 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayFrostSound() =>
         _source.PlayOneShot(_frostSound);
+    
+    public void PlayFrostShootSound() =>
+        _source.PlayOneShot(_frostShootSound);
+
+    public void PlayFireSound() =>
+        _source.PlayOneShot(_fireSound);
+   
+    public void PlayFireShootSound() =>
+        _source.PlayOneShot(_fireShootSound);
+
+    public void PlayExplorelSound() =>
+        _source.PlayOneShot(_explorelSound);
+   
+    public void PlayDetonatorSound() =>
+        _source.PlayOneShot(_detonationSound);
+
+    public void PlayShootSound() =>
+        _source.PlayOneShot(_gunSound);
+  
+    public void PlayLaserSound() =>
+        _source.PlayOneShot(_laserSound);
+
+    public void PlayKnifeSound() =>
+        _source.PlayOneShot(_knifeSound);
+
+    public void PlayAxeSound() =>
+        _source.PlayOneShot(_axeSound);
+
+    public void PlayChainsawSound()
+    {
+        if (_sourceSaw.isPlaying == false)
+            _sourceSaw.Play();
+    }
+
+    public void StopChainsawSound() =>
+        _sourceSaw.Stop();
 
     public void PlayDieEnemySound() =>
       _source.PlayOneShot(_enemyDied);
-   
+
     public void PlayAhhSound() =>
       _source.PlayOneShot(_ahh);
-   
+
     public void PlayDiePlayerSound() =>
       _source.PlayOneShot(_playerDied);
 
@@ -80,7 +128,10 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayPoisonSound() =>
    _source.PlayOneShot(_poisonSound);
-    
+  
+    public void PlayShootPoisonSound() =>
+   _source.PlayOneShot(_poisonShootSound);
+
     public void PlaySettingSound() =>
    _source.PlayOneShot(_settingSound);
 }

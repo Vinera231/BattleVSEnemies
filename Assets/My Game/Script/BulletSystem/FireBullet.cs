@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class FireBullet : MonoBehaviour
+public class FireBullet : Bullet
 {
     [SerializeField] private float _fireDamage;
     [SerializeField] private float _durationInSecond;
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
+        base.OnTriggerEnter(other);
         if(other.TryGetComponent(out Enemy enemy))
         {
             enemy.ApplayFire(_fireDamage,_durationInSecond);

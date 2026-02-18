@@ -34,6 +34,7 @@ public class Axe : MonoBehaviour, ISecondWeapon
     {
         _animator.SetTrigger("AttackAxe");
         TakeDamage();
+        SfxPlayer.Instance.PlayAxeSound();
     }
 
     private void OnCollisionEntered(Collider collider)

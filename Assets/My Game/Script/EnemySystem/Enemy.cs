@@ -122,7 +122,7 @@ public class Enemy : MonoBehaviour, IDamageble
         Attacked?.Invoke();
     }
 
-    private void OnDied() =>       
+    private void OnDied() =>
         ProcessDied();
 
     protected virtual void ProcessDied()
@@ -233,13 +233,15 @@ public class Enemy : MonoBehaviour, IDamageble
         ParticleSpawner.Instance.CreateFire(transform, transform.position);
         Debug.Log(ParticleSpawner.Instance);
 
+
         while (_fireElapsed < duration)
         {
             _health.TakeDamage(fireDamage);
             TrySpreedFire(fireDamage, duration);
             _fireElapsed += interval;
-
+           
             yield return wait;
+            SfxPlayer.Instance.PlayFireSound();
         }
 
         _isFire = false;

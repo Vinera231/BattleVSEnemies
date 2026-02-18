@@ -57,7 +57,6 @@ public class BulletSpawner : MonoBehaviour
         while (_canShoot)
         {
             Shoot(spawnPoint);
-
             yield return _waitShoot;
         }
     }
@@ -76,7 +75,35 @@ public class BulletSpawner : MonoBehaviour
         rigidbody.linearVelocity = spawnPoint.forward * _velocity;
         rigidbody.freezeRotation = true;
 
-       newBullet.SetDamage(_currentDamage);
+         switch(newBullet)
+         {
+            case FrostBullet:
+                SfxPlayer.Instance.PlayFrostShootSound();
+                break;
+
+            case PoisonBullet:
+                SfxPlayer.Instance.PlayPoisonSound();
+                break;
+
+            case ExtraBullet:
+                SfxPlayer.Instance.PlayLaserSound();
+                break;
+
+            case ExplorelBulett:
+                SfxPlayer.Instance.PlayDetonatorSound();
+                break;
+
+            case FireBullet:
+                SfxPlayer.Instance.PlayFireShootSound();
+                break;
+
+            default:
+                 SfxPlayer.Instance.PlayShootSound();
+                break;
+        }
+
+
+        newBullet.SetDamage(_currentDamage);
 
         _bullet--;
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);

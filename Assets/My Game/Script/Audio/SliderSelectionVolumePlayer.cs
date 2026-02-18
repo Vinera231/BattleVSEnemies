@@ -27,7 +27,6 @@ public class SliderSelectionVolumePlayer : MonoBehaviour, IPointerDownHandler, I
 
     private void StopCoroutine()
     {
-        Debug.Log("StopCoroutine");
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
@@ -40,7 +39,6 @@ public class SliderSelectionVolumePlayer : MonoBehaviour, IPointerDownHandler, I
         while (true)
         {
             _sfx.PlaySettingSound();
-            Debug.Log(nameof(Routine));
             yield return _wait;
         }
     }

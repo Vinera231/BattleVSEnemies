@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8106204960807365188}
   - component: {fileID: 6628213666106556294}
   - component: {fileID: 3418022880455942800}
-  - component: {fileID: 9067059710875233655}
   - component: {fileID: 7856620837385608149}
   m_Layer: 0
   m_Name: FrostBullet
@@ -138,19 +137,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9067059710875233655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7819319055888532227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2e4c61de783e84c843baddb8a2ca7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 25
 --- !u!114 &7856620837385608149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,5 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec82a6c7df9a5e54e891cc90a64c33f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 25
   _slowDown: 2
   _duraction: 3

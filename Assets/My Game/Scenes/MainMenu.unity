@@ -5779,13 +5779,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3132746089237757416, guid: a47d8c6a4628014429d0ebc1aea5b725, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2105278758}
-    - targetCorrespondingSourceObject: {fileID: 3132746089237757416, guid: a47d8c6a4628014429d0ebc1aea5b725, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2105278760}
-    - targetCorrespondingSourceObject: {fileID: 3132746089237757416, guid: a47d8c6a4628014429d0ebc1aea5b725, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2105278759}
   m_SourcePrefab: {fileID: 100100000, guid: a47d8c6a4628014429d0ebc1aea5b725, type: 3}
 --- !u!4 &1096396523 stripped
 Transform:
@@ -6909,6 +6903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 1252745117}
+  _sourceSaw: {fileID: 0}
   _cursourEnterButton: {fileID: 8300000, guid: baa1aea4c738c374aa746d2e1eae1e43, type: 3}
   _cursorExitButton: {fileID: 0}
   _clickButton: {fileID: 8300000, guid: 436c8a3139b8c4d44a5e55ce2737cffc, type: 3}
@@ -6919,6 +6914,14 @@ MonoBehaviour:
   _recoverPlayer: {fileID: 0}
   _buyBullet: {fileID: 0}
   _frostSound: {fileID: 0}
+  _fireSound: {fileID: 0}
+  _gunSound: {fileID: 0}
+  _explorelSound: {fileID: 0}
+  _poisonShootSound: {fileID: 0}
+  _knifeSound: {fileID: 0}
+  _axeSound: {fileID: 0}
+  _sawSound: {fileID: 0}
+  _detonationSound: {fileID: 0}
   _enemyDied: {fileID: 0}
   _ahh: {fileID: 0}
   _playerDied: {fileID: 0}
@@ -11725,55 +11728,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3132746089237757416, guid: a47d8c6a4628014429d0ebc1aea5b725, type: 3}
   m_PrefabInstance: {fileID: 1096396522}
   m_PrefabAsset: {fileID: 0}
---- !u!195 &2105278758
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105278755}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!54 &2105278759
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105278755}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!136 &2105278760
 CapsuleCollider:
   m_ObjectHideFlags: 0

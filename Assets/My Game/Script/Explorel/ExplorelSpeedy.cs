@@ -20,6 +20,7 @@ public class ExplorelSpeedy : Enemy
             return;
 
         _isDied = true;
+        SfxPlayer.Instance.PlayExplorelSound();
         ParticleSpawner.Instance.CreateExplosion(transform.position);
         Collider[] hits = Physics.OverlapSphere(transform.position, _explosionRadius);
 

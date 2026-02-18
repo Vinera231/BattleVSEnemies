@@ -16,6 +16,7 @@ public class ExplorelBulett : Bullet
 
     protected override void OnTriggerEnter(Collider other)
     {
+        base.OnTriggerEnter(other);
         if (!_hasExplorel && other.gameObject.TryGetComponent(out BulletIgnore _) == false)
             Exploed();
     }
@@ -28,9 +29,9 @@ public class ExplorelBulett : Bullet
         _hasExplorel = true;
 
         ParticleSpawner.Instance.CreateExplosion(transform.position);
-
         Collider[] hits = Physics.OverlapSphere(transform.position, _radiousExplorel);
-      
+        SfxPlayer.Instance.PlayExplorelSound();
+        
         foreach (var hit in hits)
             if(hit.TryGetComponent(out Enemy enemy))
                 enemy.TakeDamage(_explorelDamage + Damage);
