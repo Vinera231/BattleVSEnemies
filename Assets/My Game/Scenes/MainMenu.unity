@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 1.5.0
+  m_text: 'Version: 1.5.1
 
 
 '
@@ -6914,10 +6914,13 @@ MonoBehaviour:
   _recoverPlayer: {fileID: 0}
   _buyBullet: {fileID: 0}
   _frostSound: {fileID: 0}
+  _frostShootSound: {fileID: 0}
   _fireSound: {fileID: 0}
+  _fireShootSound: {fileID: 0}
   _gunSound: {fileID: 0}
   _explorelSound: {fileID: 0}
   _poisonShootSound: {fileID: 0}
+  _laserSound: {fileID: 0}
   _knifeSound: {fileID: 0}
   _axeSound: {fileID: 0}
   _sawSound: {fileID: 0}
