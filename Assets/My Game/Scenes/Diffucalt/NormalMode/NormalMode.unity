@@ -5012,6 +5012,7 @@ MonoBehaviour:
   _detector: {fileID: 70718814}
   _damage: 30
   _animator: {fileID: 1707108004}
+  _reloadTime: 0.2
 --- !u!4 &218460897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8, type: 3}
@@ -18021,7 +18022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6239969156481072347, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61988306
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 6239969156481072347, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18104,7 +18105,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6239969156481072347, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1472733696}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1275312212}
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
 --- !u!1001 &741632768
 PrefabInstance:
@@ -23103,7 +23107,6 @@ MonoBehaviour:
   _bullet: 100
   _limitbullet: 100
   _bulletView: {fileID: 203276211}
-  _player: {fileID: 9200639445192888596}
   _baseDamage: 10
   _fireRate: 0.2
 --- !u!1 &975213759
@@ -25588,6 +25591,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2807449429036539767, guid: f0c16f0ea935ea64297ca1d4d55d9746, type: 3}
   m_PrefabInstance: {fileID: 1104371872}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1112735247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
+  m_PrefabInstance: {fileID: 738930474}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1120092659
 PrefabInstance:
@@ -30253,6 +30261,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6239969156481072347, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
   m_PrefabInstance: {fileID: 738930474}
   m_PrefabAsset: {fileID: 0}
+--- !u!208 &1275312212
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112735247}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.345, y: 0.3, z: 0.3}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &1275631293 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8903058273634951509, guid: f1fc5bb90ac285e4486771552d63bcb8, type: 3}
@@ -44402,8 +44426,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1923177468}
   m_SourcePrefab: {fileID: 100100000, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
+--- !u!1 &1923177467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d, type: 3}
+  m_PrefabInstance: {fileID: 1923177466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1923177468
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923177467}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1925260645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51704,6 +51752,10 @@ PrefabInstance:
       value: 0.059
       objectReference: {fileID: 0}
     - target: {fileID: 8504620550649655335, guid: 54cc2bbadd2971b469fcb7ed533cc107, type: 3}
+      propertyPath: _time
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504620550649655335, guid: 54cc2bbadd2971b469fcb7ed533cc107, type: 3}
       propertyPath: _damage
       value: 20
       objectReference: {fileID: 0}
@@ -51719,6 +51771,10 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 834384338}
+    - target: {fileID: 8504620550649655335, guid: 54cc2bbadd2971b469fcb7ed533cc107, type: 3}
+      propertyPath: _reloadTime
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6397150234085790112, guid: 54cc2bbadd2971b469fcb7ed533cc107, type: 3}
     m_RemovedGameObjects: []
@@ -61081,11 +61137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8112550546095672189, guid: 57474d87046bebd4ab9e11942a9423e9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20
+      value: 49.099976
       objectReference: {fileID: 0}
     - target: {fileID: 8112550546095672189, guid: 57474d87046bebd4ab9e11942a9423e9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10
+      value: 16.900024
       objectReference: {fileID: 0}
     - target: {fileID: 8112550546095672189, guid: 57474d87046bebd4ab9e11942a9423e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -66264,7 +66320,7 @@ MonoBehaviour:
   _frostShootSound: {fileID: 8300000, guid: 63aadab6bab81a043a2f30cb3988461a, type: 3}
   _fireSound: {fileID: 8300000, guid: d98ec4a49822f674cb35ff7c7169203a, type: 3}
   _fireShootSound: {fileID: 8300000, guid: f59d82aa5c062df46b3a491cdcb7fbda, type: 3}
-  _gunSound: {fileID: 8300000, guid: 66cd04c7a9c1b66418fba2340a80ef88, type: 3}
+  _gunSound: {fileID: 8300000, guid: 13a54fa0a41015d4ab968592e814c84e, type: 3}
   _explorelSound: {fileID: 8300000, guid: 69c280b3f163c894785c52f69f5bca39, type: 3}
   _poisonShootSound: {fileID: 8300000, guid: 75186827d57fd1642ad044bc2b74d2c5, type: 3}
   _laserSound: {fileID: 8300000, guid: 9672775c417c9ca4aae455ae845191d3, type: 3}

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class HamerAnimation : MonoBehaviour
 {
-    private const string Hit = nameof(Hit);
-
+    private static readonly int s_attackAnimationID = Animator.StringToHash("Kick");
+   
     [SerializeField] private Animator _animator;
     [SerializeField] private Enemy _enemy;
 
@@ -19,7 +19,7 @@ public class HamerAnimation : MonoBehaviour
 
     private void OnAttack()
     {
-        _animator.SetTrigger(Hit);
+        _animator.Play(s_attackAnimationID, -1, 0);
         OnHammerHit();
     }
 

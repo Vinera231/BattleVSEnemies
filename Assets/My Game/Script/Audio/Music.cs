@@ -15,7 +15,6 @@ public class Music : MonoBehaviour
         _afterBoss.Finished += PlayTwoPhaseMusic;
     }
 
-
     private void OnDisable()
     {
         _beforeBoss.Finished -= PlayBossMusic;

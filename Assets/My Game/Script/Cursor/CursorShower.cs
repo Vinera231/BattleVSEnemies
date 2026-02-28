@@ -27,6 +27,18 @@ public class CursorShower : MonoBehaviour
     private void OnEnable() =>
         ProcessShow();
 
+    public void Show()
+    {
+        _counterToShow++;
+        ProcessShow();
+    }
+
+    public void Hide()
+    {
+        _counterToShow--;
+        ProcessShow();
+    }
+    
     private void ProcessShow()
     {
         if(_counterToShow > 0)
@@ -39,17 +51,5 @@ public class CursorShower : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-    }
-
-    public void Show()
-    {
-        _counterToShow++;
-        ProcessShow();
-    }
-
-    public void Hide()
-    {
-        _counterToShow--;
-        ProcessShow();
     }
 }

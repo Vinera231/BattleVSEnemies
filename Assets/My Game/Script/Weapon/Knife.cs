@@ -3,11 +3,23 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour, ISecondWeapon
 {
+    private static readonly int s_attackAnimationID = Animator.StringToHash("KnifeAttack");
+
     [SerializeField] private DamageDetector _detector;
-    [SerializeField] private float _damage = 20f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private float _damage = 20f;
+    [SerializeField] private float _reloadTime = 0.2f;
 
     private readonly List<IDamageble> _damagebles = new();
+    private float _remainingReloadTime;
+
+    private void Update()
+    {
+        if (_remainingReloadTime <= 0)
+            return;
+
+        _remainingReloadTime -= Time.deltaTime;
+    }
 
     private void OnEnable()
     {
@@ -28,10 +40,15 @@ public class Knife : MonoBehaviour, ISecondWeapon
         foreach (IDamageble damageble in _damagebles)
             damageble?.TakeDamage(_damage);
     }
-
+    
     public void Attack()
     {
-       _animator.SetTrigger("IsAttack");
+        if(_remainingReloadTime > 0)
+            return;
+
+        _remainingReloadTime = _reloadTime;
+
+       _animator.Play(s_attackAnimationID,-1,0);
        TakeDamage();
         SfxPlayer.Instance.PlayKnifeSound();
     }
