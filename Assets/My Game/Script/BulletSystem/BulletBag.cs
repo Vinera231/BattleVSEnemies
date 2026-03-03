@@ -22,6 +22,6 @@ public class BulletBag : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
             if (player.TryReplenishBullet(_amount))
-                Destroy(gameObject);
+                Destroy(gameObject);           
     }
 }

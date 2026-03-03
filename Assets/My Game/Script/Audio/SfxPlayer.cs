@@ -33,6 +33,7 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _bossDied;
     [SerializeField] private AudioClip _poisonSound;
     [SerializeField] private AudioClip _settingSound;
+    [SerializeField] private AudioClip _speedSound;
 
     private void Awake()
     {
@@ -134,4 +135,7 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlaySettingSound() =>
    _source.PlayOneShot(_settingSound);
+  
+    public void PlaySpeedSound() =>
+   _source.PlayOneShot(_speedSound);
 }

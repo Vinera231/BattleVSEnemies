@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Health _health;
     [SerializeField] private CharacterController _controller;
     [SerializeField] private BulletSpawner _bulletSpawner;
-    [SerializeField] private SfxPlayer _sfx;
+    [SerializeField] private Score _score;
+    [SerializeField] private int _point;
     [SerializeField] private float gravity = -8f;
     [SerializeField] private float _moveX, _moveZ;
     [SerializeField] private float _speed = 8f;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] private List<MonoBehaviour> _secondWeapons;
     [SerializeField] private GunBase _gun;
 
+    private bool _canGetPoint;
     private bool _canJump = true;
     private bool _isSlow;
     private int _allowedAttackCounter = 1;
@@ -117,10 +119,9 @@ public class Player : MonoBehaviour
 
         if (ParticleSpawner.Instance != null)
         {
-            Debug.Log("Spawn is doing ");
             ParticleSpawner.Instance.CreateSpeed(transform.position);
+            SfxPlayer.Instance.PlaySpeedSound();
         }
-
     }
 
     public void ReseteToBaseSpeed(int amount) =>
@@ -133,7 +134,12 @@ public class Player : MonoBehaviour
             _bulletSpawner.AddBullet(amount);
             return true;
         }
-        return false;
+        else
+        {
+            _score.Increaze(_point);
+            return true;
+        }
+
     }
 
     public bool TryTakeHealth(int life)
@@ -141,7 +147,7 @@ public class Player : MonoBehaviour
         if (_health.IsFull == false)
         {
             _health.RecoverHealth(life);
-            _sfx.PlayRecoverPlayer();
+            SfxPlayer.Instance.PlayRecoverPlayer();
             return true;
         }
 
@@ -190,7 +196,7 @@ public class Player : MonoBehaviour
     private void OnDied()
     {
         Died?.Invoke();
-        _sfx.PlayDiePlayerSound();
+        SfxPlayer.Instance.PlayDiePlayerSound();
     }
 
     private void OnShotPressed()
@@ -199,7 +205,7 @@ public class Player : MonoBehaviour
             return;
 
         if (_allowedAttackCounter > 0)
-            _bulletSpawner.StartShoot(_gun.SpawnPoint);   
+            _bulletSpawner.StartShoot(_gun.SpawnPoint);
     }
 
     private void OnShotUnpressed() =>

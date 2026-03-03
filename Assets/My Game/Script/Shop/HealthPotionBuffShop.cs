@@ -10,9 +10,6 @@ public class HealthPotionBuffShop : Shop
     protected override bool TryApplyItem() =>
         _inventory.TryAddBuff(_boostSprite,Key, OnApply);
 
-    private void OnApply()
-    {
-        if (_player.TryTakeHealth(_amountHealth))
-            Debug.Log($"Игрок получил {_amountHealth} здоровья");
-    }
+    private void OnApply() =>
+        _player.TryTakeHealth(_amountHealth);  
 }

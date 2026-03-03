@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 2400616520176372186}
+  _hpBar: {fileID: 0}
 --- !u!1 &2175763377937725784
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +269,7 @@ GameObject:
   - component: {fileID: 5556298816651745386}
   - component: {fileID: 89978275632698240}
   - component: {fileID: 7453890571248570535}
+  - component: {fileID: 4670344552428291882}
   m_Layer: 7
   m_Name: EasyRegenEnemy
   m_TagString: Enemy
@@ -446,6 +448,18 @@ MonoBehaviour:
   _renderer: {fileID: 5556298816651745378}
   _slowDelay: 6
   _fireSpreadRadius: 1
+--- !u!114 &4670344552428291882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556298816651745376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3273ea722a6e2345b567e37693f7d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7157658716984522113
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 338371550393996785}
+  _hpBar: {fileID: 0}
 --- !u!1 &8681547577094816761
 GameObject:
   m_ObjectHideFlags: 0
