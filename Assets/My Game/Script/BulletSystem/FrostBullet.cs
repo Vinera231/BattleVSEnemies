@@ -10,7 +10,7 @@ public class FrostBullet : Bullet
         base.OnTriggerEnter(other);
         if(other.TryGetComponent(out Enemy enemy))
         {
-            enemy.ApplaySlow();
+            enemy.ApplySlow();
             Destroy(gameObject);
         }
     }

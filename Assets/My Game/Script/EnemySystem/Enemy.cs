@@ -47,7 +47,6 @@ public class Enemy : MonoBehaviour, IDamageble
         _currentSpeed = _speed;
         _agent.speed = _speed;
         _agent.stoppingDistance = StoppingDistance;
-
         _player = FindFirstObjectByType<Player>();
     }
 
@@ -95,11 +94,8 @@ public class Enemy : MonoBehaviour, IDamageble
         }
     }
 
-
-    public virtual void TakeDamage(float value)
-    {
+    public virtual void TakeDamage(float value) =>
         _health.TakeDamage(value);
-    }
 
     public void Freeze()
     {
@@ -113,34 +109,13 @@ public class Enemy : MonoBehaviour, IDamageble
         _agent.speed = _currentSpeed;
     }
 
-    protected virtual void Attack(Player player)
-    {
-        player.TakeDamage(_damageAmount);
-
-        SfxPlayer.Instance.PlayKickEnemy();
-
-        Attacked?.Invoke();
-    }
-
-    private void OnDied() =>
-        ProcessDied();
-
-    protected virtual void ProcessDied()
-    {
-        _renderer.material = _defultSkin;
-        SfxPlayer.Instance.PlayDieEnemySound();
-        ParticleSpawner.Instance.CreateBlood(transform.position);
-        Died?.Invoke(this);
-        Destroy(gameObject);
-    }
-
     public void ReplaceSkin()
     {
         _isMinion = true;
         _renderer.material = _minionSkin;
     }
 
-    public void ApplaySlow()
+    public void ApplySlow()
     {
         if (_isSlowed)
             return;
@@ -153,7 +128,7 @@ public class Enemy : MonoBehaviour, IDamageble
         Invoke(nameof(AfterSlow), _slowDelay);
     }
 
-    public void ApplayFire(float fireDamage, float duraction)
+    public void ApplyFire(float fireDamage, float duraction)
     {
         if (_isFire)
             return;
@@ -187,11 +162,34 @@ public class Enemy : MonoBehaviour, IDamageble
         }
 
         _isPoison = true;
-
         _fricklesCoroutine = StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
     }
 
-    public IEnumerator PoisonCoroutine(float poisonDamage, float duraction, float tickInterval)
+    protected virtual void Attack(Player player)
+    {
+        player.TakeDamage(_damageAmount);
+        SfxPlayer.Instance.PlayKickEnemy();
+        Attacked?.Invoke();
+    }
+
+    protected virtual void OnDied() =>
+        ProcessDied();
+
+    protected virtual void ProcessDied()
+    {
+        _renderer.material = _defultSkin;
+        SfxPlayer.Instance.PlayDieEnemySound();
+        ParticleSpawner.Instance.CreateBlood(transform.position);
+        InvokeDeath();
+        Destroy(gameObject);
+    }
+
+    protected void InvokeDeath() =>
+        Died?.Invoke(this);
+
+    protected virtual void OnHealthChanged(float value) { }
+
+    private IEnumerator PoisonCoroutine(float poisonDamage, float duraction, float tickInterval)
     {
         float elapset = 0f;
         WaitForSeconds wait = new(tickInterval);
@@ -229,7 +227,7 @@ public class Enemy : MonoBehaviour, IDamageble
     private IEnumerator FireCoroutine(float fireDamage, float duration)
     {
         float interval = 1f;
-        WaitForSeconds wait = new WaitForSeconds(interval);
+        WaitForSeconds wait = new(interval);
         ParticleSpawner.Instance.CreateFire(transform, transform.position);
         Debug.Log(ParticleSpawner.Instance);
 
@@ -262,14 +260,9 @@ public class Enemy : MonoBehaviour, IDamageble
                 if (enemy == this)
                     continue;
 
-                enemy.ApplayFire(fireDamage, duraction);
+                enemy.ApplyFire(fireDamage, duraction);
                 break;
             }
         }
-    }
-
-    protected virtual void OnHealthChanged(float value)
-    {
-
     }
 }

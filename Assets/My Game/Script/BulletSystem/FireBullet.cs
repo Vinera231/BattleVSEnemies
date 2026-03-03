@@ -10,7 +10,7 @@ public class FireBullet : Bullet
         base.OnTriggerEnter(other);
         if(other.TryGetComponent(out Enemy enemy))
         {
-            enemy.ApplayFire(_fireDamage,_durationInSecond);
+            enemy.ApplyFire(_fireDamage,_durationInSecond);
             Destroy(gameObject);
         }
     }

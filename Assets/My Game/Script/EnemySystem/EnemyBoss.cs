@@ -1,15 +1,9 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyBoss : Enemy
 {
-    [SerializeField] private float _firstValue;
-    [SerializeField] private float _secondValue;
-    [SerializeField] private float _thirtValue;
-    [SerializeField] private float _forthValue;
-    [SerializeField] private float _fifthValue;
-    [SerializeField] private float _sixValue;
-    [SerializeField] private float _sevenValue;
-    [SerializeField] private float _spawnEnemies;
     [SerializeField] private float _bullets;
     [SerializeField] private EnemyBossAnimator _animator;
 
@@ -17,81 +11,81 @@ public class EnemyBoss : Enemy
     private EnemySpawner _spawner;
     private LootSpawner _lootSpawner;
 
+    private List<float> _sortedThresholds;
+    private HashSet<float> _usedThresholds;
+
+    private readonly Dictionary<float, int> _thresholds = new()
+    {
+        { 7000, 10 },
+        { 6000, 10 },
+        { 5000, 10 },
+        { 4000, 5 },
+        { 3000, 5 },
+        { 2000, 5 },
+        { 1000, 5 },
+    };
+
     protected override void Awake()
     {
         base.Awake();
         _spawner = FindFirstObjectByType<EnemySpawner>();
         _lootSpawner = FindFirstObjectByType<LootSpawner>();
+
+        _sortedThresholds = _thresholds.Keys.OrderByDescending(k => k).ToList();
+        _usedThresholds = new HashSet<float>();
     }
+
+    private System.Func<Vector3, Enemy> GetSpawnFunctionByIndex(int index)
+    {
+        return index switch
+        {
+            0 => _spawner.SpawnEnemy,           // 7000
+            1 => _spawner.SpawnMonsterEnemy,    // 6000
+            2 => _spawner.SpawnSpeedy,          // 5000
+            3 => _spawner.SpawnMonsterSpeedy,   // 4000
+            4 => _spawner.SpawnMonsterSpeedy,   // 3000 (повтор, как в оригинале)
+            5 => _spawner.SpawnHamer,           // 2000
+            _ => _spawner.SpawnEnemy            // запасной вариант
+        };
+    }
+
 
     protected override void OnHealthChanged(float value)
     {
         base.OnHealthChanged(value);
 
-        if (value < _firstValue)
+        for (int i = 0; i < _sortedThresholds.Count; i++)
         {
-            _firstValue = float.MinValue;
-            SpawnEnemies(10, _spawner.SpawnEnemy);
-            return;
-        }
-
-        if (value < _secondValue)
-        {
-            _secondValue = float.MinValue;
-            SpawnEnemies(10, _spawner.SpawnMonsterEnemy);
-            return;
-        }
-        
-        if (value < _thirtValue)
-        {
-            _thirtValue = float.MinValue;
-            SpawnEnemies(10, _spawner.SpawnSpeedy);
-            return;
-        }
-
-
-        if (value < _forthValue)
-        {
-            _forthValue = float.MinValue;
-            SpawnEnemies(5, _spawner.SpawnMonsterSpeedy);
-            return;
-        }
-        
-        if (value < _fifthValue)
-        {
-            _fifthValue = float.MinValue;
-            SpawnEnemies(5, _spawner.SpawnMonsterSpeedy);
-            return;
-        }
-       
-        if (value < _sixValue)
-        {
-            _sixValue = float.MinValue;
-            SpawnEnemies(5, _spawner.SpawnHamer);
-            return;
-        }
-
-        if (value < _sevenValue)
-        {
-            _sevenValue = float.MinValue;
-
-            for (int i = 0; i < 5; i++)
+            float threshold = _sortedThresholds[i];
+            if (!_usedThresholds.Contains(threshold) && value < threshold)
             {
-                Enemy enemy = _spawner.SpawnAngryHamer(transform.position);
-                Enemy enemy1 = _spawner.SpawnEnemy(transform.position);
-                Enemy enemy2 = _spawner.SpawnSpeedy(transform.position);
-                Subcrible(enemy);
-                Subcrible(enemy1);
-                Subcrible(enemy2);
-            }
+                int count = _thresholds[threshold];
 
-            return;
+                if (i == _sortedThresholds.Count - 1)
+                {
+                    for (int j = 0; j < count; j++) // count = 5
+                    {
+                        Enemy enemy = _spawner.SpawnAngryHamer(transform.position);
+                        Enemy enemy1 = _spawner.SpawnEnemy(transform.position);
+                        Enemy enemy2 = _spawner.SpawnSpeedy(transform.position);
+                        Subcrible(enemy);
+                        Subcrible(enemy1);
+                        Subcrible(enemy2);
+                    }
+                }
+                else
+                {
+                    var spawnFunc = GetSpawnFunctionByIndex(i);
+                    SpawnEnemies(count, spawnFunc);
+                }
+
+                _usedThresholds.Add(threshold);
+                return;
+            }
         }
 
         if (_currentBulletCount < _bullets)
-        {
             SpawnEnemies(1, _spawner.SpawnEnemy);
-        }
     }
 
     private void SpawnEnemies(int count, System.Func<Vector3, Enemy> spawnFunc)
@@ -122,11 +116,15 @@ public class EnemyBoss : Enemy
     protected override void ProcessDied()
     {
         SfxPlayer.Instance.PlayDieBossSound();
+        ParticleSpawner.Instance.CreateBlood(transform.position);
         _animator.PlayDied();
+        Freeze();
         Invoke(nameof(DestroyBoss), 3f);
-        base.ProcessDied();
     }
     
-    private void DestroyBoss() =>
+    private void DestroyBoss()
+    {
+        InvokeDeath();
         Destroy(gameObject);
+    }
 }
