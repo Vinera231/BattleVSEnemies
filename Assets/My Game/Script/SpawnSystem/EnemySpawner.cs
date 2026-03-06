@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -17,30 +18,32 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Enemy _regenEnemy;
     [SerializeField] private Vector2 _deviation;
 
+    public event Action<Enemy> Spawned;
+
     public Enemy SpawnBoss(Vector3 position) =>
         Spawn(position, _bossPrefab);
 
     public Enemy SpawnEnemy(Vector3 position) =>
          Spawn(position, _enemyPrefab);
-  
+
     public Enemy SpawnMonsterEnemy(Vector3 position) =>
         Spawn(position, _monsterEnemyPrefab);
 
     public Enemy SpawnSpeedy(Vector3 position) =>
         Spawn(position, _speedyPrefab);
-   
+
     public Enemy SpawnMonsterSpeedy(Vector3 position) =>
         Spawn(position, _monsterSpeedyPrefab);
 
     public Enemy SpawnHamer(Vector3 position) =>
         Spawn(position, _hamerPrefab);
-   
+
     public Enemy SpawnAngryHamer(Vector3 position) =>
         Spawn(position, _angryHamerPrefab);
-   
+
     public Enemy SpawnHalmer(Vector3 position) =>
          Spawn(position, _halmerEnemy);
-   
+
     public Enemy SpawnMonsterHalmer(Vector3 position) =>
          Spawn(position, _monsterHalmerEnemy);
 
@@ -55,16 +58,21 @@ public class EnemySpawner : MonoBehaviour
 
     public Enemy SpawnRegen(Vector3 position) =>
         Spawn(position, _regenEnemy);
-   
-    private Enemy Spawn(Vector3 position, Enemy prefab) =>
-        Instantiate(prefab, DeviatePosition(position), Quaternion.identity);
+
+    private Enemy Spawn(Vector3 position, Enemy prefab)
+    {
+        Enemy enemy = Instantiate(prefab, DeviatePosition(position), Quaternion.identity);
+        Spawned?.Invoke(enemy);
+       
+        return enemy;
+    }
 
     private Vector3 DeviatePosition(Vector3 position)
     {
         Vector3 offset = new(
-           Random.Range(-_deviation.x, _deviation.x),
+           UnityEngine.Random.Range(-_deviation.x, _deviation.x),
            0,
-           Random.Range(-_deviation.y, _deviation.y));
+           UnityEngine.Random.Range(-_deviation.y, _deviation.y));
 
         return offset + position;
     }

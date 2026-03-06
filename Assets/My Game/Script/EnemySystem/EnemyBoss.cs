@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -24,7 +25,7 @@ public class EnemyBoss : Enemy
         { 2000, 5 },
         { 1000, 5 },
     };
-
+     
     protected override void Awake()
     {
         base.Awake();
@@ -39,12 +40,12 @@ public class EnemyBoss : Enemy
     {
         return index switch
         {
-            0 => _spawner.SpawnEnemy,           // 7000
-            1 => _spawner.SpawnMonsterEnemy,    // 6000
-            2 => _spawner.SpawnSpeedy,          // 5000
-            3 => _spawner.SpawnMonsterSpeedy,   // 4000
-            4 => _spawner.SpawnMonsterSpeedy,   // 3000 (повтор, как в оригинале)
-            5 => _spawner.SpawnHamer,           // 2000
+            0 => _spawner.SpawnEnemy,
+            1 => _spawner.SpawnMonsterEnemy,    
+            2 => _spawner.SpawnSpeedy,          
+            3 => _spawner.SpawnMonsterSpeedy,  
+            4 => _spawner.SpawnMonsterSpeedy,   
+            5 => _spawner.SpawnHamer,          
             _ => _spawner.SpawnEnemy            // запасной вариант
         };
     }
@@ -115,6 +116,9 @@ public class EnemyBoss : Enemy
 
     protected override void ProcessDied()
     {
+        if(TryGetComponent(out Collider collider))
+            Destroy(collider);
+
         SfxPlayer.Instance.PlayDieBossSound();
         ParticleSpawner.Instance.CreateBlood(transform.position);
         _animator.PlayDied();

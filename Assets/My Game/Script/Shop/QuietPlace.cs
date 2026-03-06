@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class QuietPlace : MonoBehaviour
@@ -7,7 +8,7 @@ public class QuietPlace : MonoBehaviour
     [SerializeField] private WaveManager _waveManager;
     [SerializeField] private HealthView _healthView;
 
-    private readonly List<Enemy> _enemies = new();
+    private List<Enemy> _enemies = new();
     private bool _isActive;
   
     public event Action PlayerEntered;
@@ -27,6 +28,8 @@ public class QuietPlace : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        _enemies = _enemies.Where(e  => e != null).ToList();
+
         if (other.TryGetComponent(out Player player))
         {
             player.ProhibitAttack();
@@ -59,6 +62,9 @@ public class QuietPlace : MonoBehaviour
 
     private void OnEnemySpawned(Enemy enemy)
     {
+        if(enemy == null) 
+            return;
+
         _enemies.Add(enemy);
 
         if (_isActive)

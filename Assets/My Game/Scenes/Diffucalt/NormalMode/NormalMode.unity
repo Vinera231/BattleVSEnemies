@@ -6200,8 +6200,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5089877098680381616, guid: 60f79905accf3b24fa0114b941f1aac0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 265954774}
   m_SourcePrefab: {fileID: 100100000, guid: 60f79905accf3b24fa0114b941f1aac0, type: 3}
+--- !u!1 &265954773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5089877098680381616, guid: 60f79905accf3b24fa0114b941f1aac0, type: 3}
+  m_PrefabInstance: {fileID: 265954772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &265954774
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265954773}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.064, y: 1.8360001, z: 1.0890001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.162, y: 1.8260001, z: -0.015000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &268258265
 GameObject:
   m_ObjectHideFlags: 0
@@ -8850,7 +8874,7 @@ MonoBehaviour:
   _dabtStepMusic: {fileID: 8300000, guid: 2270585766f7c56449fe0e682266a317, type: 3}
   _bossMusic: {fileID: 8300000, guid: e9c85fe237840514a804e23b748ec657, type: 3}
   _beforeBoss: {fileID: 1182479980}
-  _afterBoss: {fileID: 2125280817}
+  _afterBoss: {fileID: 2140147766}
 --- !u!1 &360270462
 GameObject:
   m_ObjectHideFlags: 0
@@ -28935,6 +28959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waves:
+  - {fileID: 2140147766}
   - {fileID: 427512791}
   - {fileID: 1733740976}
   - {fileID: 1997837115}
@@ -28944,7 +28969,6 @@ MonoBehaviour:
   - {fileID: 615173879}
   - {fileID: 1377493455}
   - {fileID: 1182479980}
-  - {fileID: 2125280817}
   - {fileID: 1402337811}
   - {fileID: 1464079393}
   - {fileID: 1266841442}
@@ -28976,7 +29000,7 @@ Transform:
   - {fileID: 615173878}
   - {fileID: 1377493456}
   - {fileID: 1182479981}
-  - {fileID: 2125280816}
+  - {fileID: 2140147767}
   - {fileID: 1402337810}
   - {fileID: 1464079392}
   - {fileID: 1266841441}
@@ -50225,70 +50249,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1182479981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2125280815
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2125280816}
-  - component: {fileID: 2125280817}
-  m_Layer: 0
-  m_Name: TenthWave
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2125280816
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125280815}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.42, y: 3.08, z: 26.24}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1209387576}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2125280817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125280815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9997da8bb3b42e44bea61d622de5c19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawner: {fileID: 1454733085}
-  _frequency: 0
-  _countEnemy: 0
-  _countMonsterEnemy: 0
-  _countSpeedy: 0
-  _countMonsterSpeedy: 0
-  _countHamer: 0
-  _countAngryHamer: 0
-  _countBoss: 1
-  _countHalmer: 0
-  _countMonsterHalmer: 0
-  _countIron: 0
-  _countExplorel: 0
-  _countFrost: 0
-  _countRegen: 0
-  _timeBeforeSpawn: 20
-  _text: TenthWave
-  _lootSpawner: {fileID: 1159280641}
-  _spawnPoints: []
-  _scoreReward: 200
 --- !u!1001 &2125488336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50770,6 +50730,70 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e682b966e3f644392ffbfab511e0e2, type: 3}
+--- !u!1 &2140147765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140147767}
+  - component: {fileID: 2140147766}
+  m_Layer: 0
+  m_Name: TenthWave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2140147766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140147765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0aa06eb771796418dd10eed25499c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawner: {fileID: 1454733085}
+  _frequency: 0
+  _countEnemy: 0
+  _countMonsterEnemy: 0
+  _countSpeedy: 0
+  _countMonsterSpeedy: 0
+  _countHamer: 0
+  _countAngryHamer: 0
+  _countBoss: 1
+  _countHalmer: 0
+  _countMonsterHalmer: 0
+  _countIron: 0
+  _countExplorel: 0
+  _countFrost: 0
+  _countRegen: 0
+  _timeBeforeSpawn: 5
+  _text: TenthWave
+  _lootSpawner: {fileID: 1159280641}
+  _spawnPoints: []
+  _scoreReward: 200
+--- !u!4 &2140147767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140147765}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.42, y: 3.08, z: 26.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1209387576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2141931368
 GameObject:
   m_ObjectHideFlags: 0

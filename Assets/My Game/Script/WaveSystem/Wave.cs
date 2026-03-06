@@ -37,6 +37,8 @@ public class Wave : MonoBehaviour
 
     public string Text => _text;
 
+    public EnemySpawner Spawner => _spawner;
+
     private Vector3 RandomSpawnPosition()
     {
         if (_spawnPoints.Count == 0)
@@ -61,7 +63,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnEnemy(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countEnemy--;
         }
         
@@ -71,7 +73,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnMonsterEnemy(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countMonsterEnemy--;
         }
 
@@ -81,7 +83,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnSpeedy(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countSpeedy--;
         }
        
@@ -91,7 +93,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnMonsterSpeedy(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countMonsterSpeedy--;
         }
 
@@ -102,7 +104,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnHamer(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countHamer--;
         }
        
@@ -112,7 +114,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnAngryHamer(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countAngryHamer--;
         }
       
@@ -122,7 +124,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnBoss(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countBoss--;
         }
 
@@ -132,7 +134,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnHalmer(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countHalmer--;
         }
        
@@ -142,7 +144,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnMonsterHalmer(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countMonsterHalmer--;
         }
 
@@ -152,7 +154,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnIron(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countIron--;
         }
         
@@ -162,7 +164,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnExplorel(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countExplorel--;
         }
 
@@ -172,7 +174,7 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnFrost(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countFrost--;
         }
        
@@ -182,11 +184,14 @@ public class Wave : MonoBehaviour
             Enemy enemy = _spawner.SpawnRegen(RandomSpawnPosition());
             enemy.Died += OnDied;
             _enemies.Add(enemy);
-            Spawned?.Invoke(enemy);
+            InvokeEnemySpawn(enemy);
             _countRegen--;
         }
     }
-
+    protected void InvokeEnemySpawn(Enemy enemy)
+    {
+        Spawned?.Invoke(enemy);
+    }
     private void OnDied(Enemy enemy)
     {
         _enemies.Remove(enemy);

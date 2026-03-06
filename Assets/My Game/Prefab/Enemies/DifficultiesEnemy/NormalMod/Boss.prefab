@@ -1088,14 +1088,6 @@ MonoBehaviour:
   _renderer: {fileID: 3309389445043673922}
   _slowDelay: 6
   _fireSpreadRadius: 1
-  _firstValue: 7000
-  _secondValue: 6000
-  _thirtValue: 5000
-  _forthValue: 4000
-  _fifthValue: 3000
-  _sixValue: 2000
-  _sevenValue: 1000
-  _spawnEnemies: 1
   _bullets: 20
   _animator: {fileID: 6002438986551568146}
 --- !u!114 &6002438986551568146
