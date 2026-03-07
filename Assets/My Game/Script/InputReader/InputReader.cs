@@ -5,7 +5,7 @@ public class InputReader : MonoBehaviour
 {
     private const KeyCode SettingPanel = KeyCode.Escape;
     private const KeyCode ChitingPanel = KeyCode.BackQuote;
-    private const KeyCode EnterCheatPanel = KeyCode.KeypadEnter;
+    private const KeyCode EnterCheatPanel = KeyCode.Return;
     private const KeyCode BuyKey = KeyCode.Space;
     private const KeyCode JumpKey = KeyCode.Space;
     private const KeyCode SelectKey = KeyCode.E;

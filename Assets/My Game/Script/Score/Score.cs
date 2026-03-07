@@ -10,6 +10,8 @@ public class Score : MonoBehaviour
     public void Increaze(int value)
     {
         _score += value;
+
+        if(_view != null) 
         _view.UpdateInfo(_score);
     }
 
@@ -19,7 +21,9 @@ public class Score : MonoBehaviour
             return false;
         
         _score -= value;
-        _view.UpdateInfo(_score);
+       
+        if (_view != null)
+            _view.UpdateInfo(_score);
         return true;
     }
 }

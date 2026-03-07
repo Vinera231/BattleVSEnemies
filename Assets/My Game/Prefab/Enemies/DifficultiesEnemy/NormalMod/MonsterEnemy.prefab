@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 2400616520176372186}
+  _hpBar: {fileID: 0}
 --- !u!1 &2175763377937725784
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +447,8 @@ MonoBehaviour:
   _minionSkin: {fileID: 0}
   _renderer: {fileID: 5556298816651745378}
   _slowDelay: 6
+  _fireSpreadRadius: 1
+  _point: 25
 --- !u!1 &7157658716984522113
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 338371550393996785}
+  _hpBar: {fileID: 0}
 --- !u!1 &8681547577094816761
 GameObject:
   m_ObjectHideFlags: 0

@@ -816,16 +816,9 @@ MonoBehaviour:
   _renderer: {fileID: 3309389445043673922}
   _slowDelay: 6
   _fireSpreadRadius: 1
-  _firstValue: 5500
-  _secondValue: 4000
-  _thirtValue: 3500
-  _forthValue: 2500
-  _fifthValue: 2000
-  _sixValue: 1500
-  _sevenValue: 1000
-  _spawnEnemies: 1
   _bullets: 20
   _animator: {fileID: 6002438986551568146}
+  _score: {fileID: 3079195441420717652, guid: 5d8ec5ee3f7261349ad36ec1b036512c, type: 3}
 --- !u!114 &6002438986551568146
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 4174161159842355164}
+  _hpBar: {fileID: 0}
 --- !u!1 &2977697864280984321
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 5997330999187736343}
+  _hpBar: {fileID: 0}
 --- !u!1 &3779317539951698213
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +546,7 @@ MonoBehaviour:
   _renderer: {fileID: 1259698736222383231}
   _slowDelay: 6
   _fireSpreadRadius: 1
+  _point: 30
 --- !u!195 &8230835532149007525
 NavMeshAgent:
   m_ObjectHideFlags: 0

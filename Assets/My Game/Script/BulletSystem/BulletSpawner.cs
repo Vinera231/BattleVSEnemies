@@ -9,12 +9,11 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private int _bullet;
     [SerializeField] private int _limitbullet;
     [SerializeField] private BulletView _bulletView;
-    [SerializeField] private float _baseDamage = 10f;
     [SerializeField] private float _fireRate;
-
+    
+    private float _damage = 20f;
     private Coroutine _shootCoroutine;
     private WaitForSeconds _waitShoot;
-    private float  _currentDamage;
     private bool _canShoot = true;
 
     public bool IsFull => _bullet >= _limitbullet;
@@ -22,24 +21,26 @@ public class BulletSpawner : MonoBehaviour
     private void Start()
     {
         _waitShoot = new(_fireRate);
-        _currentDamage = _baseDamage;
+       
     }
-
+    public void ResetBulletDamage()
+    {
+        _damage = 20f;
+    }
     public void ReplacePrefab(Bullet bullet)
     {
         _prefab = bullet;
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
+    }
+    public void IncreaseBulletDamage(float amount)
+    {
+        _damage += amount;
     }
 
     public void StartShoot(Transform spawnPoint)
     {
         StopShoot();
         _shootCoroutine = StartCoroutine(ShootingRoutine(spawnPoint));
-    }
-
-    public void SetBulletDamage(float value)
-    {
-        _currentDamage = Mathf.Max(0, value);
     }
 
     public void StopShoot()
@@ -102,7 +103,7 @@ public class BulletSpawner : MonoBehaviour
         }
 
 
-        newBullet.SetDamage(_currentDamage);
+        newBullet.SetDamage(_damage);
 
         _bullet--;
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
@@ -114,17 +115,7 @@ public class BulletSpawner : MonoBehaviour
         _bulletView.UpdateBulletCount(_bullet, _limitbullet);
         SfxPlayer.Instance.PlayReloadBullet();
     }
-
-    public void IncreaseBulletDamage(float amount)
-    {
-        _currentDamage += amount;
-    }
-
-    public void ResetBulletDamage()
-    {
-        _currentDamage = _baseDamage;
-        Debug.Log($"Bullet damage reset to {_currentDamage}");
-    }
+  
 
     public void NotBullet()
     {

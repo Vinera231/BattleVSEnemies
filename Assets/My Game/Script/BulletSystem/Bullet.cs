@@ -3,10 +3,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _damage;
+    
     public float Damage => _damage;
 
-    protected virtual  void Start() =>
+    protected virtual  void Start()
+    {
         Invoke(nameof(DestroyBullet), 3);
+    }
 
     protected virtual void DestroyBullet() =>
         Destroy(gameObject);
@@ -30,11 +33,14 @@ public class Bullet : MonoBehaviour
     protected virtual void OnEnter(GameObject other)
     {
         if (other.TryGetComponent(out Enemy enemy))
+        {
+            Debug.Log("Bullet damage = " + _damage);
             enemy.TakeDamage(_damage);
+        }
     }
-
+ 
     public virtual void SetDamage(float damage)
     {
-        _damage = damage;
+        _damage = Mathf.Max(0, damage);
     }
 }

@@ -94,8 +94,11 @@ public class Enemy : MonoBehaviour, IDamageble
         }
     }
 
-    public virtual void TakeDamage(float value) =>
+    public virtual void TakeDamage(float value)
+    {
+        Debug.Log("Enemy received damage = " + value);
         _health.TakeDamage(value);
+    }
 
     public void Freeze()
     {

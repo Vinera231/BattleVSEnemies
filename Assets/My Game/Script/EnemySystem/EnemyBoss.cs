@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class EnemyBoss : Enemy
 {
-    [SerializeField] private float _bullets;
+    [SerializeField] private int _bullets;
     [SerializeField] private EnemyBossAnimator _animator;
-
+    [SerializeField] private Score _score;
+   
     private float _currentBulletCount;
     private EnemySpawner _spawner;
     private LootSpawner _lootSpawner;
@@ -102,13 +103,14 @@ public class EnemyBoss : Enemy
     {
         _lootSpawner.SpawnBulletBag(enemy.transform.position);
         enemy.Died -= OnEnemyDied;
+        _score.Increaze(enemy.ScoreReward);
     }
 
     private void Subcrible(Enemy enemy)
     {
         enemy.Died += OnEnemyDied;
     }
-
+    
     public void UpdateBulletCount(float _current)
     {
         _currentBulletCount = _current;

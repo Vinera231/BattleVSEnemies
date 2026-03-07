@@ -17,25 +17,37 @@ public class SelectPage : MonoBehaviour
 
     private void OnEnable()
     {
-        _reader.SelectPressed += PressArrow;
-        _reader.BackSelectPressed += PressArrow;
+        _reader.SelectPressed += SwipeRight;
+        _reader.BackSelectPressed += SwipeLeft;
         _quietPlace.PlayerEntered += OnPlayerEntered;
         _quietPlace.PlayerExited += OnPlayerExited;
     }
     
     private void OnDisable()
     {
-        _reader.SelectPressed -= PressArrow;
-        _reader.BackSelectPressed -= PressArrow;
+        _reader.SelectPressed -= SwipeRight;
+        _reader.BackSelectPressed -= SwipeLeft;
         _quietPlace.PlayerEntered-= OnPlayerEntered;
         _quietPlace.PlayerExited -= OnPlayerExited;
     }
    
-    public void PressArrow()
+    public void SwipeLeft()
     {
         if (_isShock == false)
             return;
 
+        _categoria[_currentIndex].SetActive(false);
+        _currentIndex = (_currentIndex - 1 + _categoria.Length) % _categoria.Length;
+
+        _categoria[_currentIndex].SetActive(true);
+        _textArrow.text = _categoria[_currentIndex].name;
+    }
+
+    public void SwipeRight()
+    {
+        if (_isShock == false)
+            return;
+      
         _categoria[_currentIndex].SetActive(false);
         _currentIndex = (_currentIndex + 1) % _categoria.Length;
 

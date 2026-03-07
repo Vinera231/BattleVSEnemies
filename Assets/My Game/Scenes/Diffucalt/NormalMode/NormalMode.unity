@@ -3348,7 +3348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &140594066
 Transform:
   m_ObjectHideFlags: 0
@@ -19057,7 +19057,7 @@ Transform:
   m_GameObject: {fileID: 805269702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.37727517, z: 0, w: 0.92610127}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.179, y: 0, z: 0}
   m_LocalScale: {x: 0.19541861, y: 0.32154357, z: 1.0068738}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23099,12 +23099,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _freezeRotation: {fileID: 742336071941857357, guid: 5cdb68724a7c2504fb0e549eb9f67ded, type: 3}
-  _prefab: {fileID: -4434134799110684633, guid: 5cdb68724a7c2504fb0e549eb9f67ded, type: 3}
+  _prefab: {fileID: 2757616622049092626, guid: 2389d256a35a8c24c8ada206ea617320, type: 3}
   _velocity: 20
   _bullet: 100
   _limitbullet: 100
   _bulletView: {fileID: 203276211}
-  _baseDamage: 10
   _fireRate: 0.2
 --- !u!1 &975213759
 GameObject:
@@ -27218,7 +27217,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 499
   m_TargetDisplay: 0
 --- !u!1001 &1168291892
 PrefabInstance:
@@ -28269,8 +28268,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.89538383
-  m_Center: {x: -0.1609465, y: 0.02396208, z: 0.16756546}
+  m_Radius: 0.5201412
+  m_Center: {x: -0.32908982, y: 0.02396208, z: 0.16756552}
 --- !u!4 &1195832805
 Transform:
   m_ObjectHideFlags: 0
@@ -28959,7 +28958,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waves:
-  - {fileID: 2140147766}
   - {fileID: 427512791}
   - {fileID: 1733740976}
   - {fileID: 1997837115}
@@ -28969,6 +28967,7 @@ MonoBehaviour:
   - {fileID: 615173879}
   - {fileID: 1377493455}
   - {fileID: 1182479980}
+  - {fileID: 2140147766}
   - {fileID: 1402337811}
   - {fileID: 1464079393}
   - {fileID: 1266841442}
@@ -38838,7 +38837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1713427350
 Transform:
   m_ObjectHideFlags: 0
@@ -48918,8 +48917,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.9634237
-  m_Center: {x: -0.23938367, y: -0.059999913, z: -0.11805715}
+  m_Radius: 0.61714995
+  m_Center: {x: 0.110939994, y: -0.059999943, z: -0.118056886}
 --- !u!4 &2081066904
 Transform:
   m_ObjectHideFlags: 0
@@ -50774,7 +50773,7 @@ MonoBehaviour:
   _countExplorel: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 5
+  _timeBeforeSpawn: 20
   _text: TenthWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints: []
@@ -59662,8 +59661,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.892082
-  m_Center: {x: 0.11747599, y: 0, z: 0.06337865}
+  m_Radius: 0.56736183
+  m_Center: {x: 0.016629772, y: 0, z: 0.06337865}
 --- !u!114 &5734482902771752920
 MonoBehaviour:
   m_ObjectHideFlags: 0
