@@ -6,7 +6,6 @@ using UnityEngine;
 public class QuietPlace : MonoBehaviour
 {
     [SerializeField] private WaveManager _waveManager;
-    [SerializeField] private HealthView _healthView;
 
     private List<Enemy> _enemies = new();
     private bool _isActive;
@@ -34,7 +33,6 @@ public class QuietPlace : MonoBehaviour
         {
             player.ProhibitAttack();
             player.ProhibitJump();
-            _healthView.HideHealthView();
 
             foreach (Enemy enemy in _enemies)
                 enemy.Freeze();
@@ -50,7 +48,6 @@ public class QuietPlace : MonoBehaviour
         {
             player.AllowAttack();
             player.AllowJump();
-            _healthView.ShowHealthView();
 
             foreach (Enemy enemy in _enemies)
                 enemy.ResetFreezen();

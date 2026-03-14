@@ -94,12 +94,9 @@ public class Enemy : MonoBehaviour, IDamageble
         }
     }
 
-    public virtual void TakeDamage(float value)
-    {
-        Debug.Log("Enemy received damage = " + value);
+    public virtual void TakeDamage(float value) =>
         _health.TakeDamage(value);
-    }
-
+    
     public void Freeze()
     {
         _isFrozen = true;
@@ -159,11 +156,8 @@ public class Enemy : MonoBehaviour, IDamageble
             return;
 
         if (_renderer == null)
-        {
-            Debug.LogWarning("Enemy not Applay : Render material");
             return;
-        }
-
+        
         _isPoison = true;
         _fricklesCoroutine = StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
     }
@@ -205,7 +199,6 @@ public class Enemy : MonoBehaviour, IDamageble
 
             yield return wait;
             elapset += tickInterval;
-            Debug.Log($"{elapset += tickInterval} есть  отровление");
             toogle = !toogle;
             _renderer.material = toogle ? _poisonSkin : _defultSkin;
         }

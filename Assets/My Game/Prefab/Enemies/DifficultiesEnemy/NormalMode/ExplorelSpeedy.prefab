@@ -804,9 +804,9 @@ MonoBehaviour:
   _renderer: {fileID: 7624014647235544898}
   _slowDelay: 6
   _fireSpreadRadius: 1
-  _explosionRadius: 2.81
+  _explosionRadius: 3
   _explosionDamage: 50
-  _exploreltime: 5
+  _exploreltime: 10
 --- !u!1 &7752711280608166503
 GameObject:
   m_ObjectHideFlags: 0

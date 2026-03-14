@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983a615c392538241ab7ff65d9fa0ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 50
+  _damage: 60
+  _velocity: 26
+  _bullet: 50
   _radiousExplorel: 5
   _explorelDamage: 30

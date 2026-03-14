@@ -150,5 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 25
+  _velocity: 21
+  _fireRate: 0.25
   _slowDown: 2
   _duraction: 3

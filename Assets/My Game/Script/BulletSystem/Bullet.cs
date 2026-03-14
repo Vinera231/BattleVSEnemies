@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _damage;
-    
+    [SerializeField] private float _damage = 20f;
+    [SerializeField] private float _velocity = 20f;
+    [SerializeField] private int _bullet;
     public float Damage => _damage;
-
-    protected virtual  void Start()
-    {
+    public float Velocity => _velocity;
+   
+    protected virtual void Start() =>
         Invoke(nameof(DestroyBullet), 3);
-    }
+    
+    public abstract void OnShot();
 
     protected virtual void DestroyBullet() =>
         Destroy(gameObject);
@@ -32,15 +34,10 @@ public class Bullet : MonoBehaviour
 
     protected virtual void OnEnter(GameObject other)
     {
-        if (other.TryGetComponent(out Enemy enemy))
-        {
-            Debug.Log("Bullet damage = " + _damage);
-            enemy.TakeDamage(_damage);
-        }
+        if (other.TryGetComponent(out Enemy enemy))       
+            enemy.TakeDamage(_damage);      
     }
  
-    public virtual void SetDamage(float damage)
-    {
-        _damage = Mathf.Max(0, damage);
-    }
+    public virtual void SetDamage(float damage) => 
+        _damage = Mathf.Max(0, damage);   
 }

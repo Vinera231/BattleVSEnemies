@@ -26,8 +26,6 @@ public class WinPanelShower : MonoBehaviour
 
     private void OnFinished()
     {
-        Debug.Log($"{name} OnFinished ");
-
         _winPanel.Show();        
 
         WinPanelShowed?.Invoke();

@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ExplorelBulett : Bullet
@@ -7,6 +6,9 @@ public class ExplorelBulett : Bullet
     [SerializeField] private float _explorelDamage;
 
     private bool _hasExplorel = false;
+
+    public override void OnShot() =>
+        SfxPlayer.Instance.PlayDetonatorSound();
 
     protected override void OnCollisionEnter(Collision collision)
     {

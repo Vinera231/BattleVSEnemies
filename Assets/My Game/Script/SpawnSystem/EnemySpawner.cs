@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Enemy _monsterHalmerEnemy;
     [SerializeField] private Enemy _ironEnemy;
     [SerializeField] private Enemy _explorelEnemy;
+    [SerializeField] private Enemy _explorelEnemyMonster;
     [SerializeField] private Enemy _frostEnemy;
     [SerializeField] private Enemy _regenEnemy;
     [SerializeField] private Vector2 _deviation;
@@ -52,6 +53,9 @@ public class EnemySpawner : MonoBehaviour
 
     public Enemy SpawnExplorel(Vector3 position) =>
         Spawn(position, _explorelEnemy);
+   
+    public Enemy SpawnExplorelMonster(Vector3 position) =>
+        Spawn(position, _explorelEnemyMonster);
 
     public Enemy SpawnFrost(Vector3 position) =>
         Spawn(position, _frostEnemy);

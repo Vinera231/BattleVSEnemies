@@ -150,3 +150,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 40
+  _velocity: 30
+  _fireRate: 0.3

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -5,37 +6,54 @@ public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] private Rigidbody _freezeRotation;
     [SerializeField] private Bullet _prefab;
-    [SerializeField] private float _velocity = 20f;
     [SerializeField] private int _bullet;
     [SerializeField] private int _limitbullet;
     [SerializeField] private BulletView _bulletView;
-    [SerializeField] private float _fireRate;
-    
-    private float _damage = 20f;
+    [SerializeField] private float _defaultRate = 0.2f;
+
+    private float _currentDefaultDamage;
     private Coroutine _shootCoroutine;
     private WaitForSeconds _waitShoot;
     private bool _canShoot = true;
+
+    public event Action BulletChanged;
+
+    public int BulletCount => _bullet;
 
     public bool IsFull => _bullet >= _limitbullet;
 
     private void Start()
     {
-        _waitShoot = new(_fireRate);
-       
+        SetRate(_defaultRate);
+        UpdateCurrentDamage();
     }
-    public void ResetBulletDamage()
-    {
-        _damage = 20f;
-    }
-    public void ReplacePrefab(Bullet bullet)
+
+    private void SetRate(float rate) =>
+        _waitShoot = new(rate);
+
+    private void UpdateCurrentDamage() =>
+        _currentDefaultDamage = _prefab.Damage;
+
+    public void ResetBulletDamage() =>
+        _prefab.SetDamage(_currentDefaultDamage);
+
+    public void ReplacePrefab(Bullet bullet, float rate, int limit)
     {
         _prefab = bullet;
-        _bulletView.UpdateBulletCount(_bullet, _limitbullet);
+        _limitbullet = limit;
+        SetRate(rate);
+
+        UpdateCurrentDamage();
+
+        if (_bullet > _limitbullet)
+        {
+            _bullet = _limitbullet;
+            BulletChanged?.Invoke();
+        }
     }
-    public void IncreaseBulletDamage(float amount)
-    {
-        _damage += amount;
-    }
+
+    public void IncreaseBulletDamage(float amount) =>
+        _prefab.SetDamage(_prefab.Damage + amount);
 
     public void StartShoot(Transform spawnPoint)
     {
@@ -65,60 +83,23 @@ public class BulletSpawner : MonoBehaviour
     {
         if (_bullet <= 0)
         {
-            NotBullet();
             SfxPlayer.Instance.PlayNotBullet();
             return;
         }
 
         Bullet newBullet = Instantiate(_prefab, spawnPoint.position, spawnPoint.rotation);
         Rigidbody rigidbody = newBullet.GetComponent<Rigidbody>();
-        rigidbody.linearVelocity = spawnPoint.forward * _velocity;
+        rigidbody.linearVelocity = spawnPoint.forward * newBullet.Velocity;
         rigidbody.freezeRotation = true;
-
-         switch(newBullet)
-         {
-            case FrostBullet:
-                SfxPlayer.Instance.PlayFrostShootSound();
-                break;
-
-            case PoisonBullet:
-                SfxPlayer.Instance.PlayPoisonSound();
-                break;
-
-            case ExtraBullet:
-                SfxPlayer.Instance.PlayLaserSound();
-                break;
-
-            case ExplorelBulett:
-                SfxPlayer.Instance.PlayDetonatorSound();
-                break;
-
-            case FireBullet:
-                SfxPlayer.Instance.PlayFireShootSound();
-                break;
-
-            default:
-                 SfxPlayer.Instance.PlayShootSound();
-                break;
-        }
-
-
-        newBullet.SetDamage(_damage);
-
+        newBullet.OnShot();
         _bullet--;
-        _bulletView.UpdateBulletCount(_bullet, _limitbullet);
+        BulletChanged?.Invoke();
     }
 
     public void AddBullet(int amount)
     {
         _bullet = Mathf.Min(_bullet + amount, _limitbullet);
-        _bulletView.UpdateBulletCount(_bullet, _limitbullet);
+        BulletChanged?.Invoke();
         SfxPlayer.Instance.PlayReloadBullet();
-    }
-  
-
-    public void NotBullet()
-    {
-        _bulletView.UpdateBulletCount(_bullet, _limitbullet);
     }
 }
