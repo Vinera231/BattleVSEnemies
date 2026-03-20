@@ -21,10 +21,10 @@ public class Player : MonoBehaviour
     [SerializeField] private Renderer _renderer;
     [SerializeField] private Material _frostSkin;
     [SerializeField] private Material _defultSkin;
+    [SerializeField] private Material _brownSkin;
     [SerializeField] private List<MonoBehaviour> _secondWeapons;
     [SerializeField] private GunBase _gun;
 
-    private bool _canGetPoint;
     private bool _canJump = true;
     private bool _isSlow;
     private int _allowedAttackCounter = 1;
@@ -76,6 +76,9 @@ public class Player : MonoBehaviour
         _controller.Move(_velocity * Time.deltaTime);
     }
 
+    public void ChangColor() =>
+        _renderer.material = _brownSkin;
+    
     public void SetGun(GunBase gun)
     {
         _gun.gameObject.SetActive(false);
