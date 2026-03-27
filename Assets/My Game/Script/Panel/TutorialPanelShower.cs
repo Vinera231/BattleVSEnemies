@@ -6,8 +6,6 @@ public class TutorialPanelShower : MonoBehaviour
     [SerializeField] private TutorialPanel _panel;
     [SerializeField] private ButtonInformer _closeButton;
 
-    public bool IsActive => _panel != null && _panel.gameObject.activeSelf;
-
     private void Start() =>
       _panel.Show();
 

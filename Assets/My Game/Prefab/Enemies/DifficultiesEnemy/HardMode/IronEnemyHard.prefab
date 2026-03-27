@@ -439,7 +439,7 @@ MonoBehaviour:
   _agent: {fileID: 1595713761963284895}
   _speed: 4
   _detectionRadius: 380
-  _damageAmount: 60
+  _damageAmount: 70
   _frost: 6
   _attackRate: 1
   _scoreReward: 75

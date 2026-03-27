@@ -6,7 +6,9 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Score _score;
+    [SerializeField] private Health _health;
 
+    private float _amount = 100f;
     private int _currentWaveIndex = 0;
 
     public event Action<int> WaveStarted;
@@ -24,9 +26,7 @@ public class WaveManager : MonoBehaviour
     public string GetWaveName(int index) =>  
         _waves[index].Text;
   
-    public void DeleteBoss() =>   
-       _waves.Remove(_waves[9]);
-  
+ 
     private void StartWave(int index)
     {
         _currentWaveIndex = index;
@@ -37,6 +37,9 @@ public class WaveManager : MonoBehaviour
         wave.Spawned += OnEnemySpawned;
         Vector2 spawnPosition = transform.position;
         WaveStarted?.Invoke(_currentWaveIndex);
+        
+        if (_currentWaveIndex == 10)
+            AddHealthValue();
     }
     
     private void OnWaveFinished()
@@ -67,4 +70,8 @@ public class WaveManager : MonoBehaviour
         EnemyDied?.Invoke(enemy);
         _score.Increaze(enemy.ScoreReward);
     }
+
+    private void AddHealthValue() =>   
+     _health.RecoverHealth(_amount);
+  
 }

@@ -191,7 +191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 5696656929931116886}
-  _hpBar: {fileID: 0}
 --- !u!1 &1181340327341451449
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +433,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 3072741878150824329}
-  _hpBar: {fileID: 0}
 --- !u!1 &3423462526607715392
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,9 +708,9 @@ GameObject:
   - component: {fileID: 5065033212600556928}
   - component: {fileID: 1087178890326134753}
   - component: {fileID: 1026828381980982638}
-  - component: {fileID: 1277114470616081379}
   - component: {fileID: 6002438986551568146}
   - component: {fileID: 7929237923332471853}
+  - component: {fileID: 1656968779538065852}
   m_Layer: 7
   m_Name: EasyBoss
   m_TagString: Enemy
@@ -787,38 +785,6 @@ CapsuleCollider:
   m_Height: 5.3
   m_Direction: 1
   m_Center: {x: 0, y: 2.7, z: 0}
---- !u!114 &1277114470616081379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6837979829544711026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 391737d01e514df4da034d6f38fd347b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackDetector: {fileID: 8822677875608083494}
-  _health: {fileID: 2818299267573887289}
-  _agent: {fileID: 7929237923332471853}
-  _speed: 3
-  _detectionRadius: 380
-  _damageAmount: 60
-  _frost: 0
-  _attackRate: 1
-  _scoreReward: 550
-  _currentSpeed: 2
-  _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
-  _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
-  _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
-  _minionSkin: {fileID: 0}
-  _renderer: {fileID: 3309389445043673922}
-  _slowDelay: 6
-  _fireSpreadRadius: 1
-  _bullets: 20
-  _animator: {fileID: 6002438986551568146}
-  _score: {fileID: 3079195441420717652, guid: 5d8ec5ee3f7261349ad36ec1b036512c, type: 3}
 --- !u!114 &6002438986551568146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +820,37 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1656968779538065852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6837979829544711026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7b3fdd00399d54db3edd8a0a407ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackDetector: {fileID: 8822677875608083494}
+  _health: {fileID: 2818299267573887289}
+  _agent: {fileID: 7929237923332471853}
+  _speed: 4
+  _detectionRadius: 380
+  _damageAmount: 60
+  _frost: 2
+  _attackRate: 1
+  _scoreReward: 250
+  _currentSpeed: 4
+  _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
+  _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
+  _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
+  _minionSkin: {fileID: 0}
+  _renderer: {fileID: 3309389445043673922}
+  _slowDelay: 0
+  _fireSpreadRadius: 1
+  _bullets: 20
+  _animator: {fileID: 6002438986551568146}
 --- !u!1 &7099604365031243988
 GameObject:
   m_ObjectHideFlags: 0

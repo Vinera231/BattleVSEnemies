@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EnemyBoss : Enemy
+public class EnemyBossEasy : Enemy
 {
     [SerializeField] private int _bullets;
     [SerializeField] private EnemyBossAnimator _animator;
@@ -17,7 +17,6 @@ public class EnemyBoss : Enemy
 
     private readonly Dictionary<float, int> _thresholds = new()
     {
-        { 7000, 10 },
         { 6000, 10 },
         { 5000, 10 },
         { 4000, 5 },
@@ -43,11 +42,8 @@ public class EnemyBoss : Enemy
         return index switch
         {
             0 => _enemySpawner.SpawnEnemy,
-            1 => _enemySpawner.SpawnMonsterEnemy,
-            2 => _enemySpawner.SpawnSpeedy,
-            3 => _enemySpawner.SpawnMonsterSpeedy,
-            4 => _enemySpawner.SpawnMonsterSpeedy,
-            5 => _enemySpawner.SpawnHamer,
+            1 => _enemySpawner.SpawnSpeedy,
+            2 => _enemySpawner.SpawnHamer,
             _ => throw new System.ArgumentOutOfRangeException(nameof(index), index, "для даного индекса нет зареганих действие"),
         };
     }
@@ -68,7 +64,7 @@ public class EnemyBoss : Enemy
                 {
                     for (int j = 0; j < count; j++)
                     {
-                        Enemy enemy = _enemySpawner.SpawnAngryHamer(transform.position);
+                        Enemy enemy = _enemySpawner.SpawnHamer(transform.position);
                         Enemy enemy1 = _enemySpawner.SpawnEnemy(transform.position);
                         Enemy enemy2 = _enemySpawner.SpawnSpeedy(transform.position);
                         Subcrible(enemy);
@@ -88,8 +84,8 @@ public class EnemyBoss : Enemy
             }
         }
 
-        if (_bulletSpawner.BulletCount < _bullets) 
-            SpawnEnemies(1, _enemySpawner.SpawnEnemy);      
+        if (_bulletSpawner.BulletCount < _bullets)
+            SpawnEnemies(1, _enemySpawner.SpawnEnemy);
     }
 
     private void SpawnEnemies(int count, System.Func<Vector3, Enemy> spawnFunc)
@@ -124,12 +120,13 @@ public class EnemyBoss : Enemy
         ParticleSpawner.Instance.CreateBlood(transform.position);
         _animator.PlayDied();
         Freeze();
-        Invoke(nameof(DestroyBoss), 3f);
+        Invoke(nameof(DestroyBossEasy), 3f);
     }
 
-    private void DestroyBoss()
+    private void DestroyBossEasy()
     {
         InvokeDeath();
         Destroy(gameObject);
     }
+
 }

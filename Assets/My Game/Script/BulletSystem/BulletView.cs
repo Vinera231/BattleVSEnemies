@@ -25,7 +25,7 @@ public class BulletView : MonoBehaviour
     private void OnBulletChanged()
     {
         int count = _spawner.BulletCount;
-        _text.text = $" {count}";
+        _text.text = $"{count}";
 
         _bulletGui[0].SetActive(count >= FirstTreshold);
         _bulletGui[1].SetActive(count >= SecondTreshold);

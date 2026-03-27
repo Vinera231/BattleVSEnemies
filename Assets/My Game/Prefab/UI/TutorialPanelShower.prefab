@@ -994,8 +994,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "1. Killing enemies gives you points.\n2. You can use points to buy bullets
     and buffs.\n3. Enemies drop bullets when you killed.\n4. Don't let the enemy
-    kill you!\n5.Right mouse button \u2014 melee attack. \n6.Left mouse button \u2014
-    shoot.\n7. Press ~ to open the console.\n"
+    kill you!\n5. Right mouse button \u2014 melee attack. \n6. Left mouse button
+    \u2014 shoot.\n7.  Press \"~\" to open the console.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1730,6 +1730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cb406bdf584894fa61eb850a5f5dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hideIcon:
+  - {fileID: 0}
 --- !u!114 &7827925270016255504
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,8 +16,9 @@ public class Health : MonoBehaviour
 
     public void IncreaseHealth(float health)
     {
-        _healthValue = health;
-        _maxValue = health;
+        _healthValue += health;
+        _maxValue += health;
+        _view.ShowInfo(health,_maxValue);
     }
 
     public void TakeDamage(float damage)
@@ -37,7 +38,7 @@ public class Health : MonoBehaviour
 
     public void RecoverHealth(float amount)
     {
-        _healthValue = Mathf.Min(_healthValue + amount, _maxValue);
+        _healthValue = Mathf.Min(_healthValue + amount,_maxValue);
     
         _view.ShowInfo(_healthValue, _maxValue);
         ValueChanged?.Invoke(Value);

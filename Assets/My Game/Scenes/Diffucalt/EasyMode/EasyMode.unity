@@ -12210,7 +12210,7 @@ MonoBehaviour:
   _countHamer: 0
   _countAngryHamer: 0
   _countBoss: 0
-  _countEasyBoss: 0
+  _countEasyBoss: 1
   _countHalmer: 0
   _countMonsterHalmer: 0
   _countIron: 0
@@ -24895,6 +24895,11 @@ Transform:
   - {fileID: 370839116}
   m_Father: {fileID: 1212691032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &851015613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2759204973915524971, guid: 5d8ec5ee3f7261349ad36ec1b036512c, type: 3}
+  m_PrefabInstance: {fileID: 407325626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &853667679
 GameObject:
   m_ObjectHideFlags: 0
@@ -26482,7 +26487,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.2
   m_MinRegionArea: 0
-  m_NavMeshData: {fileID: 23800000, guid: 914521f7b15540f4ebe94201e82d7a47, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d5ae581686f0b61448e8737b47d00e9b, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &906736949
 GameObject:
@@ -32918,6 +32923,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbddc4ef9676cc419e81e06aaa836d8, type: 3}
+--- !u!1 &1122502566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4913849319507590008, guid: 696cd747c5d48ff4197671e45cbf3847, type: 3}
+  m_PrefabInstance: {fileID: 1717766410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1122660526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6239969156481072347, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
@@ -32931,6 +32941,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1928975223}
     m_Modifications:
+    - target: {fileID: 1709700547795976966, guid: 71d4b37f06c0cac44be72f03092a29dc, type: 3}
+      propertyPath: _hideIcon.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709700547795976966, guid: 71d4b37f06c0cac44be72f03092a29dc, type: 3}
+      propertyPath: '_hideIcon.Array.data[0]'
+      value: 
+      objectReference: {fileID: 851015613}
+    - target: {fileID: 1709700547795976966, guid: 71d4b37f06c0cac44be72f03092a29dc, type: 3}
+      propertyPath: '_hideIcon.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1122502566}
+    - target: {fileID: 1709700547795976966, guid: 71d4b37f06c0cac44be72f03092a29dc, type: 3}
+      propertyPath: '_hideIcon.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1837341821}
+    - target: {fileID: 1709700547795976966, guid: 71d4b37f06c0cac44be72f03092a29dc, type: 3}
+      propertyPath: '_hideIcon.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1765816367}
+    - target: {fileID: 1709700547795976966, guid: 71d4b37f06c0cac44be72f03092a29dc, type: 3}
+      propertyPath: '_hideIcon.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1765816367}
     - target: {fileID: 3514208489607105408, guid: 71d4b37f06c0cac44be72f03092a29dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -36787,6 +36821,7 @@ MonoBehaviour:
   - {fileID: 997703242}
   - {fileID: 357540762}
   _score: {fileID: 2123496127}
+  _health: {fileID: 0}
 --- !u!4 &1209387576
 Transform:
   m_ObjectHideFlags: 0
@@ -37869,6 +37904,103 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1794009823}
   m_SourcePrefab: {fileID: 100100000, guid: c5ab76a6dfe5944b2b25fda31410eb91, type: 3}
+--- !u!1 &1257691366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1257691367}
+  - component: {fileID: 1257691368}
+  m_Layer: 6
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1257691367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257691366}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2031880570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &1257691368
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257691366}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 2
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1001 &1259327597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42586,8 +42718,8 @@ MonoBehaviour:
   _monsterSpeedyPrefab: {fileID: 429578588366157044, guid: 22b7122998d5c0a44a1b3980b16e4568, type: 3}
   _hamerPrefab: {fileID: 412744899412341863, guid: 9a02ff5cdee56b74fb3a6022e45886f2, type: 3}
   _angryHamerPrefab: {fileID: 822237253872330836, guid: dc45930453c803b42bffb22db82cde64, type: 3}
-  _bossPrefab: {fileID: 1277114470616081379, guid: 3127efe72fe5f7d4aa10732f753fae8e, type: 3}
-  _bossEasyPrefab: {fileID: 0}
+  _bossPrefab: {fileID: 1277114470616081379, guid: a53039920a5e13a4eb031adfda2a8371, type: 3}
+  _bossEasyPrefab: {fileID: 1656968779538065852, guid: 3127efe72fe5f7d4aa10732f753fae8e, type: 3}
   _halmerEnemy: {fileID: 4970981288387148015, guid: 4ee96a25401475447b5e627014c1edb4, type: 3}
   _monsterHalmerEnemy: {fileID: 4970981288387148015, guid: eeb08a28020814a42ab468c8c1087215, type: 3}
   _ironEnemy: {fileID: 5660751812424424819, guid: 20e7d3074b489004082dc55fbcfbe664, type: 3}
@@ -48110,7 +48242,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 40b4770434480e447a3585c3c11a8820, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e469a8ee145613644914729841ff78d2, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1613027473
 Transform:
@@ -52873,6 +53005,11 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.37500003, z: -0.026}
   m_TimeToStationary: 0.5
+--- !u!1 &1765816367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1957039220639615725, guid: 57474d87046bebd4ab9e11942a9423e9, type: 3}
+  m_PrefabInstance: {fileID: 1511063316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1766454706 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7682145562595897172, guid: c5ab76a6dfe5944b2b25fda31410eb91, type: 3}
@@ -55173,6 +55310,11 @@ MonoBehaviour:
     \u043E\u0447\u043A\u043E\u0432"
   _score: {fileID: 2123496127}
   _takeScore: 10000
+--- !u!1 &1837341821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 976136720063466992, guid: 56c2cb12a6c7e494ebe78e140aa08e1e, type: 3}
+  m_PrefabInstance: {fileID: 1132155584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1837505612
 GameObject:
   m_ObjectHideFlags: 0
@@ -57283,8 +57425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Chainsaw\n damage 20  for 0.2\u0441\u0435\u043A \n \"Space\"  press to
-    buy"
+  m_text: "Chainsaw\n damage 50  for 0.2sec\n \"Space\"  press to buy"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -62963,6 +63104,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2125488337}
+  - {fileID: 1257691367}
   m_Father: {fileID: 805269703}
   m_LocalEulerAnglesHint: {x: -92.097, y: 0, z: 0}
 --- !u!1001 &2032778474
@@ -65759,7 +65901,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3079195441420717652, guid: 5d8ec5ee3f7261349ad36ec1b036512c, type: 3}
   m_PrefabInstance: {fileID: 407325626}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 851015613}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 955ca4ac90c3b474e8760bf80343c082, type: 3}
