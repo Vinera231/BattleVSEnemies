@@ -35,6 +35,8 @@ public class Wave : MonoBehaviour
     public event Action Finished;
     public event Action<Enemy> EnemyDied;
 
+    public List<Transform> Points => _spawnPoints;
+
     public int ScoreReward => _scoreReward;
 
     public string Text => _text;
@@ -58,6 +60,11 @@ public class Wave : MonoBehaviour
     private IEnumerator SpawnOverCount()
     {
         yield return new WaitForSeconds(_timeBeforeSpawn);
+
+        foreach (Transform point in _spawnPoints)
+            ParticleSpawner.Instance.CreateSpawnerPartical(point.position);
+
+        yield return new WaitForSeconds(2);
 
         while (_countEnemy > 0)
         {

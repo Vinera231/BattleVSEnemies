@@ -21,27 +21,25 @@ public class WaveManager : MonoBehaviour
     public int CurrentWaveIndex => _currentWaveIndex;
 
     private void Start() =>
-        StartWave(_currentWaveIndex);
+        StartWave();
 
-    public string GetWaveName(int index) =>  
+    public string GetWaveName(int index) =>
         _waves[index].Text;
-  
- 
-    private void StartWave(int index)
+
+    private void StartWave()
     {
-        _currentWaveIndex = index;
-        Wave wave = _waves[index];
+        Wave wave = _waves[_currentWaveIndex];
         wave.StartSpawn();
         wave.Finished += OnWaveFinished;
         wave.EnemyDied += OnEnemyDied;
         wave.Spawned += OnEnemySpawned;
         Vector2 spawnPosition = transform.position;
         WaveStarted?.Invoke(_currentWaveIndex);
-        
+
         if (_currentWaveIndex == 10)
             AddHealthValue();
     }
-    
+
     private void OnWaveFinished()
     {
         Wave wave = _waves[_currentWaveIndex];
@@ -53,25 +51,24 @@ public class WaveManager : MonoBehaviour
         ++_currentWaveIndex;
 
         if (_currentWaveIndex < _waves.Count)
-            StartWave(_currentWaveIndex);
+            StartWave();
 
-        if (_currentWaveIndex > _waves.Count)
+        if (_currentWaveIndex >= _waves.Count)
             AllWavesFinished?.Invoke();
     }
-  
+
     private void OnEnemySpawned(Enemy enemy)
     {
-        ParticleSpawner.Instance.CreateSpawnerPartical(enemy.transform, enemy.transform.position);
         EnemySpawned?.Invoke(enemy);
     }
-  
+
     private void OnEnemyDied(Enemy enemy)
     {
         EnemyDied?.Invoke(enemy);
         _score.Increaze(enemy.ScoreReward);
     }
 
-    private void AddHealthValue() =>   
+    private void AddHealthValue() =>
      _health.RecoverHealth(_amount);
-  
+
 }

@@ -39,10 +39,9 @@ public class ParticleSpawner : MonoBehaviour
         particalFire.transform.rotation = Quaternion.identity;
     }
 
-    public void CreateSpawnerPartical(Transform parent,Vector3 position)
+    public void CreateSpawnerPartical(Vector3 position)
     {
-        SpawnerPartical spawnerPartical = Instantiate(_spawnerPartical, parent);
-        spawnerPartical.transform.position = position + _spawnerOffset;
-        spawnerPartical.transform.position = Quaternion.identity * position;
+        SpawnerPartical spawnerPartical = Instantiate(_spawnerPartical);
+        spawnerPartical.transform.position = position;
     }
 }
