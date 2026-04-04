@@ -3295,7 +3295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version:0.57
+  m_text: 'Version:0.5.8
 
 
 '
@@ -3563,6 +3563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _volumeMusic: {fileID: 1511869010}
+  _soundSFX: {fileID: 1102126818}
 --- !u!1001 &653394318
 PrefabInstance:
   m_ObjectHideFlags: 0

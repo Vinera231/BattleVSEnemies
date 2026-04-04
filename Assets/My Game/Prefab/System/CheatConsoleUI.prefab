@@ -943,7 +943,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5334056325657750794}
-  - component: {fileID: 5092721356228959792}
   m_Layer: 5
   m_Name: CommandAdd1000Money
   m_TagString: Untagged
@@ -970,21 +969,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5092721356228959792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5076359408767954741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03243f97c5c2d824e939198da2c7cb1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _command: AddMoneyPlease
-  _description: "\u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C 1000 \u0434\u0435\u043D\u0435\u0433"
-  _consoleInfo: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u043E 1000 \u0434\u0435\u043D\u0435\u0433"
 --- !u!1 &5268103137612979673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1770,7 @@ MonoBehaviour:
   - {fileID: 8583086661932236655}
   - {fileID: 0}
   - {fileID: 2476128264139823117}
-  - {fileID: 5092721356228959792}
+  - {fileID: 0}
 --- !u!1 &8766196236093990763
 GameObject:
   m_ObjectHideFlags: 0
