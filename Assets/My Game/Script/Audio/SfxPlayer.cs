@@ -35,6 +35,7 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _settingSound;
     [SerializeField] private AudioClip _speedSound;
     [SerializeField] private AudioClip _brokenGlassesSound;
+    [SerializeField] private AudioClip _bleedSound;
 
     private void Awake()
     {
@@ -79,25 +80,25 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayFrostSound() =>
         _source.PlayOneShot(_frostSound);
-    
+
     public void PlayFrostShootSound() =>
         _source.PlayOneShot(_frostShootSound);
 
     public void PlayFireSound() =>
         _source.PlayOneShot(_fireSound);
-   
+
     public void PlayFireShootSound() =>
         _source.PlayOneShot(_fireShootSound);
 
     public void PlayExplorelSound() =>
         _source.PlayOneShot(_explorelSound);
-   
+
     public void PlayDetonatorSound() =>
         _source.PlayOneShot(_detonationSound);
 
     public void PlayShootSound() =>
         _source.PlayOneShot(_gunSound);
-  
+
     public void PlayLaserSound() =>
         _source.PlayOneShot(_laserSound);
 
@@ -130,16 +131,19 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayPoisonSound() =>
    _source.PlayOneShot(_poisonSound);
-  
+
     public void PlayShootPoisonSound() =>
    _source.PlayOneShot(_poisonShootSound);
 
     public void PlaySettingSound() =>
    _source.PlayOneShot(_settingSound);
-  
+
     public void PlaySpeedSound() =>
    _source.PlayOneShot(_speedSound);
-   
+
     public void PlayBrokenGlassesSound() =>
    _source.PlayOneShot(_brokenGlassesSound);
+
+    public void PlayBleedSound() =>
+   _source.PlayOneShot(_bleedSound);
 }
