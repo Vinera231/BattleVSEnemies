@@ -429,7 +429,7 @@ MonoBehaviour:
   _speedRotationSmallDisk: -250
   _isRotation: 0
   _damageInterval: 0
-  _damage: 20
+  _damage: 50
 --- !u!54 &5417711967627811358
 Rigidbody:
   m_ObjectHideFlags: 0

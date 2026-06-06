@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 5556298816651745376}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -436,7 +436,7 @@ MonoBehaviour:
   _damageAmount: 10
   _frost: 0
   _attackRate: 1
-  _scoreReward: 50
+  _scoreReward: 40
   _currentSpeed: 6
   _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}

@@ -7,6 +7,7 @@ public class SawWeaponInstaller : Shop
     protected override bool TryApplyItem()
     {
         _weapon.SetSaw();
+        ResetPrice();
         return true;
     }
 }

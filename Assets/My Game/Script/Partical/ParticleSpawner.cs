@@ -9,29 +9,41 @@ public class ParticleSpawner : MonoBehaviour
     [SerializeField] private SpeedParticle _speedParticle;
     [SerializeField] private ParticalFire _particalFire;
     [SerializeField] private SpawnerPartical _spawnerPartical;
+    [SerializeField] private SawPartical _sawPartical;
     [SerializeField] private Vector3 _explosionOffset;
     [SerializeField] private Vector3 _bloodOffset;
     [SerializeField] private Vector3 _speedOffset;
+    [SerializeField] private Vector3 _sawOffset;
     [SerializeField] private Vector3 _fireOffset;
     [SerializeField] private Vector3 _spawnerOffset;
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
     }
 
     public void CreateExplosion(Vector3 position) =>
-        Instantiate(_explosionPrefab, position + _explosionOffset, Quaternion.identity); 
+        Instantiate(_explosionPrefab, position + _explosionOffset, Quaternion.identity);
 
     public void CreateBlood(Vector3 position) =>
-        Instantiate(_bloodPrefab, position + _bloodOffset, Quaternion.identity);    
+        Instantiate(_bloodPrefab, position + _bloodOffset, Quaternion.identity);
 
     public void CreateSpeed(Vector3 position) =>
         Instantiate(_speedParticle, position + _speedOffset, Quaternion.identity);
-   
+
+    public SawPartical CreateSaw(Transform parent, Vector3 position)
+    {
+        SawPartical particalSaw = Instantiate(_sawPartical, parent);
+
+        particalSaw.transform.position = position + _sawOffset;
+        particalSaw.transform.rotation = Quaternion.identity;
+
+        return particalSaw;
+    }
+
     public void CreateFire(Transform parent, Vector3 position)
     {
         ParticalFire particalFire = Instantiate(_particalFire, parent);

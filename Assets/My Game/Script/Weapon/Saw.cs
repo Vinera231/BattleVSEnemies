@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Saw : MonoBehaviour, ISecondWeapon
 {
@@ -8,6 +9,7 @@ public class Saw : MonoBehaviour, ISecondWeapon
     [SerializeField] private Player _player;
     [SerializeField] private Transform _bigDisk;
     [SerializeField] private Transform _smallDisk;
+    [SerializeField] private SawPartical _sawPartical;
     [SerializeField] private Vector3 _rotationAxis = Vector3.right;
     [SerializeField] private float _speedRotationBigDisk;
     [SerializeField] private float _speedRotationSmallDisk;
@@ -54,6 +56,9 @@ public class Saw : MonoBehaviour, ISecondWeapon
     public void StartRotation()
     {
         _isRotation = true;
+        if (_sawPartical == null)
+            _sawPartical = ParticleSpawner.Instance.CreateSaw(transform,transform.position);
+        
         StartCoroutineSafe();
     }
 
@@ -61,6 +66,13 @@ public class Saw : MonoBehaviour, ISecondWeapon
     {
         StopCoroutineSafe();
         _isRotation = false;
+
+        if (_sawPartical != null) 
+        {
+            Destroy(_sawPartical.gameObject);
+            _sawPartical = null;
+        }
+
         SfxPlayer.Instance.StopChainsawSound();
     }
 

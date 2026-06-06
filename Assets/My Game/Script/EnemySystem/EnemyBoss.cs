@@ -114,7 +114,6 @@ public class EnemyBoss : Enemy
         enemy.Died += OnEnemyDied;
     }
 
-
     protected override void ProcessDied()
     {
         if (TryGetComponent(out Collider collider))

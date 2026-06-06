@@ -225,8 +225,6 @@ public class Enemy : MonoBehaviour, IDamageble
         float interval = 1f;
         WaitForSeconds wait = new(interval);
         ParticleSpawner.Instance.CreateFire(transform, transform.position);
-        Debug.Log(ParticleSpawner.Instance);
-
 
         while (_fireElapsed < duration)
         {

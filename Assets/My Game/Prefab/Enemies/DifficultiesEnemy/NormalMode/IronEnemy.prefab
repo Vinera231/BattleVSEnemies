@@ -442,7 +442,7 @@ MonoBehaviour:
   _damageAmount: 50
   _frost: 6
   _attackRate: 1
-  _scoreReward: 75
+  _scoreReward: 80
   _currentSpeed: 3
   _defultSkin: {fileID: 2100000, guid: 541ee43c60001154fb23314550d77cbb, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}

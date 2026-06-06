@@ -1,13 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Axe : MonoBehaviour, ISecondWeapon
 {
     private static readonly int s_attackAnimationID = Animator.StringToHash("AttackAxe");
 
     [SerializeField] private DamageDetector _detector;
-    [SerializeField] private float _damage = 30f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private float _damage = 30f;
+    [SerializeField] private float _criticalDamage = 50f;
     [SerializeField] private float _reloadTime = 0.2f;
 
     private readonly List<IDamageble> _damagebles = new();
@@ -17,14 +19,14 @@ public class Axe : MonoBehaviour, ISecondWeapon
     {
         if (_remainingReloadTime <= 0)
             return;
-        
+
         _remainingReloadTime -= Time.deltaTime;
     }
+    
     private void OnEnable()
     {
         _detector.Entered += OnCollisionEntered;
         _detector.Exited += OnCollisionExited;
-        
     }
 
     private void OnDisable()
@@ -47,8 +49,12 @@ public class Axe : MonoBehaviour, ISecondWeapon
             return;
 
         _remainingReloadTime = _reloadTime;
+        
+        bool isCrit = Random.value < 0.2f;
+     
+        _damage = isCrit ? _criticalDamage : _damage;
 
-        _animator.Play(s_attackAnimationID, -1,0);
+        _animator.Play(s_attackAnimationID, -1, 0);
         TakeDamage();
         SfxPlayer.Instance.PlayAxeSound();
     }

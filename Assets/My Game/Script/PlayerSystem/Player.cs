@@ -182,7 +182,6 @@ public class Player : MonoBehaviour
 
     public void SlowPlayer()
     {
-        Debug.Log("_isSlow");
         if (_isSlow)
             return;
 

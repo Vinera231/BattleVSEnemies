@@ -3403,7 +3403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version:0.5.9
+  m_text: 'Version:0.6.1
 
 
 '

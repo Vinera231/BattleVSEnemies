@@ -437,7 +437,7 @@ MonoBehaviour:
   _damageAmount: 20
   _frost: 0
   _attackRate: 1
-  _scoreReward: 25
+  _scoreReward: 35
   _currentSpeed: 6
   _defultSkin: {fileID: 2100000, guid: c65d4247d71e5fa4a9cadd4c755ce32d, type: 2}
   _frostSkin: {fileID: 2100000, guid: c65d4247d71e5fa4a9cadd4c755ce32d, type: 2}
@@ -445,7 +445,6 @@ MonoBehaviour:
   _minionSkin: {fileID: 0}
   _renderer: {fileID: 5556298816651745378}
   _slowDelay: 0
-  _fireSpreadChance: 0.4
   _fireSpreadRadius: 1
 --- !u!1 &7157658716984522113
 GameObject:
