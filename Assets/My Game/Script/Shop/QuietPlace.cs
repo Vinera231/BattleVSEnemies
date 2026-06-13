@@ -33,7 +33,6 @@ public class QuietPlace : MonoBehaviour
         {
             player.ProhibitAttack();
             player.ProhibitJump();
-
             foreach (Enemy enemy in _enemies)
                 enemy.Freeze();
 

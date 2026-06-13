@@ -8,7 +8,7 @@ public class InventorySelector : MonoBehaviour
 
     private List<InventorySlot> _slots = new();
     private int _currentSelectedIndex = 0;
-   
+
     public event Action BuffApplied;
 
     private void OnEnable() =>
@@ -43,7 +43,7 @@ public class InventorySelector : MonoBehaviour
 
     private void Select()
     {
-        if(_slots.Count == 0)
+        if (_slots.Count == 0)
             return;
 
         if (_currentSelectedIndex < 0)
@@ -80,5 +80,19 @@ public class InventorySelector : MonoBehaviour
         Select();
         Destroy(slot.gameObject);
         BuffApplied?.Invoke();
+    }
+
+    public void ReplaceSelected(Sprite sprite, KeyCode hotkey, Action onApply)
+    {
+        InventorySlot oldSlot = _slots[_currentSelectedIndex];
+
+        Destroy(oldSlot.gameObject);
+        _slots.RemoveAt(_currentSelectedIndex);
+
+        InventorySlot newSlot = Instantiate(oldSlot, oldSlot.transform.parent);
+        newSlot.Init(sprite, hotkey, onApply);
+
+        _slots.Insert(_currentSelectedIndex, newSlot);
+        Select();
     }
 }

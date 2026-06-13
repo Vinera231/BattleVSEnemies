@@ -25,6 +25,8 @@ public class InputReader : MonoBehaviour
     public event Action SelectPressed;
     public event Action BackSelectPressed;
 
+    public event Action<float> MouseScroll;
+
     private void Update()
     {
         ReadSettingPanel();
@@ -36,6 +38,15 @@ public class InputReader : MonoBehaviour
         ReadSelectKey();
         ReadIventarKey();
         ReadSecondWeapon();
+        ReadMouseScroll();
+    }
+
+    private void ReadMouseScroll()
+    {
+        float scrol = Input.GetAxis("Mouse ScrollWheel");
+
+        if(Math.Abs(scrol) > 0.001f)
+            MouseScroll?.Invoke(scrol);
     }
 
     private void ReadSecondWeapon()
