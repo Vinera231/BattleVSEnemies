@@ -12,13 +12,13 @@ public class CustomSceneManager : MonoBehaviour
     private void OnEnable()
     {
         if (_player != null)
-            _player.Died += OnPlayrDied;
+            _player.PlayerDied += OnPlayrDied;
     }
 
     private void OnDisable()
     {
         if (_player != null)
-            _player.Died -= OnPlayrDied;
+            _player.PlayerDied -= OnPlayrDied;
     }
 
     public void OnPlayrDied() =>

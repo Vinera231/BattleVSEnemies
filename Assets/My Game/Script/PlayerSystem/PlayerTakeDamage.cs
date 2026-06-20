@@ -5,7 +5,7 @@ public class PlayerTakeDamage : MonoBehaviour
 {
     [SerializeField] private Health _health;
    
-    public event Action Died;
+    public event Action PlayerDied;
 
     private void OnEnable()
     {
@@ -33,7 +33,7 @@ public class PlayerTakeDamage : MonoBehaviour
 
     public void OnDied()
     {
-        Died?.Invoke();
+        PlayerDied?.Invoke();
         SfxPlayer.Instance.PlayDiePlayerSound();
     }
 }
