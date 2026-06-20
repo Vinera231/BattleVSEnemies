@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class RegenEnemy : Enemy
 {
-    private readonly float _recoveryHealthPerSecond = 10f;
-    private readonly float _recoveryHealthAfterAttack = 20f;
+    [SerializeField] private float _recoveryHealthPerSecond = 10f;
+    [SerializeField] private float _recoveryHealthAfterAttack = 20f;
 
     protected override void Update()
     {
@@ -11,9 +11,9 @@ public class RegenEnemy : Enemy
         HealthComponent.RecoverHealth(_recoveryHealthPerSecond * Time.deltaTime);
     }
 
-    protected override void Attack(Player player)
+    protected override void Attack()
     {
-        base.Attack(player);
+        base.Attack();
         HealthComponent.RecoverHealth(_recoveryHealthAfterAttack);
     }
 }

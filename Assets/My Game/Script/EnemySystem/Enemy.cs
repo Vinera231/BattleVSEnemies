@@ -33,6 +33,8 @@ public class Enemy : MonoBehaviour, IDamageble
     private bool _isFire;
     private float _elapsedTime;
     private Player _player;
+    private PlayerTakeDamage _takeDamage;
+    private PlayerSlow _slow;
     private bool _isFrozen;
     private bool _isMinion;
     private float _fireElapsed;
@@ -42,12 +44,21 @@ public class Enemy : MonoBehaviour, IDamageble
 
     public int ScoreReward => _scoreReward;
 
+    protected PlayerTakeDamage PlayerTakeDamage => _takeDamage;
+    protected PlayerSlow SlowComponent => _slow;
+
     protected virtual void Awake()
     {
         _currentSpeed = _speed;
         _agent.speed = _speed;
         _agent.stoppingDistance = StoppingDistance;
         _player = FindFirstObjectByType<Player>();
+
+        if(_player != null )
+        {
+            _takeDamage = _player.GetComponent<PlayerTakeDamage>();
+            _slow = _player.GetComponent<PlayerSlow>();
+        }
     }
 
     protected virtual void OnEnable()
@@ -78,7 +89,6 @@ public class Enemy : MonoBehaviour, IDamageble
         if (distanceToPlayer > _detectionRadius)
         {
             _agent.ResetPath();
-            _player = null;
             return;
         }
 
@@ -90,7 +100,7 @@ public class Enemy : MonoBehaviour, IDamageble
         if (_elapsedTime >= _attackRate)
         {
             _elapsedTime = 0f;
-            Attack(_player);
+            Attack();
         }
     }
 
@@ -151,7 +161,6 @@ public class Enemy : MonoBehaviour, IDamageble
 
     public void ApplyPoison(float poisonDamage, float duraction, float tickInterval)
     {
-
         if (_isPoison == true || _isMinion)
             return;
 
@@ -162,9 +171,9 @@ public class Enemy : MonoBehaviour, IDamageble
         _fricklesCoroutine = StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
     }
 
-    protected virtual void Attack(Player player)
+    protected virtual void Attack()
     {
-        player.TakeDamage(_damageAmount);
+        PlayerTakeDamage.TakeDamage(_damageAmount);
         SfxPlayer.Instance.PlayKickEnemy();
         Attacked?.Invoke();
     }

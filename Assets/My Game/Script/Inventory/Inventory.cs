@@ -21,11 +21,8 @@ public class Inventory : MonoBehaviour
 
     public bool TryAddBuff(Sprite sprite, KeyCode hotkey, Action onApply)
     {
-        if (_buffCount >= _buffLimit)
-        {
-            _selector.ReplaceSelected(sprite, hotkey, onApply);
-            return true;
-        }
+        if (_buffCount >= _buffLimit)     
+            return false;     
 
         _buffCount++;
         InventorySlot inventorySlot = Instantiate(_prefab, _content);

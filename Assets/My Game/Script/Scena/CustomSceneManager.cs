@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class CustomSceneManager : MonoBehaviour
 {
     [SerializeField] private InputReader _reader;
-    [SerializeField] private Player _player;
+    [SerializeField] private PlayerTakeDamage _player;
 
     public Action OnDieded;
 

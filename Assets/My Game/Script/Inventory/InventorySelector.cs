@@ -81,18 +81,4 @@ public class InventorySelector : MonoBehaviour
         Destroy(slot.gameObject);
         BuffApplied?.Invoke();
     }
-
-    public void ReplaceSelected(Sprite sprite, KeyCode hotkey, Action onApply)
-    {
-        InventorySlot oldSlot = _slots[_currentSelectedIndex];
-
-        Destroy(oldSlot.gameObject);
-        _slots.RemoveAt(_currentSelectedIndex);
-
-        InventorySlot newSlot = Instantiate(oldSlot, oldSlot.transform.parent);
-        newSlot.Init(sprite, hotkey, onApply);
-
-        _slots.Insert(_currentSelectedIndex, newSlot);
-        Select();
-    }
 }

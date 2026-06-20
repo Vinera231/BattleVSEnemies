@@ -6,7 +6,7 @@ public class TemporaryDamageBulletBuffShop : Shop
     [SerializeField] private Sprite _boostSprite;
     [SerializeField] private int _amountDamage;
     [SerializeField] private int _timeInSeconds;
-    [SerializeField] private Player _player;
+    [SerializeField] private PlayerShooting _player;
 
     protected override bool TryApplyItem() =>
         _inventory.TryAddBuff(_boostSprite, Key, OnApply);

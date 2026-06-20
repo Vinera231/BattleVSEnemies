@@ -446,6 +446,8 @@ MonoBehaviour:
   _renderer: {fileID: 5556298816651745378}
   _slowDelay: 6
   _fireSpreadRadius: 1
+  _recoveryHealthPerSecond: 20
+  _recoveryHealthAfterAttack: 30
 --- !u!1 &7157658716984522113
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ public class CommandBanana : CheatCommandInfo
 {
     [SerializeField] private Enemy _enemy;
     [SerializeField] private GunBase _banana;
-    [SerializeField] private Player _player;
+    [SerializeField] private PlayerShooting _player;
 
     public override void Apply()
     {

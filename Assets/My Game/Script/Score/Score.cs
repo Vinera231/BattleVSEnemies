@@ -4,7 +4,7 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private ScoreView _view;
     [SerializeField] private int _score;
-    
+
     public int Value => _score;
 
     public void Increaze(int value)

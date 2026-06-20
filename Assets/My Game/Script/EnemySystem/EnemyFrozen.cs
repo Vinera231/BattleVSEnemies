@@ -1,10 +1,9 @@
 
 public class EnemyFrozen : Enemy
 {
-    protected override void Attack(Player player)
+    protected override void Attack()
     {
-        player.SlowPlayer();
-        base.Attack(player);
-        
+        SlowComponent?.SlowPlayer();
+        base.Attack();
     }
 }

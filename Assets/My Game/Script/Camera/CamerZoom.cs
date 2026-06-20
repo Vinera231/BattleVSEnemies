@@ -35,9 +35,8 @@ public class CamerZoom : MonoBehaviour
         if (_canZoom == false)
             return;
 
-        EnableZoom();
-        _camera.fieldOfView = value * _zoomSpeed;
-        _camera.fieldOfView =  Mathf.Clamp(_camera.fieldOfView,_minFov,_maxFov);
+        float zoom =_camera.fieldOfView + value * _zoomSpeed;
+        _camera.fieldOfView =  Mathf.Clamp(zoom,_minFov,_maxFov);
     }
 
     private void EnableZoom()

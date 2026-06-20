@@ -6,7 +6,6 @@ public class ParticleSpawner : MonoBehaviour
 
     [SerializeField] private ExplosionParticle _explosionPrefab;
     [SerializeField] private BloodParticle _bloodPrefab;
-    [SerializeField] private SpeedParticle _speedParticle;
     [SerializeField] private ParticalFire _particalFire;
     [SerializeField] private SpawnerPartical _spawnerPartical;
     [SerializeField] private SawPartical _sawPartical;
@@ -30,9 +29,6 @@ public class ParticleSpawner : MonoBehaviour
 
     public void CreateBlood(Vector3 position) =>
         Instantiate(_bloodPrefab, position + _bloodOffset, Quaternion.identity);
-
-    public void CreateSpeed(Vector3 position) =>
-        Instantiate(_speedParticle, position + _speedOffset, Quaternion.identity);
 
     public SawPartical CreateSaw(Transform parent, Vector3 position)
     {

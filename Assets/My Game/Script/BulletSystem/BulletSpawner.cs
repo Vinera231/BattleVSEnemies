@@ -8,7 +8,6 @@ public class BulletSpawner : MonoBehaviour
     [SerializeField] private Bullet _prefab;
     [SerializeField] private int _bullet;
     [SerializeField] private int _limitbullet;
-    [SerializeField] private BulletView _bulletView;
     [SerializeField] private float _defaultRate = 0.2f;
 
     private float _currentDefaultDamage;

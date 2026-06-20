@@ -6,6 +6,8 @@ using UnityEngine;
 public class QuietPlace : MonoBehaviour
 {
     [SerializeField] private WaveManager _waveManager;
+    [SerializeField] private PlayerMovement _movement;
+    [SerializeField] private PlayerShooting _shooting;
 
     private List<Enemy> _enemies = new();
     private bool _isActive;
@@ -31,8 +33,9 @@ public class QuietPlace : MonoBehaviour
 
         if (other.TryGetComponent(out Player player))
         {
-            player.ProhibitAttack();
-            player.ProhibitJump();
+            _shooting.ProhibitAttack();
+            _movement.OffJump();
+
             foreach (Enemy enemy in _enemies)
                 enemy.Freeze();
 
@@ -45,8 +48,8 @@ public class QuietPlace : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
         {
-            player.AllowAttack();
-            player.AllowJump();
+            _shooting.AllowAttack();
+            _movement.AllowJump();
 
             foreach (Enemy enemy in _enemies)
                 enemy.ResetFreezen();

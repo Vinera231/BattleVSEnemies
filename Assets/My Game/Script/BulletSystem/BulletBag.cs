@@ -20,8 +20,8 @@ public class BulletBag : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Player player))
-            if (player.TryReplenishBullet(_amount))
+        if (other.TryGetComponent(out PlayerShooting shooting))
+            if (shooting.TryReplenishBullet(_amount))
                 Destroy(gameObject);           
     }
 }
