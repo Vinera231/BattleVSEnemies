@@ -14771,8 +14771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waveManager: {fileID: 1209387575}
-  _movement: {fileID: 0}
-  _shooting: {fileID: 0}
+  _movement: {fileID: 3132746089753518542}
+  _shooting: {fileID: 3132746089753518541}
 --- !u!114 &627875605
 MonoBehaviour:
   m_ObjectHideFlags: 0

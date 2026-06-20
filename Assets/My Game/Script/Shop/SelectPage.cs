@@ -64,7 +64,5 @@ public class SelectPage : MonoBehaviour
     {
         _textSelect.gameObject.SetActive(false);
         _isShock = false;
-    }
-
-    
+    } 
 }
