@@ -40,16 +40,13 @@ public class CursorShower : MonoBehaviour
 
     private void ProcessShow()
     {
-        //Debug.Log(_counterToShow);
         if (_counterToShow > 0)
         {
-            Debug.Log("Showing");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
-            Debug.Log("Hidding");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
