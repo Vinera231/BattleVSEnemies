@@ -12,9 +12,8 @@ public class BuffApplier : MonoBehaviour
 
     private void Update()
     {
-        if(_slot == null)
-            return;
-
+        if (_slot == null) return;
+       
         if (Input.GetKeyDown(_slot.Hotkey))
             Applied?.Invoke(_slot);
     }

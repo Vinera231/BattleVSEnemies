@@ -5,8 +5,8 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private BulletSpawner _bulletSpawner;
     [SerializeField] private GunBase _gun;
     [SerializeField] private Score _score;
-  
-    private int _point;
+
+    private int _point = 5;
     private int _allowedShootingCounter = 1;
 
     public void IncreaseBulletDamage(int amount)

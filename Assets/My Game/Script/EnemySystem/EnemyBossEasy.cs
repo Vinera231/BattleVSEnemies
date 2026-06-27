@@ -128,5 +128,4 @@ public class EnemyBossEasy : Enemy
         InvokeDeath();
         Destroy(gameObject);
     }
-
 }

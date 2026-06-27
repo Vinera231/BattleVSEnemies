@@ -14,6 +14,7 @@ public class InventorySelector : MonoBehaviour
     private void OnEnable() =>
         _buffApplier.Applied += OnBuffApplied;
 
+
     private void OnDisable() =>
         _buffApplier.Applied -= OnBuffApplied;
 

@@ -1,22 +1,21 @@
 using UnityEngine;
 
-public class SettingButton : MonoBehaviour
+public class EncyclopediaButton : MonoBehaviour
 {
     [SerializeField] private ButtonInformer _informer;
-    [SerializeField] private SettingsPanel _settingsPanel;
+    [SerializeField] private EncyclopediaPanel _panel;
 
     private void OnEnable()
     {
         _informer.Clicked += OnClick;
     }
-
     private void OnDisable()
     {
         _informer.Clicked -= OnClick;
     }
-    
+
     private void OnClick()
     {
-        _settingsPanel.Show();
-    }        
+        _panel.Show();
+    }
 }

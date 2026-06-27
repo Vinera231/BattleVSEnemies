@@ -14,7 +14,6 @@ public class TemporaryDamageBulletBuffShop : Shop
     private void OnApply()
     {
         _player.IncreaseBulletDamage(_amountDamage);
-
         Invoke(nameof(ResetBuff),_timeInSeconds);
     }
 

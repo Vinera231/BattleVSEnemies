@@ -26,13 +26,22 @@ public class CustomSceneManager : MonoBehaviour
 
     public void LoadMenu() =>
         SceneManager.LoadScene(0);
- 
-    public void LoadNormalMode() =>
-           SceneManager.LoadScene(1);
-   
-    public void LoadEasyMode() =>
+
+    public void LoadNormalMode()
+    {
+        SceneManager.LoadScene(1);
+        CursorShower.Instance.Hide();
+    }
+
+    public void LoadEasyMode()
+    {
         SceneManager.LoadScene(2);
-  
-    public void LoadHardMode() =>
-           SceneManager.LoadScene(3);
+        CursorShower.Instance.Hide();
+    }
+
+    public void LoadHardMode()
+    {
+        SceneManager.LoadScene(3);
+        CursorShower.Instance.Hide();
+    }
 }

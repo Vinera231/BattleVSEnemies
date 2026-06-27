@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour, IDamageble
     private bool _isPoison;
     private bool _isSlowed;
     private bool _isFire;
+    private EnemyDate _enemyDate;
     private float _elapsedTime;
     private Player _player;
     private PlayerTakeDamage _takeDamage;
@@ -46,7 +47,15 @@ public class Enemy : MonoBehaviour, IDamageble
 
     protected PlayerTakeDamage PlayerTakeDamage => _takeDamage;
     protected PlayerSlow SlowComponent => _slow;
-
+   
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            EncyclopediaManager.Instance.DiscoverEnemy(_enemyDate);
+        }
+    }
+    
     protected virtual void Awake()
     {
         _currentSpeed = _speed;

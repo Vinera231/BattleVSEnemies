@@ -10,9 +10,8 @@ public class InputReader : MonoBehaviour
     private const KeyCode JumpKey = KeyCode.Space;
     private const KeyCode SelectKey = KeyCode.R;
     private const KeyCode BackSelectKey = KeyCode.Q;
-    private const KeyCode IventarKey = KeyCode.V;
+    private const KeyCode IventarKey = KeyCode.Tab;
 
-    public event Action IventarPressed;
     public event Action SettingPanelPressed;
     public event Action ChitingPanelPressed;
     public event Action EnterCheatPanelPressed;
@@ -25,6 +24,7 @@ public class InputReader : MonoBehaviour
     public event Action SelectPressed;
     public event Action BackSelectPressed;
 
+    public event Action IventarPressed;
     public event Action<float> MouseScroll;
 
     private void Update()
@@ -45,7 +45,7 @@ public class InputReader : MonoBehaviour
     {
         float scrol = Input.GetAxis("Mouse ScrollWheel");
 
-        if(Math.Abs(scrol) > 0.001f)
+        if (Math.Abs(scrol) > 0.001f)
             MouseScroll?.Invoke(scrol);
     }
 

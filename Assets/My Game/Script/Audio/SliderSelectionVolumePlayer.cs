@@ -6,6 +6,8 @@ public class SliderSelectionVolumePlayer : MonoBehaviour, IPointerDownHandler, I
 {
     [SerializeField] private SfxPlayer _sfx;
     [SerializeField] private float _delay;
+    [SerializeField] private Sprite _offSound;
+    [SerializeField] private Sprite _onSound;
 
     private Coroutine _coroutine;
     private WaitForSecondsRealtime _wait;

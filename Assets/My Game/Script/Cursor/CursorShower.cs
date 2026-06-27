@@ -42,11 +42,13 @@ public class CursorShower : MonoBehaviour
     {
         if (_counterToShow > 0)
         {
+            Debug.Log("Show");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
+            Debug.Log("Hide");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

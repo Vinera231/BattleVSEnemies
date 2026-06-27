@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: 7929237923332471853}
   - component: {fileID: 1656968779538065852}
   m_Layer: 7
-  m_Name: EasyBoss 1
+  m_Name: KingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

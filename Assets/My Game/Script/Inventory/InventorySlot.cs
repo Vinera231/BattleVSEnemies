@@ -8,7 +8,7 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private TextMeshProUGUI _hotkey;
     [SerializeField] private GameObject _frame;
-    
+   
     private KeyCode _keyCode;
     private Action _onApply;
 
