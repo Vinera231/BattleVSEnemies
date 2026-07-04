@@ -10,8 +10,10 @@ public class ButtonClosePanel : MonoBehaviour
     private void OnEnable() =>
         _informer.Clicked += OnClick;
 
-    private void OnDisable() =>
+    private void OnDisable()
+    {
         _informer.Clicked -= OnClick;
+    }
 
     public void OnClick()
     {

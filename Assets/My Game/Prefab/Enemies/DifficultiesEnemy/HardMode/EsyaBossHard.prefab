@@ -798,6 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDetector: {fileID: 8822677875608083494}
+  _dataConfig: {fileID: 11400000, guid: 8e543f4b05b59f34099e2d8f51ca361c, type: 2}
   _health: {fileID: 2818299267573887289}
   _agent: {fileID: 7929237923332471853}
   _speed: 4
@@ -816,7 +817,6 @@ MonoBehaviour:
   _fireSpreadRadius: 1
   _bullets: 20
   _animator: {fileID: 6002438986551568146}
-  _score: {fileID: 3079195441420717652, guid: 5d8ec5ee3f7261349ad36ec1b036512c, type: 3}
 --- !u!114 &6002438986551568146
 MonoBehaviour:
   m_ObjectHideFlags: 0

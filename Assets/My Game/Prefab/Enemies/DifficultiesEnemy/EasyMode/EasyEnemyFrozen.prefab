@@ -430,6 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDetector: {fileID: 465319038858044454}
+  _dataConfig: {fileID: 11400000, guid: dc88b779268125d4d99e0ce6fe2e5ec1, type: 2}
   _health: {fileID: 3009349650919912553}
   _agent: {fileID: 89978275632698240}
   _speed: 6

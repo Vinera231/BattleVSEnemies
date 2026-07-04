@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour, IDamageble
     private const float StoppingDistance = 0.5f;
 
     [SerializeField] private AttackDetector _attackDetector;
+    [SerializeField] private EnemyDataConfig _dataConfig;
     [SerializeField] private Health _health;
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private float _speed;
@@ -25,13 +26,11 @@ public class Enemy : MonoBehaviour, IDamageble
     [SerializeField] private Renderer _renderer;
     [SerializeField] private float _slowDelay;
     [SerializeField] private float _fireSpreadRadius = 1f;
-
     protected Health HealthComponent => _health;
     private Coroutine _fricklesCoroutine;
     private bool _isPoison;
     private bool _isSlowed;
     private bool _isFire;
-    private EnemyDate _enemyDate;
     private float _elapsedTime;
     private Player _player;
     private PlayerTakeDamage _takeDamage;
@@ -39,23 +38,16 @@ public class Enemy : MonoBehaviour, IDamageble
     private bool _isFrozen;
     private bool _isMinion;
     private float _fireElapsed;
-
     public event Action Attacked;
     public event Action<Enemy> Died;
 
     public int ScoreReward => _scoreReward;
 
+    public IEnemyData Data => _dataConfig;
+
     protected PlayerTakeDamage PlayerTakeDamage => _takeDamage;
     protected PlayerSlow SlowComponent => _slow;
-   
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            EncyclopediaManager.Instance.DiscoverEnemy(_enemyDate);
-        }
-    }
-    
+
     protected virtual void Awake()
     {
         _currentSpeed = _speed;
@@ -63,7 +55,7 @@ public class Enemy : MonoBehaviour, IDamageble
         _agent.stoppingDistance = StoppingDistance;
         _player = FindFirstObjectByType<Player>();
 
-        if(_player != null )
+        if (_player != null)
         {
             _takeDamage = _player.GetComponent<PlayerTakeDamage>();
             _slow = _player.GetComponent<PlayerSlow>();
@@ -115,7 +107,7 @@ public class Enemy : MonoBehaviour, IDamageble
 
     public virtual void TakeDamage(float value) =>
         _health.TakeDamage(value);
-    
+
     public void Freeze()
     {
         _isFrozen = true;
@@ -175,7 +167,7 @@ public class Enemy : MonoBehaviour, IDamageble
 
         if (_renderer == null)
             return;
-        
+
         _isPoison = true;
         _fricklesCoroutine = StartCoroutine(PoisonCoroutine(poisonDamage, duraction, tickInterval));
     }
@@ -249,7 +241,7 @@ public class Enemy : MonoBehaviour, IDamageble
             _health.TakeDamage(fireDamage);
             TrySpreedFire(fireDamage, duration);
             _fireElapsed += interval;
-           
+
             yield return wait;
             SfxPlayer.Instance.PlayFireSound();
         }

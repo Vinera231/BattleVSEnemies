@@ -17,7 +17,7 @@ public class ButtonInformer : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private void OnDisable() =>
         _button.onClick.RemoveListener(OnClick);
-    private void OnClick() =>
+    protected virtual void OnClick() =>
         Clicked?.Invoke();
 
     public void OnPointerEnter(PointerEventData eventData) =>

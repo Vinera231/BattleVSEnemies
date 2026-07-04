@@ -56,6 +56,7 @@ public class PlayerShooting : MonoBehaviour
         else
         {
             _score.Increaze(_point);
+            SfxPlayer.Instance.PlayExtraSound();
             return true;
         }
     }

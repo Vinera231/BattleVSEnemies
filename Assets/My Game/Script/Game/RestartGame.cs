@@ -8,13 +8,11 @@ public class RestartGame : MonoBehaviour
   
     private void OnEnable()
     {
-        CursorShower.Instance.Show();
         _informer.Clicked += ResetGame;
     }
 
     private void OnDisable()
     {
-        CursorShower.Instance.Hide();
         _informer.Clicked -= ResetGame;
     }
 

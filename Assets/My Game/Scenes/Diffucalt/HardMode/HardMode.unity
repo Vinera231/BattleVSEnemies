@@ -8330,7 +8330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.25
-  _countEnemy: 15
+  _countEnemy: 8
   _countMonsterEnemy: 0
   _countSpeedy: 8
   _countMonsterSpeedy: 0
@@ -8695,10 +8695,10 @@ MonoBehaviour:
   _twoPhaseMusic: {fileID: 8300000, guid: 5ab03a61dd0a8c444b645220f8c98b60, type: 3}
   _dabtStepMusic: {fileID: 8300000, guid: 2270585766f7c56449fe0e682266a317, type: 3}
   _bossMusic: {fileID: 8300000, guid: e9c85fe237840514a804e23b748ec657, type: 3}
-  _finalSoundMusic: {fileID: 0}
+  _finalSoundMusic: {fileID: 8300000, guid: 9a1f21ffd7fbb9a4e9adf4ec1d95f670, type: 3}
   _beforeBoss: {fileID: 1182479980}
   _afterBoss: {fileID: 2140147766}
-  _beforeFinal: {fileID: 0}
+  _beforeFinal: {fileID: 1201542489}
 --- !u!1001 &360707152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10142,7 +10142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.2
-  _countEnemy: 10
+  _countEnemy: 5
   _countMonsterEnemy: 0
   _countSpeedy: 0
   _countMonsterSpeedy: 0
@@ -15667,7 +15667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press "E"  '
+  m_text: 'Press "R"  '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -38742,7 +38742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1454733085}
   _frequency: 0.2
-  _countEnemy: 15
+  _countEnemy: 7
   _countMonsterEnemy: 0
   _countSpeedy: 5
   _countMonsterSpeedy: 0
@@ -43076,6 +43076,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 521f2a0c7d76aae45934d55c4a7ba4b6, type: 3}
   m_PrefabInstance: {fileID: 727739170}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1915905569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915905571}
+  - component: {fileID: 1915905570}
+  m_Layer: 0
+  m_Name: Encyclopedia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1915905570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915905569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d20ee6afcbab0647a09aed2d9e6390d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _configs: []
+--- !u!4 &1915905571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915905569}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 972.5956, y: 738.4679, z: -20.789413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919555042
 GameObject:
   m_ObjectHideFlags: 0
@@ -46908,6 +46953,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8efb728f1fb9b4092c4df591c827ca, type: 3}
+--- !u!1 &2062722200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062722202}
+  - component: {fileID: 2062722201}
+  m_Layer: 0
+  m_Name: EncyclopediaOpener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2062722201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062722200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db981a1642d3ce4e8bacf652ea7dab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wave: {fileID: 1209387575}
+  _encyclopedia: {fileID: 1915905570}
+--- !u!4 &2062722202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062722200}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 972.5956, y: 738.4679, z: -20.789413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063696793
 GameObject:
   m_ObjectHideFlags: 0
@@ -67663,7 +67754,6 @@ MonoBehaviour:
   _source: {fileID: 4349893523909249507}
   _sourceSaw: {fileID: 640899639}
   _cursourEnterButton: {fileID: 8300000, guid: baa1aea4c738c374aa746d2e1eae1e43, type: 3}
-  _cursorExitButton: {fileID: 0}
   _clickButton: {fileID: 8300000, guid: 436c8a3139b8c4d44a5e55ce2737cffc, type: 3}
   _notBullet: {fileID: 8300000, guid: a134c92a56467854d886b636f24585f9, type: 3}
   _reloadBullet: {fileID: 8300000, guid: c3bcecf49ef9a10428748d845b8e6a90, type: 3}
@@ -67692,6 +67782,7 @@ MonoBehaviour:
   _speedSound: {fileID: 8300000, guid: b353f80371b050947aa6bf8493b618b3, type: 3}
   _brokenGlassesSound: {fileID: 8300000, guid: cd3017a1720429d43b2830b698d2d73f, type: 3}
   _bleedSound: {fileID: 8300000, guid: 0fb2c1d6e83386d4d8975dfeb6b644a9, type: 3}
+  _extraBulletSound: {fileID: 8300000, guid: 8436620c36c19ce448bbd4ab8bdf8074, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -67702,3 +67793,5 @@ SceneRoots:
   - {fileID: 146794479}
   - {fileID: 1928975223}
   - {fileID: 252114381}
+  - {fileID: 2062722202}
+  - {fileID: 1915905571}

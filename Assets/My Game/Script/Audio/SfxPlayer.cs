@@ -7,7 +7,6 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioSource _sourceSaw;
     [SerializeField] private AudioClip _cursourEnterButton;
-    [SerializeField] private AudioClip _cursorExitButton;
     [SerializeField] private AudioClip _clickButton;
     [SerializeField] private AudioClip _notBullet;
     [SerializeField] private AudioClip _reloadBullet;
@@ -36,6 +35,7 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _speedSound;
     [SerializeField] private AudioClip _brokenGlassesSound;
     [SerializeField] private AudioClip _bleedSound;
+    [SerializeField] private AudioClip _extraBulletSound;
 
     private void Awake()
     {
@@ -50,12 +50,6 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayCursorEnterButton() =>
         _source.PlayOneShot(_cursourEnterButton);
-
-    public void PlayCursorExitButton()
-    {
-        // Добавишь, если нужен будет звук выхода курсора с кнопки
-        // _source.PlayOneShot(_cursorExitButton);
-    }
 
     public void PlayClickButton() =>
         _source.PlayOneShot(_clickButton);
@@ -146,4 +140,7 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayBleedSound() =>
    _source.PlayOneShot(_bleedSound);
+   
+    public void PlayExtraSound() =>
+   _source.PlayOneShot(_extraBulletSound);
 }

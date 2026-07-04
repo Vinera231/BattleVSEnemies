@@ -29,19 +29,16 @@ public class CustomSceneManager : MonoBehaviour
 
     public void LoadNormalMode()
     {
-        SceneManager.LoadScene(1);
-        CursorShower.Instance.Hide();
+        SceneManager.LoadScene(1);  
     }
 
     public void LoadEasyMode()
     {
         SceneManager.LoadScene(2);
-        CursorShower.Instance.Hide();
     }
 
     public void LoadHardMode()
     {
         SceneManager.LoadScene(3);
-        CursorShower.Instance.Hide();
     }
 }

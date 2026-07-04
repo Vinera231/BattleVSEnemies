@@ -44,6 +44,9 @@ public class EnemyBossEasy : Enemy
             0 => _enemySpawner.SpawnEnemy,
             1 => _enemySpawner.SpawnSpeedy,
             2 => _enemySpawner.SpawnHamer,
+            3 => _enemySpawner.SpawnHamer,
+            4 => _enemySpawner.SpawnHamer,
+            5 => _enemySpawner.SpawnHamer,
             _ => throw new System.ArgumentOutOfRangeException(nameof(index), index, "для даного индекса нет зареганих действие"),
         };
     }

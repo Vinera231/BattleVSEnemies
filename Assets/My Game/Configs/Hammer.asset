@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd7c6a1c3b83c64eb2d9494eb345753, type: 3}
+  m_Name: Hammer
+  m_EditorClassIdentifier: 
+  _name: Hammer
+  _description: 'Hammer have big damage NormalMode have 200 Hp damage 30,EasyMode
+    150 Hp,  damage 20 , HardMode 350HP damage 50.
+
+    Family hierarchy:Low-Middle.'
+  _preview: {fileID: 21300000, guid: 5349d91f0b4ddcd49919ce0f573bc753, type: 3}
+  _opened: 0

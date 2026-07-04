@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CursorShower : MonoBehaviour
 {
-    private int _counterToShow = 0;
+    private int _counterToShow = 1;
 
     public static CursorShower Instance { get; private set; }
 
@@ -42,15 +42,16 @@ public class CursorShower : MonoBehaviour
     {
         if (_counterToShow > 0)
         {
-            Debug.Log("Show");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
-            Debug.Log("Hide");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+
+        //string state = _counterToShow > 0 ? "Show" : "Hide";
+        //Debug.Log($"CounterToShow = {_counterToShow},({state})");
     }
 }

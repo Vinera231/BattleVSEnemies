@@ -30,25 +30,27 @@ public class PauseSwitcher : MonoBehaviour
     {
         _pauseCounter++;
         HandleChanged();
-    } 
-    
+    }
+
     public void PlayGame()
     {
         _pauseCounter--;
         HandleChanged();
-    }  
+    }
 
     private void HandleChanged()
     {
-        if(_pauseCounter <= 0)
+        if (_pauseCounter <= 0)
         {
             Time.timeScale = 1f;
             Continued?.Invoke();
         }
-        else  
+        else
         {
             Time.timeScale = 0f;
             Paused?.Invoke();
         }
+        //string state = _pauseCounter <= 0 ? "Continue" : "Pause";
+        //Debug.Log($"CounterPause = {_pauseCounter},({state})");
     }
 }
