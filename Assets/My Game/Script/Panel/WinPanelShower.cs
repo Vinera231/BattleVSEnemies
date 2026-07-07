@@ -26,7 +26,7 @@ public class WinPanelShower : MonoBehaviour
 
     private void OnFinished()
     {
-        _winPanel.Show();        
+        _winPanel.Show();
 
         WinPanelShowed?.Invoke();
         Invoke(nameof(LoadMenu), 5f);

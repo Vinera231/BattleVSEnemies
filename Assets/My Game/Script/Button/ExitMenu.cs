@@ -18,5 +18,6 @@ public class ExitMenu : MonoBehaviour
     public void OnClick()
     {
         SceneManager.LoadScene(0);
+        PauseSwitcher.Instance.PlayGame();
     }
 }

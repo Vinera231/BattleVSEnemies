@@ -5,24 +5,6 @@ using UnityEngine.SceneManagement;
 public class CustomSceneManager : MonoBehaviour
 {
     [SerializeField] private InputReader _reader;
-    [SerializeField] private PlayerTakeDamage _player;
-
-    public Action OnDieded;
-
-    private void OnEnable()
-    {
-        if (_player != null)
-            _player.PlayerDied += OnPlayrDied;
-    }
-
-    private void OnDisable()
-    {
-        if (_player != null)
-            _player.PlayerDied -= OnPlayrDied;
-    }
-
-    public void OnPlayrDied() =>
-        LoadMenu();
 
     public void LoadMenu() =>
         SceneManager.LoadScene(0);

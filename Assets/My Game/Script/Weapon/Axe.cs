@@ -50,7 +50,7 @@ public class Axe : MonoBehaviour, ISecondWeapon
 
         _remainingReloadTime = _reloadTime;
         
-        bool isCrit = Random.value < 0.2f;
+        bool isCrit = Random.value < 0.3;
      
         _damage = isCrit ? _criticalDamage : _damage;
 
