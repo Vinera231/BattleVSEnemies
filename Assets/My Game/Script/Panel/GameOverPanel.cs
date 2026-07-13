@@ -9,20 +9,14 @@ public class GameOverPanel : MonoBehaviour
     [SerializeField] private WaveManager _waveManager;
     [SerializeField] private PlayerTakeDamage _takeDamage;
 
-    private void Awake()
-    {
-        HideAll();
-    }
+    private void Awake() =>   
+       HideAll();   
 
-    private void OnEnable()
-    {
+    private void OnEnable() =>  
         _takeDamage.Died += OnDied;
-    }
-
-    private void OnDisable()
-    {
+    
+    private void OnDisable() =>
         _takeDamage.Died -= OnDied;
-    }
 
     public void Show(bool isFirstPhase)
     {
@@ -41,5 +35,4 @@ public class GameOverPanel : MonoBehaviour
         bool isFirstPhase = _waveManager.CurrentWaveIndex <= 10;
         Show(isFirstPhase);
     }
-
 }

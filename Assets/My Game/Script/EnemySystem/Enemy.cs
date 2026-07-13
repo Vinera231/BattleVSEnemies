@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour, IDamageble
     public IEnemyData Data => _dataConfig;
 
     protected PlayerTakeDamage PlayerTakeDamage => _takeDamage;
+
     protected PlayerSlow SlowComponent => _slow;
 
     protected virtual void Awake()
@@ -179,8 +180,8 @@ public class Enemy : MonoBehaviour, IDamageble
         Attacked?.Invoke();
     }
 
-    protected virtual void OnDied() =>
-        ProcessDied();
+    protected virtual void OnDied() =>   
+        ProcessDied();  
 
     protected virtual void ProcessDied()
     {
@@ -191,8 +192,10 @@ public class Enemy : MonoBehaviour, IDamageble
         Destroy(gameObject);
     }
 
-    protected void InvokeDeath() =>
+    protected void InvokeDeath()
+    {
         Died?.Invoke(this);
+    }
 
     protected virtual void OnHealthChanged(float value) { }
 

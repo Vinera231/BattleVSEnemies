@@ -7,6 +7,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Score _score;
     [SerializeField] private Health _health;
+    [SerializeField] private WavePassed _wavePassed;
 
     private float _amount = 100f;
     private int _currentWaveIndex = 0;
@@ -20,6 +21,8 @@ public class WaveManager : MonoBehaviour
 
     public int CurrentWaveIndex => _currentWaveIndex;
 
+    public int EnemyKilled { get; private set; }
+
     private void Start() =>
         StartWave();
 
@@ -28,6 +31,7 @@ public class WaveManager : MonoBehaviour
 
     private void StartWave()
     {
+        _wavePassed?.CountWave();
         Wave wave = _waves[_currentWaveIndex];
         wave.StartSpawn();
         wave.Finished += OnWaveFinished;
@@ -50,6 +54,7 @@ public class WaveManager : MonoBehaviour
         _score.Increaze(wave.ScoreReward);
         ++_currentWaveIndex;
 
+
         if (_currentWaveIndex < _waves.Count)
             StartWave();
 
@@ -57,18 +62,16 @@ public class WaveManager : MonoBehaviour
             AllWavesFinished?.Invoke();
     }
 
-    private void OnEnemySpawned(Enemy enemy)
-    {
+    private void OnEnemySpawned(Enemy enemy) =>
         EnemySpawned?.Invoke(enemy);
-    }
 
     private void OnEnemyDied(Enemy enemy)
     {
+        EnemyKilled++;
         EnemyDied?.Invoke(enemy);
         _score.Increaze(enemy.ScoreReward);
     }
 
     private void AddHealthValue() =>
      _health.RecoverHealth(_amount);
-
 }

@@ -13,10 +13,9 @@ public class VolumeModifier : MonoBehaviour
     [SerializeField] private AudioMixer _mixer;
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _soundSlider;
-    [SerializeField] private Image _onMusic;
-    [SerializeField] private Image _offMusic;
-    [SerializeField] private Image _onSound;
-    [SerializeField] private Image _offSound;
+
+    [SerializeField] private Image _musicImage;
+    [SerializeField] private Sprite[] _musicSound;
 
     private float _minimumValueSlider;
     private float _maximumValueSlider;
@@ -46,35 +45,13 @@ public class VolumeModifier : MonoBehaviour
     private void OnChangedMusic(float value)
     {
         SetLevel(Music, value);
-        _normolized = NormalizeValue(value);
-        
-        if(Mathf.Approximately(_normolized, 0f))
-        {
-            _onMusic.enabled = false;
-            _offMusic.enabled = true;
-        }
-        else
-        {
-            _onMusic.enabled = true;
-            _offMusic.enabled = false;
-        }
+        ChangeMusicIcon();
     }
 
     private void OnChangedSound(float value)
     {
         SetLevel(Sound, value);
-        _normolized = NormalizeValue(value);
-
-        if (Mathf.Approximately(_normolized, 0f))
-        {
-            _onSound.enabled = false;
-            _offSound.enabled = true;
-        }
-        else
-        {
-            _onSound.enabled = true;
-            _offSound.enabled = false;
-        }
+        ChangeMusicIcon();
     }
 
     private void SetLevel(string group, float value)
@@ -82,7 +59,17 @@ public class VolumeModifier : MonoBehaviour
         float level = ConvertVolumeToLevel(NormalizeValue(value));
         _mixer.SetFloat(group, level);
     }
-   
+
+    private void ChangeMusicIcon()
+    {
+        _musicImage.sprite =
+            _normolized <= 0f ? _musicSound[0] :
+            _normolized <= 0.3f ? _musicSound[1] :
+            _normolized <= 0.5 ? _musicSound[2] :
+            _normolized <= 0.5 ? _musicSound[3] :
+            _musicSound[4];
+    }
+
     private float NormalizeValue(float value) =>
         Mathf.InverseLerp(_minimumValueSlider, _maximumValueSlider, value);
 

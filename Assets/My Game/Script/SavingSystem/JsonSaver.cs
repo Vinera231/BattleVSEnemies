@@ -5,7 +5,7 @@ public class JsonSaver
 {
     private const string FileName = "save.json";
 
-    public SavesData Data;
+    public SavesData Data { get; private set; }
 
     private string SavePath =>
         Path.Combine(Application.persistentDataPath, FileName);

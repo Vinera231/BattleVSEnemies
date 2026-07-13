@@ -29,7 +29,7 @@ public class WinPanelShower : MonoBehaviour
         _winPanel.Show();
 
         WinPanelShowed?.Invoke();
-        Invoke(nameof(LoadMenu), 5f);
+        Invoke(nameof(LoadMenu), 10f);
     }
 
     private void LoadMenu()
