@@ -9865,19 +9865,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934224854920037551, guid: e28d7e283deeb264b98e18592fd800a8, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1934224854920037551, guid: e28d7e283deeb264b98e18592fd800a8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1934224854920037551, guid: e28d7e283deeb264b98e18592fd800a8, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1934224854920037551, guid: e28d7e283deeb264b98e18592fd800a8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1934224854920037551, guid: e28d7e283deeb264b98e18592fd800a8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9917,11 +9917,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934224854920037551, guid: e28d7e283deeb264b98e18592fd800a8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -960
       objectReference: {fileID: 0}
     - target: {fileID: 1934224854920037551, guid: e28d7e283deeb264b98e18592fd800a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 1934224854920037551, guid: e28d7e283deeb264b98e18592fd800a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36231,14 +36231,10 @@ MonoBehaviour:
   _mixer: {fileID: 24100000, guid: 5a1d183405385ae4b88f91f99fdbec5a, type: 2}
   _musicSlider: {fileID: 935446808}
   _soundSlider: {fileID: 630761979}
-  _onMusic: {fileID: 1386596939934018356}
-  _offMusic: {fileID: 1386596939934018355}
-  _lowMusic: {fileID: 0}
-  _maxMusic: {fileID: 0}
-  _onSound: {fileID: 1386596939934018358}
-  _offSound: {fileID: 1386596939934018357}
-  _lowSound: {fileID: 0}
-  _maxSound: {fileID: 0}
+  _musicOn: {fileID: 1386596939934018356}
+  _musicOff: {fileID: 1386596939934018355}
+  _soundOn: {fileID: 1386596939934018358}
+  _soundOff: {fileID: 1386596939934018357}
 --- !u!4 &1613850569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}

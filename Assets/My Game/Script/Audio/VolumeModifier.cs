@@ -14,12 +14,8 @@ public class VolumeModifier : MonoBehaviour
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _soundSlider;
 
-    [SerializeField] private Image _musicImage;
-    [SerializeField] private Sprite[] _musicSound;
-
     private float _minimumValueSlider;
     private float _maximumValueSlider;
-    private float _normolized;
 
     private void Start()
     {
@@ -45,29 +41,17 @@ public class VolumeModifier : MonoBehaviour
     private void OnChangedMusic(float value)
     {
         SetLevel(Music, value);
-        ChangeMusicIcon();
     }
 
     private void OnChangedSound(float value)
     {
         SetLevel(Sound, value);
-        ChangeMusicIcon();
     }
 
     private void SetLevel(string group, float value)
     {
         float level = ConvertVolumeToLevel(NormalizeValue(value));
         _mixer.SetFloat(group, level);
-    }
-
-    private void ChangeMusicIcon()
-    {
-        _musicImage.sprite =
-            _normolized <= 0f ? _musicSound[0] :
-            _normolized <= 0.3f ? _musicSound[1] :
-            _normolized <= 0.5 ? _musicSound[2] :
-            _normolized <= 0.5 ? _musicSound[3] :
-            _musicSound[4];
     }
 
     private float NormalizeValue(float value) =>

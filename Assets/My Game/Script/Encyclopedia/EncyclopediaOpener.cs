@@ -9,7 +9,7 @@ public class EncyclopediaOpener : MonoBehaviour
     private JsonSaver _saver;
 
     private void Awake() =>
-        _saver = new();
+        _saver = new ();
 
     private void OnEnable() =>
         _wave.EnemySpawned += OnEnemySpawned;
