@@ -1340,10 +1340,6 @@ MonoBehaviour:
   _mixer: {fileID: 24100000, guid: 5a1d183405385ae4b88f91f99fdbec5a, type: 2}
   _musicSlider: {fileID: 1511869010}
   _soundSlider: {fileID: 1102126818}
-  _musicOn: {fileID: 1116586962}
-  _musicOff: {fileID: 1419792898}
-  _soundOn: {fileID: 1142065610}
-  _soundOff: {fileID: 645029101}
 --- !u!1001 &171734695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3907,7 +3903,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version:0.6.5
+  m_text: 'Version:0.6.7
 
 
 '

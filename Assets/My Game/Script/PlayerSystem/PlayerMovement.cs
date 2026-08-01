@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float gravity = -8f;
+    [SerializeField] private float gravity = -30f;
     [SerializeField] private float _speed = 8f;
     [SerializeField] private Vector3 _velocity;
-    [SerializeField] private float _jump = 2f;
+    [SerializeField] private float _jump = 3f;
     [SerializeField] private CharacterController _controller;
 
     private bool _isGround;
