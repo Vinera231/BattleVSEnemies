@@ -22477,6 +22477,7 @@ MonoBehaviour:
     _waveIndex: 10
   - _sky: {fileID: 2100000, guid: f8a60d169ab8a46b09c9b01a3e51601f, type: 2}
     _waveIndex: 14
+  _night: {fileID: 705507994}
 --- !u!1001 &782903380
 PrefabInstance:
   m_ObjectHideFlags: 0

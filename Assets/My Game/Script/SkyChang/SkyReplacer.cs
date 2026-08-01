@@ -6,6 +6,7 @@ public class SkyReplacer : MonoBehaviour
 {
     [SerializeField] private WaveManager _waveManager;
     [SerializeField] private List<SkyInfo> _infos;
+    [SerializeField] private Light _night;
 
     private void OnEnable() =>    
         _waveManager.WaveStarted += OnWaveChanged;
@@ -23,6 +24,9 @@ public class SkyReplacer : MonoBehaviour
                 return;
             }
         }
+
+        if (_waveManager.CurrentWaveIndex == 10)
+            _night.color = Color.black;
     }
 }
 
