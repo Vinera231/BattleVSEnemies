@@ -36737,50 +36737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1263638001 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6427229952488886945, guid: be87637768157b846a7733c26652af78, type: 3}
-  m_PrefabInstance: {fileID: 1263637998}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1263638002 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7399370760222447344, guid: be87637768157b846a7733c26652af78, type: 3}
-  m_PrefabInstance: {fileID: 1263637998}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1263638003 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7945818752053462318, guid: be87637768157b846a7733c26652af78, type: 3}
-  m_PrefabInstance: {fileID: 1263637998}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1263638004 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7199809869398227919, guid: be87637768157b846a7733c26652af78, type: 3}
-  m_PrefabInstance: {fileID: 1263637998}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1264825765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46729,10 +46685,6 @@ MonoBehaviour:
   _mixer: {fileID: 24100000, guid: 5a1d183405385ae4b88f91f99fdbec5a, type: 2}
   _musicSlider: {fileID: 286763477}
   _soundSlider: {fileID: 1263638000}
-  _musicOn: {fileID: 1263638002}
-  _musicOff: {fileID: 1263638001}
-  _soundOn: {fileID: 1263638004}
-  _soundOff: {fileID: 1263638003}
 --- !u!4 &1613850569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
