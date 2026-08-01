@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EnemyBossEasy : Enemy
+public class KingBoss : Enemy
 {
     [SerializeField] private int _bullets;
     [SerializeField] private EnemyBossAnimator _animator;

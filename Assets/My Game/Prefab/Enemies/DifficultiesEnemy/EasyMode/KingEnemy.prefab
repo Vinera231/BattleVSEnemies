@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 1026828381980982638}
   - component: {fileID: 6002438986551568146}
   - component: {fileID: 7929237923332471853}
-  - component: {fileID: 1656968779538065852}
+  - component: {fileID: 4185402127882155950}
   m_Layer: 7
   m_Name: KingEnemy
   m_TagString: Enemy
@@ -712,7 +712,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1656968779538065852
+--- !u!114 &4185402127882155950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -721,20 +721,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6837979829544711026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7b3fdd00399d54db3edd8a0a407ad4, type: 3}
+  m_Script: {fileID: 11500000, guid: 90d9e24b28e33504fb574f33ca27713b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDetector: {fileID: 8822677875608083494}
   _dataConfig: {fileID: 11400000, guid: 9267fc9fe46bde04190977059d45b656, type: 2}
   _health: {fileID: 2818299267573887289}
   _agent: {fileID: 7929237923332471853}
-  _speed: 4
+  _speed: 2
   _detectionRadius: 380
   _damageAmount: 60
   _frost: 0
   _attackRate: 1
-  _scoreReward: 500
-  _currentSpeed: 4
+  _scoreReward: 600
+  _currentSpeed: 2
   _defultSkin: {fileID: 2100000, guid: ec2b19ffe1ccc134893274730ae71048, type: 2}
   _frostSkin: {fileID: 2100000, guid: 0cfdf06470beaa644bcc367dd8ef475d, type: 2}
   _poisonSkin: {fileID: 2100000, guid: b3556cf7cf2a42049afdb95464711600, type: 2}
@@ -744,6 +744,7 @@ MonoBehaviour:
   _fireSpreadRadius: 1
   _bullets: 20
   _animator: {fileID: 6002438986551568146}
+  EasyBossKilled: 0
 --- !u!1 &7099604365031243988
 GameObject:
   m_ObjectHideFlags: 0
