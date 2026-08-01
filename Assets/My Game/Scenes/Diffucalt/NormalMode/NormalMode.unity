@@ -42708,7 +42708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239615f87d34d4843a8c10307e4d48ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 2800
+  _price: 3000
   _text: {fileID: 1646217429}
   _reader: {fileID: 1909665639}
   _score: {fileID: 8050493536558515526}
