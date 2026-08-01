@@ -5,12 +5,12 @@ using UnityEngine;
 public class WaveManagerView : MonoBehaviour
 {
     [SerializeField] private WaveManager _waveManager;
-    [SerializeField] private WaveTotalTime _waveTotalTime;
     [SerializeField] private TextMeshProUGUI _name;
     [SerializeField] private TextMeshProUGUI _time;
    
     private float _waveStartTime;
-   
+    public float TotalTime{ get; private set; }
+
     private void Update()
     {
         if (_waveManager.IsActiveWave == false)
@@ -33,6 +33,6 @@ public class WaveManagerView : MonoBehaviour
     {
         _name.text = _waveManager.GetWaveName(index); 
         _waveStartTime = Time.time;
-        _waveTotalTime?.TotalTime();
+        TotalTime++;
     }    
 }

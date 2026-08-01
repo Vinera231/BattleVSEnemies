@@ -14758,6 +14758,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1928975223}
     m_Modifications:
+    - target: {fileID: 1740055056613042471, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 1209387577}
     - target: {fileID: 2445560241019473545, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
       propertyPath: _waveManager
       value: 
@@ -14842,6 +14846,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4874268035261174418, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
+      propertyPath: _waveManager
+      value: 
+      objectReference: {fileID: 1209387575}
     - target: {fileID: 7529250737974924355, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
       propertyPath: m_Name
       value: WinPanel_1
@@ -14858,6 +14866,10 @@ PrefabInstance:
       propertyPath: _enemyBossEasy
       value: 
       objectReference: {fileID: 1656968779538065852, guid: 3127efe72fe5f7d4aa10732f753fae8e, type: 3}
+    - target: {fileID: 7880760948880347954, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
+      propertyPath: _enemyBossKing
+      value: 
+      objectReference: {fileID: 4185402127882155950, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15816,6 +15828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1978597712}
     m_Modifications:
+    - target: {fileID: 2389932895924939824, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
+      propertyPath: _waveManager
+      value: 
+      objectReference: {fileID: 1209387575}
     - target: {fileID: 5862613833746888031, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -15921,17 +15937,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
---- !u!114 &539614988 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2389932895924939824, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
-  m_PrefabInstance: {fileID: 539614987}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fe56ff2023b240850b628c13ff8c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &539614989 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5862613833746888031, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
@@ -35271,7 +35276,6 @@ MonoBehaviour:
   - {fileID: 357540762}
   _score: {fileID: 2123496127}
   _health: {fileID: 846612849}
-  _wavePassed: {fileID: 539614988}
 --- !u!4 &1209387576
 Transform:
   m_ObjectHideFlags: 0
@@ -35320,7 +35324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waveManager: {fileID: 1209387575}
-  _waveTotalTime: {fileID: 2143370615}
   _name: {fileID: 1099545619}
   _time: {fileID: 575873288}
 --- !u!1 &1210015603
@@ -37908,6 +37911,10 @@ PrefabInstance:
       propertyPath: _enemyBossEasy
       value: 
       objectReference: {fileID: 1656968779538065852, guid: 3127efe72fe5f7d4aa10732f753fae8e, type: 3}
+    - target: {fileID: 2348078319213245716, guid: 771e1298fe0d12e499f1cc8644bfbb31, type: 3}
+      propertyPath: _enemyBossKing
+      value: 
+      objectReference: {fileID: 4185402127882155950, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39607,6 +39614,10 @@ PrefabInstance:
       propertyPath: _enemyBossEasy
       value: 
       objectReference: {fileID: 1656968779538065852, guid: 3127efe72fe5f7d4aa10732f753fae8e, type: 3}
+    - target: {fileID: 2348078319213245716, guid: 771e1298fe0d12e499f1cc8644bfbb31, type: 3}
+      propertyPath: _enemyBossKing
+      value: 
+      objectReference: {fileID: 4185402127882155950, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -58930,6 +58941,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2369647089336795300, guid: 8645137c5fefcf7478a174ed48b6e795, type: 3}
+      propertyPath: _waveManager
+      value: 
+      objectReference: {fileID: 1209387575}
+    - target: {fileID: 2721699857695397845, guid: 8645137c5fefcf7478a174ed48b6e795, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 1209387577}
     - target: {fileID: 3241786146449190871, guid: 8645137c5fefcf7478a174ed48b6e795, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -64155,6 +64174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Time_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5542788841072677923, guid: d60f98328ef1eed45a1e2ba7cebf1a66, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 1209387577}
     - target: {fileID: 5869656005884288010, guid: d60f98328ef1eed45a1e2ba7cebf1a66, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -64261,17 +64284,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5869656005884288010, guid: d60f98328ef1eed45a1e2ba7cebf1a66, type: 3}
   m_PrefabInstance: {fileID: 2143370613}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2143370615 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5542788841072677923, guid: d60f98328ef1eed45a1e2ba7cebf1a66, type: 3}
-  m_PrefabInstance: {fileID: 2143370613}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d69ac81d57cd244aecbf841e0e11db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2145846420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3841036625015779569, guid: 54cc2bbadd2971b469fcb7ed533cc107, type: 3}

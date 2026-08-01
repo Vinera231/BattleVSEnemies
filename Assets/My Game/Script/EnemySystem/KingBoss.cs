@@ -15,7 +15,7 @@ public class KingBoss : Enemy
     private List<float> _sortedThresholds;
     private HashSet<float> _usedThresholds;
 
-    public int EasyBossKilled;
+    public int KingBossKilled;
 
     private readonly Dictionary<float, int> _thresholds = new()
     {
@@ -118,7 +118,7 @@ public class KingBoss : Enemy
 
     protected override void ProcessDied()
     {
-        EasyBossKilled++;
+        KingBossKilled++;
         if (TryGetComponent(out Collider collider))
             Destroy(collider);
 

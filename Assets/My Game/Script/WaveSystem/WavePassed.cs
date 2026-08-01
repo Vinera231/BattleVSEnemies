@@ -5,17 +5,11 @@ using UnityEngine;
 public class WavePassed : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private WaveManager _waveManager;
 
-    private int _wavePassed;
+    private void OnEnable() =>
+        UpdateText();
 
-    private void Update() => 
-        UpdateText();
-    public void CountWave()
-    {
-        _wavePassed++;
-        UpdateText();
-    }
-  
     private void UpdateText() =>   
-        _text.text = _wavePassed.ToString();    
+        _text.text = _waveManager.WavePassed.ToString();  
 }

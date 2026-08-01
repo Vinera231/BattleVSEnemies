@@ -27545,7 +27545,6 @@ MonoBehaviour:
   - {fileID: 1201542489}
   _score: {fileID: 8050493536558515526}
   _health: {fileID: 4259007593421346580}
-  _wavePassed: {fileID: 2761874337357356017}
 --- !u!4 &1209387576
 Transform:
   m_ObjectHideFlags: 0
@@ -27592,7 +27591,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waveManager: {fileID: 1209387575}
-  _waveTotalTime: {fileID: 2274933016994615092}
   _name: {fileID: 1359546847}
   _time: {fileID: 367833461}
 --- !u!1001 &1211143170
@@ -46053,6 +46051,10 @@ PrefabInstance:
       propertyPath: _enemyBossEasy
       value: 
       objectReference: {fileID: 1656968779538065852, guid: 3127efe72fe5f7d4aa10732f753fae8e, type: 3}
+    - target: {fileID: 2348078319213245716, guid: 771e1298fe0d12e499f1cc8644bfbb31, type: 3}
+      propertyPath: _enemyBossKing
+      value: 
+      objectReference: {fileID: 4185402127882155950, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
     - target: {fileID: 7429782780649027437, guid: 771e1298fe0d12e499f1cc8644bfbb31, type: 3}
       propertyPath: _waveManager
       value: 
@@ -49337,6 +49339,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2369647089336795300, guid: 8645137c5fefcf7478a174ed48b6e795, type: 3}
+      propertyPath: _waveManager
+      value: 
+      objectReference: {fileID: 1209387575}
     - target: {fileID: 2496391839520605260, guid: 8645137c5fefcf7478a174ed48b6e795, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -853
@@ -49345,6 +49351,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -390
       objectReference: {fileID: 0}
+    - target: {fileID: 2721699857695397845, guid: 8645137c5fefcf7478a174ed48b6e795, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 1209387577}
     - target: {fileID: 3234444578310140531, guid: 8645137c5fefcf7478a174ed48b6e795, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1000
@@ -49800,6 +49810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Time_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5542788841072677923, guid: d60f98328ef1eed45a1e2ba7cebf1a66, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 1209387577}
     - target: {fileID: 5869656005884288010, guid: d60f98328ef1eed45a1e2ba7cebf1a66, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -49890,17 +49904,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5869656005884288010, guid: d60f98328ef1eed45a1e2ba7cebf1a66, type: 3}
   m_PrefabInstance: {fileID: 2274933016994615090}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2274933016994615092 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5542788841072677923, guid: d60f98328ef1eed45a1e2ba7cebf1a66, type: 3}
-  m_PrefabInstance: {fileID: 2274933016994615090}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d69ac81d57cd244aecbf841e0e11db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2320039168407829363
 Transform:
   m_ObjectHideFlags: 0
@@ -50065,6 +50068,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1725300737664119394}
     m_Modifications:
+    - target: {fileID: 2389932895924939824, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
+      propertyPath: _waveManager
+      value: 
+      objectReference: {fileID: 1209387575}
     - target: {fileID: 5862613833746888031, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -50159,17 +50166,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5862613833746888031, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
   m_PrefabInstance: {fileID: 2761874337357356015}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2761874337357356017 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2389932895924939824, guid: da4406476c52ef24fb252cf9f5629af2, type: 3}
-  m_PrefabInstance: {fileID: 2761874337357356015}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fe56ff2023b240850b628c13ff8c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &2781394479266683674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55465,6 +55461,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1928975223}
     m_Modifications:
+    - target: {fileID: 1740055056613042471, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
+      propertyPath: _view
+      value: 
+      objectReference: {fileID: 1209387577}
     - target: {fileID: 2445560241019473545, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
       propertyPath: _waveManager
       value: 
@@ -55569,6 +55569,10 @@ PrefabInstance:
       propertyPath: m_enableVertexGradient
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4874268035261174418, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
+      propertyPath: _waveManager
+      value: 
+      objectReference: {fileID: 1209387575}
     - target: {fileID: 5353560103596752190, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
       propertyPath: m_Sprite
       value: 

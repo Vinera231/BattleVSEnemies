@@ -7,7 +7,6 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Score _score;
     [SerializeField] private Health _health;
-    [SerializeField] private WavePassed _wavePassed;
 
     private float _amount = 100f;
     private int _currentWaveIndex = 0;
@@ -22,6 +21,7 @@ public class WaveManager : MonoBehaviour
     public int CurrentWaveIndex => _currentWaveIndex;
 
     public int EnemyKilled { get; private set; }
+    public int WavePassed { get; private set; }
 
     private void Start() =>
         StartWave();
@@ -31,7 +31,7 @@ public class WaveManager : MonoBehaviour
 
     private void StartWave()
     {
-        _wavePassed?.CountWave();
+        WavePassed++;
         Wave wave = _waves[_currentWaveIndex];
         wave.StartSpawn();
         wave.Finished += OnWaveFinished;
