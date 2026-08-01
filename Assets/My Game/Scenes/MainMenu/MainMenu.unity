@@ -9837,7 +9837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1613917034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9971,10 +9971,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _configs:
   - {fileID: 11400000, guid: f2f3c2bde7442e2479d8d254e556b5a0, type: 2}
+  - {fileID: 11400000, guid: ef62d0b6b97ffd04ab3bf67cddb75c60, type: 2}
   - {fileID: 11400000, guid: 44408b7f7a45e4f40af878f5f0e7dc7a, type: 2}
-  - {fileID: 11400000, guid: dc88b779268125d4d99e0ce6fe2e5ec1, type: 2}
+  - {fileID: 11400000, guid: 186323df095a15a46a62b249703cffbd, type: 2}
   - {fileID: 11400000, guid: 4498145f40ee7ab4d9afb0a898bee298, type: 2}
+  - {fileID: 11400000, guid: 96ad7a513ca88cb42a2b0cc2d1cb1b11, type: 2}
+  - {fileID: 11400000, guid: dc88b779268125d4d99e0ce6fe2e5ec1, type: 2}
+  - {fileID: 11400000, guid: b38888b8772d2ca41aa3d52a96dab92e, type: 2}
+  - {fileID: 11400000, guid: e6396b2ee42904f41b405d7bb50fe26c, type: 2}
+  - {fileID: 11400000, guid: 8e543f4b05b59f34099e2d8f51ca361c, type: 2}
+  - {fileID: 11400000, guid: f9576bbb9df510847873a40685fe9704, type: 2}
+  - {fileID: 11400000, guid: a286f926901234b4f84ad26a6c43d420, type: 2}
+  - {fileID: 11400000, guid: ef1fbe8eabb033641af54f635a2a3899, type: 2}
+  - {fileID: 11400000, guid: fe7f3023f54887541a2fa1661c53d7f2, type: 2}
   - {fileID: 11400000, guid: 412587fca5a6a874da60cc1a7143869f, type: 2}
+  - {fileID: 11400000, guid: 9267fc9fe46bde04190977059d45b656, type: 2}
 --- !u!1001 &1615371208
 PrefabInstance:
   m_ObjectHideFlags: 0
