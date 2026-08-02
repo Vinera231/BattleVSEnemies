@@ -67,11 +67,8 @@ public class Saw : MonoBehaviour, ISecondWeapon
         StopCoroutineSafe();
         _isRotation = false;
 
-        if (_sawPartical != null) 
-        {
-            Destroy(_sawPartical.gameObject);
-            _sawPartical = null;
-        }
+        if (_sawPartical != null)
+            _sawPartical.StopEffect();
 
         SfxPlayer.Instance.StopChainsawSound();
     }

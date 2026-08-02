@@ -14124,6 +14124,7 @@ Transform:
   - {fileID: 627875601}
   - {fileID: 1195781896}
   - {fileID: 1271664320}
+  - {fileID: 702316026}
   m_Father: {fileID: 928695647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &483095414 stripped
@@ -20545,6 +20546,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
+--- !u!1001 &702316025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 481820638}
+    m_Modifications:
+    - target: {fileID: 1647999077074837373, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_Name
+      value: BaricadaShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+--- !u!4 &702316026 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8019266324466443995, guid: 2511b2eb40b439e40b496e6318b76ee2, type: 3}
+  m_PrefabInstance: {fileID: 702316025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &702574932
 GameObject:
   m_ObjectHideFlags: 0
@@ -41477,7 +41540,7 @@ MonoBehaviour:
   _monsterSpeedyPrefab: {fileID: 429578588366157044, guid: 22b7122998d5c0a44a1b3980b16e4568, type: 3}
   _hamerPrefab: {fileID: 412744899412341863, guid: 9a02ff5cdee56b74fb3a6022e45886f2, type: 3}
   _angryHamerPrefab: {fileID: 822237253872330836, guid: dc45930453c803b42bffb22db82cde64, type: 3}
-  _bossPrefab: {fileID: 1656968779538065852, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
+  _bossPrefab: {fileID: 4185402127882155950, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
   _bossEasyPrefab: {fileID: 1656968779538065852, guid: 3127efe72fe5f7d4aa10732f753fae8e, type: 3}
   _halmerEnemy: {fileID: 4970981288387148015, guid: 4ee96a25401475447b5e627014c1edb4, type: 3}
   _monsterHalmerEnemy: {fileID: 4970981288387148015, guid: eeb08a28020814a42ab468c8c1087215, type: 3}

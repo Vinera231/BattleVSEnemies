@@ -6,5 +6,7 @@ public class SawPartical : MonoBehaviour
 
     private void OnEnable() =>
    _particle.Play();
-
+   
+   public void StopEffect() =>   
+        _particle.Stop(true,ParticleSystemStopBehavior.StopEmitting);
 }
