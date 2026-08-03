@@ -15,6 +15,6 @@ public class WaveTotalTime : MonoBehaviour
     public void TotalTime()
     {
         float time = Time.time;
-        _text.text = _view.TotalTime.ToString();
+        _text.text = _view.TotalTime.ToString("F1");
     }   
 }
