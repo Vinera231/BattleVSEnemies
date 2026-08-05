@@ -625,6 +625,7 @@ Transform:
   m_Children:
   - {fileID: 2065493189860720943}
   - {fileID: 6045207580312284337}
+  - {fileID: 9119295211180461401}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1087178890326134753
@@ -744,7 +745,8 @@ MonoBehaviour:
   _fireSpreadRadius: 1
   _bullets: 20
   _animator: {fileID: 6002438986551568146}
-  EasyBossKilled: 0
+  _staffAnimation: {fileID: 733747051348678681}
+  KingBossKilled: 0
 --- !u!1 &7099604365031243988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,4 +1145,81 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3651813b8e7f9fb44983f5ee131eb8a3, type: 3}
   m_PrefabInstance: {fileID: 4103811596830798401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8891972308043362848
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5065033212600556928}
+    m_Modifications:
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302105431605670925, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: m_Name
+      value: Staff
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162891688535665209, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 4185402127882155950}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+--- !u!114 &733747051348678681 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8162891688535665209, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+  m_PrefabInstance: {fileID: 8891972308043362848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f975492b2a5d62841b91aa904da99da9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &9119295211180461401 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 425765117693394809, guid: 61f50a049d89aed4bb5726aef041e153, type: 3}
+  m_PrefabInstance: {fileID: 8891972308043362848}
   m_PrefabAsset: {fileID: 0}

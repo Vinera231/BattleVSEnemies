@@ -6,6 +6,7 @@ public class KingBoss : Enemy
 {
     [SerializeField] private int _bullets;
     [SerializeField] private EnemyBossAnimator _animator;
+    [SerializeField] private StaffAnimation _staffAnimation;
 
     private Score _score;
     private EnemySpawner _enemySpawner;
@@ -69,6 +70,8 @@ public class KingBoss : Enemy
                 {
                     for (int j = 0; j < count; j++)
                     {
+                        _staffAnimation.OnApeelEnemy();
+                        _staffAnimation.OnHealthEnemy();
                         Enemy enemy = _enemySpawner.SpawnHamer(transform.position);
                         Enemy enemy1 = _enemySpawner.SpawnEnemy(transform.position);
                         Enemy enemy2 = _enemySpawner.SpawnSpeedy(transform.position);
