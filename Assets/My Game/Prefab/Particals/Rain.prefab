@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.4852941, g: 0.4852941, b: 0.4852941, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0, g: 0.14885426, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4915,7 +4915,7 @@ GameObject:
   - component: {fileID: 1172081452124834315}
   - component: {fileID: 1172081452124834312}
   m_Layer: 0
-  m_Name: CFXR4 Rain Splashes
+  m_Name: Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5127,7 +5127,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.4852941, g: 0.4852941, b: 0.4852941, a: 1}
-      maxColor: {r: 0.90099996, g: 0.90099996, b: 0.90099996, a: 0.8}
+      maxColor: {r: 0, g: 0.052785397, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9680,7 +9680,7 @@ ParticleSystemRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172081452124834319}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -9696,7 +9696,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2beba2f11be47c4b93abe40da54b177, type: 2}
+  - {fileID: 2100000, guid: c65d4247d71e5fa4a9cadd4c755ce32d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

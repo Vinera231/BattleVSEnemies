@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cd7c6a1c3b83c64eb2d9494eb345753, type: 3}
-  m_Name: King
+  m_Name: Father
   m_EditorClassIdentifier: 
-  _name: King
-  _description: 'This Finall Boss in EasylMode have 10000 Hp damage 60,HardMode have
-    10000Hp 70 damage.
+  _name: Father
+  _description: 'This Finall Boss in NormalMode have 20000 Hp damage 60..
 
-    Reward 500 point.
+    Reward
+    1000 point.
 
-    Interesting Fact: King, grandfather
-    SmallBrother and BigBrother.
+    Interesting Fact:Father have 2 Sons:George.Chris.
 
-    Family hierarchy:Huge.'
+    Family
+    hierarchy:Huge.'
   _preview: {fileID: 21300000, guid: cab34dac368405949b3f8bd28681c664, type: 3}
   _opened: 0

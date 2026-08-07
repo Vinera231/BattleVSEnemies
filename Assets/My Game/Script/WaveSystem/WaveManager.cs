@@ -10,8 +10,10 @@ public class WaveManager : MonoBehaviour
 
     private float _amount = 100f;
     private int _currentWaveIndex = 0;
+    private int _waveIndex = 20;
 
     public event Action<int> WaveStarted;
+    public event Action<int> WaveSpecialStarted;
     public event Action AllWavesFinished;
     public event Action<Enemy> EnemySpawned;
     public event Action<Enemy> EnemyDied;
@@ -42,6 +44,9 @@ public class WaveManager : MonoBehaviour
 
         if (_currentWaveIndex == 10)
             AddHealthValue();
+
+        if (_currentWaveIndex == 19)
+            StartSpecialWave();
     }
 
     private void OnWaveFinished()
@@ -60,6 +65,17 @@ public class WaveManager : MonoBehaviour
 
         if (_currentWaveIndex >= _waves.Count)
             AllWavesFinished?.Invoke();
+    }
+
+    public void StartSpecialWave()
+    {
+        Wave wave = _waves[_waveIndex];
+        wave.StartSpawn();
+        wave.Finished += OnWaveFinished;
+        wave.EnemyDied += OnEnemyDied;
+        wave.Spawned += OnEnemySpawned;
+        Vector2 spawnPosition = transform.position;
+        WaveSpecialStarted?.Invoke(_waveIndex);
     }
 
     private void OnEnemySpawned(Enemy enemy) =>

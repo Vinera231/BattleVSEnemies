@@ -12574,6 +12574,10 @@ PrefabInstance:
       propertyPath: _enemyBossKing
       value: 
       objectReference: {fileID: 4185402127882155950, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
+    - target: {fileID: 2348078319213245716, guid: 771e1298fe0d12e499f1cc8644bfbb31, type: 3}
+      propertyPath: _enemyfatherBoss
+      value: 
+      objectReference: {fileID: 1257074850187254137, guid: 504e0edd923723349abb62667cdc76b0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43056,6 +43060,10 @@ PrefabInstance:
       propertyPath: _enemyBossKing
       value: 
       objectReference: {fileID: 4185402127882155950, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
+    - target: {fileID: 2348078319213245716, guid: 771e1298fe0d12e499f1cc8644bfbb31, type: 3}
+      propertyPath: _enemyfatherBoss
+      value: 
+      objectReference: {fileID: 1257074850187254137, guid: 504e0edd923723349abb62667cdc76b0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -57518,6 +57526,10 @@ PrefabInstance:
       propertyPath: _enemyBossKing
       value: 
       objectReference: {fileID: 4185402127882155950, guid: 24ef5551cbf65bc459761cdd3fcf1361, type: 3}
+    - target: {fileID: 7880760948880347954, guid: b0dbd15d61258f647bba9201bfdd8046, type: 3}
+      propertyPath: _enemyfatherBoss
+      value: 
+      objectReference: {fileID: 1257074850187254137, guid: 504e0edd923723349abb62667cdc76b0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

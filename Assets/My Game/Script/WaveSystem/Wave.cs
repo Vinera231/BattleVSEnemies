@@ -217,10 +217,12 @@ public class Wave : MonoBehaviour
             _countRegen--;
         }
     }
+
     protected void InvokeEnemySpawn(Enemy enemy)
     {
         Spawned?.Invoke(enemy);
     }
+
     private void OnDied(Enemy enemy)
     {
         _enemies.Remove(enemy);

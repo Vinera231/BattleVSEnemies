@@ -25,10 +25,10 @@ public class KingBoss : Enemy
         { 8000, 20 },
         { 6000, 15 },
         { 5000, 10 },
-        { 4000, 3 },
+        { 4000, 2 },
         { 3000, 10 },
         { 2000, 15 },
-        { 1000, 5 },
+        { 1000, 3 },
     };
 
     protected override void Awake()
