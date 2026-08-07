@@ -7,6 +7,7 @@ public class SkyReplacer : MonoBehaviour
     [SerializeField] private WaveManager _waveManager;
     [SerializeField] private List<SkyInfo> _infos;
     [SerializeField] private Light _night;
+    [SerializeField] private GameObject _rain;
 
     private void OnEnable() =>    
         _waveManager.WaveStarted += OnWaveChanged;
@@ -27,6 +28,12 @@ public class SkyReplacer : MonoBehaviour
 
         if (_waveManager.CurrentWaveIndex == 10)
             _night.color = Color.black;
+
+        if (_waveManager.CurrentWaveIndex == 18)
+        {
+            _rain.SetActive(true);
+            SfxPlayer.Instance.PlayRainSound();
+        }
     }
 }
 

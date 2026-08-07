@@ -37,6 +37,7 @@ public class SfxPlayer : MonoBehaviour
     [SerializeField] private AudioClip _brokenGlassesSound;
     [SerializeField] private AudioClip _bleedSound;
     [SerializeField] private AudioClip _extraBulletSound;
+    [SerializeField] private AudioClip _rainSound;
     [SerializeField] private AudioClip _gameOverSound;
 
     private void Awake()
@@ -145,6 +146,9 @@ public class SfxPlayer : MonoBehaviour
 
     public void PlayExtraSound() =>
    _source.PlayOneShot(_extraBulletSound);
+  
+    public void PlayRainSound() =>
+   _source.PlayOneShot(_rainSound);
   
     public void PlayGameOverSound() =>
    _source.PlayOneShot(_gameOverSound);
