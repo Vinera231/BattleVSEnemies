@@ -108,6 +108,9 @@ public class Enemy : MonoBehaviour, IDamageble
 
     public virtual void TakeDamage(float value) =>
         _health.TakeDamage(value);
+   
+    public virtual void TakeHealth(float value) =>
+        _health.RecoverHealth(value);
 
     public void Freeze()
     {

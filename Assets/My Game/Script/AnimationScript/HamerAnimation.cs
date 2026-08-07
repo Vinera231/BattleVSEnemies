@@ -8,15 +8,11 @@ public class HamerAnimation : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Enemy _enemy;
 
-    private void OnEnable()
-    {
+    private void OnEnable() =>   
         _enemy.Attacked += OnAttack;
-    }
 
-    private void OnDisable()
-    {
+    private void OnDisable() =>   
         _enemy.Attacked -= OnAttack;
-    }
 
     private void OnAttack()
     {
@@ -24,8 +20,6 @@ public class HamerAnimation : MonoBehaviour
         OnHammerHit();
     }
 
-    private void OnHammerHit()
-    {
+    private void OnHammerHit() =>    
         SfxPlayer.Instance.PlayHammerEnemy();
-    }
 }

@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.99}
+  m_AnchoredPosition: {x: 0, y: 3.089}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8142726885203101008
@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 1181340327341451449}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.75, z: 0}
+  m_LocalPosition: {x: 0, y: 11.44, z: 0}
   m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -603,6 +603,7 @@ GameObject:
   - component: {fileID: 6002438986551568146}
   - component: {fileID: 7929237923332471853}
   - component: {fileID: 4185402127882155950}
+  - component: {fileID: 1711231089104285477}
   m_Layer: 7
   m_Name: KingEnemy
   m_TagString: Enemy
@@ -745,8 +746,26 @@ MonoBehaviour:
   _fireSpreadRadius: 1
   _bullets: 20
   _animator: {fileID: 6002438986551568146}
+  _bossHealth: {fileID: 1711231089104285477}
   _staffAnimation: {fileID: 733747051348678681}
   KingBossKilled: 0
+--- !u!114 &1711231089104285477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6837979829544711026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1c298c64da6c34ca3c8849f3e56ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radious: 10
+  _health: 500
+  _enemy:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &7099604365031243988
 GameObject:
   m_ObjectHideFlags: 0
