@@ -110,7 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1.2000184, y: -18.52002}
+  m_AnchoredPosition: {x: -1.2000184, y: -20.12002}
   m_SizeDelta: {x: 80, y: 10}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &542654184738487815
@@ -246,7 +246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -5.600006, y: -6.1}
+  m_AnchoredPosition: {x: -5.600006, y: -7}
   m_SizeDelta: {x: 80, y: 10}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8702870267816749605
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -45.528717, y: 0, z: 35.446728, w: 0.11234665}
+  m_margin: {x: -45.528717, y: 0, z: 35.446728, w: 5.250354}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -386,7 +386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1.2000184, y: -25.500011}
+  m_AnchoredPosition: {x: -1.2000184, y: -27.100012}
   m_SizeDelta: {x: 80, y: 10}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5043541991921415633
@@ -523,7 +523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1.2000184, y: -12}
+  m_AnchoredPosition: {x: -1.2000184, y: -13.6}
   m_SizeDelta: {x: 80, y: 10}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8740502672816246705
@@ -992,10 +992,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1.Killing enemies gives you points.\n2.You can use points to buy bullets
-    and buffs.\n3.Enemies drop bullets when you killed.\n4.Don't let the enemy kill
-    you!\n5.Right mouse button \u2014 melee attack. \n6.Left mouse button \u2014
-    shoot.\n7. Press \"~\" to open the console.\n"
+  m_text: "1. Killing enemies gives you points.\n2. You can use points to buy bullets
+    and buffs.\n3. Enemies drop bullets when you killed.\n4. Don't let the enemy
+    kill you!\n5. Right mouse button - melee attack. \n6. Left mouse button - shoot.\n7.
+    Press \"~\" to open the console.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1176,7 +1176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 79, y: -351}
+  m_AnchoredPosition: {x: 79, y: -307}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3395467618215915587
@@ -1234,8 +1234,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
