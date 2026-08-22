@@ -3828,7 +3828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version:0.6.7
+  m_text: 'Version:0.6.8
 
 
 '
@@ -6912,7 +6912,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 1173513738}
   _encyclopedia: {fileID: 1613917043}
-  _previousArrow: {fileID: 1173513735}
 --- !u!114 &1173513738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8658,7 +8657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 1506902518}
   _encyclopedia: {fileID: 1613917043}
-  _nextArrow: {fileID: 1506902515}
 --- !u!114 &1506902518
 MonoBehaviour:
   m_ObjectHideFlags: 0
