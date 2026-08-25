@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameOverPanel : MonoBehaviour
@@ -22,6 +20,7 @@ public class GameOverPanel : MonoBehaviour
     {
         _panelGameOverPhase1.SetActive(isFirstPhase);
         _panelGameOverPhase2.SetActive(isFirstPhase == false);
+        PauseSwitcher.Instance.PlayGame();
     }
 
     public void HideAll()

@@ -1621,6 +1621,10 @@ PrefabInstance:
       value: HealthPotion
       objectReference: {fileID: 0}
     - target: {fileID: 5984532016702433567, guid: 49546b30a7d246c4eafcd60c8a9bd053, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 1257074850187254137}
+    - target: {fileID: 5984532016702433567, guid: 49546b30a7d246c4eafcd60c8a9bd053, type: 3}
       propertyPath: _animator
       value: 
       objectReference: {fileID: 5151014638536100369}
