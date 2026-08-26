@@ -3456,7 +3456,7 @@ MonoBehaviour:
   _countAngryHamer: 0
   _countBoss: 0
   _countEasyBoss: 0
-  _countHalmer: 0
+  _countHalmer: 1
   _countMonsterHalmer: 0
   _countIron: 0
   _countExplorel: 0
@@ -3464,7 +3464,7 @@ MonoBehaviour:
   _countFrost: 0
   _countRegen: 0
   _timeBeforeSpawn: 10
-  _text: FinalWave
+  _text: Nineteenth
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
   - {fileID: 446796788}
@@ -6905,7 +6905,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 0
+  _timeBeforeSpawn: 10
   _text: FinalWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -8678,7 +8678,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 10
+  _timeBeforeSpawn: 8
   _text: ForthWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -10262,7 +10262,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 10
+  _timeBeforeSpawn: 8
   _text: FirstWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -18644,8 +18644,8 @@ MonoBehaviour:
     _waveIndex: 15
   - _sky: {fileID: 2100000, guid: 8426cf3d3939a7d419671f3d5c269c0b, type: 2}
     _waveIndex: 18
-  _night: {fileID: 705507994}
-  _rain: {fileID: 1806397945}
+  _light: {fileID: 705507994}
+  _rain: {fileID: 1806397948}
 --- !u!1001 &782903380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24107,7 +24107,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 10
+  _timeBeforeSpawn: 8
   _text: FithteenWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -26747,7 +26747,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 15
+  _timeBeforeSpawn: 10
   _text: NineWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -27632,7 +27632,7 @@ MonoBehaviour:
   _countExplorelMonster: 4
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 8
+  _timeBeforeSpawn: 6
   _text: Invasion
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -29078,7 +29078,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 6
+  _timeBeforeSpawn: 8
   _text: Time to Explosion
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -38264,7 +38264,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 10
+  _timeBeforeSpawn: 8
   _text: 'SecondWave '
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -40001,7 +40001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.883
+      value: 23.47
       objectReference: {fileID: 0}
     - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40035,19 +40035,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198913305880061536, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
---- !u!1 &1806397945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1624732227010082, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
-  m_PrefabInstance: {fileID: 1806397944}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1806397946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+  m_PrefabInstance: {fileID: 1806397944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1806397948 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198913305880061536, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
   m_PrefabInstance: {fileID: 1806397944}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1810720491
@@ -40484,7 +40488,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 6
   _countRegen: 6
-  _timeBeforeSpawn: 8
+  _timeBeforeSpawn: 6
   _text: Combination of Elements
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -43969,7 +43973,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 8
+  _timeBeforeSpawn: 6
   _text: ForthteenWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -45599,7 +45603,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 12
+  _timeBeforeSpawn: 8
   _text: 'ThirdWave  '
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -48842,7 +48846,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 20
+  _timeBeforeSpawn: 12
   _text: TenthWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints: []
@@ -67072,7 +67076,7 @@ MonoBehaviour:
   _buyBullet: {fileID: 8300000, guid: fcd4a097937ae4245a02a520796a0144, type: 3}
   _frostSound: {fileID: 8300000, guid: fb4757e118df4f148ad655816a6c561b, type: 3}
   _frostShootSound: {fileID: 8300000, guid: 63aadab6bab81a043a2f30cb3988461a, type: 3}
-  _fireSound: {fileID: 8300000, guid: d98ec4a49822f674cb35ff7c7169203a, type: 3}
+  _fireSound: {fileID: 8300000, guid: 80477f01758af184baf90abe693b4dfb, type: 3}
   _fireShootSound: {fileID: 8300000, guid: f59d82aa5c062df46b3a491cdcb7fbda, type: 3}
   _gunSound: {fileID: 8300000, guid: 13a54fa0a41015d4ab968592e814c84e, type: 3}
   _explorelSound: {fileID: 8300000, guid: 69c280b3f163c894785c52f69f5bca39, type: 3}

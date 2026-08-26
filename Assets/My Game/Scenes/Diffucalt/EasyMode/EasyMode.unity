@@ -6171,7 +6171,7 @@ MonoBehaviour:
   _countExplorelMonster: 0
   _countFrost: 0
   _countRegen: 0
-  _timeBeforeSpawn: 0
+  _timeBeforeSpawn: 10
   _text: EighteenthWave
   _lootSpawner: {fileID: 1159280641}
   _spawnPoints:
@@ -22675,8 +22675,8 @@ MonoBehaviour:
     _waveIndex: 10
   - _sky: {fileID: 2100000, guid: f8a60d169ab8a46b09c9b01a3e51601f, type: 2}
     _waveIndex: 14
-  _night: {fileID: 705507994}
-  _rain: {fileID: 0}
+  _light: {fileID: 705507994}
+  _rain: {fileID: 1822718899}
 --- !u!1001 &782903380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27178,6 +27178,7 @@ Transform:
   - {fileID: 1814895495}
   - {fileID: 1101160671}
   - {fileID: 1804130981}
+  - {fileID: 1822718898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &928979736
@@ -53636,6 +53637,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1fc5bb90ac285e4486771552d63bcb8, type: 3}
+--- !u!1001 &1822718897
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 928695647}
+    m_Modifications:
+    - target: {fileID: 1624732227010082, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_Name
+      value: Rain Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624732227010082, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2568357
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6507
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.958817
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20.465
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.04372215
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.04372215
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7057538
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7057538
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -152.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+--- !u!4 &1822718898 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+  m_PrefabInstance: {fileID: 1822718897}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1822718899 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198913305880061536, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+  m_PrefabInstance: {fileID: 1822718897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1825868317
 GameObject:
   m_ObjectHideFlags: 0
@@ -66269,7 +66349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _source: {fileID: 4349893523909249507}
   _sourceSaw: {fileID: 1275572535}
-  _stopMusic: {fileID: 0}
+  _stopMusic: {fileID: 358669107}
   _cursourEnterButton: {fileID: 8300000, guid: baa1aea4c738c374aa746d2e1eae1e43, type: 3}
   _clickButton: {fileID: 8300000, guid: 436c8a3139b8c4d44a5e55ce2737cffc, type: 3}
   _notBullet: {fileID: 8300000, guid: a134c92a56467854d886b636f24585f9, type: 3}
@@ -66280,7 +66360,7 @@ MonoBehaviour:
   _buyBullet: {fileID: 8300000, guid: fcd4a097937ae4245a02a520796a0144, type: 3}
   _frostSound: {fileID: 8300000, guid: fb4757e118df4f148ad655816a6c561b, type: 3}
   _frostShootSound: {fileID: 8300000, guid: 63aadab6bab81a043a2f30cb3988461a, type: 3}
-  _fireSound: {fileID: 8300000, guid: d98ec4a49822f674cb35ff7c7169203a, type: 3}
+  _fireSound: {fileID: 8300000, guid: 80477f01758af184baf90abe693b4dfb, type: 3}
   _fireShootSound: {fileID: 8300000, guid: f59d82aa5c062df46b3a491cdcb7fbda, type: 3}
   _gunSound: {fileID: 8300000, guid: 13a54fa0a41015d4ab968592e814c84e, type: 3}
   _explorelSound: {fileID: 8300000, guid: 69c280b3f163c894785c52f69f5bca39, type: 3}

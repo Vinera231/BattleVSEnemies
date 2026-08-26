@@ -19,6 +19,7 @@ public class FatherBoss : Enemy
     private HashSet<float> _usedThresholds;
 
     public int FatherBossKilled;
+    private bool _specialWaveCalled;
 
     private readonly Dictionary<float, int> _thresholds = new()
     {
@@ -117,16 +118,22 @@ public class FatherBoss : Enemy
             SpawnEnemies(1, _enemySpawner.SpawnEnemy);
 
         if (value <= 4000)
-        {
             _potionAnimation.OnDrinkHealthAnimation();
-            
-            if(value == 9000)
-                Destroy(_potionAnimation);
-        }
+
+        if (value == 9000)
+            Destroy(_potionAnimation);
+
 
         if (value <= 8000)
         {
             _radioAnimation.OnAnimationRadio();
+
+            if (_specialWaveCalled == false)
+            {
+                _specialWaveCalled = true;
+                _wave.StartSpecialWave();
+            }
+
             _wave.StartSpecialWave();
         }
     }

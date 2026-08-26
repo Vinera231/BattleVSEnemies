@@ -11,6 +11,7 @@ public class WaveManager : MonoBehaviour
     private float _amount = 100f;
     private int _currentWaveIndex = 0;
     private int _waveIndex = 20;
+    private bool _specialWaveStarte;
 
     public event Action<int> WaveStarted;
     public event Action<int> WaveSpecialStarted;
@@ -44,9 +45,6 @@ public class WaveManager : MonoBehaviour
 
         if (_currentWaveIndex == 10)
             AddHealthValue();
-
-        if (_currentWaveIndex == 19)
-            StartSpecialWave();
     }
 
     private void OnWaveFinished()
@@ -57,8 +55,8 @@ public class WaveManager : MonoBehaviour
         wave.Spawned -= OnEnemySpawned;
 
         _score.Increaze(wave.ScoreReward);
-        ++_currentWaveIndex;
 
+        ++_currentWaveIndex;
 
         if (_currentWaveIndex < _waves.Count)
             StartWave();
@@ -69,15 +67,36 @@ public class WaveManager : MonoBehaviour
 
     public void StartSpecialWave()
     {
+        if (_specialWaveStarte)
+            return;
+
+        if (_waveIndex < 0 || _waveIndex >= _waves.Count)
+            Debug.LogError($"Special wave index {_waveIndex} is invalid.");
+
+        _specialWaveStarte = true;
+
         Wave wave = _waves[_waveIndex];
+      
         wave.StartSpawn();
-        wave.Finished += OnWaveFinished;
+        wave.Finished += FinishSpecialWave;
         wave.EnemyDied += OnEnemyDied;
         wave.Spawned += OnEnemySpawned;
-        Vector2 spawnPosition = transform.position;
-        WaveSpecialStarted?.Invoke(_waveIndex);
+
+        WaveSpecialStarted?.Invoke(_waveIndex); 
     }
 
+    public void FinishSpecialWave()
+    {
+        Wave wave = _waves[_waveIndex];
+      
+        wave.StartSpawn();
+        wave.Finished -= FinishSpecialWave;
+        wave.EnemyDied -= OnEnemyDied;
+        wave.Spawned -= OnEnemySpawned;
+
+        _score.Increaze(wave.ScoreReward);
+
+    }
     private void OnEnemySpawned(Enemy enemy) =>
         EnemySpawned?.Invoke(enemy);
 

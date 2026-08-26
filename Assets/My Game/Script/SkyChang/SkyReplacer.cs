@@ -6,8 +6,8 @@ public class SkyReplacer : MonoBehaviour
 {
     [SerializeField] private WaveManager _waveManager;
     [SerializeField] private List<SkyInfo> _infos;
-    [SerializeField] private Light _night;
-    [SerializeField] private GameObject _rain;
+    [SerializeField] private Light _light;
+    [SerializeField] private ParticleSystem _rain;
 
     private void OnEnable() =>    
         _waveManager.WaveStarted += OnWaveChanged;
@@ -22,17 +22,18 @@ public class SkyReplacer : MonoBehaviour
             if (waveIndex == info.WaveIndex)
             {
                 RenderSettings.skybox = info.Sky;
-                return;
+                break;
             }
         }
 
         if (_waveManager.CurrentWaveIndex == 10)
-            _night.color = Color.black;
+            _light.color = Color.black;
 
         if (_waveManager.CurrentWaveIndex == 18)
         {
-            _rain.SetActive(true);
             SfxPlayer.Instance.PlayRainSound();
+            _rain.gameObject.SetActive(true);
+            _rain.Play();
         }
     }
 }
