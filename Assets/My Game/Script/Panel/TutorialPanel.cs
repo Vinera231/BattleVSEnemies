@@ -26,6 +26,7 @@ public class TutorialPanel : MonoBehaviour
         
         if ( _currentIndex < _hideIcon.Length)
        _hideIcon[_currentIndex].SetActive(true);
+        SfxPlayer.Instance.PlayStopSound();
     }
 
     public void Hide()
@@ -34,5 +35,6 @@ public class TutorialPanel : MonoBehaviour
 
         foreach (var icon in _hideIcon)
             icon.SetActive(true);
+        SfxPlayer.Instance.PlaySound();
     }
 }

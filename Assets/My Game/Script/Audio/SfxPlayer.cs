@@ -154,5 +154,8 @@ public class SfxPlayer : MonoBehaviour
    _source.PlayOneShot(_gameOverSound);
     
     public void PlayStopSound() =>
-  _stopMusic.Stop();
+    _stopMusic.Stop();
+   
+    public void PlaySound() =>
+    _stopMusic.Play();
 }
