@@ -9027,7 +9027,7 @@ MonoBehaviour:
   _source: {fileID: 358669107}
   _twoPhaseMusic: {fileID: 8300000, guid: c403ffd0cbb918942adcd8bdef3fbcdf, type: 3}
   _dabtStepMusic: {fileID: 8300000, guid: 2270585766f7c56449fe0e682266a317, type: 3}
-  _bossMusic: {fileID: 8300000, guid: e9c85fe237840514a804e23b748ec657, type: 3}
+  _bossMusic: {fileID: 8300000, guid: 303298a9e864481408998a6f82bee052, type: 3}
   _finalSoundMusic: {fileID: 8300000, guid: 6e62c2c084dc01045bb2daccf306f29f, type: 3}
   _beforeBoss: {fileID: 427512791}
   _afterBoss: {fileID: 427512791}
