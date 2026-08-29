@@ -9029,9 +9029,9 @@ MonoBehaviour:
   _dabtStepMusic: {fileID: 8300000, guid: 2270585766f7c56449fe0e682266a317, type: 3}
   _bossMusic: {fileID: 8300000, guid: 303298a9e864481408998a6f82bee052, type: 3}
   _finalSoundMusic: {fileID: 8300000, guid: 6e62c2c084dc01045bb2daccf306f29f, type: 3}
-  _beforeBoss: {fileID: 427512791}
-  _afterBoss: {fileID: 427512791}
-  _beforeFinal: {fileID: 1201542489}
+  _beforeBoss: {fileID: 1182479980}
+  _afterBoss: {fileID: 2140147766}
+  _beforeFinal: {fileID: 133840136}
 --- !u!1001 &360707152
 PrefabInstance:
   m_ObjectHideFlags: 0

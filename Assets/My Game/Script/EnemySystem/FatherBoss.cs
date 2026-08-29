@@ -19,7 +19,9 @@ public class FatherBoss : Enemy
     private HashSet<float> _usedThresholds;
 
     public int FatherBossKilled;
+    private float amount = 5000f;
     private bool _specialWaveCalled;
+    private bool _isDrinkPotion = true;
 
     private readonly Dictionary<float, int> _thresholds = new()
     {
@@ -117,11 +119,12 @@ public class FatherBoss : Enemy
         if (_bulletSpawner.BulletCount < _bullets)
             SpawnEnemies(1, _enemySpawner.SpawnEnemy);
 
-        if (value <= 4000)
+        if (value <= 4000 &&_isDrinkPotion)
+        {      
+            _isDrinkPotion = false;
             _potionAnimation.OnDrinkHealthAnimation();
-
-        if (value == 9000)
-            Destroy(_potionAnimation);
+            TakeHealth(amount);        
+        }
 
 
         if (value <= 8000)
