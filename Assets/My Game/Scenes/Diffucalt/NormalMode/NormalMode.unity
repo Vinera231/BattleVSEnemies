@@ -49333,6 +49333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CursorShower
       objectReference: {fileID: 0}
+    - target: {fileID: 558249010700611332, guid: d470a113c0a97934796c096d644dffbb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8712982197440808691, guid: d470a113c0a97934796c096d644dffbb, type: 3}
       propertyPath: _isShow
       value: 0
@@ -66935,11 +66939,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3044295046031641417, guid: e17df097c38203542be9ed2909f9a364, type: 3}
       propertyPath: m_Size.y
-      value: 0.90171194
+      value: 1.302653
       objectReference: {fileID: 0}
     - target: {fileID: 3044295046031641417, guid: e17df097c38203542be9ed2909f9a364, type: 3}
       propertyPath: m_Center.y
-      value: 0.43519828
+      value: 0.6356689
       objectReference: {fileID: 0}
     - target: {fileID: 4557382463656393112, guid: e17df097c38203542be9ed2909f9a364, type: 3}
       propertyPath: m_Name

@@ -9,7 +9,7 @@ public class SpeedPotionBuffShop : Shop
     [SerializeField] private PlayerMovement _movement;
 
     protected override bool TryApplyItem() =>
-           _inventory.TryAddBuff(_boostSprite,Key, OnApply);
+           _inventory.TryAddBuff(_boostSprite, Key, OnApply);
 
     private void OnApply()
     {
@@ -17,6 +17,6 @@ public class SpeedPotionBuffShop : Shop
         Invoke(nameof(ResetBuff), _timeInSeconds);
     }
 
-    private void ResetBuff() =>  
+    private void ResetBuff() =>
         _movement.ResetToBaseSpeed(_amountSpeed);
 }

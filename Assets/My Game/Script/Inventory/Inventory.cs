@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private InventorySelector _selector;
     [SerializeField] private int _buffLimit;
 
+
     private int _buffCount;
 
     private void OnEnable() =>
@@ -31,6 +32,7 @@ public class Inventory : MonoBehaviour
         _selector.AddSlot(inventorySlot);
 
         return true;
+
     }
 
     private void OnBuffApplied() =>

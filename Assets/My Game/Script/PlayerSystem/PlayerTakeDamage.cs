@@ -34,10 +34,11 @@ public class PlayerTakeDamage : MonoBehaviour
     public void OnDied()
     {
         Died?.Invoke();
+        CursorShower.Instance.Show();
         SfxPlayer.Instance.PlayDiePlayerSound();    
         SfxPlayer.Instance.PlayGameOverSound();    
         SfxPlayer.Instance.PlayStopSound();    
         PauseSwitcher.Instance.PauseGame();
-        CursorShower.Instance.Show();
+        Destroy(gameObject);
     }
 }

@@ -31422,6 +31422,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3044295046031641417, guid: e17df097c38203542be9ed2909f9a364, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2279507
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044295046031641417, guid: e17df097c38203542be9ed2909f9a364, type: 3}
+      propertyPath: m_Center.y
+      value: 0.5983177
+      objectReference: {fileID: 0}
     - target: {fileID: 4557382463656393112, guid: e17df097c38203542be9ed2909f9a364, type: 3}
       propertyPath: m_Name
       value: BushRedBerries

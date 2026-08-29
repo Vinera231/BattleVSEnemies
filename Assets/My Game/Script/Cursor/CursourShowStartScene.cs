@@ -4,12 +4,7 @@ public class CursourShowStartScene : MonoBehaviour
 {
     private void Start()
     {
-        Show();
+        CursorShower.Instance.Show();
     }
 
-    public void Show()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
 }

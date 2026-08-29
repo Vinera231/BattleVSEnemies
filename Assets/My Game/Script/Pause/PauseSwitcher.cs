@@ -22,7 +22,6 @@ public class PauseSwitcher : MonoBehaviour
 
             return;
         }
-
         Destroy(gameObject);
     }
 

@@ -14,6 +14,7 @@ public abstract class Shop : MonoBehaviour
     [SerializeField] private bool _isConsumable = true;
     [SerializeField] private GameObject _signPrefad;
 
+    private bool _isBought;
     protected Player Player;
 
     protected virtual void Awake()
@@ -60,24 +61,40 @@ public abstract class Shop : MonoBehaviour
                 _text.color = Color.red;
         }
     }
-  
+
     protected void ResetPrice()
     {
         _price = 0;
         _text.text = _price.ToString();
     }
-   
+
     private void OnBuyPressed()
     {
-        if (Player != null && _score.TrySpendScore(_price))
-        {
-            if (TryApplyItem())
-            {
-                _sfx.PlayBuyItem();
-            }
+        if (Player == null)
+            return;
 
-            if (_isConsumable)
-                Destroy(gameObject);
+        if (_isConsumable)
+        {
+            if (_score.Value < _price)
+                return;
+
+            if (!TryApplyItem())
+                return;
+
+            _score.TrySpendScore(_price);
+            _sfx.PlayBuyItem();
+            Destroy(gameObject);
+        }
+        else
+        {
+            if (_score.Value < _price)
+                return;
+
+            if (!TryApplyItem())
+                return;
+
+            _score.TrySpendScore(_price);
+            _sfx.PlayBuyItem();
         }
     }
 
