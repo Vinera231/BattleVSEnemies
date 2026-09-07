@@ -35831,7 +35831,6 @@ MonoBehaviour:
   _isConsumable: 1
   _signPrefad: {fileID: 1599101190}
   _inventory: {fileID: 989577696}
-  _boostSprite: {fileID: 21300000, guid: 0aefe6822fa862c4fa826d7e83817157, type: 3}
   _countSlots: 1
 --- !u!135 &1632675938
 SphereCollider:

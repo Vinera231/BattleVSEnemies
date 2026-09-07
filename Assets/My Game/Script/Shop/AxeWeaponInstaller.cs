@@ -7,6 +7,7 @@ public class AxeWeaponInstaller : Shop
     protected override bool TryApplyItem()
     {
         _weapon.SetAxe();
+        ResetPrice();
         return true;
     }
 }

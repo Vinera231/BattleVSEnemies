@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     {
         _healthValue += health;
         _maxValue += health;
-        _view.ShowInfo(health,_maxValue);
+        _view.ShowInfo(_maxValue,_healthValue);
     }
 
     public void TakeDamage(float damage)
