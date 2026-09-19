@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EncyclopediaPanel : MonoBehaviour
+public class BackgroundPanel : MonoBehaviour
 {
     [SerializeField] private ButtonClosePanel _closePanel;
 
@@ -15,7 +15,7 @@ public class EncyclopediaPanel : MonoBehaviour
 
     private void Hide()
     {
-       gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void Show()
