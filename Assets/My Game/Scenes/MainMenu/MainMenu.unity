@@ -12969,6 +12969,7 @@ GameObject:
   - component: {fileID: 1578932687}
   - component: {fileID: 1578932686}
   - component: {fileID: 1578932685}
+  - component: {fileID: 1578932688}
   m_Layer: 5
   m_Name: Bratkevich
   m_TagString: Untagged
@@ -13077,6 +13078,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578932683}
   m_CullTransparentMesh: 1
+--- !u!114 &1578932688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578932683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162499e6db55814409417bfe3c4ef076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AuthorBratkevich
+  _bratkevich: {fileID: 1578932685}
 --- !u!1001 &1579984253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13232,6 +13246,7 @@ GameObject:
   - component: {fileID: 1603034630}
   - component: {fileID: 1603034629}
   - component: {fileID: 1603034628}
+  - component: {fileID: 1603034631}
   m_Layer: 5
   m_Name: VVittox
   m_TagString: Untagged
@@ -13340,6 +13355,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603034626}
   m_CullTransparentMesh: 1
+--- !u!114 &1603034631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603034626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b225412bf713be74d9052d374f50156f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AuthorVVittoks
+  _vvittoks: {fileID: 1603034628}
 --- !u!4 &1605560619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310, type: 3}
