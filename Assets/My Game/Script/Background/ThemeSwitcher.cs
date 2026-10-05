@@ -9,6 +9,13 @@ public class ThemeSwitcher : MonoBehaviour
     private void Awake()
     {
         ResetAllThemes();
+
+        for (int i = 0; i < _themes.Length; i++)
+        {
+            bool isUnlock = ThemeSave.isUnlocked(i);
+            _themes[i].SetLock(isUnlock == false);
+        }
+
         _themes[0].SetLock(false);
         _themes[0].SetSelect(true);
         _background.sprite = _themes[0].Sprite;
@@ -32,14 +39,16 @@ public class ThemeSwitcher : MonoBehaviour
 
     public void Unlock(int index)
     {
+        if (index < 0 || index >= _themes.Length)
+            return;
         _themes[index].SetLock(false);
+        ThemeSave.Unlock(index);
     }
 
     private void OnThemeClicked(MenuBox box)
     {
         if (box.IsLocked)
             return;
-        Debug.Log(nameof(OnThemeClicked));
 
         ResetAllThemes();
         box.SetSelect(true);
