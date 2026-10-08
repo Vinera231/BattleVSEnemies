@@ -18,5 +18,6 @@ public class ButtonClosePanel : MonoBehaviour
     public void OnClick()
     {
         PanelClosed?.Invoke();
+        CursorShower.Instance.Show();
     }
 }
