@@ -12,7 +12,7 @@ public class ThemeSwitcher : MonoBehaviour
 
         for (int i = 0; i < _themes.Length; i++)
         {
-            bool isUnlock = ThemeSave.isUnlocked(i);
+            bool isUnlock = SaverSystem.isUnlocked(i);
             _themes[i].SetLock(isUnlock == false);
         }
 
@@ -42,7 +42,7 @@ public class ThemeSwitcher : MonoBehaviour
         if (index < 0 || index >= _themes.Length)
             return;
         _themes[index].SetLock(false);
-        ThemeSave.Unlock(index);
+        SaverSystem.Unlock(index);
     }
 
     private void OnThemeClicked(MenuBox box)

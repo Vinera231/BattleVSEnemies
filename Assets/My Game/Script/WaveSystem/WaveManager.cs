@@ -7,6 +7,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Score _score;
     [SerializeField] private Health _health;
+    [SerializeField] private int[] _wavesUnlockThemes;
+    [SerializeField] private int[] _themesIndexToUnlock;
 
     private float _amount = 100f;
     private int _currentWaveIndex = 0;
@@ -45,6 +47,19 @@ public class WaveManager : MonoBehaviour
 
         if (_currentWaveIndex == 10)
             AddHealthValue();
+
+        int CompleteWave = _currentWaveIndex + 1;
+
+        for (int i = 0; i < _wavesUnlockThemes.Length; i++)
+        {
+            if (_wavesUnlockThemes[i] != CompleteWave)
+                continue;
+
+            if (i >= _themesIndexToUnlock.Length)
+                continue;
+            
+           SaverSystem.Unlock(_themesIndexToUnlock[i]);
+        }
     }
 
     private void OnWaveFinished()
@@ -76,19 +91,19 @@ public class WaveManager : MonoBehaviour
         _specialWaveStarte = true;
 
         Wave wave = _waves[_waveIndex];
-      
+
         wave.StartSpawn();
         wave.Finished += FinishSpecialWave;
         wave.EnemyDied += OnEnemyDied;
         wave.Spawned += OnEnemySpawned;
 
-        WaveSpecialStarted?.Invoke(_waveIndex); 
+        WaveSpecialStarted?.Invoke(_waveIndex);
     }
 
     public void FinishSpecialWave()
     {
         Wave wave = _waves[_waveIndex];
-      
+
         wave.StartSpawn();
         wave.Finished -= FinishSpecialWave;
         wave.EnemyDied -= OnEnemyDied;

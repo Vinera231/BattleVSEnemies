@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public static  class ThemeSave
+public static  class SaverSystem
 {
     public static string SavePath =>
         Path.Combine(Application.persistentDataPath, "themes.json");
@@ -26,6 +26,21 @@ public static  class ThemeSave
         return data.UnlockedThemes.Contains(index);   
     }
 
+    public static int GetSelectTheme()
+    {
+        return Load().SelectedThemes;
+    }
+
+    public static void Select(int index)
+    {
+        ThemeData data = Load();
+
+        if (data.UnlockedThemes.Contains(index) == false)
+            return;
+
+        data.SelectedThemes = index;
+        Save(data);
+    }
 
     private static ThemeData Load()
     {
