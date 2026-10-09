@@ -169,7 +169,6 @@ public class FatherBoss : Enemy
         if (TryGetComponent(out Collider collider))
             Destroy(collider);
 
-        ThemeSave.Unlock(2);
         SfxPlayer.Instance.PlayDieBossSound();
         ParticleSpawner.Instance.CreateBlood(transform.position);
         _animator.PlayDied();
