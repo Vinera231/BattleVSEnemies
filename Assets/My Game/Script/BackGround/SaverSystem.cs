@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public static  class SaverSystem
@@ -10,14 +11,11 @@ public static  class SaverSystem
     public static void Unlock(int index)
     {
         ThemeData data = Load();
-
         if (data.UnlockedThemes.Contains(index))
             return;
 
         data.UnlockedThemes.Add(index);
-
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(SavePath, json);
+        Save(data);
     }
 
     public static bool isUnlocked(int index)
@@ -48,22 +46,29 @@ public static  class SaverSystem
             return new ThemeData();
 
         string json = File.ReadAllText(SavePath);
-
         ThemeData data = JsonUtility.FromJson<ThemeData>(json);
 
-        Save(data);
-        return data ?? new ThemeData();
+        if (data == null)
+            return new ThemeData();
+
+        if(data.UnlockedThemes == null)
+            data.UnlockedThemes = new List<int> ();
+
+        if(data.UnlockedThemes.Contains(0) == false)
+            data.UnlockedThemes.Add(0);
+
+        return data;
     }
 
     private static void Save(ThemeData data)
     {
-        string json = JsonUtility.ToJson(data);
+        string json = JsonUtility.ToJson(data,true);
         File.WriteAllText(SavePath, json);
     }
 
     private class ThemeData
     {
-        public List<int> UnlockedThemes = new();
+        public List<int> UnlockedThemes = new List<int> { 0 };
         public int  SelectedThemes;
     }
 }

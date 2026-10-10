@@ -169,6 +169,13 @@ public class FatherBoss : Enemy
         if (TryGetComponent(out Collider collider))
             Destroy(collider);
 
+        SaverSystem.Unlock(2);
+
+        ThemeSwitcher themeSwitcher = FindAnyObjectByType<ThemeSwitcher>();
+
+        if (themeSwitcher)
+            themeSwitcher.RefreshThemes();
+
         SfxPlayer.Instance.PlayDieBossSound();
         ParticleSpawner.Instance.CreateBlood(transform.position);
         _animator.PlayDied();

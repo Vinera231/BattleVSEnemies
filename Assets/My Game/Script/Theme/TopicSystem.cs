@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ThemaSystem : MonoBehaviour
+public class TopicSystem : MonoBehaviour
 {
     [SerializeField] private Material[] _materialTimeofDay;
     [SerializeField] private Material[] _materialSkyBox;

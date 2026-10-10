@@ -10,15 +10,9 @@ public class ThemeSwitcher : MonoBehaviour
     {
         ResetAllThemes();
 
-        for (int i = 0; i < _themes.Length; i++)
-        {
-            bool isUnlock = SaverSystem.isUnlocked(i);
-            _themes[i].SetLock(isUnlock == false);
-        }
+        bool isUnlock = SaverSystem.isUnlocked(2);    
+        _themes[2].SetLock(isUnlock == false);
 
-        _themes[0].SetLock(false);
-        _themes[0].SetSelect(true);
-        _background.sprite = _themes[0].Sprite;
     }
 
     private void OnEnable()
@@ -37,14 +31,6 @@ public class ThemeSwitcher : MonoBehaviour
         }
     }
 
-    public void Unlock(int index)
-    {
-        if (index < 0 || index >= _themes.Length)
-            return;
-        _themes[index].SetLock(false);
-        SaverSystem.Unlock(index);
-    }
-
     private void OnThemeClicked(MenuBox box)
     {
         if (box.IsLocked)
@@ -53,6 +39,11 @@ public class ThemeSwitcher : MonoBehaviour
         ResetAllThemes();
         box.SetSelect(true);
         _background.sprite = box.Sprite;
+
+        int index = System.Array.IndexOf(_themes, box);
+
+        if (index >= 0)
+            SaverSystem.Select(index);
     }
 
     private void ResetAllThemes()
@@ -60,6 +51,16 @@ public class ThemeSwitcher : MonoBehaviour
         foreach (var theme in _themes)
         {
             theme.SetSelect(false);
+        }
+    }
+
+    public void RefreshThemes()
+    {
+        for (int i = 0; i < _themes.Length; i++)
+        {
+            bool isUnclock = SaverSystem.isUnlocked(i);
+            _themes[i].SetLock(isUnclock == true);
+            _themes[2].SetLock(true);
         }
     }
 }
